@@ -63,5 +63,5 @@ def perform_rest(
             out = hook.apply(out)
             applied.append(hook.id)
     if request.kind == "long":
-        out = replace(out, slots=tuple(FULL for FULL in state.slots))
+        out = replace(out, slots=out.slot_maximum)
     return RestResult(True, out, tuple(applied))

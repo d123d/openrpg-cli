@@ -4,10 +4,11 @@ from srd_cli.rules.spellcasting import CastingState, Resource
 
 def test_rest_hooks_are_owned_ordered_and_interruptible():
     resource = Resource("rage", "barbarian", 0, 2, "long")
-    state = CastingState((), resources=(resource,))
+    state = CastingState((0, 1), resources=(resource,), slot_maximum=(4, 2))
     result = perform_rest(
         RestRequest("r1", "long", 480), state, (resource_recovery_hook(resource),)
     )
     assert result.state.resources[0].current == 2
+    assert result.state.slots == (4, 2)
     interrupted = perform_rest(RestRequest("r2", "short", 60, True), state, ())
     assert not interrupted.completed and interrupted.state is state

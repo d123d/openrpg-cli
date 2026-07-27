@@ -45,6 +45,18 @@ class CastingState:
     prepared: tuple[str, ...] = ()
     resources: tuple[Resource, ...] = ()
     concentration: str | None = None
+    slot_maximum: tuple[int, ...] = ()
+
+    def __post_init__(self) -> None:
+        if not self.slot_maximum:
+            object.__setattr__(self, "slot_maximum", self.slots)
+        if len(self.slots) != len(self.slot_maximum):
+            raise ValueError("slots: current/maximum shape mismatch")
+        if any(
+            current < 0 or current > maximum
+            for current, maximum in zip(self.slots, self.slot_maximum)
+        ):
+            raise ValueError("slots: current outside maximum")
 
 
 def multiclass_caster_level(class_levels: Mapping[str, tuple[int, str]]) -> int:
