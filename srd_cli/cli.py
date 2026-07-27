@@ -21,6 +21,8 @@ from srd_cli.character import AbilityScores
 from srd_cli.character_builder import CharacterBuilder, CharacterRequest, ChoiceError
 from srd_cli.character_sheet import render_json, render_sheet
 from srd_cli.character_store import CharacterStore, CharacterValidationError
+from srd_cli.combat import CombatError
+from srd_cli.combat_session import CombatSession, render_combat_json, render_transcript
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(errors="replace")
@@ -50,6 +52,43 @@ def _character_services(root: Path | None = None) -> tuple[CharacterBuilder, Cha
 def _fail_character(exc: Exception) -> None:
     Console(stderr=True).print(f"Error: {exc}", markup=False)
     raise typer.Exit(2)
+
+
+@app.command()
+def combat(
+    character: Path = typer.Option(..., exists=True, readable=True),
+    monster: str = typer.Option(...),
+    seed: int = typer.Option(...),
+    auto: bool = typer.Option(False, "--auto"),
+    as_json: bool = typer.Option(False, "--json"),
+    max_rounds: int = typer.Option(100, min=1, max=10_000),
+) -> None:
+    """Run deterministic one-character combat."""
+    _, store = _character_services()
+    try:
+        hero = store.load(character)
+        creature = get_rules_api().get_creature(monster)
+        if creature is None:
+            raise CombatError(f"unknown or ambiguous creature: {monster}")
+        session = CombatSession(hero, creature, seed, max_rounds)
+        if not auto:
+            console.print("Interactive combat uses stable first legal action each turn.")
+        result = session.run_auto()
+        console.print(render_combat_json(result) if as_json else render_transcript(result),
+                      end="", markup=False)
+    except (CombatError, CharacterValidationError, OSError, ValueError) as exc:
+        _fail_character(exc)
+
+
+@app.command()
+def play(
+    character: Path = typer.Option(..., exists=True, readable=True),
+    monster: str = typer.Option(...),
+    seed: int = typer.Option(0),
+) -> None:
+    """Guide load → SRD creature → combat result."""
+    combat(character=character, monster=monster, seed=seed, auto=False,
+           as_json=False, max_rounds=100)
 
 
 def _pick(label: str, value: str | None, choices) -> str:
