@@ -43,7 +43,13 @@
   1. Checks/saves/attacks/contests share one modifier pipeline.
   2. Damage defenses, temp HP, zero HP, death saves, recovery match encoded SRD rules.
   3. All 15 bundled conditions and exhaustion have tested mechanical hooks.
-**Plans**: TBD
+**Plans**: 4 plans
+
+Plans:
+- [ ] 06-01-PLAN.md — Shared d20 resolution and SRD golden tests
+- [ ] 06-02-PLAN.md — Damage, healing, zero HP, death, and recovery
+- [ ] 06-03-PLAN.md — Complete condition hooks and deterministic effect scheduler
+- [ ] 06-04-PLAN.md — Kernel integration, replay, v1 compatibility, and release gates
 
 ### Phase 7: Turn, Action & Space Engine
 **Goal**: Multi-actor encounters support full core action economy and targeting.
@@ -120,7 +126,7 @@
 | Phase | Plans Complete | Status | Completed |
 |---|---:|---|---|
 | 5. Deterministic Gameplay Kernel | 4/4 | Complete | 2026-07-26 |
-| 6. Universal Resolution & Effects | 0/? | Not started | - |
+| 6. Universal Resolution & Effects | 0/4 | Planned | - |
 | 7. Turn, Action & Space Engine | 0/? | Not started | - |
 | 8. Complete Characters & Progression | 0/? | Not started | - |
 | 9. SRD Effect Adapters | 0/? | Not started | - |
