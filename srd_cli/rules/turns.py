@@ -26,7 +26,8 @@ class InitiativeEntry:
     total: int
 
     def __post_init__(self) -> None:
-        _id(self.actor_id); _id(self.team_id)
+        _id(self.actor_id)
+        _id(self.team_id)
 
 
 @dataclass(frozen=True, slots=True)
@@ -82,8 +83,10 @@ class TurnTransition:
 
 
 def roll_initiative(
-    actors: tuple[tuple[str, str, int], ...], teams: tuple[tuple[str, tuple[str, ...]], ...],
-    rng: GameRNG, surprised_actor_ids: frozenset[str] = frozenset(),
+    actors: tuple[tuple[str, str, int], ...],
+    teams: tuple[tuple[str, tuple[str, ...]], ...],
+    rng: GameRNG,
+    surprised_actor_ids: frozenset[str] = frozenset(),
 ) -> tuple[TurnState, GameRNG]:
     if not actors or len(actors) > MAX_ACTORS:
         raise ValueError("invalid actor count")
@@ -103,13 +106,20 @@ def roll_initiative(
         raise ValueError("unknown surprised actor")
     entries, next_rng = [], rng
     for actor_id, team_id, modifier in actors:
-        _id(actor_id); _id(team_id)
-        if team_map.get(actor_id) != team_id or type(modifier) is not int or abs(modifier) > MAX_VALUE:
+        _id(actor_id)
+        _id(team_id)
+        if (
+            team_map.get(actor_id) != team_id
+            or type(modifier) is not int
+            or abs(modifier) > MAX_VALUE
+        ):
             raise ValueError("invalid actor initiative")
         roll, next_rng = next_rng.die(20)
         entries.append(InitiativeEntry(actor_id, team_id, roll, modifier, roll + modifier))
     entries.sort(key=lambda x: (-x.total, -x.modifier, x.actor_id))
-    return TurnState(TurnOrder(tuple(entries)), surprise=SurpriseState(surprised_actor_ids)), next_rng
+    return TurnState(
+        TurnOrder(tuple(entries)), surprise=SurpriseState(surprised_actor_ids)
+    ), next_rng
 
 
 def require_owner(state: TurnState, actor_id: str) -> str | None:
@@ -119,23 +129,32 @@ def require_owner(state: TurnState, actor_id: str) -> str | None:
 def end_turn(state: TurnState, actor_id: str) -> tuple[TurnState, TurnTransition]:
     reason = require_owner(state, actor_id)
     if reason:
-        return state, TurnTransition(False, reason, state.current_actor_id, state.current_actor_id, state.round, state.round)
+        return state, TurnTransition(
+            False, reason, state.current_actor_id, state.current_actor_id, state.round, state.round
+        )
     surprise = state.surprise
     if surprise.is_surprised(actor_id):
         surprise = replace(surprise, consumed_actor_ids=surprise.consumed_actor_ids | {actor_id})
     index = (state.index + 1) % len(state.order.entries)
     round_number = state.round + (1 if index == 0 else 0)
     result = replace(state, index=index, round=round_number, surprise=surprise)
-    return result, TurnTransition(True, None, actor_id, result.current_actor_id, state.round, round_number)
+    return result, TurnTransition(
+        True, None, actor_id, result.current_actor_id, state.round, round_number
+    )
 
 
 class BudgetKind(str, Enum):
-    ACTION = "action"; BONUS_ACTION = "bonus_action"; REACTION = "reaction"
-    MOVEMENT = "movement"; INTERACTION = "interaction"
+    ACTION = "action"
+    BONUS_ACTION = "bonus_action"
+    REACTION = "reaction"
+    MOVEMENT = "movement"
+    INTERACTION = "interaction"
 
 
 class TriggerKind(str, Enum):
-    LEAVE_REACH = "leave_reach"; READY = "ready"; EXPLICIT = "explicit"
+    LEAVE_REACH = "leave_reach"
+    READY = "ready"
+    EXPLICIT = "explicit"
 
 
 @dataclass(frozen=True, slots=True)
@@ -147,14 +166,26 @@ class ActionBudget:
     interaction: int = 1
 
     def __post_init__(self) -> None:
-        if any(type(x) is not int or not 0 <= x <= MAX_VALUE for x in (self.action, self.bonus_action, self.reaction, self.movement, self.interaction)):
+        if any(
+            type(x) is not int or not 0 <= x <= MAX_VALUE
+            for x in (
+                self.action,
+                self.bonus_action,
+                self.reaction,
+                self.movement,
+                self.interaction,
+            )
+        ):
             raise ValueError("invalid budget")
 
 
 @dataclass(frozen=True, slots=True)
 class ActionCost:
-    action: int = 0; bonus_action: int = 0; reaction: int = 0
-    movement: int = 0; interaction: int = 0
+    action: int = 0
+    bonus_action: int = 0
+    reaction: int = 0
+    movement: int = 0
+    interaction: int = 0
 
     def __post_init__(self) -> None:
         ActionBudget(self.action, self.bonus_action, self.reaction, self.movement, self.interaction)
@@ -178,7 +209,11 @@ class RangeSpec:
     unit: str = "feet"
 
     def __post_init__(self) -> None:
-        if type(self.minimum) is not int or type(self.maximum) is not int or not 0 <= self.minimum <= self.maximum <= MAX_VALUE:
+        if (
+            type(self.minimum) is not int
+            or type(self.maximum) is not int
+            or not 0 <= self.minimum <= self.maximum <= MAX_VALUE
+        ):
             raise ValueError("invalid range spec")
 
 
@@ -195,7 +230,8 @@ class LegalCommandSpec:
     srd_key: str = ""
 
     def __post_init__(self) -> None:
-        _id(self.command_id); _id(self.actor_id)
+        _id(self.command_id)
+        _id(self.actor_id)
         if len(self.prerequisites) > 64:
             raise ValueError("too many prerequisites")
 
