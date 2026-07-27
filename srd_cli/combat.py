@@ -7,7 +7,7 @@ from enum import Enum
 from typing import Any, Mapping
 
 from srd_cli.character import Character
-from srd_cli.api import get_rules_api
+from srd_cli.api import RulesAPI, get_rules_api
 from srd_cli.combat_actions import CombatActionCatalog, UnsupportedCombatAction
 from srd_cli.dice import roll
 from srd_cli.combat_rules import CreatureView
@@ -58,8 +58,10 @@ class CombatState:
 
 
 class CombatEngine:
-    def __init__(self, character: Character, creature: CreatureView, seed: int) -> None:
+    def __init__(self, character: Character, creature: CreatureView, seed: int,
+                 api: RulesAPI | None = None) -> None:
         self.character, self.creature = character, creature
+        self.api = api or get_rules_api()
         self.rng = GameRNG(seed)
         player = Combatant("player", character.name, character.derived.current_hp,
                            character.derived.max_hp, character.derived.armor_class,
@@ -78,13 +80,14 @@ class CombatEngine:
         actions = [("weapon", x.weapon.pk) for x in sorted(
             self.character.derived.attacks, key=lambda x: (x.weapon.name.casefold(), x.weapon.pk))]
         for ref in sorted(self.character.spells, key=lambda x: (x.name.casefold(), x.pk)):
-            view = get_rules_api().get_spell(ref.pk)
+            view = self.api.get_spell(ref.pk)
             if view:
                 try:
                     CombatActionCatalog.spell(view)
                 except UnsupportedCombatAction:
                     continue
                 actions.append(("spell", ref.pk))
+        actions.append(("unarmed", "unarmed"))
         return tuple(actions)
 
     def act(self, actor: str, action_id: str | None = None) -> tuple[CombatState, tuple[CombatEvent, ...]]:
@@ -102,10 +105,17 @@ class CombatEngine:
                     return self._attack(actor, target, attack.weapon.name, attack.attack_bonus,
                                         attack.damage.split()[0])
                 refs = {x.pk for x in self.character.spells}
-                view = get_rules_api().get_spell(action_id or "")
+                if action_id == "unarmed":
+                    strength = self.character.derived.modifiers["str"]
+                    return self._attack(actor, target, "Unarmed Strike", strength + 2,
+                                        str(max(1, 1 + strength)))
+                view = self.api.get_spell(action_id or "")
                 if action_id not in refs or view is None:
                     raise CombatError(f"unknown, unequipped, or unprepared action: {action_id}")
-                resolved = CombatActionCatalog.spell(view)
+                try:
+                    resolved = CombatActionCatalog.spell(view)
+                except UnsupportedCombatAction as exc:
+                    raise CombatError(f"unsupported combat action {action_id}: {exc}") from exc
                 if view.spell.data.get("attack_roll"):
                     return self._attack(actor, target, resolved.name,
                                         int(self.character.derived.spell_attack_bonus or 0),

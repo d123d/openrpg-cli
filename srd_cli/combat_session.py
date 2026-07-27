@@ -8,6 +8,7 @@ from dataclasses import dataclass
 from srd_cli.character import Character
 from srd_cli.combat import CombatEngine, CombatError, CombatEvent, CombatState, Outcome
 from srd_cli.combat_rules import CreatureView
+from srd_cli.api import RulesAPI
 
 
 @dataclass(frozen=True, slots=True)
@@ -19,10 +20,10 @@ class CombatResult:
 
 class CombatSession:
     def __init__(self, character: Character, creature: CreatureView, seed: int,
-                 max_rounds: int = 100) -> None:
+                 max_rounds: int = 100, api: RulesAPI | None = None) -> None:
         if not 1 <= max_rounds <= 10_000:
             raise CombatError("max rounds must be 1..10000")
-        self.engine = CombatEngine(character, creature, seed)
+        self.engine = CombatEngine(character, creature, seed, api)
         self.seed, self.max_rounds = seed, max_rounds
 
     def run_auto(self) -> CombatResult:
