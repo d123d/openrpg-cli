@@ -59,7 +59,14 @@ Plans:
   1. N actors/teams take legal deterministic turns with action budgets.
   2. Core actions, reactions, movement, cover, visibility, grapples, and opportunity attacks work.
   3. Range-band and optional grid targeting use same command contracts.
-**Plans**: TBD
+**Plans**: 5 plans
+
+Plans:
+- [ ] 07-01-PLAN.md — N-actor initiative, legal ownership, budgets, and legal-command contracts
+- [ ] 07-02-PLAN.md — Authoritative range bands and optional grid translation
+- [ ] 07-03-PLAN.md — Complete core action catalog and resolution
+- [ ] 07-04-PLAN.md — Grapple, shove, reactions, cover, visibility, mounted, and underwater hooks
+- [ ] 07-05-PLAN.md — Kernel integration, replay, v1 compatibility, and release gates
 
 ### Phase 8: Complete Characters & Progression
 **Goal**: SRD characters work across levels 1–20 with equipment, features, spells, resources, and rests.
@@ -127,7 +134,7 @@ Plans:
 |---|---:|---|---|
 | 5. Deterministic Gameplay Kernel | 4/4 | Complete | 2026-07-26 |
 | 6. Universal Resolution & Effects | 4/4 | Complete | 2026-07-26 |
-| 7. Turn, Action & Space Engine | 0/? | Not started | - |
+| 7. Turn, Action & Space Engine | 0/5 | Planned | - |
 | 8. Complete Characters & Progression | 0/? | Not started | - |
 | 9. SRD Effect Adapters | 0/? | Not started | - |
 | 10. Encounters, Parties & Sessions | 0/? | Not started | - |
