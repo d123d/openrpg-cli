@@ -52,6 +52,23 @@ def test_armor_and_weapon_ability_rules():
     assert thrown.derived.attacks[0].ability == "str"
 
 
+@pytest.mark.parametrize(
+    ("class_name", "scores", "expected_ac"),
+    [
+        ("Druid", AbilityScores(10, 12, 14, 8, 15, 13), 13),  # shield only
+        ("Cleric", AbilityScores(10, 18, 13, 8, 15, 12), 17),  # medium Dex cap + shield
+        ("Paladin", AbilityScores(15, 14, 13, 8, 10, 12), 18),  # heavy + shield
+        ("Barbarian", AbilityScores(15, 14, 13, 8, 12, 10), 12),  # unarmored fallback
+        ("Ranger", AbilityScores(10, 18, 14, 8, 15, 12), 16),  # light armor, uncapped
+    ],
+)
+def test_starting_armor_matrix(class_name, scores, expected_ac):
+    character = CharacterBuilder(get_rules_api()).build(
+        request(class_identity=class_name, scores=scores)
+    )
+    assert character.derived.armor_class == expected_ac
+
+
 def test_suggestions_are_stable():
     with pytest.raises(ChoiceError, match=r"class.*Wizard"):
         CharacterBuilder(get_rules_api()).build(request(class_identity="Wizrd"))

@@ -87,6 +87,13 @@ class CharacterBuilder:
         self.backgrounds = tuple(_ref(x.entity) for x in self._background_views)
         self.feats = tuple(_ref(x.entity) for x in self._feat_views)
 
+    def legal_equipment(self) -> tuple[EntityRef, ...]:
+        return tuple(_ref(x.entity) for x in self.api.list_weapons())
+
+    def legal_spells(self, class_identity: str) -> tuple[EntityRef, ...]:
+        class_view = self._select("class", class_identity, self._class_views)
+        return tuple(_ref(x.spell) for x in class_view.spells if x.spell.data.get("level") in (0, 1))
+
     @staticmethod
     def _select(field: str, identity: str, views):
         if not isinstance(identity, str) or not identity.strip() or len(identity) > 200:
@@ -194,9 +201,13 @@ class CharacterBuilder:
         armor_rows = [
             row for row in self.api.repository.table("Armor.json")
             if str(row["fields"]["name"]) in equipment_names
+            and str(row["fields"]["name"]).casefold() != "shield"
         ]
         if armor_rows:
-            armor = armor_rows[0]["fields"]
+            # Option text can match "Leather Armor" inside "Studded Leather
+            # Armor"; selecting strongest matched body armor avoids substring
+            # ambiguity while remaining within selected SRD package.
+            armor = max(armor_rows, key=lambda row: int(row["fields"]["ac_base"]))["fields"]
             dex_bonus = mods["dex"] if armor.get("ac_add_dexmod") else 0
             cap = armor.get("ac_cap_dexmod")
             if isinstance(cap, int):
