@@ -9,11 +9,12 @@ def test_play_guides_creation_creature_and_actions(tmp_path, monkeypatch):
         app,
         ["play", "--seed", "7"],
         input=(
-            "create\nAda\nFighter\nHuman\nSoldier\nSavage Attacker\nn\n"
+            "create\nAda\nFighter\nHuman\nSoldier\nSavage Attacker\n\nn\n"
             "Goblin Warrior\n" + "1\n" * 100
         ),
     )
     assert result.exit_code == 0
     assert "Creature choices:" in result.stdout
+    assert "Equipment choices:" in result.stdout
     assert "Action" in result.stdout
     assert "Result:" in result.stdout

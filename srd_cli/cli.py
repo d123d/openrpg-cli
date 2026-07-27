@@ -23,6 +23,8 @@ from srd_cli.character_sheet import render_json, render_sheet
 from srd_cli.character_store import CharacterStore, CharacterValidationError
 from srd_cli.combat import CombatError, Outcome
 from srd_cli.combat_session import CombatResult, CombatSession, render_combat_json, render_transcript
+from srd_cli.playtest_agent import CoverageController, SubprocessController
+from srd_cli.playtest_bot import run_playtest, write_playtest_artifacts
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(errors="replace")
@@ -121,14 +123,7 @@ def play(
         if character is None:
             mode = typer.prompt("Character: create or load", default="load").strip().casefold()
             if mode == "create":
-                hero = builder.build(CharacterRequest(
-                    typer.prompt("Name"),
-                    _pick("Class", None, builder.classes),
-                    _pick("Species", None, builder.species),
-                    _pick("Background", None, builder.backgrounds),
-                    _pick("Feat", None, builder.feats),
-                    None, (), (),
-                ))
+                hero = _guided_build(builder)
                 if typer.confirm("Save character?", default=False):
                     store.save(hero)
             elif mode == "load":
@@ -155,12 +150,118 @@ def play(
         _fail_character(exc)
 
 
+@app.command()
+def playtest(
+    character: Path | None = typer.Option(None, exists=True, readable=True),
+    monster: str = typer.Option("Goblin Warrior"),
+    seed: int = typer.Option(42),
+    max_turns: int = typer.Option(200, min=1, max=10_000),
+    controller_script: Path | None = typer.Option(
+        None, "--controller", exists=True, readable=True,
+        help="Python controller implementing the JSON stdin/stdout contract.",
+    ),
+    timeout: int = typer.Option(120, min=1, max=3600),
+    log_dir: Path = typer.Option(Path("playlogs/srd-playtest")),
+    report_dir: Path = typer.Option(Path("scores/playtest-bot")),
+    as_json: bool = typer.Option(False, "--json"),
+) -> None:
+    """Run a bounded autonomous combat QA agent and save evidence."""
+    builder, store = _character_services()
+    try:
+        hero = (
+            store.load(character)
+            if character is not None
+            else builder.build(
+                CharacterRequest(
+                    "SRD Bot", "Fighter", "Human", "Soldier", "Savage Attacker"
+                )
+            )
+        )
+        creature = get_rules_api().get_creature(monster)
+        if creature is None:
+            raise CombatError(f"unknown or ambiguous creature: {monster}")
+        controller = (
+            SubprocessController(
+                [sys.executable, str(controller_script)],
+                timeout=timeout,
+                name=f"python:{controller_script.name}",
+            )
+            if controller_script is not None
+            else CoverageController()
+        )
+        report = run_playtest(
+            hero,
+            creature,
+            seed=seed,
+            max_turns=max_turns,
+            controller=controller,
+        )
+        log_path, report_path = write_playtest_artifacts(
+            report,
+            log_dir=log_dir,
+            report_dir=report_dir,
+        )
+    except (CombatError, CharacterValidationError, OSError, ValueError) as exc:
+        _fail_character(exc)
+    if as_json:
+        console.print(json.dumps(report.to_dict(), ensure_ascii=False, indent=2, sort_keys=True),
+                      markup=False)
+    else:
+        status = "PASS" if report.ok else "INCONCLUSIVE/FAIL"
+        console.print(
+            f"{status}: {report.creature} → {report.outcome}; "
+            f"{report.turns} turns, {report.rounds} rounds"
+        )
+        console.print(f"Log: {log_path}")
+        console.print(f"Report: {report_path}")
+    if not report.ok:
+        raise typer.Exit(1)
+
+
 def _pick(label: str, value: str | None, choices) -> str:
     if value is not None:
         return value
     names = [x.name for x in choices]
     console.print(f"{label} choices: {', '.join(names)}")
     return typer.prompt(label)
+
+
+def _guided_build(
+    builder: CharacterBuilder,
+    *,
+    name: str | None = None,
+    class_: str | None = None,
+    species: str | None = None,
+    background: str | None = None,
+    feat: str | None = None,
+    scores: AbilityScores | None = None,
+    equipment: tuple[str, ...] = (),
+    spells: tuple[str, ...] = (),
+    prompt_optional: bool = True,
+):
+    actual_name = name if name is not None else typer.prompt("Name")
+    class_ = _pick("Class", class_, builder.classes)
+    species = _pick("Species", species, builder.species)
+    background = _pick("Background", background, builder.backgrounds)
+    feat = _pick("Feat", feat, builder.feats)
+    if prompt_optional:
+        legal_equipment = builder.legal_equipment()
+        console.print("Equipment choices: " + ", ".join(x.name for x in legal_equipment))
+        raw_equipment = typer.prompt(
+            "Equipment (comma-separated; blank uses class defaults)", default="", show_default=False
+        )
+        equipment = tuple(x.strip() for x in raw_equipment.split(",") if x.strip())
+        legal_spells = builder.legal_spells(class_)
+        if legal_spells:
+            console.print("Spell choices: " + ", ".join(x.name for x in legal_spells))
+            raw_spells = typer.prompt(
+                "Spells (comma-separated; blank uses supported defaults)", default="",
+                show_default=False,
+            )
+            spells = tuple(x.strip() for x in raw_spells.split(",") if x.strip())
+    return builder.build(CharacterRequest(
+        actual_name, class_, species, background, feat, scores, equipment, spells
+    ))
 
 
 @character_app.command("create")
@@ -195,10 +296,12 @@ def character_create(
                 parsed_scores = AbilityScores(*(int(x) for x in parts))
             except (ValueError, TypeError) as exc:
                 raise ValueError(f"scores: {exc}") from exc
-        character = builder.build(CharacterRequest(
-            actual_name, class_, species, background, feat, parsed_scores,
-            tuple(equipment or ()), tuple(spell or ()),
-        ))
+        character = _guided_build(
+            builder, name=actual_name, class_=class_, species=species,
+            background=background, feat=feat, scores=parsed_scores,
+            equipment=tuple(equipment or ()), spells=tuple(spell or ()),
+            prompt_optional=False,
+        )
         path = store.save(character, output, overwrite=overwrite)
     except (ChoiceError, CharacterValidationError, OSError, ValueError) as exc:
         _fail_character(exc)
