@@ -31,13 +31,13 @@
 
 ## Combat and Play
 
-- [ ] **COMBAT-01**: Initiative and turn loop.
-- [ ] **COMBAT-02**: Weapon attacks, damage, critical hits, defeat.
-- [ ] **COMBAT-03**: Spell attacks and save-based damage.
-- [ ] **COMBAT-04**: Deterministic enemy SRD action selection.
-- [ ] **COMBAT-05**: Reproducible transcript and headless auto mode.
-- [ ] **PLAY-01**: Interactive create/load and encounter loop.
-- [ ] **PLAY-02**: Install/package/smoke verification.
+- [x] **COMBAT-01**: Initiative and turn loop.
+- [x] **COMBAT-02**: Weapon attacks, damage, critical hits, defeat.
+- [x] **COMBAT-03**: Spell attacks and save-based damage.
+- [x] **COMBAT-04**: Deterministic enemy SRD action selection.
+- [x] **COMBAT-05**: Reproducible transcript and headless auto mode.
+- [x] **PLAY-01**: Interactive create/load and encounter loop.
+- [x] **PLAY-02**: Install/package/smoke verification.
 
 ## Traceability
 
@@ -47,4 +47,3 @@
 | API-01..06 | 2 |
 | CHAR-01..06 | 3 |
 | COMBAT-01..05, PLAY-01..02 | 4 |
-

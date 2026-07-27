@@ -80,10 +80,10 @@ Plans:
 **Plans**: 4 plans
 
 Plans:
-- [ ] 04-01-PLAN.md — Deterministic combat state, initiative, and weapon resolution
-- [ ] 04-02-PLAN.md — Structured offensive spells and deterministic SRD enemy actions
-- [ ] 04-03-PLAN.md — Reproducible sessions, transcripts, and combat CLI
-- [ ] 04-04-PLAN.md — Interactive play loop and installed-artifact v1.0 verification
+- [x] 04-01-PLAN.md — Deterministic combat state, initiative, and weapon resolution
+- [x] 04-02-PLAN.md — Structured offensive spells and deterministic SRD enemy actions
+- [x] 04-03-PLAN.md — Reproducible sessions, transcripts, and combat CLI
+- [x] 04-04-PLAN.md — Interactive play loop and installed-artifact v1.0 verification
 
 ## Progress
 
@@ -92,4 +92,4 @@ Plans:
 | 1. Clean SRD-Only Fork | 1/1 | Complete | 2026-07-26 |
 | 2. Normalized Rules API | 4/4 | Complete | 2026-07-26 |
 | 3. Character Engine | 4/4 | Complete | 2026-07-26 |
-| 4. Combat & Interactive Play | 0/4 | Planned | - |
+| 4. Combat & Interactive Play | 4/4 | Complete | 2026-07-26 |
