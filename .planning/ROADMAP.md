@@ -15,7 +15,8 @@
 
 - [x] **Phase 5: Deterministic Gameplay Kernel** - Versioned state, typed commands/events, reducer, logs, replay, migrations
 - [x] **Phase 6: Universal Resolution & Effects** - Checks, saves, contests, damage, healing, death, conditions, durations
-- [x] **Phase 7: Turn, Action & Space Engine** - N actors, action economy, core actions, reactions, range bands/grid (completed 2026-07-27)
+- [x] **Phase 7: Turn, Action & Space Engine** - N actors, action economy, core actions, reactions, range bands/grid
+ (completed 2026-07-27)
 - [ ] **Phase 8: Complete Characters & Progression** - Levels 1–20, features, inventory, spell resources, rests
 - [ ] **Phase 9: SRD Effect Adapters** - Spells, monsters, items, multiattack/recharge/traits, coverage registry
 - [ ] **Phase 10: Encounters, Parties & Sessions** - Encounter lifecycle, teams, party resources, objectives, controllers
@@ -143,9 +144,17 @@ Plans:
 | 5. Deterministic Gameplay Kernel | 4/4 | Complete | 2026-07-26 |
 | 6. Universal Resolution & Effects | 4/4 | Complete | 2026-07-26 |
 | 7. Turn, Action & Space Engine | 5/5 | Complete   | 2026-07-27 |
-| 8. Complete Characters & Progression | 0/? | Not started | - |
+| 8. Complete Characters & Progression | 6/6 | Complete | 2026-07-26 |
 | 9. SRD Effect Adapters | 0/? | Not started | - |
 | 10. Encounters, Parties & Sessions | 0/? | Not started | - |
 | 11. Core Noncombat Scenes | 0/? | Not started | - |
 | 12. Campaign Activity Systems | 0/? | Not started | - |
 | 13. Unified CLI & Hardening | 0/? | Not started | - |
+
+
+## Structural Contract Sync (2026-07-26)
+
+- `srd-cli` inherited through `5b89831`: RNG boundary `51bc0b8`, reducer routing `cbbb155`, CLI composition `5b89831`.
+- `openrpg-core` compatibility verified at `0.1.0` / `c178e59`.
+- Family inheritance policy: inherit shared common-system structure only. Preserve OpenRPG provider architecture, isolated system packs, licensing boundaries, commands, and output.
+- Next product phase: Phase 9, SRD Effect Adapters. Structural sync adds no new system-family scope.

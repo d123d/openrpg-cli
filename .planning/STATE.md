@@ -6,18 +6,18 @@ status: completed
 last_updated: "2026-07-27T02:43:24.893Z"
 progress:
   total_phases: 9
-  completed_phases: 3
-  total_plans: 13
-  completed_plans: 13
-  percent: 33
+  completed_phases: 4
+  total_plans: 19
+  completed_plans: 19
+  percent: 44
 ---
 
 # Project State
 
 ## Current Position
 
-Phase: 8 of 13
-Status: Phase 7 complete; ready for Phase 8
+Phase: 9 of 13
+Status: Phase 8 complete; structural contract sync complete; ready for Phase 9
 Progress: [███░░░░░░] 33%
 
 ## Decisions
@@ -43,3 +43,10 @@ Progress: [███░░░░░░] 33%
 ## Blockers
 
 None.
+
+## 2026-07-26 Structural Sync
+
+- Local commits: `58cb0cd` explicit RNG names/RandomSource; `7c4619e` handler router; `f86b9e7` presentation composition; `a2e84fa` sync metadata.
+- Upstream boundary: `srd-cli@5b89831`; core compatibility: `openrpg-core@c178e59` (`0.1.0`).
+- Gates: 107 non-release tests pass; 12/12 system packs audit clean; release build gate pending final environment validation; Ruff repo baseline contains pre-existing debt, changed code has no undefined-name failures.
+- Policy: inherit shared common systems only. Never collapse OpenRPG providers/packs into SRD scope.
