@@ -36,6 +36,14 @@
     "ReputationTier.json": {
       "sha256": "ae7aa45d9bcd3f0743ea13461bdb52639d9a30212880c56da73a754db1350b36",
       "record_count": 5
+    },
+    "DowntimeActivity.json": {
+      "sha256": "e48f8fdc06546dd95ac19e0a23369c0eaba3ba27bc64896c1df71be993f6c825",
+      "record_count": 16
+    },
+    "ExplorationActivity.json": {
+      "sha256": "72ce8f123ebe55915f8b8431bab9ae37ca855597ce22733f32e5665c1100c270",
+      "record_count": 14
     }
   },
   "disabled_reason": null,

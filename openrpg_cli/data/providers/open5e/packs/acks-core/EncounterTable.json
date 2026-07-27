@@ -1,0 +1,74 @@
+[
+  {
+    "pk": "acks_enc_wilderness_1",
+    "fields": {
+      "name": "Wilderness Encounter (Level 1)",
+      "system": "acks",
+      "license": "OGL",
+      "terrain": "wilderness",
+      "level": 1,
+      "table": "1: Bandits (2d4), 2: Wolves (1d4+1), 3: Giant Rats (1d6), 4: Kobolds (2d4), 5: Goblins (1d4+1), 6: No encounter",
+      "document": "acks-core"
+    }
+  },
+  {
+    "pk": "acks_enc_wilderness_3",
+    "fields": {
+      "name": "Wilderness Encounter (Level 3)",
+      "system": "acks",
+      "license": "OGL",
+      "terrain": "wilderness",
+      "level": 3,
+      "table": "1: Orcs (1d6), 2: Owlbear (1), 3: Trolls (1d4), 4: Bugbears (1d4), 5: Wyvern (1), 6: No encounter",
+      "document": "acks-core"
+    }
+  },
+  {
+    "pk": "acks_enc_wilderness_5",
+    "fields": {
+      "name": "Wilderness Encounter (Level 5)",
+      "system": "acks",
+      "license": "OGL",
+      "terrain": "wilderness",
+      "level": 5,
+      "table": "1: Hill Giant (1d3), 2: Ogres (1d4+1), 3: Cockatrice (1d4), 4: Gorgon (1), 5: Hydra (1), 6: No encounter",
+      "document": "acks-core"
+    }
+  },
+  {
+    "pk": "acks_enc_dungeon_1",
+    "fields": {
+      "name": "Dungeon Encounter (Level 1)",
+      "system": "acks",
+      "license": "OGL",
+      "terrain": "dungeon",
+      "level": 1,
+      "table": "1: Skeletons (1d4), 2: Zombies (1d4), 3: Giant Spiders (1d3), 4: Kobolds (2d4), 5: Gelatinous Cube (1), 6: No encounter",
+      "document": "acks-core"
+    }
+  },
+  {
+    "pk": "acks_enc_dungeon_3",
+    "fields": {
+      "name": "Dungeon Encounter (Level 3)",
+      "system": "acks",
+      "license": "OGL",
+      "terrain": "dungeon",
+      "level": 3,
+      "table": "1: Wraith (1), 2: Ghoul (1d3), 3: Mimic (1), 4: Rust Monster (1), 5: Displacer Beast (1), 6: No encounter",
+      "document": "acks-core"
+    }
+  },
+  {
+    "pk": "acks_enc_urban",
+    "fields": {
+      "name": "Urban Encounter",
+      "system": "acks",
+      "license": "OGL",
+      "terrain": "urban",
+      "level": 1,
+      "table": "1: Pickpocket, 2: Drunk (1d3), 3: City Guard patrol, 4: Merchant with goods, 5: Noble entourage, 6: No encounter",
+      "document": "acks-core"
+    }
+  }
+]

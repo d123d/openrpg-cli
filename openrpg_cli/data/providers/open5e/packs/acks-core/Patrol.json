@@ -1,0 +1,67 @@
+[
+  {
+    "pk": "acks_patrol_light",
+    "fields": {
+      "name": "Light Patrol",
+      "system": "acks",
+      "license": "OGL",
+      "composition": "4 militia + 1 footmen",
+      "strength": 4,
+      "cost": "15gp/month",
+      "coverage": "1 hex",
+      "document": "acks-core"
+    }
+  },
+  {
+    "pk": "acks_patrol_medium",
+    "fields": {
+      "name": "Medium Patrol",
+      "system": "acks",
+      "license": "OGL",
+      "composition": "4 footmen + 2 archers",
+      "strength": 8,
+      "cost": "40gp/month",
+      "coverage": "3 hexes",
+      "document": "acks-core"
+    }
+  },
+  {
+    "pk": "acks_patrol_heavy",
+    "fields": {
+      "name": "Heavy Patrol",
+      "system": "acks",
+      "license": "OGL",
+      "composition": "4 heavy cavalry + 2 archers + 1 battle mage",
+      "strength": 15,
+      "cost": "120gp/month",
+      "coverage": "6 hexes",
+      "document": "acks-core"
+    }
+  },
+  {
+    "pk": "acks_patrol_elite",
+    "fields": {
+      "name": "Elite Patrol",
+      "system": "acks",
+      "license": "OGL",
+      "composition": "4 heavy cavalry + 2 battle mages + 4 mercenaries",
+      "strength": 22,
+      "cost": "200gp/month",
+      "coverage": "10 hexes",
+      "document": "acks-core"
+    }
+  },
+  {
+    "pk": "acks_patrol_scout",
+    "fields": {
+      "name": "Scout Party",
+      "system": "acks",
+      "license": "OGL",
+      "composition": "2 light cavalry + 1 footman",
+      "strength": 3,
+      "cost": "20gp/month",
+      "coverage": "5 hexes",
+      "document": "acks-core"
+    }
+  }
+]

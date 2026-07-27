@@ -1,0 +1,194 @@
+[
+  {
+    "pk": "pf2e_dt_craft",
+    "fields": {
+      "name": "Craft",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Create items using formulas and raw materials. Takes 4 days per 100gp of value.",
+      "skill": "Crafting",
+      "cost": "50% of item price",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_dt_repair",
+    "fields": {
+      "name": "Repair",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Restore HP to a broken or damaged object.",
+      "skill": "Crafting",
+      "cost": "none",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_dt_rent_house",
+    "fields": {
+      "name": "Rent House",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Rent lodging for comfort and safety.",
+      "skill": "none",
+      "cost": "varies by quality",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_dt_buy_house",
+    "fields": {
+      "name": "Buy House",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Purchase property for a permanent base.",
+      "skill": "none",
+      "cost": "varies by location",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_dt_communal_work",
+    "fields": {
+      "name": "Communal Work",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Contribute to community projects. Earn Favor with settlements.",
+      "skill": "varies",
+      "cost": "time",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_dt_establish_business",
+    "fields": {
+      "name": "Establish Business",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Start a business that generates income over time.",
+      "skill": "varies",
+      "cost": "initial investment",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_dt_reputation",
+    "fields": {
+      "name": "Gather Information",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Learn rumors, contacts, and local knowledge.",
+      "skill": "Society",
+      "cost": "none",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_dt_subsist",
+    "fields": {
+      "name": "Subsist",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Find food and shelter without spending money.",
+      "skill": "Society or Survival",
+      "cost": "none",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_dt_learn_spell",
+    "fields": {
+      "name": "Learn a Spell",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Study to add a spell to your repertoire.",
+      "skill": "varies by tradition",
+      "cost": "10gp per spell level",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_dt_train",
+    "fields": {
+      "name": "Train",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Gain proficiency or learn a new language.",
+      "skill": "varies",
+      "cost": "time and supplies",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_dt_warmage_craft",
+    "fields": {
+      "name": "Craft Magical Item",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Create magical items using formulas and special materials.",
+      "skill": "Crafting",
+      "cost": "50% of item price + rare materials",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_dt_research",
+    "fields": {
+      "name": "Research",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Investigate a topic in libraries or with experts.",
+      "skill": "varies",
+      "cost": "time and access fees",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_dt_income",
+    "fields": {
+      "name": "Earn Income",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Work a job to earn gold. DC and income based on task difficulty.",
+      "skill": "varies",
+      "cost": "time",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_dt_treat_disease",
+    "fields": {
+      "name": "Treat Disease",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Provide ongoing care for a diseased creature.",
+      "skill": "Medicine",
+      "cost": "supplies",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_dt_treat_poison",
+    "fields": {
+      "name": "Treat Poison",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Provide ongoing care for a poisoned creature.",
+      "skill": "Medicine",
+      "cost": "supplies",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_dt_treat_wounds",
+    "fields": {
+      "name": "Treat Wounds",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Heal a creature during downtime using medicine.",
+      "skill": "Medicine",
+      "cost": "supplies",
+      "document": "pf2e-core"
+    }
+  }
+]

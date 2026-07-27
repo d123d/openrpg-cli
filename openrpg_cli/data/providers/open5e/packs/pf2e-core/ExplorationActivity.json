@@ -1,0 +1,156 @@
+[
+  {
+    "pk": "pf2e_exp_avoid_notice",
+    "fields": {
+      "name": "Avoid Notice",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Use Stealth to move without being noticed.",
+      "skill": "Stealth",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_exp_cover_tracks",
+    "fields": {
+      "name": "Cover Tracks",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Hide your trail to prevent tracking.",
+      "skill": "Survival",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_exp_defend",
+    "fields": {
+      "name": "Defend",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Stay ready to react. Gain +1 circumstance bonus to initiative.",
+      "skill": "varies",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_exp_detect",
+    "fields": {
+      "name": "Detect",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Use a precise sense to notice hidden creatures or hazards.",
+      "skill": "Perception",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_exp_follow_explore",
+    "fields": {
+      "name": "Follow the Expert",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Follow a trained ally and mimic their approach.",
+      "skill": "varies",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_exp_hustle",
+    "fields": {
+      "name": "Hustle",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Move at double your travel speed.",
+      "skill": "Constitution check",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_exp_investigate",
+    "fields": {
+      "name": "Investigate",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Seek out specific information using Recall Knowledge.",
+      "skill": "varies",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_exp_repair",
+    "fields": {
+      "name": "Repairs",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Repair damaged gear during exploration.",
+      "skill": "Crafting",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_exp_scout",
+    "fields": {
+      "name": "Scout",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Scout ahead to warn allies of dangers.",
+      "skill": "Perception",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_exp_search",
+    "fields": {
+      "name": "Search",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Thoroughly examine an area for hidden things.",
+      "skill": "Perception",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_exp_structure",
+    "fields": {
+      "name": "Sense Direction",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Determine cardinal directions without a compass.",
+      "skill": "Survival",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_exp_travel",
+    "fields": {
+      "name": "Travel",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Move at your travel speed toward a destination.",
+      "skill": "none",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_exp_treat_wounds_explore",
+    "fields": {
+      "name": "Treat Wounds",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Heal an ally during exploration with Medicine.",
+      "skill": "Medicine",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_exp_overland",
+    "fields": {
+      "name": "Overland Travel",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Travel long distances over multiple days.",
+      "skill": "Navigation check",
+      "document": "pf2e-core"
+    }
+  }
+]

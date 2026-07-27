@@ -36,6 +36,18 @@
     "ArmyUnit.json": {
       "sha256": "7ea72cdf734dbd4f77c8ab9cf03ed56e485b59c4cc14cdca50e0d3792019871b",
       "record_count": 8
+    },
+    "EncounterTable.json": {
+      "sha256": "8343ae1f375a5c681f6422d866711acbebe7c55b96508c613472b7015a381333",
+      "record_count": 6
+    },
+    "Patrol.json": {
+      "sha256": "ceb8646a3bc9aa1d00eb5f3f28d0a5819cd8de02ee6f1e9f995861868569ab85",
+      "record_count": 5
+    },
+    "TaxRevenue.json": {
+      "sha256": "6763256af9f2f513fb47537d03cf5f46d38b920e26985429f8942c22d03b5466",
+      "record_count": 5
     }
   },
   "disabled_reason": null,

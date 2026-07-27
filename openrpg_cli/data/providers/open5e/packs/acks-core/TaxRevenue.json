@@ -1,0 +1,62 @@
+[
+  {
+    "pk": "acks_tax_subsistence",
+    "fields": {
+      "name": "Subsistence",
+      "system": "acks",
+      "license": "OGL",
+      "population": "1-100",
+      "tax_rate": "1gp/household/quarter",
+      "annual_revenue": "4gp/household",
+      "document": "acks-core"
+    }
+  },
+  {
+    "pk": "acks_tax_poor",
+    "fields": {
+      "name": "Poor",
+      "system": "acks",
+      "license": "OGL",
+      "population": "101-500",
+      "tax_rate": "2gp/household/quarter",
+      "annual_revenue": "8gp/household",
+      "document": "acks-core"
+    }
+  },
+  {
+    "pk": "acks_tax_moderate",
+    "fields": {
+      "name": "Moderate",
+      "system": "acks",
+      "license": "OGL",
+      "population": "501-2000",
+      "tax_rate": "4gp/household/quarter",
+      "annual_revenue": "16gp/household",
+      "document": "acks-core"
+    }
+  },
+  {
+    "pk": "acks_tax_prosperous",
+    "fields": {
+      "name": "Prosperous",
+      "system": "acks",
+      "license": "OGL",
+      "population": "2001-5000",
+      "tax_rate": "8gp/household/quarter",
+      "annual_revenue": "32gp/household",
+      "document": "acks-core"
+    }
+  },
+  {
+    "pk": "acks_tax_wealthy",
+    "fields": {
+      "name": "Wealthy",
+      "system": "acks",
+      "license": "OGL",
+      "population": "5001-10000",
+      "tax_rate": "16gp/household/quarter",
+      "annual_revenue": "64gp/household",
+      "document": "acks-core"
+    }
+  }
+]
