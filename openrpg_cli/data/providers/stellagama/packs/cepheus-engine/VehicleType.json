@@ -1,0 +1,68 @@
+[
+  {
+    "pk": "cepheus_vehicle_grav",
+    "fields": {
+      "name": "Grav Vehicle",
+      "system": "cepheus",
+      "license": "OGL",
+      "desc": "Atmospheric gravitic vehicle.",
+      "type": "ground",
+      "document": "cepheus-srd"
+    }
+  },
+  {
+    "pk": "cepheus_vehicle_ship",
+    "fields": {
+      "name": "Starship",
+      "system": "cepheus",
+      "license": "OGL",
+      "desc": "Interstellar vessel.",
+      "type": "space",
+      "document": "cepheus-srd"
+    }
+  },
+  {
+    "pk": "cepheus_vehicle_fighter",
+    "fields": {
+      "name": "Fighter Craft",
+      "system": "cepheus",
+      "license": "OGL",
+      "desc": "Small combat vessel.",
+      "type": "space",
+      "document": "cepheus-srd"
+    }
+  },
+  {
+    "pk": "cepheus_vehicle_trader",
+    "fields": {
+      "name": "Trader",
+      "system": "cepheus",
+      "license": "OGL",
+      "desc": "Commercial vessel.",
+      "type": "space",
+      "document": "cepheus-srd"
+    }
+  },
+  {
+    "pk": "cepheus_vehicle_courier",
+    "fields": {
+      "name": "Courier",
+      "system": "cepheus",
+      "license": "OGL",
+      "desc": "Fast transport.",
+      "type": "space",
+      "document": "cepheus-srd"
+    }
+  },
+  {
+    "pk": "cepheus_vehicle_patrol",
+    "fields": {
+      "name": "Patrol Craft",
+      "system": "cepheus",
+      "license": "OGL",
+      "desc": "Law enforcement vessel.",
+      "type": "space",
+      "document": "cepheus-srd"
+    }
+  }
+]

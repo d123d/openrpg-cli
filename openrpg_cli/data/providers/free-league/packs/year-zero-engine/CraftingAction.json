@@ -1,0 +1,46 @@
+[
+  {
+    "pk": "yze_craft_make",
+    "fields": {
+      "name": "Make",
+      "system": "yze",
+      "license": "OGL",
+      "desc": "Create a new item.",
+      "skill": "Craft",
+      "document": "yze-srd"
+    }
+  },
+  {
+    "pk": "yze_craft_repair",
+    "fields": {
+      "name": "Repair",
+      "system": "yze",
+      "license": "OGL",
+      "desc": "Fix a broken item.",
+      "skill": "Craft",
+      "document": "yze-srd"
+    }
+  },
+  {
+    "pk": "yze_craft_improve",
+    "fields": {
+      "name": "Improve",
+      "system": "yze",
+      "license": "OGL",
+      "desc": "Enhance an existing item.",
+      "skill": "Craft",
+      "document": "yze-srd"
+    }
+  },
+  {
+    "pk": "yze_craft_salvage",
+    "fields": {
+      "name": "Salvage",
+      "system": "yze",
+      "license": "OGL",
+      "desc": "Break down items for parts.",
+      "skill": "Craft",
+      "document": "yze-srd"
+    }
+  }
+]

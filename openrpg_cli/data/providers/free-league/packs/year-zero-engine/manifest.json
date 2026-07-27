@@ -1,0 +1,47 @@
+{
+  "schema_version": 2,
+  "pack_id": "year-zero-engine",
+  "system_id": "yze",
+  "provider_id": "free-league",
+  "title": "Year Zero Engine SRD",
+  "enabled": true,
+  "quarantined": false,
+  "source_document_ids": [
+    "yze-srd"
+  ],
+  "source_repository": "http://frank-mitchell.com/rpg/year-zero-engine-ogl/",
+  "source_commit": "0000000000000000000000000000000000000000",
+  "license": {
+    "id": "OGL-1.0a",
+    "verified": true,
+    "url": "https://www.opengamingnetwork.com/legal/ogl"
+  },
+  "notice_file": "NOTICE.md",
+  "attribution_file": "ATTRIBUTION.md",
+  "allowlist": {
+    "document_ids": [
+      "yze-srd"
+    ]
+  },
+  "notes": "OGL 1.0a. Dice pool, push mechanic, crafting, survival.",
+  "declared_files": {
+    "DicePool.json": {
+      "sha256": "0d14e213463dd18c4c28437cb447ff2a91cd6f8e34f66904c08a2250f3c00db7",
+      "record_count": 4
+    },
+    "Action.json": {
+      "sha256": "7e56c24a82653f46d26f59612a2eb16d6256fb7b3a7fc80ff74090d3a03a5cc6",
+      "record_count": 6
+    },
+    "Condition.json": {
+      "sha256": "5eb2924e9b54b6d7ba41e1a71aa7c4347af51a3ac819e6fa3fb178cc382ee295",
+      "record_count": 4
+    },
+    "CraftingAction.json": {
+      "sha256": "c95ee0df4f70725d062de8284058442da1a57b1d7f4b5ce696bab43f88a9cd62",
+      "record_count": 4
+    }
+  },
+  "disabled_reason": null,
+  "license_file": "LICENSE.md"
+}

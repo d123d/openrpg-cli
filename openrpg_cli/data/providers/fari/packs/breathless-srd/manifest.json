@@ -1,0 +1,39 @@
+{
+  "schema_version": 2,
+  "pack_id": "breathless-srd",
+  "system_id": "breathless",
+  "provider_id": "fari",
+  "title": "Breathless SRD",
+  "enabled": true,
+  "quarantined": false,
+  "source_document_ids": [
+    "breathless-srd"
+  ],
+  "source_repository": "https://fari-rpgs.itch.io/breathless-srd",
+  "source_commit": "0000000000000000000000000000000000000000",
+  "license": {
+    "id": "CC-BY-4.0",
+    "verified": true,
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "notice_file": "NOTICE.md",
+  "attribution_file": "ATTRIBUTION.md",
+  "allowlist": {
+    "document_ids": [
+      "breathless-srd"
+    ]
+  },
+  "notes": "CC-BY 4.0. Survival horror stress mechanic.",
+  "declared_files": {
+    "StressTrack.json": {
+      "sha256": "c0e201f1be6d02c5ac4037aca8c23fc2b116a04385a052eef125442414044a3d",
+      "record_count": 6
+    },
+    "Action.json": {
+      "sha256": "f551c2784dfc554bf0348d8894f41e0b28978da5f2da88242dc9fcab9c3ef6ad",
+      "record_count": 8
+    }
+  },
+  "disabled_reason": null,
+  "license_file": "LICENSE.md"
+}

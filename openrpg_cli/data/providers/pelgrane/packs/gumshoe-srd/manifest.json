@@ -1,0 +1,39 @@
+{
+  "schema_version": 2,
+  "pack_id": "gumshoe-srd",
+  "system_id": "gumshoe",
+  "provider_id": "pelgrane",
+  "title": "GUMSHOE SRD",
+  "enabled": true,
+  "quarantined": false,
+  "source_document_ids": [
+    "gumshoe-srd"
+  ],
+  "source_repository": "https://site.pelgranepress.com/",
+  "source_commit": "0000000000000000000000000000000000000000",
+  "license": {
+    "id": "CC-BY-4.0",
+    "verified": true,
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "notice_file": "NOTICE.md",
+  "attribution_file": "ATTRIBUTION.md",
+  "allowlist": {
+    "document_ids": [
+      "gumshoe-srd"
+    ]
+  },
+  "notes": "CC-BY 4.0. Investigation and mystery mechanics.",
+  "declared_files": {
+    "InvestigativeAbility.json": {
+      "sha256": "928df512e87e0502b60519307850b97129258f9f12270657ac743886f19fbb53",
+      "record_count": 23
+    },
+    "GeneralAbility.json": {
+      "sha256": "f8487181ad1a04096d06567450d0638eb4bf009ac92131984d21e2d47d05ce80",
+      "record_count": 8
+    }
+  },
+  "disabled_reason": null,
+  "license_file": "LICENSE.md"
+}

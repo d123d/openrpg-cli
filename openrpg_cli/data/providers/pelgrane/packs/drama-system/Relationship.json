@@ -1,0 +1,90 @@
+[
+  {
+    "pk": "drama_rel_ally",
+    "fields": {
+      "name": "Ally",
+      "system": "drama",
+      "license": "CC-BY-4.0",
+      "desc": "Someone who supports you.",
+      "modifier": 0,
+      "document": "drama-srd"
+    }
+  },
+  {
+    "pk": "drama_rel_enemy",
+    "fields": {
+      "name": "Enemy",
+      "system": "drama",
+      "license": "CC-BY-4.0",
+      "desc": "Someone who opposes you.",
+      "modifier": -2,
+      "document": "drama-srd"
+    }
+  },
+  {
+    "pk": "drama_rel_rival",
+    "fields": {
+      "name": "Rival",
+      "system": "drama",
+      "license": "CC-BY-4.0",
+      "desc": "Someone competing with you.",
+      "modifier": -1,
+      "document": "drama-srd"
+    }
+  },
+  {
+    "pk": "drama_rel_mentor",
+    "fields": {
+      "name": "Mentor",
+      "system": "drama",
+      "license": "CC-BY-4.0",
+      "desc": "Someone who guides you.",
+      "modifier": 1,
+      "document": "drama-srd"
+    }
+  },
+  {
+    "pk": "drama_rel_beloved",
+    "fields": {
+      "name": "Beloved",
+      "system": "drama",
+      "license": "CC-BY-4.0",
+      "desc": "Someone you love.",
+      "modifier": 2,
+      "document": "drama-srd"
+    }
+  },
+  {
+    "pk": "drama_rel_betrayer",
+    "fields": {
+      "name": "Betrayer",
+      "system": "drama",
+      "license": "CC-BY-4.0",
+      "desc": "Someone who betrayed you.",
+      "modifier": -3,
+      "document": "drama-srd"
+    }
+  },
+  {
+    "pk": "drama_rel_savior",
+    "fields": {
+      "name": "Savior",
+      "system": "drama",
+      "license": "CC-BY-4.0",
+      "desc": "Someone who saved you.",
+      "modifier": 3,
+      "document": "drama-srd"
+    }
+  },
+  {
+    "pk": "drama_rel_suspect",
+    "fields": {
+      "name": "Suspect",
+      "system": "drama",
+      "license": "CC-BY-4.0",
+      "desc": "Someone you distrust.",
+      "modifier": -1,
+      "document": "drama-srd"
+    }
+  }
+]

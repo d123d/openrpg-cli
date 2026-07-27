@@ -1,0 +1,42 @@
+[
+  {
+    "pk": "yze_cond_angry",
+    "fields": {
+      "name": "Angry",
+      "system": "yze",
+      "license": "OGL",
+      "desc": "When pushed, -1 die.",
+      "document": "yze-srd"
+    }
+  },
+  {
+    "pk": "yze_cond_fearful",
+    "fields": {
+      "name": "Fearful",
+      "system": "yze",
+      "license": "OGL",
+      "desc": "When pushed, -1 die.",
+      "document": "yze-srd"
+    }
+  },
+  {
+    "pk": "yze_cond_hopeless",
+    "fields": {
+      "name": "Hopeless",
+      "system": "yze",
+      "license": "OGL",
+      "desc": "When pushed, -1 die.",
+      "document": "yze-srd"
+    }
+  },
+  {
+    "pk": "yze_cond_upset",
+    "fields": {
+      "name": "Upset",
+      "system": "yze",
+      "license": "OGL",
+      "desc": "When pushed, -1 die.",
+      "document": "yze-srd"
+    }
+  }
+]

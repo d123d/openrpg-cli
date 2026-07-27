@@ -1,0 +1,68 @@
+[
+  {
+    "pk": "breathless_stress_1",
+    "fields": {
+      "name": "Stress 1",
+      "system": "breathless",
+      "license": "CC-BY-4.0",
+      "desc": "You are slightly on edge.",
+      "penalty": 0,
+      "document": "breathless-srd"
+    }
+  },
+  {
+    "pk": "breathless_stress_2",
+    "fields": {
+      "name": "Stress 2",
+      "system": "breathless",
+      "license": "CC-BY-4.0",
+      "desc": "Your hands are shaking.",
+      "penalty": 0,
+      "document": "breathless-srd"
+    }
+  },
+  {
+    "pk": "breathless_stress_3",
+    "fields": {
+      "name": "Stress 3",
+      "system": "breathless",
+      "license": "CC-BY-4.0",
+      "desc": "You are sweating and breathing hard.",
+      "penalty": -1,
+      "document": "breathless-srd"
+    }
+  },
+  {
+    "pk": "breathless_stress_4",
+    "fields": {
+      "name": "Stress 4",
+      "system": "breathless",
+      "license": "CC-BY-4.0",
+      "desc": "You are starting to panic.",
+      "penalty": -1,
+      "document": "breathless-srd"
+    }
+  },
+  {
+    "pk": "breathless_stress_5",
+    "fields": {
+      "name": "Stress 5",
+      "system": "breathless",
+      "license": "CC-BY-4.0",
+      "desc": "You are hyperventilating.",
+      "penalty": -2,
+      "document": "breathless-srd"
+    }
+  },
+  {
+    "pk": "breathless_stress_6",
+    "fields": {
+      "name": "Stress 6",
+      "system": "breathless",
+      "license": "CC-BY-4.0",
+      "desc": "You freeze in terror.",
+      "penalty": -2,
+      "document": "breathless-srd"
+    }
+  }
+]

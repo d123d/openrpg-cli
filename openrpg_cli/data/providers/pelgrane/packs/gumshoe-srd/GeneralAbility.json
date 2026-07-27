@@ -1,0 +1,90 @@
+[
+  {
+    "pk": "gumshoe_composure",
+    "fields": {
+      "name": "Composure",
+      "system": "gumshoe",
+      "license": "CC-BY-4.0",
+      "category": "defensive",
+      "desc": "Resist emotional influence.",
+      "document": "gumshoe-srd"
+    }
+  },
+  {
+    "pk": "gumshoe_hit_points",
+    "fields": {
+      "name": "Hit Points",
+      "system": "gumshoe",
+      "license": "CC-BY-4.0",
+      "category": "defensive",
+      "desc": "Physical endurance.",
+      "document": "gumshoe-srd"
+    }
+  },
+  {
+    "pk": "gumshoe_fix",
+    "fields": {
+      "name": "Fix",
+      "system": "gumshoe",
+      "license": "CC-BY-4.0",
+      "category": "action",
+      "desc": "Repair damaged things.",
+      "document": "gumshoe-srd"
+    }
+  },
+  {
+    "pk": "gumshoe_brawn",
+    "fields": {
+      "name": "Brawn",
+      "system": "gumshoe",
+      "license": "CC-BY-4.0",
+      "category": "action",
+      "desc": "Physical force.",
+      "document": "gumshoe-srd"
+    }
+  },
+  {
+    "pk": "gumshoe_navigation",
+    "fields": {
+      "name": "Navigation",
+      "system": "gumshoe",
+      "license": "CC-BY-4.0",
+      "category": "action",
+      "desc": "Move through terrain.",
+      "document": "gumshoe-srd"
+    }
+  },
+  {
+    "pk": "gumshoe_porting",
+    "fields": {
+      "name": "Porting",
+      "system": "gumshoe",
+      "license": "CC-BY-4.0",
+      "category": "action",
+      "desc": "Carry and transport things.",
+      "document": "gumshoe-srd"
+    }
+  },
+  {
+    "pk": "gumshoe_tracking",
+    "fields": {
+      "name": "Tracking",
+      "system": "gumshoe",
+      "license": "CC-BY-4.0",
+      "category": "action",
+      "desc": "Follow trails.",
+      "document": "gumshoe-srd"
+    }
+  },
+  {
+    "pk": "gumshoe_transport",
+    "fields": {
+      "name": "Transport",
+      "system": "gumshoe",
+      "license": "CC-BY-4.0",
+      "category": "action",
+      "desc": "Operate vehicles.",
+      "document": "gumshoe-srd"
+    }
+  }
+]

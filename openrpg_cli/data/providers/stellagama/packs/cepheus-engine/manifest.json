@@ -1,0 +1,43 @@
+{
+  "schema_version": 2,
+  "pack_id": "cepheus-engine",
+  "system_id": "cepheus",
+  "provider_id": "stellagama",
+  "title": "Cepheus Engine SRD",
+  "enabled": true,
+  "quarantined": false,
+  "source_document_ids": [
+    "cepheus-srd"
+  ],
+  "source_repository": "https://www.drivethrurpg.com/product/186894",
+  "source_commit": "0000000000000000000000000000000000000000",
+  "license": {
+    "id": "OGL-1.0a",
+    "verified": true,
+    "url": "https://www.opengamingnetwork.com/legal/ogl"
+  },
+  "notice_file": "NOTICE.md",
+  "attribution_file": "ATTRIBUTION.md",
+  "allowlist": {
+    "document_ids": [
+      "cepheus-srd"
+    ]
+  },
+  "notes": "OGL 1.0a. Sci-fi, space travel, vehicle combat.",
+  "declared_files": {
+    "Skill.json": {
+      "sha256": "4805f3bebac926be876efabf1c14c2c87d66e91d45291318939e0e85e5fd83b7",
+      "record_count": 25
+    },
+    "CombatAction.json": {
+      "sha256": "5ee36abe7b5d1ec47b11bb3f90b3c16f38f03257f6baa7d6ce6042d6908cb914",
+      "record_count": 6
+    },
+    "VehicleType.json": {
+      "sha256": "2bbcd5cdc8c79a4e6b12862637f61e3464c75c976d9774e71f0861bca0ecbc64",
+      "record_count": 6
+    }
+  },
+  "disabled_reason": null,
+  "license_file": "LICENSE.md"
+}

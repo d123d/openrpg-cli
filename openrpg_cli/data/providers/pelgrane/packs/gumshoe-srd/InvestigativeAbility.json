@@ -1,0 +1,255 @@
+[
+  {
+    "pk": "gumshoe_athletics",
+    "fields": {
+      "name": "Athletics",
+      "system": "gumshoe",
+      "license": "CC-BY-4.0",
+      "category": "physical",
+      "desc": "Running, jumping, climbing.",
+      "document": "gumshoe-srd"
+    }
+  },
+  {
+    "pk": "gumshoe_awareness",
+    "fields": {
+      "name": "Awareness",
+      "system": "gumshoe",
+      "license": "CC-BY-4.0",
+      "category": "perception",
+      "desc": "Noticing things in the environment.",
+      "document": "gumshoe-srd"
+    }
+  },
+  {
+    "pk": "gumshoe_filing",
+    "fields": {
+      "name": "Filing",
+      "system": "gumshoe",
+      "license": "CC-BY-4.0",
+      "category": "intellect",
+      "desc": "Retrieving facts from memory or records.",
+      "document": "gumshoe-srd"
+    }
+  },
+  {
+    "pk": "gumshoe_health",
+    "fields": {
+      "name": "Health",
+      "system": "gumshoe",
+      "license": "CC-BY-4.0",
+      "category": "physical",
+      "desc": "Enduring injury and staying functional.",
+      "document": "gumshoe-srd"
+    }
+  },
+  {
+    "pk": "gumshoe_inspiration",
+    "fields": {
+      "name": "Inspiration",
+      "system": "gumshoe",
+      "license": "CC-BY-4.0",
+      "category": "mental",
+      "desc": "Creative leaps and breakthroughs.",
+      "document": "gumshoe-srd"
+    }
+  },
+  {
+    "pk": "gumshoe_intuition",
+    "fields": {
+      "name": "Intuition",
+      "system": "gumshoe",
+      "license": "CC-BY-4.0",
+      "category": "perception",
+      "desc": "Reading people and situations.",
+      "document": "gumshoe-srd"
+    }
+  },
+  {
+    "pk": "gumshoe_language",
+    "fields": {
+      "name": "Language",
+      "system": "gumshoe",
+      "license": "CC-BY-4.0",
+      "category": "intellect",
+      "desc": "Speaking and understanding languages.",
+      "document": "gumshoe-srd"
+    }
+  },
+  {
+    "pk": "gumshoe_mechanics",
+    "fields": {
+      "name": "Mechanics",
+      "system": "gumshoe",
+      "license": "CC-BY-4.0",
+      "category": "technical",
+      "desc": "Understanding machines and devices.",
+      "document": "gumshoe-srd"
+    }
+  },
+  {
+    "pk": "gumshoe_observe",
+    "fields": {
+      "name": "Observe",
+      "system": "gumshoe",
+      "license": "CC-BY-4.0",
+      "category": "perception",
+      "desc": "Detailed examination of scenes.",
+      "document": "gumshoe-srd"
+    }
+  },
+  {
+    "pk": "gumshoe_rapport",
+    "fields": {
+      "name": "Rapport",
+      "system": "gumshoe",
+      "license": "CC-BY-4.0",
+      "category": "social",
+      "desc": "Building trust and connection.",
+      "document": "gumshoe-srd"
+    }
+  },
+  {
+    "pk": "gumshoe_research",
+    "fields": {
+      "name": "Research",
+      "system": "gumshoe",
+      "license": "CC-BY-4.0",
+      "category": "intellect",
+      "desc": "Finding information in libraries and databases.",
+      "document": "gumshoe-srd"
+    }
+  },
+  {
+    "pk": "gumshoe_scuffling",
+    "fields": {
+      "name": "Scuffling",
+      "system": "gumshoe",
+      "license": "CC-BY-4.0",
+      "category": "physical",
+      "desc": "Hand-to-hand combat.",
+      "document": "gumshoe-srd"
+    }
+  },
+  {
+    "pk": "gumshoe_shotgun",
+    "fields": {
+      "name": "Shotgun Science",
+      "system": "gumshoe",
+      "license": "CC-BY-4.0",
+      "category": "technical",
+      "desc": "Firearms and weapons.",
+      "document": "gumshoe-srd"
+    }
+  },
+  {
+    "pk": "gumshoe_spatial",
+    "fields": {
+      "name": "Spatial Awareness",
+      "system": "gumshoe",
+      "license": "CC-BY-4.0",
+      "category": "perception",
+      "desc": "Navigation and mental mapping.",
+      "document": "gumshoe-srd"
+    }
+  },
+  {
+    "pk": "gumshoe_sport",
+    "fields": {
+      "name": "Sport",
+      "system": "gumshoe",
+      "license": "CC-BY-4.0",
+      "category": "physical",
+      "desc": "Athletic competition.",
+      "document": "gumshoe-srd"
+    }
+  },
+  {
+    "pk": "gumshoe_stealth",
+    "fields": {
+      "name": "Stealth",
+      "system": "gumshoe",
+      "license": "CC-BY-4.0",
+      "category": "physical",
+      "desc": "Moving unseen.",
+      "document": "gumshoe-srd"
+    }
+  },
+  {
+    "pk": "gumshoe_suggestion",
+    "fields": {
+      "name": "Suggestion",
+      "system": "gumshoe",
+      "license": "CC-BY-4.0",
+      "category": "social",
+      "desc": "Persuasion and manipulation.",
+      "document": "gumshoe-srd"
+    }
+  },
+  {
+    "pk": "gumshoe_survival",
+    "fields": {
+      "name": "Survival",
+      "system": "gumshoe",
+      "license": "CC-BY-4.0",
+      "category": "physical",
+      "desc": "Enduring harsh conditions.",
+      "document": "gumshoe-srd"
+    }
+  },
+  {
+    "pk": "gumshoe_technology",
+    "fields": {
+      "name": "Technology Use",
+      "system": "gumshoe",
+      "license": "CC-BY-4.0",
+      "category": "technical",
+      "desc": "Operating computers and electronics.",
+      "document": "gumshoe-srd"
+    }
+  },
+  {
+    "pk": "gumshoe_templating",
+    "fields": {
+      "name": "Templating",
+      "system": "gumshoe",
+      "license": "CC-BY-4.0",
+      "category": "technical",
+      "desc": "Understanding patterns and templates.",
+      "document": "gumshoe-srd"
+    }
+  },
+  {
+    "pk": "gumshoe_topology",
+    "fields": {
+      "name": "Topology",
+      "system": "gumshoe",
+      "license": "CC-BY-4.0",
+      "category": "intellect",
+      "desc": "Analyzing complex systems.",
+      "document": "gumshoe-srd"
+    }
+  },
+  {
+    "pk": "gumshoe_versatility",
+    "fields": {
+      "name": "Versatility",
+      "system": "gumshoe",
+      "license": "CC-BY-4.0",
+      "category": "general",
+      "desc": "Fallback for unlisted situations.",
+      "document": "gumshoe-srd"
+    }
+  },
+  {
+    "pk": "gumshoe_volition",
+    "fields": {
+      "name": "Volition",
+      "system": "gumshoe",
+      "license": "CC-BY-4.0",
+      "category": "mental",
+      "desc": "Willpower and determination.",
+      "document": "gumshoe-srd"
+    }
+  }
+]

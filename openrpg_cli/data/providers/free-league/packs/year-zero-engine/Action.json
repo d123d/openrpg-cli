@@ -1,0 +1,68 @@
+[
+  {
+    "pk": "yze_action_stay_alert",
+    "fields": {
+      "name": "Stay Alert",
+      "system": "yze",
+      "license": "OGL",
+      "attribute": "INT",
+      "desc": "Notice threats and gather information.",
+      "document": "yze-srd"
+    }
+  },
+  {
+    "pk": "yze_action_move",
+    "fields": {
+      "name": "Move",
+      "system": "yze",
+      "license": "OGL",
+      "attribute": "AGI",
+      "desc": "Navigate terrain and avoid danger.",
+      "document": "yze-srd"
+    }
+  },
+  {
+    "pk": "yze_action_communicate",
+    "fields": {
+      "name": "Communicate",
+      "system": "yze",
+      "license": "OGL",
+      "attribute": "CHA",
+      "desc": "Influence and interact socially.",
+      "document": "yze-srd"
+    }
+  },
+  {
+    "pk": "yze_action_observe",
+    "fields": {
+      "name": "Observe",
+      "system": "yze",
+      "license": "OGL",
+      "attribute": "INT",
+      "desc": "Examine something closely.",
+      "document": "yze-srd"
+    }
+  },
+  {
+    "pk": "yze_action_manipulate",
+    "fields": {
+      "name": "Manipulate",
+      "system": "yze",
+      "license": "OGL",
+      "attribute": "CHA",
+      "desc": "Use skill to accomplish a task.",
+      "document": "yze-srd"
+    }
+  },
+  {
+    "pk": "yze_action_fight",
+    "fields": {
+      "name": "Fight",
+      "system": "yze",
+      "license": "OGL",
+      "attribute": "STR",
+      "desc": "Engage in combat.",
+      "document": "yze-srd"
+    }
+  }
+]

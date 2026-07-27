@@ -1,0 +1,62 @@
+[
+  {
+    "pk": "drama_scene_discovery",
+    "fields": {
+      "name": "Discovery",
+      "system": "drama",
+      "license": "CC-BY-4.0",
+      "desc": "Reveal new information.",
+      "document": "drama-srd"
+    }
+  },
+  {
+    "pk": "drama_scene_debate",
+    "fields": {
+      "name": "Debate",
+      "system": "drama",
+      "license": "CC-BY-4.0",
+      "desc": "Argue opposing viewpoints.",
+      "document": "drama-srd"
+    }
+  },
+  {
+    "pk": "drama_scene_negotiation",
+    "fields": {
+      "name": "Negotiation",
+      "system": "drama",
+      "license": "CC-BY-4.0",
+      "desc": "Bargain and compromise.",
+      "document": "drama-srd"
+    }
+  },
+  {
+    "pk": "drama_scene_revelation",
+    "fields": {
+      "name": "Revelation",
+      "system": "drama",
+      "license": "CC-BY-4.0",
+      "desc": "Uncover a secret.",
+      "document": "drama-srd"
+    }
+  },
+  {
+    "pk": "drama_scene_betrayal",
+    "fields": {
+      "name": "Betrayal",
+      "system": "drama",
+      "license": "CC-BY-4.0",
+      "desc": "Someone breaks trust.",
+      "document": "drama-srd"
+    }
+  },
+  {
+    "pk": "drama_scene_confrontation",
+    "fields": {
+      "name": "Confrontation",
+      "system": "drama",
+      "license": "CC-BY-4.0",
+      "desc": "Direct conflict.",
+      "document": "drama-srd"
+    }
+  }
+]

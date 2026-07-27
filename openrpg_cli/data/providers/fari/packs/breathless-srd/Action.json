@@ -1,0 +1,90 @@
+[
+  {
+    "pk": "breathless_act_explore",
+    "fields": {
+      "name": "Explore",
+      "system": "breathless",
+      "license": "CC-BY-4.0",
+      "desc": "Move through the environment.",
+      "stress": 0,
+      "document": "breathless-srd"
+    }
+  },
+  {
+    "pk": "breathless_act_investigate",
+    "fields": {
+      "name": "Investigate",
+      "system": "breathless",
+      "license": "CC-BY-4.0",
+      "desc": "Search for clues and items.",
+      "stress": 0,
+      "document": "breathless-srd"
+    }
+  },
+  {
+    "pk": "breathless_act_hide",
+    "fields": {
+      "name": "Hide",
+      "system": "breathless",
+      "license": "CC-BY-4.0",
+      "desc": "Conceal yourself from threats.",
+      "stress": 1,
+      "document": "breathless-srd"
+    }
+  },
+  {
+    "pk": "breathless_act_run",
+    "fields": {
+      "name": "Run",
+      "system": "breathless",
+      "license": "CC-BY-4.0",
+      "desc": "Flee from danger.",
+      "stress": 1,
+      "document": "breathless-srd"
+    }
+  },
+  {
+    "pk": "breathless_act_fight",
+    "fields": {
+      "name": "Fight",
+      "system": "breathless",
+      "license": "CC-BY-4.0",
+      "desc": "Attack a threat.",
+      "stress": 2,
+      "document": "breathless-srd"
+    }
+  },
+  {
+    "pk": "breathless_act_use_item",
+    "fields": {
+      "name": "Use Item",
+      "system": "breathless",
+      "license": "CC-BY-4.0",
+      "desc": "Use a found item.",
+      "stress": 0,
+      "document": "breathless-srd"
+    }
+  },
+  {
+    "pk": "breathless_act_help",
+    "fields": {
+      "name": "Help",
+      "system": "breathless",
+      "license": "CC-BY-4.0",
+      "desc": "Assist another character.",
+      "stress": 1,
+      "document": "breathless-srd"
+    }
+  },
+  {
+    "pk": "breathless_act_resist",
+    "fields": {
+      "name": "Resist",
+      "system": "breathless",
+      "license": "CC-BY-4.0",
+      "desc": "Resist fear or pressure.",
+      "stress": 1,
+      "document": "breathless-srd"
+    }
+  }
+]

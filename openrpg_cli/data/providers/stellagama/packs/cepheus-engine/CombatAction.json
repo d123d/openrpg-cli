@@ -1,0 +1,68 @@
+[
+  {
+    "pk": "cepheus_attack_melee",
+    "fields": {
+      "name": "Melee Attack",
+      "system": "cepheus",
+      "license": "OGL",
+      "desc": "Strike with a melee weapon.",
+      "action_type": "1 action",
+      "document": "cepheus-srd"
+    }
+  },
+  {
+    "pk": "cepheus_attack_ranged",
+    "fields": {
+      "name": "Ranged Attack",
+      "system": "cepheus",
+      "license": "OGL",
+      "desc": "Fire a ranged weapon.",
+      "action_type": "1 action",
+      "document": "cepheus-srd"
+    }
+  },
+  {
+    "pk": "cepheus_aim",
+    "fields": {
+      "name": "Aim",
+      "system": "cepheus",
+      "license": "OGL",
+      "desc": "Take careful aim for +1DM next turn.",
+      "action_type": "1 action",
+      "document": "cepheus-srd"
+    }
+  },
+  {
+    "pk": "cepheus_dodge",
+    "fields": {
+      "name": "Dodge",
+      "system": "cepheus",
+      "license": "OGL",
+      "desc": "Increase defense.",
+      "action_type": "1 action",
+      "document": "cepheus-srd"
+    }
+  },
+  {
+    "pk": "cepheus_take_cover",
+    "fields": {
+      "name": "Take Cover",
+      "system": "cepheus",
+      "license": "OGL",
+      "desc": "Find or create cover.",
+      "action_type": "1 action",
+      "document": "cepheus-srd"
+    }
+  },
+  {
+    "pk": "cepheus_reload",
+    "fields": {
+      "name": "Reload",
+      "system": "cepheus",
+      "license": "OGL",
+      "desc": "Reload a weapon.",
+      "action_type": "1 action",
+      "document": "cepheus-srd"
+    }
+  }
+]

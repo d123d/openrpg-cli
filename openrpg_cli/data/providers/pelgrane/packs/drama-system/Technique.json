@@ -1,0 +1,62 @@
+[
+  {
+    "pk": "drama_tech_hindsight",
+    "fields": {
+      "name": "Hindsight",
+      "system": "drama",
+      "license": "CC-BY-4.0",
+      "desc": "Change a past event by spending a point.",
+      "document": "drama-srd"
+    }
+  },
+  {
+    "pk": "drama_tech_flashback",
+    "fields": {
+      "name": "Flashback",
+      "system": "drama",
+      "license": "CC-BY-4.0",
+      "desc": "Reveal a past event.",
+      "document": "drama-srd"
+    }
+  },
+  {
+    "pk": "drama_tech_forewarning",
+    "fields": {
+      "name": "Forewarning",
+      "system": "drama",
+      "license": "CC-BY-4.0",
+      "desc": "See a possible future.",
+      "document": "drama-srd"
+    }
+  },
+  {
+    "pk": "drama_tech_insight",
+    "fields": {
+      "name": "Insight",
+      "system": "drama",
+      "license": "CC-BY-4.0",
+      "desc": "Understand true motives.",
+      "document": "drama-srd"
+    }
+  },
+  {
+    "pk": "drama_tech_last_words",
+    "fields": {
+      "name": "Last Words",
+      "system": "drama",
+      "license": "CC-BY-4.0",
+      "desc": "Final statement before death.",
+      "document": "drama-srd"
+    }
+  },
+  {
+    "pk": "drama_tech_second_wind",
+    "fields": {
+      "name": "Second Wind",
+      "system": "drama",
+      "license": "CC-BY-4.0",
+      "desc": "Continue past your limit.",
+      "document": "drama-srd"
+    }
+  }
+]

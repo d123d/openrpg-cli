@@ -1,0 +1,43 @@
+{
+  "schema_version": 2,
+  "pack_id": "drama-system",
+  "system_id": "drama",
+  "provider_id": "pelgrane",
+  "title": "Drama System SRD",
+  "enabled": true,
+  "quarantined": false,
+  "source_document_ids": [
+    "drama-srd"
+  ],
+  "source_repository": "http://fossilbank.wikidot.com/",
+  "source_commit": "0000000000000000000000000000000000000000",
+  "license": {
+    "id": "CC-BY-4.0",
+    "verified": true,
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "notice_file": "NOTICE.md",
+  "attribution_file": "ATTRIBUTION.md",
+  "allowlist": {
+    "document_ids": [
+      "drama-srd"
+    ]
+  },
+  "notes": "CC-BY 4.0. Social intrigue and drama mechanics.",
+  "declared_files": {
+    "Relationship.json": {
+      "sha256": "52528cb76a1c587703d5f3097c72933e550905dcd9e31e0b4257c5e7d085ac3f",
+      "record_count": 8
+    },
+    "SceneType.json": {
+      "sha256": "21c022eae23c29e703f858b421d7de2eccf6bb5709dde243f33d9dcdef178427",
+      "record_count": 6
+    },
+    "Technique.json": {
+      "sha256": "240d00fb41f869d1bab4e4e56be762756129af82d05fc396caef8844d042998d",
+      "record_count": 6
+    }
+  },
+  "disabled_reason": null,
+  "license_file": "LICENSE.md"
+}

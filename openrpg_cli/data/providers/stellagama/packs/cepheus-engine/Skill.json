@@ -1,0 +1,252 @@
+[
+  {
+    "pk": "cepheus_admin",
+    "fields": {
+      "name": "Administration",
+      "system": "cepheus",
+      "license": "OGL",
+      "desc": "Manage organizations and bureaucracies.",
+      "document": "cepheus-srd"
+    }
+  },
+  {
+    "pk": "cepheus_awareness",
+    "fields": {
+      "name": "Awareness",
+      "system": "cepheus",
+      "license": "OGL",
+      "desc": "Notice things and remain vigilant.",
+      "document": "cepheus-srd"
+    }
+  },
+  {
+    "pk": "cepheus_computer",
+    "fields": {
+      "name": "Computer",
+      "system": "cepheus",
+      "license": "OGL",
+      "desc": "Operate and program computers.",
+      "document": "cepheus-srd"
+    }
+  },
+  {
+    "pk": "cepheus_counsel",
+    "fields": {
+      "name": "Counsel",
+      "system": "cepheus",
+      "license": "OGL",
+      "desc": "Provide psychological support.",
+      "document": "cepheus-srd"
+    }
+  },
+  {
+    "pk": "cepheus_drive",
+    "fields": {
+      "name": "Drive",
+      "system": "cepheus",
+      "license": "OGL",
+      "desc": "Operate ground vehicles.",
+      "document": "cepheus-srd"
+    }
+  },
+  {
+    "pk": "cepheus_electronics",
+    "fields": {
+      "name": "Electronics",
+      "system": "cepheus",
+      "license": "OGL",
+      "desc": "Use electronic devices.",
+      "document": "cepheus-srd"
+    }
+  },
+  {
+    "pk": "cepheus_engineering",
+    "fields": {
+      "name": "Engineering",
+      "system": "cepheus",
+      "license": "OGL",
+      "desc": "Repair and maintain systems.",
+      "document": "cepheus-srd"
+    }
+  },
+  {
+    "pk": "cepheus_grav",
+    "fields": {
+      "name": "Grav Vehicles",
+      "system": "cepheus",
+      "license": "OGL",
+      "desc": "Operate gravitic vehicles.",
+      "document": "cepheus-srd"
+    }
+  },
+  {
+    "pk": "cepheus_gun_cbt",
+    "fields": {
+      "name": "Gun Combat",
+      "system": "cepheus",
+      "license": "OGL",
+      "desc": "Fire ranged weapons.",
+      "document": "cepheus-srd"
+    }
+  },
+  {
+    "pk": "cepheus_gunship",
+    "fields": {
+      "name": "Gunship Ops",
+      "system": "cepheus",
+      "license": "OGL",
+      "desc": "Operate ship weapons.",
+      "document": "cepheus-srd"
+    }
+  },
+  {
+    "pk": "cepheus_investigate",
+    "fields": {
+      "name": "Investigate",
+      "system": "cepheus",
+      "license": "OGL",
+      "desc": "Search for clues and evidence.",
+      "document": "cepheus-srd"
+    }
+  },
+  {
+    "pk": "cepheus_jack_of_all",
+    "fields": {
+      "name": "Jack of All Trades",
+      "system": "cepheus",
+      "license": "OGL",
+      "desc": "Use untrained skills at reduced level.",
+      "document": "cepheus-srd"
+    }
+  },
+  {
+    "pk": "cepheus_jury_rig",
+    "fields": {
+      "name": "Jury Rig",
+      "system": "cepheus",
+      "license": "OGL",
+      "desc": "Create temporary repairs.",
+      "document": "cepheus-srd"
+    }
+  },
+  {
+    "pk": "cepheus_leadership",
+    "fields": {
+      "name": "Leadership",
+      "system": "cepheus",
+      "license": "OGL",
+      "desc": "Command and inspire others.",
+      "document": "cepheus-srd"
+    }
+  },
+  {
+    "pk": "cepheus_melee_cbt",
+    "fields": {
+      "name": "Melee Combat",
+      "system": "cepheus",
+      "license": "OGL",
+      "desc": "Fight with melee weapons.",
+      "document": "cepheus-srd"
+    }
+  },
+  {
+    "pk": "cepheus_navigation",
+    "fields": {
+      "name": "Navigation",
+      "system": "cepheus",
+      "license": "OGL",
+      "desc": "Find your way through space.",
+      "document": "cepheus-srd"
+    }
+  },
+  {
+    "pk": "cepheus_recon",
+    "fields": {
+      "name": "Recon",
+      "system": "cepheus",
+      "license": "OGL",
+      "desc": "Scout and gather intelligence.",
+      "document": "cepheus-srd"
+    }
+  },
+  {
+    "pk": "cepheus_sensor_ops",
+    "fields": {
+      "name": "Sensor Ops",
+      "system": "cepheus",
+      "license": "OGL",
+      "desc": "Operate sensor systems.",
+      "document": "cepheus-srd"
+    }
+  },
+  {
+    "pk": "cepheus_steward",
+    "fields": {
+      "name": "Steward",
+      "system": "cepheus",
+      "license": "OGL",
+      "desc": "Manage ship operations.",
+      "document": "cepheus-srd"
+    }
+  },
+  {
+    "pk": "cepheus_streetwise",
+    "fields": {
+      "name": "Streetwise",
+      "system": "cepheus",
+      "license": "OGL",
+      "desc": "Navigate criminal underworld.",
+      "document": "cepheus-srd"
+    }
+  },
+  {
+    "pk": "cepheus_survival",
+    "fields": {
+      "name": "Survival",
+      "system": "cepheus",
+      "license": "OGL",
+      "desc": "Endure harsh environments.",
+      "document": "cepheus-srd"
+    }
+  },
+  {
+    "pk": "cepheus_tac_cbt",
+    "fields": {
+      "name": "Tactical Combat",
+      "system": "cepheus",
+      "license": "OGL",
+      "desc": "Lead tactical operations.",
+      "document": "cepheus-srd"
+    }
+  },
+  {
+    "pk": "cepheus_trader",
+    "fields": {
+      "name": "Trader",
+      "system": "cepheus",
+      "license": "OGL",
+      "desc": "Buy and sell goods.",
+      "document": "cepheus-srd"
+    }
+  },
+  {
+    "pk": "cepheus_vacc_suit",
+    "fields": {
+      "name": "Vacc Suit",
+      "system": "cepheus",
+      "license": "OGL",
+      "desc": "Operate in vacuum.",
+      "document": "cepheus-srd"
+    }
+  },
+  {
+    "pk": "cepheus_zero_g",
+    "fields": {
+      "name": "Zero-G",
+      "system": "cepheus",
+      "license": "OGL",
+      "desc": "Move in zero gravity.",
+      "document": "cepheus-srd"
+    }
+  }
+]

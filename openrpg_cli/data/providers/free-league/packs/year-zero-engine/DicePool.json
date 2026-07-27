@@ -1,0 +1,46 @@
+[
+  {
+    "pk": "yze_dice_skill",
+    "fields": {
+      "name": "Skill Die",
+      "system": "yze",
+      "license": "OGL",
+      "desc": "Represents training and ability.",
+      "sides": 6,
+      "document": "yze-srd"
+    }
+  },
+  {
+    "pk": "yze_dice_attribute",
+    "fields": {
+      "name": "Attribute Die",
+      "system": "yze",
+      "license": "OGL",
+      "desc": "Represents raw potential.",
+      "sides": 6,
+      "document": "yze-srd"
+    }
+  },
+  {
+    "pk": "yze_dice Gear",
+    "fields": {
+      "name": "Gear Die",
+      "system": "yze",
+      "license": "OGL",
+      "desc": "Represents equipment quality.",
+      "sides": 6,
+      "document": "yze-srd"
+    }
+  },
+  {
+    "pk": "yze_dice_quality",
+    "fields": {
+      "name": "Quality Die",
+      "system": "yze",
+      "license": "OGL",
+      "desc": "Extra die for quality items.",
+      "sides": 6,
+      "document": "yze-srd"
+    }
+  }
+]
