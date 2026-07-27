@@ -41,7 +41,8 @@ class CharacterMetadata:
 
 
 def character_mapping(c: Character) -> dict[str, Any]:
-    ref = lambda x: {"pk": x.pk, "name": x.name}
+    def ref(x):
+        return {"pk": x.pk, "name": x.name}
     return {
         "schema_version": c.schema_version,
         "identity": {
@@ -149,7 +150,8 @@ class CharacterCodec:
         for i, value in enumerate(d["attacks"]):
             obj = _expect_map(value, f"$.derived.attacks[{i}]", ("weapon", "ability", "attack_bonus", "damage"))
             attacks.append(AttackSummary(_ref(obj["weapon"], f"$.derived.attacks[{i}].weapon"), _str(obj["ability"], "ability"), _int(obj["attack_bonus"], "attack_bonus"), _str(obj["damage"], "damage")))
-        nullable_int = lambda value, path: None if value is None else _int(value, path)
+        def nullable_int(value, path):
+            return None if value is None else _int(value, path)
         casting = d["spellcasting_ability"]
         if casting is not None and not isinstance(casting, str):
             raise ValueError("$.derived.spellcasting_ability: expected string or null")

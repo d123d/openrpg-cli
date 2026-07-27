@@ -20,7 +20,7 @@ from srd_cli.api import get_rules_api
 from srd_cli.character import AbilityScores
 from srd_cli.character_builder import CharacterBuilder, CharacterRequest, ChoiceError
 from srd_cli.character_sheet import render_json, render_sheet
-from srd_cli.character_store import CharacterStore, CharacterValidationError, validate_character
+from srd_cli.character_store import CharacterStore, CharacterValidationError
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(errors="replace")
