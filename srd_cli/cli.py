@@ -15,6 +15,7 @@ from rich.table import Table
 from srd_cli import __version__
 from srd_cli.data import SRDRepository, category_name, get_repository
 from srd_cli.dice import GameRNG, roll as roll_dice
+from srd_cli.api import get_rules_api
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(errors="replace")
@@ -52,6 +53,35 @@ def _print_entry(category: str, entry: dict[str, Any], *, raw: bool) -> None:
             rendered = str(value)
         table.add_row(key.replace("_", " ").title(), rendered)
     console.print(Panel(table, title=f"{name} [{category}]", border_style="cyan"))
+
+
+def _print_joined(category: str, name: str) -> bool:
+    api = get_rules_api()
+    getters = {
+        "classes": api.get_class, "species": api.get_species,
+        "backgrounds": api.get_background, "feats": api.get_feat,
+        "spells": api.get_spell, "creatures": api.get_creature,
+        "weapons": api.get_weapon,
+    }
+    getter = getters.get(category)
+    view = getter(name) if getter else None
+    if view is None:
+        return False
+    sections: list[tuple[str, tuple[Any, ...]]] = []
+    for label in ("features", "traits", "benefits", "spells", "options", "actions", "properties"):
+        values = getattr(view, label, ())
+        if values:
+            sections.append((label.title(), values))
+    for label, values in sections:
+        console.print(f"\n[bold cyan]{label}[/bold cyan]")
+        for value in values:
+            entity = getattr(value, "feature", None) or getattr(value, "spell", None) or \
+                getattr(value, "action", None) or getattr(value, "property", None) or value
+            console.print(f"  [bold]{getattr(entity, 'name', getattr(entity, 'pk', ''))}[/bold]")
+            nested = getattr(value, "items", ()) or getattr(value, "attacks", ())
+            for child in nested:
+                console.print(f"    {child.name}")
+    return True
 
 
 @app.command()
@@ -114,6 +144,8 @@ def show(
             console.print(f"[yellow]No unique match. Candidates:[/yellow] {suggestions}")
         raise typer.Exit(1)
     _print_entry(key, entry, raw=raw)
+    if not raw:
+        _print_joined(key, name)
 
 
 @app.command()
