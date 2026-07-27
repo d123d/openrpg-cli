@@ -25,6 +25,7 @@ from openrpg_cli.combat import CombatError, Outcome
 from openrpg_cli.combat_session import CombatResult, CombatSession, render_combat_json, render_transcript
 from openrpg_cli.playtest_agent import CoverageController, SubprocessController
 from openrpg_cli.playtest_bot import run_playtest, write_playtest_artifacts
+from openrpg_cli.systems import get_system_registry
 from openrpg_cli.dev.cli import dev_app
 
 if hasattr(sys.stdout, "reconfigure"):
@@ -42,6 +43,72 @@ console = Console()
 character_app = typer.Typer(help="Create, inspect, list, and validate level-1 characters.")
 app.add_typer(character_app, name="character")
 app.add_typer(dev_app, name="dev")
+systems_app = typer.Typer(help="Inspect isolated rules-system packs and licensing status.")
+app.add_typer(systems_app, name="systems")
+
+
+@systems_app.command("list")
+def systems_list(
+    enabled_only: bool = typer.Option(False, "--enabled-only"),
+    as_json: bool = typer.Option(False, "--json"),
+) -> None:
+    """List bundled system packs without combining their content."""
+    packs = get_system_registry().packs(include_disabled=not enabled_only)
+    rows = [
+        {
+            "pack_id": pack.pack_id,
+            "system_id": pack.system_id,
+            "enabled": pack.enabled,
+            "quarantined": bool(pack.manifest.get("quarantined")),
+            "license": pack.manifest.get("license", {}).get("id"),
+        }
+        for pack in packs
+    ]
+    if as_json:
+        console.print(json.dumps(rows, indent=2, sort_keys=True), markup=False)
+        return
+    table = Table("Pack", "System", "Status", "License")
+    for row in rows:
+        status = "quarantined" if row["quarantined"] else ("enabled" if row["enabled"] else "disabled")
+        table.add_row(row["pack_id"], row["system_id"], status, str(row["license"]))
+    console.print(table)
+
+
+@systems_app.command("info")
+def systems_info(pack_id: str, as_json: bool = typer.Option(False, "--json")) -> None:
+    """Show one pack manifest, including source ids and attribution boundary."""
+    try:
+        pack = get_system_registry().get(pack_id, allow_disabled=True)
+    except KeyError as exc:
+        Console(stderr=True).print(str(exc), markup=False)
+        raise typer.Exit(2)
+    if as_json:
+        console.print(json.dumps(pack.manifest, indent=2, sort_keys=True), markup=False)
+        return
+    console.print(Panel.fit(
+        f"{pack.manifest.get('title')}\n"
+        f"pack: {pack.pack_id}\nsystem: {pack.system_id}\n"
+        f"enabled: {pack.enabled}\nquarantined: {pack.manifest.get('quarantined')}\n"
+        f"sources: {', '.join(pack.manifest.get('source_document_ids', []))}\n"
+        f"license: {pack.manifest.get('license', {}).get('id')}",
+        title="System pack",
+    ))
+
+
+@systems_app.command("audit")
+def systems_audit(as_json: bool = typer.Option(False, "--json")) -> None:
+    """Audit hashes, manifests, allowlists, notices, and quarantine controls."""
+    report = get_system_registry().audit()
+    errors = [error for pack_errors in report.values() for error in pack_errors]
+    if as_json:
+        console.print(json.dumps(report, indent=2, sort_keys=True), markup=False)
+    else:
+        for pack_id, pack_errors in report.items():
+            console.print(f"{pack_id}: {'PASS' if not pack_errors else 'FAIL'}")
+            for error in pack_errors:
+                console.print(f"  - {error}")
+    if errors:
+        raise typer.Exit(1)
 
 
 def _repo() -> SRDRepository:
@@ -421,10 +488,12 @@ def info() -> None:
     repo = _repo()
     manifest = repo.manifest()
     console.print(f"[bold]OpenRPG CLI {__version__}[/bold]")
-    console.print(f"Content: SRD {manifest['srd_version']}")
-    console.print(f"Official source: {manifest['srd_official_url']}")
+    console.print(f"Content: {manifest['title']}")
+    console.print(
+        "Source document ids: " + ", ".join(manifest["source_document_ids"])
+    )
     console.print(f"Transform source: {manifest['source_repository']} @ {manifest['source_commit']}")
-    console.print(f"License: {manifest['content_license']}")
+    console.print(f"License: {manifest['license']['id']}")
     errors = repo.verify()
     console.print("Bundle audit: [green]PASS[/green]" if not errors else "[red]FAIL[/red]")
     for category, count in repo.stats().items():

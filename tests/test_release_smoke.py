@@ -69,11 +69,12 @@ def test_isolated_wheel_contains_auditable_content_and_license(tmp_path):
         timeout=30,
     )
     assert audit.returncode == 0, audit.stderr
-    manifest_path = target / "openrpg_cli" / "data" / "srd521" / "manifest.json"
+    pack_path = target / "openrpg_cli" / "data" / "providers" / "open5e" / "packs" / "srd521"
+    manifest_path = pack_path / "manifest.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-    assert manifest["content_license"] == "CC-BY-4.0"
-    assert manifest["srd_version"] == "5.2.1"
-    assert (target / "openrpg_cli" / "data" / "srd521" / "Creature.json").is_file()
+    assert manifest["license"]["id"] == "CC-BY-4.0"
+    assert manifest["source_document_ids"] == ["srd-2024"]
+    assert (pack_path / "Creature.json").is_file()
     smoke = subprocess.run(
         [
             sys.executable,

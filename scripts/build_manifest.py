@@ -7,7 +7,15 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-DATA = ROOT / "openrpg_cli" / "data" / "srd521"
+DATA = (
+    ROOT
+    / "openrpg_cli"
+    / "data"
+    / "providers"
+    / "open5e"
+    / "packs"
+    / "srd521"
+)
 OUTPUT = DATA / "manifest.json"
 
 SOURCE_COMMIT = "d4276c586d79f2a27bf2b814aed151cf57605283"
@@ -46,4 +54,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

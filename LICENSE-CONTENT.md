@@ -9,5 +9,9 @@ JSON structuring was produced by the Open5e project:
 https://github.com/open5e/open5e-api
 
 Open5e is not affiliated with this project. Bundled provenance, source commit, file hashes,
-record counts, and scope allowlist live in `openrpg_cli/data/srd521/manifest.json`.
+record counts, and scope allowlist live in
+`openrpg_cli/data/providers/open5e/packs/srd521/manifest.json`.
 
+Other source documents are isolated into their own packs with local `NOTICE.md`,
+`ATTRIBUTION.md`, manifest, license status, and source allowlist. Quarantined
+packs are not approved runtime content.

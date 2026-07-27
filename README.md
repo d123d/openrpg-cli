@@ -146,3 +146,35 @@ py -3.14 -m pytest tests/test_release_smoke.py -q
 ```
 
 See `LICENSE-CONTENT.md` for required attribution. Code license not yet declared.
+# OpenRPG CLI
+
+OpenRPG CLI browses isolated, attributed tabletop rules packs. Default gameplay
+provider remains verified D&D SRD 5.2.1 data.
+
+## System packs
+
+Pack layout:
+
+```text
+openrpg_cli/data/providers/<provider-id>/packs/<pack-id>/
+  manifest.json
+  NOTICE.md
+  ATTRIBUTION.md
+  *.json
+```
+
+Each manifest owns source-document ids, license status, file hashes, record
+counts, allowlist, attribution, and enable/quarantine state. Registry selection
+returns separate `SystemPack` namespaces. It never merges rows or license
+boundaries across systems.
+
+```console
+openrpg systems list
+openrpg systems info srd521
+openrpg systems audit
+```
+
+`acks-core`, `mothership`, and `pf2e-core` are quarantined and disabled pending
+provenance review. Disabled packs can be inspected and audited but cannot be
+selected for runtime use. No new copyrighted data was downloaded for this
+reorganization.

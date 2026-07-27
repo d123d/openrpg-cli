@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "pack_id": "mothership",
+  "system_id": "mothership",
+  "provider_id": "open5e",
+  "title": "Mothership SRD",
+  "enabled": false,
+  "quarantined": true,
+  "source_document_ids": [
+    "mothership-srd"
+  ],
+  "source_repository": "https://github.com/open5e/open5e-api",
+  "source_commit": "d4276c586d79f2a27bf2b814aed151cf57605283",
+  "license": {
+    "id": "UNKNOWN",
+    "verified": false
+  },
+  "notice_file": "NOTICE.md",
+  "attribution_file": "ATTRIBUTION.md",
+  "allowlist": {
+    "document_ids": [
+      "mothership-srd"
+    ]
+  },
+  "notes": "Disabled: provenance and redistribution terms require review.",
+  "declared_files": {
+    "PanicResult.json": {
+      "sha256": "80546e3fff722783f6ec21b99ee770368850bb7e58a5a86f0b36da62d48fcd01",
+      "record_count": 11
+    },
+    "StressTrigger.json": {
+      "sha256": "77a8e36384f20db38af55f2dd0ace6c7e454668af8e6a463d76f8ca13f6b8121",
+      "record_count": 9
+    }
+  }
+}

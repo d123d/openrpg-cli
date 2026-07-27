@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "pack_id": "pf2e-core",
+  "system_id": "pf2e",
+  "provider_id": "open5e",
+  "title": "Pathfinder 2e Core",
+  "enabled": false,
+  "quarantined": true,
+  "source_document_ids": [
+    "pf2e-core"
+  ],
+  "source_repository": "https://github.com/open5e/open5e-api",
+  "source_commit": "d4276c586d79f2a27bf2b814aed151cf57605283",
+  "license": {
+    "id": "UNKNOWN",
+    "verified": false
+  },
+  "notice_file": "NOTICE.md",
+  "attribution_file": "ATTRIBUTION.md",
+  "allowlist": {
+    "document_ids": [
+      "pf2e-core"
+    ]
+  },
+  "notes": "Disabled: provenance and redistribution terms require review.",
+  "declared_files": {
+    "Attitude.json": {
+      "sha256": "ad630c9c6cd950f50872a0a0df9618712b43491a408b69c470a8df4ade6ee6d0",
+      "record_count": 5
+    }
+  }
+}
