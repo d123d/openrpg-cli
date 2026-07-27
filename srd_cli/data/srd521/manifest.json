@@ -21,6 +21,10 @@
       "sha256": "f63ea79faacda476f3a96d6dd579d1024f4ef87315f3c85171152c0096239772",
       "record_count": 13
     },
+    "Attitude.json": {
+      "sha256": "ad630c9c6cd950f50872a0a0df9618712b43491a408b69c470a8df4ade6ee6d0",
+      "record_count": 5
+    },
     "Background.json": {
       "sha256": "7b57b8c42dbf7f43e14e9985c4aabdb5bc85aa6747a85a04d800dbf9ec27c8fe",
       "record_count": 4
@@ -28,6 +32,10 @@
     "BackgroundBenefit.json": {
       "sha256": "57a60333405bc8e5e300bb97a06311db34f54eac4777cc2e5792402854d63b36",
       "record_count": 20
+    },
+    "Bond.json": {
+      "sha256": "b44f11e4a1c87de05eb91c206fafdc188ca928eacb28ad5e2ae8c2791163b968",
+      "record_count": 12
     },
     "CharacterClass.json": {
       "sha256": "3ef8d6d1c7303d432cbf6c4edb688da0bae23a0dfd9650021f3e99c45ea298bb",
@@ -77,6 +85,10 @@
       "sha256": "b319500fd5da32c092b382836a3e87b0113dd5ee62736696efae65854c19f8fb",
       "record_count": 1
     },
+    "DomainAction.json": {
+      "sha256": "0880aeabd975a856fe3159fe4d50cee62224ce27f1eb00bae20c8c36dd3212e6",
+      "record_count": 10
+    },
     "Feat.json": {
       "sha256": "3246172221bc93e794ee810a19b9fa8b9187df8df6470e56ae8d68a0adbf10fc",
       "record_count": 17
@@ -97,9 +109,17 @@
       "sha256": "134b52bcd095b289ec4b220bba8b9b4e641f6fab6def2ff3bcb07bdfa38f556a",
       "record_count": 18
     },
+    "LegalCode.json": {
+      "sha256": "3ec8e41c334c7fb9d90e609eb0040fa066fd13d8103b64af2b461189d4a17d31",
+      "record_count": 10
+    },
     "MagicItem.json": {
       "sha256": "5052ca693d5146112a59d5d93475493ea65be2807238e21d7a6e23ef95052b05",
       "record_count": 757
+    },
+    "PanicResult.json": {
+      "sha256": "80546e3fff722783f6ec21b99ee770368850bb7e58a5a86f0b36da62d48fcd01",
+      "record_count": 11
     },
     "Rule.json": {
       "sha256": "d06d1e1b9b007e8086bbb55cee75c64996418f8f3f6cacc31218645fdf1d9d24",
@@ -116,6 +136,14 @@
     "Services.json": {
       "sha256": "485a8c21fcc84559303650470946a3d0421b239db3bcbf7b2dfc95437526f1c5",
       "record_count": 30
+    },
+    "SettlementResource.json": {
+      "sha256": "ec938e6cfecc48f04691dc19a2a7927319427bde01181376622e1a6c911598d0",
+      "record_count": 5
+    },
+    "SettlementType.json": {
+      "sha256": "ada5a41bd463d86992fb16f7799cd9b1f742497bcc996eba88c33466502c67cb",
+      "record_count": 5
     },
     "Size.json": {
       "sha256": "29108ace46a6d83b31555a7220663a295c5c4124ee09caaebb582fb2860f2ab6",
@@ -144,6 +172,10 @@
     "SpellSchool.json": {
       "sha256": "1066f1633cbfc1f84c5f0971adc009ef4c0766e88d0a0b96a10ddf18bc28b2dc",
       "record_count": 8
+    },
+    "StressTrigger.json": {
+      "sha256": "77a8e36384f20db38af55f2dd0ace6c7e454668af8e6a463d76f8ca13f6b8121",
+      "record_count": 9
     },
     "Weapon.json": {
       "sha256": "cc3c9828ca243ce91f6e8ff4cc171ef5cb51f1103f2a685a233311e5b8c863ca",

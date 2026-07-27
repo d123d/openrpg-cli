@@ -138,3 +138,43 @@ class SpellSchool(Entity):
 @dataclass(frozen=True, slots=True)
 class Size(Entity):
     pass
+
+
+@dataclass(frozen=True, slots=True)
+class Bond(Entity):
+    pass
+
+
+@dataclass(frozen=True, slots=True)
+class Attitude(Entity):
+    pass
+
+
+@dataclass(frozen=True, slots=True)
+class DomainAction(Entity):
+    pass
+
+
+@dataclass(frozen=True, slots=True)
+class LegalCode(Entity):
+    pass
+
+
+@dataclass(frozen=True, slots=True)
+class StressTrigger(Entity):
+    pass
+
+
+@dataclass(frozen=True, slots=True)
+class PanicResult(Entity):
+    pass
+
+
+@dataclass(frozen=True, slots=True)
+class SettlementType(Entity):
+    pass
+
+
+@dataclass(frozen=True, slots=True)
+class SettlementResource(Entity):
+    pass

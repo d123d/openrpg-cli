@@ -25,6 +25,7 @@ from srd_cli.combat import CombatError, Outcome
 from srd_cli.combat_session import CombatResult, CombatSession, render_combat_json, render_transcript
 from srd_cli.playtest_agent import CoverageController, SubprocessController
 from srd_cli.playtest_bot import run_playtest, write_playtest_artifacts
+from srd_cli.dev.cli import dev_app
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(errors="replace")
@@ -40,6 +41,7 @@ app = typer.Typer(
 console = Console()
 character_app = typer.Typer(help="Create, inspect, list, and validate level-1 characters.")
 app.add_typer(character_app, name="character")
+app.add_typer(dev_app, name="dev")
 
 
 def _repo() -> SRDRepository:

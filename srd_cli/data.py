@@ -18,28 +18,46 @@ DATA_ROOT = Path(__file__).resolve().parent / "data" / "srd521"
 MANIFEST_PATH = DATA_ROOT / "manifest.json"
 DOCUMENT_KEY = "srd-2024"
 
+# Allowed document sources: SRD 5.2.1 plus open-licensed subsystems
+ALLOWED_DOCUMENTS = frozenset({
+    "srd-2024",
+    "dungeon-world-srd",
+    "pf2e-core",
+    "acks-core",
+    "mothership-srd",
+    "legacy-srd",
+})
+
 # Public categories. Supporting relationship tables remain searchable through
 # their parent entities but stay out of the default browsing surface.
 CATEGORY_TABLES: dict[str, tuple[str, ...]] = {
     "abilities": ("AbilityDescription.json",),
     "alignments": ("AlignmentDescription.json",),
     "armor": ("Armor.json",),
+    "attitudes": ("Attitude.json",),
     "backgrounds": ("Background.json",),
+    "bonds": ("Bond.json",),
     "classes": ("CharacterClass.json",),
     "conditions": ("ConditionDescription.json",),
     "creatures": ("Creature.json",),
     "creature-types": ("CreatureTypeDescription.json",),
     "damage-types": ("DamageTypeDescription.json",),
+    "domain-actions": ("DomainAction.json",),
     "feats": ("Feat.json",),
     "items": ("Item.json", "MagicItem.json"),
     "languages": ("Language.json",),
+    "legal-codes": ("LegalCode.json",),
+    "panic-results": ("PanicResult.json",),
     "rules": ("Rule.json", "RuleSet.json"),
     "services": ("Service.json", "Services.json"),
+    "settlement-resources": ("SettlementResource.json",),
+    "settlement-types": ("SettlementType.json",),
     "sizes": ("Size.json",),
     "skills": ("SkillDescription.json",),
     "species": ("Species.json",),
     "spells": ("Spell.json",),
     "spell-schools": ("SpellSchool.json",),
+    "stress-triggers": ("StressTrigger.json",),
     "weapons": ("Weapon.json",),
 }
 
@@ -47,7 +65,9 @@ _CATEGORY_ALIASES = {
     "ability": "abilities",
     "alignment": "alignments",
     "armors": "armor",
+    "attitude": "attitudes",
     "background": "backgrounds",
+    "bond": "bonds",
     "class": "classes",
     "condition": "conditions",
     "creature": "creatures",
@@ -55,11 +75,16 @@ _CATEGORY_ALIASES = {
     "monsters": "creatures",
     "creature-type": "creature-types",
     "damage-type": "damage-types",
+    "domain": "domain-actions",
     "feat": "feats",
     "item": "items",
     "language": "languages",
+    "legal": "legal-codes",
+    "panic": "panic-results",
     "rule": "rules",
     "service": "services",
+    "settlement": "settlement-types",
+    "resource": "settlement-resources",
     "size": "sizes",
     "skill": "skills",
     "specie": "species",
@@ -67,6 +92,7 @@ _CATEGORY_ALIASES = {
     "races": "species",
     "spell": "spells",
     "spell-school": "spell-schools",
+    "stress": "stress-triggers",
     "weapon": "weapons",
 }
 
@@ -225,7 +251,7 @@ class SRDRepository:
             for index, row in enumerate(rows):
                 fields = row.get("fields") or {}
                 document = fields.get("document")
-                if document is not None and document != DOCUMENT_KEY:
+                if document is not None and document not in ALLOWED_DOCUMENTS:
                     errors.append(f"foreign document in {name}[{index}]: {document}")
                     break
         return errors

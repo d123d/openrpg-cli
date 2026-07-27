@@ -14,7 +14,7 @@ class ControllerError(RuntimeError):
 
 @dataclass(frozen=True, slots=True)
 class AgentObservation:
-    """Public mechanical state sent to a playtest controller."""
+    """Versioned public state sent to a combat or general player controller."""
 
     schema_version: int
     run_id: str
@@ -26,6 +26,31 @@ class AgentObservation:
     objective: str = (
         "Play fairly, exercise legal actions, finish combat, and expose engine defects."
     )
+    mode: str = "combat"
+    situation_id: str = "combat-encounter"
+    character: dict[str, Any] = field(default_factory=dict)
+    context: dict[str, Any] = field(default_factory=dict)
+    objectives: tuple[str, ...] = ()
+    constraints: tuple[str, ...] = (
+        "Choose one offered legal action.",
+        "Never invent mechanics, rolls, outcomes, or state changes.",
+    )
+
+    def __post_init__(self) -> None:
+        if self.schema_version not in (1, 2):
+            raise ValueError("unsupported observation schema version")
+        if not self.run_id or len(self.run_id) > 200:
+            raise ValueError("run id length must be 1..200")
+        if self.turn < 0 or self.turn > 1_000_000:
+            raise ValueError("turn must be 0..1000000")
+        if not self.mode or len(self.mode) > 80:
+            raise ValueError("mode length must be 1..80")
+        if len(self.legal_actions) > 256:
+            raise ValueError("legal action count exceeds 256")
+        if len(self.recent_actions) > 64 or len(self.recent_events) > 64:
+            raise ValueError("recent history exceeds 64 entries")
+        if len(self.objectives) > 32 or len(self.constraints) > 32:
+            raise ValueError("objective or constraint count exceeds 32")
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -36,11 +61,15 @@ class AgentObservation:
 
 @dataclass(frozen=True, slots=True)
 class AgentAction:
-    """One legal player action requested by a controller."""
+    """One structured player decision requested by a controller."""
 
     action: str
     rationale: str = ""
     controller: str = "external"
+    target: str = ""
+    parameters: dict[str, Any] = field(default_factory=dict)
+    confidence: float | None = None
+    expected_effect: str = ""
 
     @classmethod
     def parse(cls, value: AgentAction | str | dict[str, Any]) -> AgentAction:
@@ -53,6 +82,12 @@ class AgentAction:
                 action=str(value.get("action") or ""),
                 rationale=str(value.get("rationale") or ""),
                 controller=str(value.get("controller") or "external"),
+                target=str(value.get("target") or ""),
+                parameters=dict(value.get("parameters") or {}),
+                confidence=(
+                    float(value["confidence"]) if value.get("confidence") is not None else None
+                ),
+                expected_effect=str(value.get("expected_effect") or ""),
             )
         else:
             raise ControllerError(f"unsupported controller result: {type(value).__name__}")
@@ -63,7 +98,23 @@ class AgentAction:
             raise ControllerError("controller action must be one line")
         if len(action) > 200:
             raise ControllerError("controller action exceeds 200 characters")
-        return cls(action, result.rationale[:500], result.controller[:80])
+        target = result.target.strip()
+        if "\n" in target or "\r" in target or len(target) > 200:
+            raise ControllerError("controller target must be one bounded line")
+        if len(result.parameters) > 32:
+            raise ControllerError("controller parameters exceed 32 entries")
+        confidence = result.confidence
+        if confidence is not None and not 0.0 <= confidence <= 1.0:
+            raise ControllerError("controller confidence must be 0..1")
+        return cls(
+            action,
+            result.rationale[:500],
+            result.controller[:80],
+            target,
+            dict(result.parameters),
+            confidence,
+            result.expected_effect[:500],
+        )
 
 
 @runtime_checkable
@@ -91,7 +142,10 @@ class CallableController:
     def decide(self, observation: AgentObservation) -> AgentAction:
         action = AgentAction.parse(self.fn(observation))
         controller = action.controller if action.controller != "external" else self.name
-        return AgentAction(action.action, action.rationale, controller)
+        return AgentAction(
+            action.action, action.rationale, controller, action.target,
+            action.parameters, action.confidence, action.expected_effect,
+        )
 
 
 class SubprocessController:
@@ -133,7 +187,10 @@ class SubprocessController:
             raise ControllerError(f"{self.name} returned invalid JSON: {exc}") from exc
         action = AgentAction.parse(payload)
         controller = action.controller if action.controller != "external" else self.name
-        return AgentAction(action.action, action.rationale, controller)
+        return AgentAction(
+            action.action, action.rationale, controller, action.target,
+            action.parameters, action.confidence, action.expected_effect,
+        )
 
 
 @dataclass(slots=True)

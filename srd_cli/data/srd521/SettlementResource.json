@@ -1,0 +1,62 @@
+[
+  {
+    "pk": "legacy_resource_food",
+    "name": "Food",
+    "fields": {
+      "name": "Food",
+      "desc": "Sustains population. Shortage causes unrest and starvation.",
+      "consumption_rate": "1 unit per 10 population per season",
+      "system": "Legacy 2e",
+      "license": "CC-BY-4.0",
+      "document": "legacy-srd"
+    }
+  },
+  {
+    "pk": "legacy_resource_material",
+    "name": "Material",
+    "fields": {
+      "name": "Material",
+      "desc": "Raw materials for construction and crafting.",
+      "consumption_rate": "1 unit per 5 population per season",
+      "system": "Legacy 2e",
+      "license": "CC-BY-4.0",
+      "document": "legacy-srd"
+    }
+  },
+  {
+    "pk": "legacy_resource_labor",
+    "name": "Labor",
+    "fields": {
+      "name": "Labor",
+      "desc": "Workforce available for construction and production.",
+      "consumption_rate": "1 unit per 20 population per season",
+      "system": "Legacy 2e",
+      "license": "CC-BY-4.0",
+      "document": "legacy-srd"
+    }
+  },
+  {
+    "pk": "legacy_resource_influence",
+    "name": "Influence",
+    "fields": {
+      "name": "Influence",
+      "desc": "Political capital for diplomacy and faction relations.",
+      "consumption_rate": "1 unit per 100 population per season",
+      "system": "Legacy 2e",
+      "license": "CC-BY-4.0",
+      "document": "legacy-srd"
+    }
+  },
+  {
+    "pk": "legacy_resource_wealth",
+    "name": "Wealth",
+    "fields": {
+      "name": "Wealth",
+      "desc": "Gold and trade goods for commerce.",
+      "consumption_rate": "1 unit per 50 population per season",
+      "system": "Legacy 2e",
+      "license": "CC-BY-4.0",
+      "document": "legacy-srd"
+    }
+  }
+]

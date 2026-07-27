@@ -60,3 +60,36 @@ def test_subprocess_controller_uses_strict_json_protocol():
     assert action.action == "2"
     assert action.rationale == "3"
     assert action.controller == "fixture-ai"
+
+
+def test_structured_general_decision_and_v2_observation():
+    action = AgentAction.parse({
+        "action": "search",
+        "target": "door",
+        "parameters": {"method": "careful"},
+        "confidence": 0.75,
+        "expected_effect": "discover offered evidence",
+    })
+    assert action.target == "door"
+    assert action.parameters["method"] == "careful"
+    assert action.confidence == 0.75
+    observation = AgentObservation(
+        schema_version=2,
+        run_id="general-fixture",
+        turn=1,
+        combat={},
+        legal_actions=({"index": 1, "id": "search", "label": "Search"},),
+        mode="investigation",
+        situation_id="investigation-mystery",
+        objectives=("find evidence",),
+    )
+    payload = observation.to_dict()
+    assert payload["mode"] == "investigation"
+    assert payload["situation_id"] == "investigation-mystery"
+
+
+def test_structured_decision_rejects_bad_confidence_and_history_bounds():
+    with pytest.raises(ControllerError, match="confidence"):
+        AgentAction.parse({"action": "search", "confidence": 1.1})
+    with pytest.raises(ValueError, match="history"):
+        AgentObservation(2, "run", 1, {}, (), recent_actions=("x",) * 65)

@@ -10,7 +10,12 @@ from srd_cli.api import get_rules_api
 from srd_cli.character_builder import CharacterBuilder, CharacterRequest
 from srd_cli.cli import app
 from srd_cli.playtest_agent import CallableController
-from srd_cli.playtest_bot import run_playtest, write_playtest_artifacts
+from srd_cli.playtest_bot import (
+    PlaytestCase,
+    run_playtest,
+    run_playtest_matrix,
+    write_playtest_artifacts,
+)
 
 
 def _fixture():
@@ -51,7 +56,12 @@ def test_playtest_is_deterministic_and_observation_is_public():
     assert first.to_dict() == second.to_dict()
     assert seen
     assert seen[0].combat["player"]["name"] == "Ada"
+    assert seen[0].schema_version == 2
+    assert seen[0].situation_id == "combat-encounter"
+    assert seen[0].character["name"] == "Ada"
     assert seen[0].legal_actions
+    assert seen[0].legal_actions[0]["description"]
+    assert seen[0].legal_actions[0]["target_ids"]
     assert not hasattr(seen[0], "session")
     assert first.transcript[0].action_source == "fixture-ai"
 
@@ -82,6 +92,21 @@ def test_playtest_artifacts_contain_evidence(tmp_path):
     assert payload["transcript"]
     assert "## Findings" in markdown
     assert "RNG draws=" in markdown
+
+
+def test_matrix_runner_replays_exact_mechanics_and_aggregates_coverage():
+    character, creature = _fixture()
+    report = run_playtest_matrix(
+        (
+            PlaytestCase(character, creature, 7),
+            PlaytestCase(character, creature, 11),
+        ),
+    )
+    assert report.ok
+    assert len(report.runs) == 2
+    assert not report.deterministic_failures
+    assert sum(report.outcome_coverage.values()) == 2
+    assert report.interaction_coverage["attack"] > 0
 
 
 def test_playtest_cli_runs_default_agent_and_saves_artifacts(tmp_path):

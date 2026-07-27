@@ -6,12 +6,13 @@ import json
 import re
 from dataclasses import asdict, dataclass
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable, Iterable
 
 from srd_cli.character import Character
 from srd_cli.combat import CombatEvent, Outcome
 from srd_cli.combat_rules import CreatureView
 from srd_cli.combat_session import CombatSession
+from srd_cli.dev import get_developer_backend
 from srd_cli.playtest_agent import (
     AgentAction,
     AgentController,
@@ -38,8 +39,12 @@ class PlaytestTurn:
     actor: str
     action: str
     action_id: str
+    intent: str
+    target_id: str
     action_source: str
     rationale: str
+    confidence: float | None
+    expected_effect: str
     outcome: str
     player_hp: int
     enemy_hp: int
@@ -62,8 +67,30 @@ class PlaytestReport:
     controller_decisions: int
     fallback_decisions: int
     action_coverage: dict[str, int]
+    interaction_coverage: dict[str, int]
     findings: tuple[PlaytestFinding, ...] = ()
     transcript: tuple[PlaytestTurn, ...] = ()
+
+    def to_dict(self) -> dict[str, Any]:
+        return asdict(self)
+
+
+@dataclass(frozen=True, slots=True)
+class PlaytestCase:
+    character: Character
+    creature: CreatureView
+    seed: int
+
+
+@dataclass(frozen=True, slots=True)
+class PlaytestMatrixReport:
+    schema_version: int
+    ok: bool
+    runs: tuple[PlaytestReport, ...]
+    outcome_coverage: dict[str, int]
+    action_coverage: dict[str, int]
+    interaction_coverage: dict[str, int]
+    deterministic_failures: tuple[str, ...] = ()
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -90,17 +117,32 @@ def _combatants(session: CombatSession) -> tuple[Any, Any]:
 
 
 def _legal_actions(session: CombatSession) -> tuple[dict[str, Any], ...]:
+    backend = get_developer_backend()
+    enemy = next(x for x in session.engine.state.combatants if x.id != "player")
     result = []
     for index, (kind, identity) in enumerate(session.engine.legal_player_actions(), 1):
         if kind == "weapon":
             view = session.engine.api.get_weapon(identity)
             label = view.entity.name if view is not None else identity
+            intent = "attack"
         elif kind == "spell":
             view = session.engine.api.get_spell(identity)
             label = view.spell.name if view is not None else identity
+            intent = "cast-magic"
         else:
             label = "Unarmed Strike"
-        result.append({"index": index, "kind": kind, "id": identity, "label": label})
+            intent = "attack"
+        descriptor = backend.get(intent)
+        result.append({
+            "index": index,
+            "kind": kind,
+            "id": identity,
+            "label": label,
+            "intent": intent,
+            "description": descriptor.description if descriptor is not None else label,
+            "target_ids": (enemy.id,),
+            "resolution": "Engine resolves every roll, defense, damage, HP change, and outcome.",
+        })
     return tuple(result)
 
 
@@ -135,7 +177,7 @@ def _observation(
     player, enemy = _combatants(session)
     character = session.engine.character
     return AgentObservation(
-        schema_version=1,
+        schema_version=2,
         run_id=run_id,
         turn=turn,
         combat={
@@ -162,6 +204,28 @@ def _observation(
         legal_actions=offered,
         recent_actions=tuple(recent_actions[-12:]),
         recent_events=tuple(_event_payload(x) for x in session.engine.events[-8:]),
+        mode="combat",
+        situation_id="combat-encounter",
+        character={
+            "name": player.name,
+            "class": character.class_ref.name,
+            "species": character.species_ref.name,
+            "hp": player.hp,
+            "max_hp": player.max_hp,
+            "armor_class": player.armor_class,
+        },
+        context={
+            "round": state.round,
+            "active_actor": state.active_actor,
+            "enemy": enemy.name,
+            "engine_authority": "mechanical state and events",
+        },
+        objectives=("finish encounter", "survive", "exercise distinct legal actions"),
+        constraints=(
+            "Choose exactly one offered legal action.",
+            "Choose only an offered target.",
+            "Never invent rolls, damage, outcomes, abilities, or state changes.",
+        ),
     )
 
 
@@ -183,6 +247,7 @@ def run_playtest(
     findings: list[PlaytestFinding] = []
     recent_actions: list[str] = []
     coverage: dict[str, int] = {}
+    interaction_coverage: dict[str, int] = {}
     controller_decisions = 0
     fallback_decisions = 0
 
@@ -196,6 +261,10 @@ def run_playtest(
         selected_label = ""
         source = "engine"
         rationale = ""
+        intent = ""
+        target_id = ""
+        confidence: float | None = None
+        expected_effect = ""
         events: tuple[CombatEvent, ...]
         before_state = (
             state.round,
@@ -227,6 +296,15 @@ def run_playtest(
                     selected = _resolve_action(decision.action, offered)
                     source = decision.controller or active_controller.name
                     rationale = decision.rationale
+                    validation = get_developer_backend().validate_decision(
+                        {"action": decision.action, "target": decision.target},
+                        offered,
+                    )
+                    if not validation.valid:
+                        raise ControllerError(validation.reason)
+                    target_id = validation.target_id
+                    confidence = decision.confidence
+                    expected_effect = decision.expected_effect
                 except Exception as exc:  # noqa: BLE001
                     selected = offered[0]
                     source = "deterministic-fallback"
@@ -236,9 +314,13 @@ def run_playtest(
                         str(exc),
                         "Controller returns exactly one offered action; fallback preserves run.",
                     ))
+                    target_ids = tuple(str(x) for x in selected.get("target_ids", ()))
+                    target_id = target_ids[0] if len(target_ids) == 1 else ""
                 selected_id = str(selected["id"])
                 selected_label = str(selected["label"])
+                intent = str(selected.get("intent") or selected["kind"])
                 coverage[selected_id] = coverage.get(selected_id, 0) + 1
+                interaction_coverage[intent] = interaction_coverage.get(intent, 0) + 1
                 recent_actions.append(selected_id)
                 _, events = session.engine.act(actor, selected_id)
             else:
@@ -247,6 +329,7 @@ def run_playtest(
                 events = tuple(session.engine.events[before:])
                 selected_id = str(events[-1].payload.get("action") or "") if events else ""
                 selected_label = selected_id
+                intent = "enemy-action"
         except Exception as exc:  # noqa: BLE001
             findings.append(PlaytestFinding(
                 "critical", "engine-exception", turn, selected_id,
@@ -276,8 +359,12 @@ def run_playtest(
             actor=actor,
             action=selected_label,
             action_id=selected_id,
+            intent=intent,
+            target_id=target_id,
             action_source=source,
             rationale=rationale,
+            confidence=confidence,
+            expected_effect=expected_effect,
             outcome=after.outcome.value,
             player_hp=player.hp,
             enemy_hp=enemy.hp,
@@ -311,6 +398,7 @@ def run_playtest(
         controller_decisions=controller_decisions,
         fallback_decisions=fallback_decisions,
         action_coverage=dict(sorted(coverage.items())),
+        interaction_coverage=dict(sorted(interaction_coverage.items())),
         findings=tuple(findings),
         transcript=tuple(transcript),
     )
@@ -339,6 +427,13 @@ def render_report_markdown(report: PlaytestReport) -> str:
         lines.extend(f"- `{key}`: {count}" for key, count in report.action_coverage.items())
     else:
         lines.append("- None")
+    lines.extend(["", "## Interaction Coverage", ""])
+    if report.interaction_coverage:
+        lines.extend(
+            f"- `{key}`: {count}" for key, count in report.interaction_coverage.items()
+        )
+    else:
+        lines.append("- None")
     lines.extend(["", "## Findings", ""])
     if report.findings:
         for finding in report.findings:
@@ -362,6 +457,83 @@ def render_report_markdown(report: PlaytestReport) -> str:
     return "\n".join(lines).rstrip() + "\n"
 
 
+def _mechanical_fingerprint(report: PlaytestReport) -> str:
+    payload = {
+        "seed": report.seed,
+        "outcome": report.outcome,
+        "turns": report.turns,
+        "rounds": report.rounds,
+        "transcript": [
+            {
+                "turn": item.turn,
+                "round": item.round,
+                "actor": item.actor,
+                "action_id": item.action_id,
+                "target_id": item.target_id,
+                "outcome": item.outcome,
+                "player_hp": item.player_hp,
+                "enemy_hp": item.enemy_hp,
+                "rng_draw_count": item.rng_draw_count,
+                "events": item.events,
+            }
+            for item in report.transcript
+        ],
+    }
+    return json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+
+
+def run_playtest_matrix(
+    cases: Iterable[PlaytestCase],
+    *,
+    max_turns: int = 200,
+    max_runs: int = 256,
+    controller_factory: Callable[[], AgentController] = CoverageController,
+    verify_determinism: bool = True,
+) -> PlaytestMatrixReport:
+    """Run bounded character/creature/seed matrix with optional exact replay check."""
+    selected = tuple(cases)
+    if not 1 <= len(selected) <= max_runs <= 10_000:
+        raise ValueError("matrix run count outside bounds")
+    reports: list[PlaytestReport] = []
+    deterministic_failures: list[str] = []
+    outcomes: dict[str, int] = {}
+    actions: dict[str, int] = {}
+    interactions: dict[str, int] = {}
+    for case in selected:
+        report = run_playtest(
+            case.character,
+            case.creature,
+            seed=case.seed,
+            max_turns=max_turns,
+            controller=controller_factory(),
+        )
+        reports.append(report)
+        outcomes[report.outcome] = outcomes.get(report.outcome, 0) + 1
+        for identity, count in report.action_coverage.items():
+            actions[identity] = actions.get(identity, 0) + count
+        for identity, count in report.interaction_coverage.items():
+            interactions[identity] = interactions.get(identity, 0) + count
+        if verify_determinism:
+            replay = run_playtest(
+                case.character,
+                case.creature,
+                seed=case.seed,
+                max_turns=max_turns,
+                controller=controller_factory(),
+            )
+            if _mechanical_fingerprint(report) != _mechanical_fingerprint(replay):
+                deterministic_failures.append(report.run_id)
+    return PlaytestMatrixReport(
+        schema_version=1,
+        ok=all(item.ok for item in reports) and not deterministic_failures,
+        runs=tuple(reports),
+        outcome_coverage=dict(sorted(outcomes.items())),
+        action_coverage=dict(sorted(actions.items())),
+        interaction_coverage=dict(sorted(interactions.items())),
+        deterministic_failures=tuple(deterministic_failures),
+    )
+
+
 def write_playtest_artifacts(
     report: PlaytestReport,
     *,
@@ -378,4 +550,46 @@ def write_playtest_artifacts(
         encoding="utf-8",
     )
     report_path.write_text(render_report_markdown(report), encoding="utf-8")
+    return log_path, report_path
+
+
+def write_matrix_artifacts(
+    report: PlaytestMatrixReport,
+    *,
+    log_dir: Path = Path("playlogs/srd-playtest"),
+    report_dir: Path = Path("scores/playtest-bot"),
+) -> tuple[Path, Path]:
+    """Persist aggregate matrix evidence without replacing per-run artifacts."""
+    log_dir.mkdir(parents=True, exist_ok=True)
+    report_dir.mkdir(parents=True, exist_ok=True)
+    log_path = log_dir / "matrix-latest.json"
+    report_path = report_dir / "matrix-latest.md"
+    log_path.write_text(
+        json.dumps(report.to_dict(), ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+    lines = [
+        "# SRD CLI Playtest Matrix",
+        "",
+        f"- Status: {'PASS' if report.ok else 'FAIL'}",
+        f"- Runs: {len(report.runs)}",
+        f"- Determinism failures: {len(report.deterministic_failures)}",
+        "",
+        "## Run Matrix",
+        "",
+    ]
+    lines.extend(
+        f"- `{item.run_id}`: {item.outcome}, turns={item.turns}, "
+        f"fallbacks={item.fallback_decisions}, findings={len(item.findings)}"
+        for item in report.runs
+    )
+    lines.extend(["", "## Interaction Coverage", ""])
+    lines.extend(
+        f"- `{identity}`: {count}"
+        for identity, count in report.interaction_coverage.items()
+    )
+    if report.deterministic_failures:
+        lines.extend(["", "## Determinism Failures", ""])
+        lines.extend(f"- `{identity}`" for identity in report.deterministic_failures)
+    report_path.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
     return log_path, report_path

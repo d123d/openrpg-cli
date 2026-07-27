@@ -87,6 +87,46 @@ Empty, multiline, invalid, failed, or timed-out controller output records warnin
 and falls back to first deterministic legal action. Engine still resolves every roll,
 damage event, HP change, and outcome.
 
+### Matrix Coverage
+
+```powershell
+py -3.14 scripts/srd_playtest_bot.py `
+  --classes Fighter,Wizard,Rogue,Cleric `
+  --monsters "Goblin Warrior,Ogre" `
+  --seeds 42,7,11 --turns 200 --determinism-check
+```
+
+Runner bounds matrix size, creates fresh controllers per run, replays deterministic cases,
+compares mechanical fingerprints, aggregates action/interaction/outcome coverage, and writes
+`matrix-latest.json` plus `matrix-latest.md`.
+
+## General AI Developer Backend
+
+Developer backend exposes machine-readable player-experience vocabulary without pretending
+planned or generic systems are implemented:
+
+```powershell
+srd dev manifest
+srd dev coverage
+srd dev domains
+srd dev actions --domain combat --json
+srd dev situations --domain investigation --json
+srd dev show combat-encounter
+srd dev search "capture"
+srd dev prompt investigation-mystery
+srd dev schemas
+```
+
+Catalog spans character, progression, resources, combat, magic, exploration, travel,
+environment, social, investigation, survival, downtime, party, world, narrative, and
+system experiences. Every descriptor carries exact status, authority, roadmap phase,
+requirement, targets, costs, goals, triggers, actions, and stakes.
+
+`AgentObservation` v2 supports any scene mode with public character/context state,
+objectives, constraints, recent history, and described legal actions. `AgentAction`
+supports offered action/target, bounded parameters, rationale, confidence, and
+non-authoritative expected effect. Engine state/events remain authoritative.
+
 ## Content Gate
 
 `srd audit` enforces:

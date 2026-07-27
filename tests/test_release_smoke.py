@@ -20,6 +20,7 @@ def test_release_command_surface():
         ["combat", "--help"],
         ["play", "--help"],
         ["playtest", "--help"],
+        ["dev", "--help"],
     ):
         result = subprocess.run(
             [sys.executable, "-m", "srd_cli", *args], text=True, capture_output=True, timeout=30
