@@ -25,6 +25,9 @@ class CombatSession:
             raise CombatError("max rounds must be 1..10000")
         self.engine = CombatEngine(character, creature, seed, api)
         self.seed, self.max_rounds = seed, max_rounds
+        self.kernel_state = None
+        self.kernel_rng = None
+        self.kernel_log = None
 
     def run_auto(self) -> CombatResult:
         while self.engine.state.outcome == Outcome.ACTIVE:
@@ -33,7 +36,12 @@ class CombatSession:
             actor = self.engine.state.active_actor
             action = self.engine.legal_player_actions()[0][1] if actor == "player" else None
             self.engine.act(actor, action)
-        return CombatResult(self.seed, self.engine.state, tuple(self.engine.events))
+        result = CombatResult(self.seed, self.engine.state, tuple(self.engine.events))
+        # Import stays at interface boundary; legacy public output remains untouched.
+        from srd_cli.interfaces.v1_compat import adapt_combat_result
+
+        self.kernel_state, self.kernel_rng, self.kernel_log = adapt_combat_result(result)
+        return result
 
 
 def _payload(result: CombatResult) -> dict:
