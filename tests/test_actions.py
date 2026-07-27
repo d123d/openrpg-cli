@@ -1,8 +1,8 @@
 # ruff: noqa: F403, F405
-from srd_cli.engine.rng import GameRNG
-from srd_cli.rules.actions import *  # noqa: F403, F405
-from srd_cli.rules.space import *  # noqa: F403, F405
-from srd_cli.rules.turns import *  # noqa: F403, F405
+from openrpg_cli.engine.rng import GameRNG
+from openrpg_cli.rules.actions import *  # noqa: F403, F405
+from openrpg_cli.rules.space import *  # noqa: F403, F405
+from openrpg_cli.rules.turns import *  # noqa: F403, F405
 
 
 def setup():

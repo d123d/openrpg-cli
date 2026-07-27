@@ -1,5 +1,5 @@
 # ruff: noqa: F403, F405
-from srd_cli.rules.tactics import *  # noqa: F403, F405
+from openrpg_cli.rules.tactics import *  # noqa: F403, F405
 
 
 def setup():

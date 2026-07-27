@@ -1,5 +1,5 @@
-from srd_cli.combat_rules import CombatRules
-from srd_cli.normalized import NormalizedRepository
+from openrpg_cli.combat_rules import CombatRules
+from openrpg_cli.normalized import NormalizedRepository
 
 
 def test_combat_relationships_are_exhaustive():

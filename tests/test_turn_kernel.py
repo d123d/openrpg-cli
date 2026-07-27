@@ -1,9 +1,9 @@
 # ruff: noqa: F403, F405
-from srd_cli.domain.codecs import encode, decode_message
-from srd_cli.domain.messages import *  # noqa: F403, F405
-from srd_cli.domain.state import *  # noqa: F403, F405
-from srd_cli.engine.reducer import reduce_command
-from srd_cli.engine.rng import GameRNG
+from openrpg_cli.domain.codecs import encode, decode_message
+from openrpg_cli.domain.messages import *  # noqa: F403, F405
+from openrpg_cli.domain.state import *  # noqa: F403, F405
+from openrpg_cli.engine.reducer import reduce_command
+from openrpg_cli.engine.rng import GameRNG
 
 
 def state():

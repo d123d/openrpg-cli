@@ -1,8 +1,8 @@
-from srd_cli.domain.codecs import decode_message, encode
-from srd_cli.domain.messages import ResolveTest
-from srd_cli.domain.state import GameState
-from srd_cli.engine.reducer import reduce_command
-from srd_cli.engine.rng import GameRNG
+from openrpg_cli.domain.codecs import decode_message, encode
+from openrpg_cli.domain.messages import ResolveTest
+from openrpg_cli.domain.state import GameState
+from openrpg_cli.engine.reducer import reduce_command
+from openrpg_cli.engine.rng import GameRNG
 
 
 def test_resolution_command_round_trip_and_replay() -> None:

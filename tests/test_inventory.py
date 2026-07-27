@@ -1,6 +1,6 @@
 from decimal import Decimal
 import pytest
-from srd_cli.rules.inventory import (
+from openrpg_cli.rules.inventory import (
     Inventory,
     ItemSpec,
     Stack,

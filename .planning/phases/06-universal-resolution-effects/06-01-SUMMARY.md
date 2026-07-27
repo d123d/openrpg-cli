@@ -7,7 +7,7 @@ requires: [{phase: 05, provides: deterministic RNG}]
 provides: [universal d20 resolver, contests, passive scores]
 affects: [combat, scenes]
 tech-stack: {added: [], patterns: [frozen pure rule contracts]}
-key-files: {created: [srd_cli/rules/resolution.py, tests/test_resolution.py], modified: []}
+key-files: {created: [openrpg_cli/rules/resolution.py, tests/test_resolution.py], modified: []}
 key-decisions: ["Natural attack semantics remain typed and do not affect checks or saves."]
 requirements-completed: [RES-01, RES-02]
 duration: 12min

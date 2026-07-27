@@ -1,5 +1,5 @@
 import pytest
-from srd_cli.rules.progression import (
+from openrpg_cli.rules.progression import (
     build_progressions,
     level_for_xp,
     proficiency_bonus,

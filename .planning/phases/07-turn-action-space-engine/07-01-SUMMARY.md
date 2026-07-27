@@ -7,7 +7,7 @@ requires: [phase-05-kernel]
 provides: [turn-order, action-budget, legal-command-spec]
 affects: [07-03, 07-05]
 key-files:
-  created: [srd_cli/rules/turns.py, tests/test_turns.py]
+  created: [openrpg_cli/rules/turns.py, tests/test_turns.py]
 decisions: [Stable actor-id initiative tie-break, Atomic budget rejection]
 metrics: {tasks: 2, completed: 2026-07-26}
 ---

@@ -9,7 +9,7 @@ skipped: 0
 status: all_fixed
 ---
 
-# SRD CLI v1.0: Code Review Fix Report
+# OpenRPG CLI v1.0: Code Review Fix Report
 
 ## Fixed Issues
 

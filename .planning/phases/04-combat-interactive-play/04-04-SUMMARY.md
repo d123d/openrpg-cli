@@ -9,11 +9,11 @@ tags: [play, wheel, audit, v1.0]
 Interactive load-to-combat workflow plus audited SRD 5.2.1 wheel verified outside checkout.
 
 ## Verification
-- `py -3.14 -m srd_cli audit` — PASS
+- `py -3.14 -m openrpg_cli audit` — PASS
 - `py -3.14 -m pytest -q` — 39 passed
 - `py -3.14 -m ruff check .` — PASS
 - `py -3.14 -m build` — wheel and sdist built
-- isolated `pip --target` install + `python -m srd_cli audit` — PASS
+- isolated `pip --target` install + `python -m openrpg_cli audit` — PASS
 
 ## Commits
 - `dd75aef` — interactive combat release

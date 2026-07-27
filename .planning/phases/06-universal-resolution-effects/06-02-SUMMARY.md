@@ -7,7 +7,7 @@ requires: [{phase: 05, provides: deterministic RNG}]
 provides: [typed damage pipeline, vitality lifecycle]
 affects: [combat, effects]
 tech-stack: {added: [], patterns: [immutable transitions]}
-key-files: {created: [srd_cli/rules/vitality.py, tests/test_vitality.py], modified: []}
+key-files: {created: [openrpg_cli/rules/vitality.py, tests/test_vitality.py], modified: []}
 key-decisions: ["Defense precedence is immunity, resistance, vulnerability."]
 requirements-completed: [RES-03, RES-04]
 duration: 12min

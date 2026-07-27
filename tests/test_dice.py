@@ -1,6 +1,6 @@
 import pytest
 
-from srd_cli.dice import GameRNG, roll
+from openrpg_cli.dice import GameRNG, roll
 
 
 def test_seeded_roll_is_repeatable() -> None:

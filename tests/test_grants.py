@@ -1,5 +1,5 @@
 import pytest
-from srd_cli.rules.grants import ChoiceNode, Grant, project_grants, resolve_choices
+from openrpg_cli.rules.grants import ChoiceNode, Grant, project_grants, resolve_choices
 
 
 def test_choice_projection_canonical_and_expertise_checked():

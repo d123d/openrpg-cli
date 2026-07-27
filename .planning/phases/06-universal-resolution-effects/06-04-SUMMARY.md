@@ -7,7 +7,7 @@ requires: [{phase: 06, provides: resolution vitality effects rules}]
 provides: [typed Phase 6 kernel operations, v1-compatible release]
 affects: [phase-7]
 tech-stack: {added: [], patterns: [atomic reducer rejection]}
-key-files: {created: [tests/test_resolution_kernel.py], modified: [srd_cli/domain/messages.py, srd_cli/engine/reducer.py]}
+key-files: {created: [tests/test_resolution_kernel.py], modified: [openrpg_cli/domain/messages.py, openrpg_cli/engine/reducer.py]}
 key-decisions: ["Phase 6 payloads use existing frozen entity data schema.", "v1 remains one-way audit adapter."]
 requirements-completed: [RES-01, RES-02, RES-03, RES-04, RES-05]
 duration: 18min

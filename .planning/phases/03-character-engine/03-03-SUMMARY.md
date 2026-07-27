@@ -14,7 +14,7 @@ tech-stack:
   added: []
   patterns: [pure renderers, escaped Text, semantic output tests]
 key-files:
-  created: [srd_cli/character_sheet.py, tests/test_character_sheet.py]
+  created: [openrpg_cli/character_sheet.py, tests/test_character_sheet.py]
   modified: []
 key-decisions:
   - "Machine rendering shares explicit persistence mapping to keep schema surfaces equivalent."

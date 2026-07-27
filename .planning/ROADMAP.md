@@ -1,4 +1,4 @@
-# Roadmap: SRD CLI — v2.0 Complete Gameplay Systems
+# Roadmap: OpenRPG CLI — v2.0 Complete Gameplay Systems
 
 **Created:** 2026-07-26
 **Core Value:** Every gameplay mode uses one deterministic command/event kernel; bundled content remains SRD 5.2.1 only.

@@ -1,8 +1,8 @@
-from srd_cli.domain.codecs import decode_message, encode
-from srd_cli.domain.messages import AdvanceCharacter, CharacterChanged
-from srd_cli.domain.state import ActorState, GameState
-from srd_cli.engine.reducer import reduce_command
-from srd_cli.engine.rng import GameRNG
+from openrpg_cli.domain.codecs import decode_message, encode
+from openrpg_cli.domain.messages import AdvanceCharacter, CharacterChanged
+from openrpg_cli.domain.state import ActorState, GameState
+from openrpg_cli.engine.reducer import reduce_command
+from openrpg_cli.engine.rng import GameRNG
 
 
 def test_character_command_roundtrip_is_atomic_and_rng_neutral():

@@ -1,6 +1,6 @@
 from typer.testing import CliRunner
 
-from srd_cli.cli import app
+from openrpg_cli.cli import app
 
 
 def test_play_guides_creation_creature_and_actions(tmp_path, monkeypatch):

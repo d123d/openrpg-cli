@@ -7,7 +7,7 @@ requires: [07-01]
 provides: [spatial-state, grid-adapter, target-resolution]
 affects: [07-03, 07-04, 07-05]
 key-files:
-  created: [srd_cli/rules/space.py, tests/test_space.py]
+  created: [openrpg_cli/rules/space.py, tests/test_space.py]
 decisions: [Chebyshev square-grid metric, Range bands remain authoritative]
 metrics: {tasks: 2, completed: 2026-07-26}
 ---

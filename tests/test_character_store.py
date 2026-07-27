@@ -4,9 +4,9 @@ import json
 
 import pytest
 
-from srd_cli.api import get_rules_api
-from srd_cli.character_builder import CharacterBuilder, CharacterRequest
-from srd_cli.character_store import CharacterCodec, CharacterStore, CharacterValidationError
+from openrpg_cli.api import get_rules_api
+from openrpg_cli.character_builder import CharacterBuilder, CharacterRequest
+from openrpg_cli.character_store import CharacterCodec, CharacterStore, CharacterValidationError
 
 
 def character():

@@ -6,9 +6,9 @@ import sys
 
 import pytest
 
-from srd_cli.api import get_rules_api
-from srd_cli.character_builder import CharacterBuilder, CharacterRequest
-from srd_cli.combat_session import CombatSession
+from openrpg_cli.api import get_rules_api
+from openrpg_cli.character_builder import CharacterBuilder, CharacterRequest
+from openrpg_cli.combat_session import CombatSession
 
 
 def test_release_command_surface():
@@ -23,7 +23,7 @@ def test_release_command_surface():
         ["dev", "--help"],
     ):
         result = subprocess.run(
-            [sys.executable, "-m", "srd_cli", *args], text=True, capture_output=True, timeout=30
+            [sys.executable, "-m", "openrpg_cli", *args], text=True, capture_output=True, timeout=30
         )
         assert result.returncode == 0, result.stderr
 
@@ -61,7 +61,7 @@ def test_isolated_wheel_contains_auditable_content_and_license(tmp_path):
     env = os.environ.copy()
     env["PYTHONPATH"] = str(target)
     audit = subprocess.run(
-        [sys.executable, "-m", "srd_cli", "audit"],
+        [sys.executable, "-m", "openrpg_cli", "audit"],
         cwd=tmp_path,
         env=env,
         capture_output=True,
@@ -69,16 +69,16 @@ def test_isolated_wheel_contains_auditable_content_and_license(tmp_path):
         timeout=30,
     )
     assert audit.returncode == 0, audit.stderr
-    manifest_path = target / "srd_cli" / "data" / "srd521" / "manifest.json"
+    manifest_path = target / "openrpg_cli" / "data" / "srd521" / "manifest.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     assert manifest["content_license"] == "CC-BY-4.0"
     assert manifest["srd_version"] == "5.2.1"
-    assert (target / "srd_cli" / "data" / "srd521" / "Creature.json").is_file()
+    assert (target / "openrpg_cli" / "data" / "srd521" / "Creature.json").is_file()
     smoke = subprocess.run(
         [
             sys.executable,
             "-c",
-            "from srd_cli.rules.resolution import *; from srd_cli.engine.rng import GameRNG; "
+            "from openrpg_cli.rules.resolution import *; from openrpg_cli.engine.rng import GameRNG; "
             "assert resolve_d20(D20Test(TestKind.CHECK), GameRNG(1))[1].draws == 1",
         ],
         cwd=tmp_path,

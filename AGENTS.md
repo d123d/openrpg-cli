@@ -1,4 +1,4 @@
-# SRD CLI Agent Rules
+# OpenRPG CLI Agent Rules
 
 ## Scope Lock
 
@@ -26,7 +26,7 @@ Runtime user content may remain external. Do not bundle it.
 ## Verification
 
 ```powershell
-py -3.14 -m srd_cli audit
+py -3.14 -m openrpg_cli audit
 py -3.14 -m pytest -q
 py -3.14 -m ruff check .
 ```

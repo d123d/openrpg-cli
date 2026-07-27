@@ -1,4 +1,4 @@
-# Requirements: SRD CLI v2.0 Complete Gameplay Systems
+# Requirements: OpenRPG CLI v2.0 Complete Gameplay Systems
 
 ## Kernel and State
 

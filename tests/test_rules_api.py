@@ -1,7 +1,7 @@
 from typer.testing import CliRunner
 
-from srd_cli import get_rules_api
-from srd_cli.cli import app
+from openrpg_cli import get_rules_api
+from openrpg_cli.cli import app
 
 
 def test_public_api_is_cached_and_complete():

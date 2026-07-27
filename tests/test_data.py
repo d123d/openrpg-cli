@@ -1,4 +1,4 @@
-from srd_cli.data import CATEGORY_TABLES, SRDRepository, category_name
+from openrpg_cli.data import CATEGORY_TABLES, SRDRepository, category_name
 
 
 def test_bundle_integrity() -> None:

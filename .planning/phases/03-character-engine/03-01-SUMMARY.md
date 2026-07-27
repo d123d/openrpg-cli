@@ -14,7 +14,7 @@ tech-stack:
   added: []
   patterns: [frozen contracts, injected read-only RulesAPI, fail-closed adapters]
 key-files:
-  created: [srd_cli/character.py, srd_cli/character_builder.py, tests/test_character_builder.py]
+  created: [openrpg_cli/character.py, openrpg_cli/character_builder.py, tests/test_character_builder.py]
   modified: []
 key-decisions:
   - "Missing primary and casting ability source fields use exhaustive base-class adapters keyed by bundled SRD class identity."

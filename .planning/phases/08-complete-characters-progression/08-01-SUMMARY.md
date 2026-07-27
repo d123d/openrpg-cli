@@ -4,7 +4,7 @@ plan: 01
 subsystem: character-progression
 tags: [progression, coverage, srd-5.2.1]
 key-files:
-  created: [srd_cli/rules/progression.py, srd_cli/rules/character_coverage.py]
+  created: [openrpg_cli/rules/progression.py, openrpg_cli/rules/character_coverage.py]
 metrics: {tasks: 2, completed: 2026-07-26}
 ---
 # Phase 8 Plan 1: Progression and Coverage Summary

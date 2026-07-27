@@ -7,7 +7,7 @@ requires: [{phase: 05, provides: immutable state}]
 provides: [15-condition registry, deterministic effect scheduler]
 affects: [turn-engine, combat]
 tech-stack: {added: [], patterns: [stable id ordered transitions]}
-key-files: {created: [srd_cli/rules/effects.py, tests/test_effects.py], modified: []}
+key-files: {created: [openrpg_cli/rules/effects.py, tests/test_effects.py], modified: []}
 key-decisions: ["Unsupported prose remains explicit per condition."]
 requirements-completed: [RES-05]
 duration: 12min

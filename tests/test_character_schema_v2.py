@@ -1,6 +1,6 @@
-from srd_cli.character import CHARACTER_SCHEMA_VERSION
-from srd_cli.character_builder import CharacterBuilder, CharacterRequest
-from srd_cli.character_store import CharacterCodec
+from openrpg_cli.character import CHARACTER_SCHEMA_VERSION
+from openrpg_cli.character_builder import CharacterBuilder, CharacterRequest
+from openrpg_cli.character_store import CharacterCodec
 
 
 def _character(level=1):

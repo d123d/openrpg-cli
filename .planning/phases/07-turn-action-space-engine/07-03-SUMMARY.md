@@ -7,7 +7,7 @@ requires: [07-01, 07-02, phase-06-resolution]
 provides: [core-action-catalog, action-resolution]
 affects: [07-04, 07-05]
 key-files:
-  created: [srd_cli/rules/actions.py, tests/test_actions.py]
+  created: [openrpg_cli/rules/actions.py, tests/test_actions.py]
 decisions: [Closed twelve-action enum, Structured effects never inferred]
 metrics: {tasks: 2, completed: 2026-07-26}
 ---

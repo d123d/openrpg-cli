@@ -2,7 +2,7 @@ from dataclasses import FrozenInstanceError
 
 import pytest
 
-from srd_cli.normalized import NormalizedRepository, TABLE_CATALOG
+from openrpg_cli.normalized import NormalizedRepository, TABLE_CATALOG
 
 
 def test_catalog_matches_manifest_and_loads_deterministically():

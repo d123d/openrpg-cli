@@ -16,7 +16,7 @@ Build complete level-1 SRD character creation, derived stats, JSON persistence, 
 - Support all SRD 5.2.1 base classes, species, four backgrounds, and valid origin feats.
 - Default ability generation uses SRD standard array assigned deterministically from class primary ability and save priorities; explicit six-score input supported.
 - Character schema is versioned and human-readable JSON.
-- Default save root is `~/.srd-cli/characters`; commands accept explicit paths for CI.
+- Default save root is `~/.openrpg-cli/characters`; commands accept explicit paths for CI.
 - Validate every content reference against RulesAPI on creation and load.
 - Starting equipment and spells derive only from joined SRD tables. When SRD offers choices, deterministic defaults plus explicit overrides.
 - Level 1 is required; structure should permit later levels without pretending unimplemented progression is complete.

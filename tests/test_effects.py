@@ -1,4 +1,4 @@
-from srd_cli.rules.effects import CONDITION_REGISTRY, Condition, DurationKind, Effect, Phase, add_effect, advance
+from openrpg_cli.rules.effects import CONDITION_REGISTRY, Condition, DurationKind, Effect, Phase, add_effect, advance
 
 
 def test_registry_and_scheduler_order_idempotence() -> None:

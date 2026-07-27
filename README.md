@@ -1,4 +1,4 @@
-# SRD CLI
+# OpenRPG CLI
 
 Lean, read-only CLI for latest System Reference Document: **SRD 5.2.1**.
 
@@ -24,20 +24,20 @@ Open5e's `data/v2/wizards-of-the-coast/srd-2024` subtree at pinned commit record
 ## Install
 
 ```powershell
-cd C:\AI\projects\srd-cli
+cd C:\AI\projects\openrpg-cli
 py -3.14 -m pip install -e ".[dev]"
 ```
 
 ## Use
 
 ```powershell
-py -3.14 -m srd_cli info
-py -3.14 -m srd_cli categories
-py -3.14 -m srd_cli list creatures --limit 20
-py -3.14 -m srd_cli show spell fireball
-py -3.14 -m srd_cli search "temporary hit points"
-py -3.14 -m srd_cli roll 4d6kh3 --seed 42
-py -3.14 -m srd_cli audit
+py -3.14 -m openrpg_cli info
+py -3.14 -m openrpg_cli categories
+py -3.14 -m openrpg_cli list creatures --limit 20
+py -3.14 -m openrpg_cli show spell fireball
+py -3.14 -m openrpg_cli search "temporary hit points"
+py -3.14 -m openrpg_cli roll 4d6kh3 --seed 42
+py -3.14 -m openrpg_cli audit
 ```
 
 Installed entry points:

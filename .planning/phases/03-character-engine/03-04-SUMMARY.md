@@ -15,7 +15,7 @@ tech-stack:
   patterns: [thin CLI adapters, domain-error exit 2, explicit CI roots]
 key-files:
   created: [tests/test_character_cli.py]
-  modified: [srd_cli/cli.py]
+  modified: [openrpg_cli/cli.py]
 key-decisions:
   - "Bare character names resolve only under selected character root; explicit paths remain explicit."
 patterns-established:

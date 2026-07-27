@@ -1,4 +1,4 @@
-# SRD CLI Content Licenses
+# OpenRPG CLI Content Licenses
 
 ## Primary Content
 

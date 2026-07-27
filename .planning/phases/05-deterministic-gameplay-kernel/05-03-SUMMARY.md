@@ -4,7 +4,7 @@ plan: 03
 subsystem: application
 tags: [hash-chain, replay, snapshots, migrations]
 provides: [KERN-04]
-key-files: [srd_cli/application/log.py, srd_cli/application/replay.py, srd_cli/application/migrations.py]
+key-files: [openrpg_cli/application/log.py, openrpg_cli/application/replay.py, openrpg_cli/application/migrations.py]
 ---
 # Phase 5 Plan 3: Replay Persistence Summary
 

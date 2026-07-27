@@ -4,7 +4,7 @@ plan: 02
 subsystem: engine
 tags: [canonical-json, deterministic-rng, reducer]
 provides: [KERN-02, KERN-03]
-key-files: [srd_cli/domain/codecs.py, srd_cli/engine/rng.py, srd_cli/engine/reducer.py]
+key-files: [openrpg_cli/domain/codecs.py, openrpg_cli/engine/rng.py, openrpg_cli/engine/reducer.py]
 ---
 # Phase 5 Plan 2: Canonical Reducer Summary
 

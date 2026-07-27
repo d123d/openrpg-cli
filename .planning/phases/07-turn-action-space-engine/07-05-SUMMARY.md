@@ -7,7 +7,7 @@ requires: [07-01, 07-02, 07-03, 07-04]
 provides: [phase-07-messages, encounter-reducer]
 affects: [phase-08]
 key-files:
-  modified: [srd_cli/domain/messages.py, srd_cli/engine/reducer.py]
+  modified: [openrpg_cli/domain/messages.py, openrpg_cli/engine/reducer.py]
   created: [tests/test_turn_kernel.py, tests/test_turn_v1_compat.py]
 decisions: [Schema version remains 1, Phase 7 state stored in immutable encounter data]
 metrics: {tasks: 2, completed: 2026-07-26}

@@ -2,10 +2,10 @@ from pathlib import Path
 
 from typer.testing import CliRunner
 
-from srd_cli.api import get_rules_api
-from srd_cli.character_builder import CharacterBuilder, CharacterRequest
-from srd_cli.character_store import CharacterStore
-from srd_cli.cli import app
+from openrpg_cli.api import get_rules_api
+from openrpg_cli.character_builder import CharacterBuilder, CharacterRequest
+from openrpg_cli.character_store import CharacterStore
+from openrpg_cli.cli import app
 
 
 def _character(path: Path) -> Path:

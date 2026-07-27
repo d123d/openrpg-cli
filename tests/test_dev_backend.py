@@ -6,8 +6,8 @@ import json
 
 from typer.testing import CliRunner
 
-from srd_cli.cli import app
-from srd_cli.dev import CapabilityStatus, ExperienceDomain, get_developer_backend
+from openrpg_cli.cli import app
+from openrpg_cli.dev import CapabilityStatus, ExperienceDomain, get_developer_backend
 
 
 def test_catalog_covers_every_domain_with_linked_descriptions():
@@ -71,6 +71,6 @@ def test_dev_cli_exposes_json_manifest_catalog_and_schemas():
     actions = runner.invoke(app, ["dev", "actions", "--domain", "combat", "--json"])
     schemas = runner.invoke(app, ["dev", "schemas"])
     assert manifest.exit_code == actions.exit_code == schemas.exit_code == 0
-    assert json.loads(manifest.stdout)["name"] == "srd-cli-developer-backend"
+    assert json.loads(manifest.stdout)["name"] == "openrpg-cli-developer-backend"
     assert any(item["id"] == "attack" for item in json.loads(actions.stdout))
     assert "observation" in json.loads(schemas.stdout)

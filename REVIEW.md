@@ -10,7 +10,7 @@ findings:
 status: clean
 ---
 
-# SRD CLI v1.0: Final Review
+# OpenRPG CLI v1.0: Final Review
 
 **Status:** clean
 
@@ -27,10 +27,10 @@ All prior findings are closed:
 ## Required Environment Verification
 
 Project targets Python 3.14 dev runtime per workspace rules. Exact gates run from
-`C:\AI\projects\srd-cli`:
+`C:\AI\projects\openrpg-cli`:
 
 ```powershell
-py -3.14 -m srd_cli audit
+py -3.14 -m openrpg_cli audit
 py -3.14 -m pytest -q
 py -3.14 -m ruff check .
 py -3.14 -m build

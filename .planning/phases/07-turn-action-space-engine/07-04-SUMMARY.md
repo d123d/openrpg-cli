@@ -7,7 +7,7 @@ requires: [07-03]
 provides: [tactical-transitions, modifier-hooks]
 affects: [07-05]
 key-files:
-  created: [srd_cli/rules/tactics.py, tests/test_tactics.py]
+  created: [openrpg_cli/rules/tactics.py, tests/test_tactics.py]
 decisions: [Malformed commands reject atomically, Failed legal grapple or shove spends action]
 metrics: {tasks: 2, completed: 2026-07-26}
 ---

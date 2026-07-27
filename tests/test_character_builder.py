@@ -2,10 +2,10 @@ from __future__ import annotations
 
 import pytest
 
-from srd_cli.api import get_rules_api
-from srd_cli.character import AbilityScores, Character
-from srd_cli.character_builder import CharacterBuilder, CharacterRequest, ChoiceError
-from srd_cli.combat_session import CombatSession
+from openrpg_cli.api import get_rules_api
+from openrpg_cli.character import AbilityScores, Character
+from openrpg_cli.character_builder import CharacterBuilder, CharacterRequest, ChoiceError
+from openrpg_cli.combat_session import CombatSession
 
 
 def test_contracts_reject_invalid_values():

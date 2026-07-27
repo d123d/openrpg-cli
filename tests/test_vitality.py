@@ -1,4 +1,4 @@
-from srd_cli.rules.vitality import DamageInstance, DamageType, Defenses, Vitality, apply_damage, apply_healing, apply_temporary_hp
+from openrpg_cli.rules.vitality import DamageInstance, DamageType, Defenses, Vitality, apply_damage, apply_healing, apply_temporary_hp
 
 
 def test_damage_order_and_temp_hp() -> None:

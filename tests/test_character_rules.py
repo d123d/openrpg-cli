@@ -1,5 +1,5 @@
-from srd_cli.character_rules import CharacterRules
-from srd_cli.normalized import NormalizedRepository
+from openrpg_cli.character_rules import CharacterRules
+from openrpg_cli.normalized import NormalizedRepository
 
 
 def test_character_relationships_are_exhaustive():

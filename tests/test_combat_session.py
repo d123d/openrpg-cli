@@ -1,8 +1,8 @@
-from srd_cli.api import get_rules_api
-from srd_cli.character import AbilityScores
-from srd_cli.character_builder import CharacterBuilder, CharacterRequest
-from srd_cli.combat_session import CombatSession, render_combat_json, render_transcript
-from srd_cli.combat import CombatError
+from openrpg_cli.api import get_rules_api
+from openrpg_cli.character import AbilityScores
+from openrpg_cli.character_builder import CharacterBuilder, CharacterRequest
+from openrpg_cli.combat_session import CombatSession, render_combat_json, render_transcript
+from openrpg_cli.combat import CombatError
 from dataclasses import replace
 import pytest
 

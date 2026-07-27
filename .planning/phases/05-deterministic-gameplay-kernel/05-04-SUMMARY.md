@@ -4,7 +4,7 @@ plan: 04
 subsystem: interfaces
 tags: [v1-compat, release-gates]
 provides: [KERN-03, KERN-04, KERN-05]
-key-files: [srd_cli/interfaces/v1_compat.py, srd_cli/combat_session.py]
+key-files: [openrpg_cli/interfaces/v1_compat.py, openrpg_cli/combat_session.py]
 ---
 # Phase 5 Plan 4: v1 Compatibility Summary
 

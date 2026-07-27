@@ -1,5 +1,5 @@
-from srd_cli.engine.rng import GameRNG
-from srd_cli.rules.resolution import D20Test, Proficiency, TestKind, passive_score, resolve_contest, resolve_d20
+from openrpg_cli.engine.rng import GameRNG
+from openrpg_cli.rules.resolution import D20Test, Proficiency, TestKind, passive_score, resolve_contest, resolve_d20
 
 
 def test_pipeline_expertise_and_cancelled_advantage() -> None:

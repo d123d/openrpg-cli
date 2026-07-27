@@ -6,7 +6,7 @@ import sys
 
 import pytest
 
-from srd_cli.playtest_agent import (
+from openrpg_cli.playtest_agent import (
     AgentAction,
     AgentObservation,
     ControllerError,

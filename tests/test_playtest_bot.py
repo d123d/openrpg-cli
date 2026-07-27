@@ -6,11 +6,11 @@ import json
 
 from typer.testing import CliRunner
 
-from srd_cli.api import get_rules_api
-from srd_cli.character_builder import CharacterBuilder, CharacterRequest
-from srd_cli.cli import app
-from srd_cli.playtest_agent import CallableController
-from srd_cli.playtest_bot import (
+from openrpg_cli.api import get_rules_api
+from openrpg_cli.character_builder import CharacterBuilder, CharacterRequest
+from openrpg_cli.cli import app
+from openrpg_cli.playtest_agent import CallableController
+from openrpg_cli.playtest_bot import (
     PlaytestCase,
     run_playtest,
     run_playtest_matrix,

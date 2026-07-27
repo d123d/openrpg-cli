@@ -1,7 +1,7 @@
-from srd_cli.api import get_rules_api
-from srd_cli.character_builder import CharacterBuilder, CharacterRequest
-from srd_cli.combat_session import CombatSession
-from srd_cli.interfaces.v1_compat import adapt_combat_result
+from openrpg_cli.api import get_rules_api
+from openrpg_cli.character_builder import CharacterBuilder, CharacterRequest
+from openrpg_cli.combat_session import CombatSession
+from openrpg_cli.interfaces.v1_compat import adapt_combat_result
 
 
 def test_adapter_preserves_legacy_result_and_rng() -> None:

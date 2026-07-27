@@ -4,7 +4,7 @@ import json
 
 from typer.testing import CliRunner
 
-from srd_cli.cli import app
+from openrpg_cli.cli import app
 
 runner = CliRunner()
 

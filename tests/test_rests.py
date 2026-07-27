@@ -1,5 +1,5 @@
-from srd_cli.rules.rests import RestRequest, perform_rest, resource_recovery_hook
-from srd_cli.rules.spellcasting import CastingState, Resource
+from openrpg_cli.rules.rests import RestRequest, perform_rest, resource_recovery_hook
+from openrpg_cli.rules.spellcasting import CastingState, Resource
 
 
 def test_rest_hooks_are_owned_ordered_and_interruptible():

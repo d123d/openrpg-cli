@@ -1,10 +1,10 @@
 # Fork Provenance
 
-SRD CLI began 2026-07-26 as a lean fork of local `C:\AI\projects\dnd-cli`.
+OpenRPG CLI began 2026-07-26 as a lean fork of local `C:\AI\projects\dnd-cli`.
 
 Retained:
 
-- deterministic bounded dice engine (`dnd_cli/dice.py` → `srd_cli/dice.py`)
+- deterministic bounded dice engine (`dnd_cli/dice.py` → `openrpg_cli/dice.py`)
 - Python 3.11+, Typer, Rich, pytest, ruff stack
 - SRD-first architecture
 
@@ -17,5 +17,5 @@ Removed:
 - AI DM, saves, playtest harness, media/TUI systems
 - SRD 5.1/2014 and third-party publisher datasets
 
-Source dnd-cli working tree was not modified. SRD CLI uses a new independent Git repository.
+Source dnd-cli working tree was not modified. OpenRPG CLI uses a new independent Git repository.
 

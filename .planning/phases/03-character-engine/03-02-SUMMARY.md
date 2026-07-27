@@ -14,7 +14,7 @@ tech-stack:
   added: []
   patterns: [explicit schema codec, atomic replacement, non-mutating rebuild validation]
 key-files:
-  created: [srd_cli/character_store.py, tests/test_character_store.py]
+  created: [openrpg_cli/character_store.py, tests/test_character_store.py]
   modified: []
 key-decisions:
   - "Only schema version 1 is accepted; unknown versions require explicit migration."

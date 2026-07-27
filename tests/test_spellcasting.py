@@ -1,5 +1,5 @@
 import pytest
-from srd_cli.rules.spellcasting import (
+from openrpg_cli.rules.spellcasting import (
     CastingState,
     concentration_save,
     slots_for,
