@@ -1,54 +1,39 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.0
-milestone_name: milestone
-status: complete
-stopped_at: Milestone v1.0 complete.
-last_updated: "2026-07-27T01:35:35.572Z"
-last_activity: 2026-07-26 — Phase 3 character engine completed.
+milestone: v2.0
+milestone_name: Complete Gameplay Systems
+status: active
+last_updated: "2026-07-26"
 progress:
-  total_phases: 4
-  completed_phases: 4
-  total_plans: 13
-  completed_plans: 13
-  percent: 100
+  total_phases: 9
+  completed_phases: 0
+  percent: 0
 ---
 
 # Project State
 
-## Project Reference
-
-See `.planning/PROJECT.md`.
-
-**Core value:** Complete offline SRD 5.2.1-only CLI.
-**Current focus:** Phase 4 — Combat & Interactive Play.
-
 ## Current Position
 
-Phase: 4 of 4 (Combat & Interactive Play)
-Plan: 4 of 4
-Status: Complete
-Last activity: 2026-07-26 — Phase 4 combat, play, and v1.0 release completed.
+Phase: 5 of 13
+Status: Ready for planning
+Progress: [░░░░░░░░] 0%
 
-Progress: [████████] 100%
+## Decisions
 
-## Accumulated Context
+- Bundled content stays SRD 5.2.1-only.
+- Missing procedural rules use generic, provenance-labeled frameworks—not false SRD claims.
+- Complex prose mechanics require explicit adapters or explicit unsupported reasons.
+- Pure deterministic command/event kernel precedes feature expansion.
+- Existing v1 CLI/API compatibility remains gated.
 
-### Decisions
+## Research Findings
 
-- SRD 5.2.1 only; no runtime network fallback.
-- Open5e SRD-only subtree pinned by commit and integrity manifest.
-- Gameplay rebuilt incrementally; no inherited dnd-cli adventure/setting stack.
-- Deterministic RNG is explicit and serializable.
-- Phase 3: exhaustive SRD class adapters supply missing primary/casting ability fields.
-- Phase 3: persisted derived stats are untrusted and must match a current RulesAPI rebuild.
+- Strong SRD coverage: d20 checks, combat fundamentals, damage/death, conditions text, equipment, spells, creatures.
+- Partial coverage: travel, social influence, hazards, rests, crafting tool hints.
+- No direct SRD subsystem: downtime, discovery/clues, lore-state, factions, party management, spiritual relationship mechanics.
+- Generic frameworks cover absent domains using user-authored runtime data.
 
-### Blockers
+## Blockers
 
 None.
 
-## Session Continuity
-
-Last session: 2026-07-27T01:35:35.566Z
-Stopped at: Milestone v1.0 complete.
-Resume file: None
