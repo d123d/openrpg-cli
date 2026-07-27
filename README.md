@@ -48,6 +48,7 @@ srd show creature "Goblin Warrior"
 srd combat --character .\hero.json --monster "Goblin Warrior" --seed 42 --auto
 srd combat --character .\hero.json --monster "Goblin Warrior" --seed 42 --auto --json
 srd play --character .\hero.json --monster "Goblin Warrior" --seed 42
+srd playtest --character .\hero.json --monster "Goblin Warrior" --seed 42
 ```
 
 Identical character, creature, seed, and output format produce byte-identical output.
@@ -55,6 +56,36 @@ Combat stays offline. Engine resolves equipped weapon attacks and structured ord
 creature attacks. Unsupported or prose-dependent mechanics fail readably; no prose gets
 converted into invented rules. Scope excludes parties, maps, adventures, settings, NPCs,
 quests, progression, and non-SRD content.
+
+## Autonomous Playtest Bot
+
+Run deterministic three-seed coverage:
+
+```powershell
+py -3.14 scripts/srd_playtest_bot.py --monster "Goblin Warrior" --seeds 42,7,11
+```
+
+Bot receives public combat state plus offered legal actions. Built-in coverage controller
+tries least-used actions first. Every run stays bounded and saves canonical JSON under
+`playlogs/srd-playtest/` plus Markdown triage under `scores/playtest-bot/`.
+
+Plug in any AI through JSON stdin/stdout:
+
+```powershell
+py -3.14 scripts/srd_playtest_bot.py `
+  --controller py -3.14 C:\path\to\controller.py `
+  --monster "Goblin Warrior" --seeds 42
+```
+
+Controller reads one observation JSON document from stdin and writes:
+
+```json
+{"action": "one offered id, label, or index", "rationale": "brief reason"}
+```
+
+Empty, multiline, invalid, failed, or timed-out controller output records warning evidence
+and falls back to first deterministic legal action. Engine still resolves every roll,
+damage event, HP change, and outcome.
 
 ## Content Gate
 

@@ -32,11 +32,14 @@ CATEGORY_TABLES: dict[str, tuple[str, ...]] = {
     "damage-types": ("DamageTypeDescription.json",),
     "feats": ("Feat.json",),
     "items": ("Item.json", "MagicItem.json"),
+    "languages": ("Language.json",),
     "rules": ("Rule.json", "RuleSet.json"),
     "services": ("Service.json", "Services.json"),
+    "sizes": ("Size.json",),
     "skills": ("SkillDescription.json",),
     "species": ("Species.json",),
     "spells": ("Spell.json",),
+    "spell-schools": ("SpellSchool.json",),
     "weapons": ("Weapon.json",),
 }
 
@@ -54,13 +57,16 @@ _CATEGORY_ALIASES = {
     "damage-type": "damage-types",
     "feat": "feats",
     "item": "items",
+    "language": "languages",
     "rule": "rules",
     "service": "services",
+    "size": "sizes",
     "skill": "skills",
     "specie": "species",
     "race": "species",
     "races": "species",
     "spell": "spells",
+    "spell-school": "spell-schools",
     "weapon": "weapons",
 }
 

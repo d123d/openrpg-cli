@@ -123,3 +123,18 @@ class Spell(Entity):
 @dataclass(frozen=True, slots=True)
 class SpellCastingOption(Relationship):
     pass
+
+
+@dataclass(frozen=True, slots=True)
+class Language(Entity):
+    pass
+
+
+@dataclass(frozen=True, slots=True)
+class SpellSchool(Entity):
+    pass
+
+
+@dataclass(frozen=True, slots=True)
+class Size(Entity):
+    pass

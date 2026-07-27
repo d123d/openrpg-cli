@@ -93,6 +93,10 @@
       "sha256": "11e1cee19b7c0461d031bcf321321e47d66fb4f5ad97246db1f36522b279a542",
       "record_count": 2
     },
+    "Language.json": {
+      "sha256": "134b52bcd095b289ec4b220bba8b9b4e641f6fab6def2ff3bcb07bdfa38f556a",
+      "record_count": 18
+    },
     "MagicItem.json": {
       "sha256": "5052ca693d5146112a59d5d93475493ea65be2807238e21d7a6e23ef95052b05",
       "record_count": 757
@@ -113,6 +117,10 @@
       "sha256": "485a8c21fcc84559303650470946a3d0421b239db3bcbf7b2dfc95437526f1c5",
       "record_count": 30
     },
+    "Size.json": {
+      "sha256": "29108ace46a6d83b31555a7220663a295c5c4124ee09caaebb582fb2860f2ab6",
+      "record_count": 6
+    },
     "SkillDescription.json": {
       "sha256": "049722c67ff32974b240aaf5e6c119ecd504875099384d7111f15aa53126811f",
       "record_count": 18
@@ -132,6 +140,10 @@
     "SpellCastingOption.json": {
       "sha256": "1bec742a59b58db9eb4ff800b69227e07657ed77733149bb1df2e45b23de60d2",
       "record_count": 671
+    },
+    "SpellSchool.json": {
+      "sha256": "1066f1633cbfc1f84c5f0971adc009ef4c0766e88d0a0b96a10ddf18bc28b2dc",
+      "record_count": 8
     },
     "Weapon.json": {
       "sha256": "cc3c9828ca243ce91f6e8ff4cc171ef5cb51f1103f2a685a233311e5b8c863ca",

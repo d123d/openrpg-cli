@@ -1,0 +1,218 @@
+[
+  {
+    "pk": "srd-2024_abyssal",
+    "model": "api_v2.language",
+    "fields": {
+      "name": "Abyssal",
+      "desc": "Typical speakers are demons.",
+      "is_exotic": true,
+      "is_secret": false,
+      "script_language": "infernal",
+      "document": "srd-2024"
+    }
+  },
+  {
+    "pk": "srd-2024_celestial",
+    "model": "api_v2.language",
+    "fields": {
+      "name": "Celestial",
+      "desc": "Typical speakers are celestials",
+      "is_exotic": true,
+      "is_secret": false,
+      "script_language": "celestial",
+      "document": "srd-2024"
+    }
+  },
+  {
+    "pk": "srd-2024_common",
+    "model": "api_v2.language",
+    "fields": {
+      "name": "Common",
+      "desc": "Typical speakers are Humans.",
+      "is_exotic": false,
+      "is_secret": false,
+      "script_language": "common",
+      "document": "srd-2024"
+    }
+  },
+  {
+    "pk": "srd-2024_deep-speech",
+    "model": "api_v2.language",
+    "fields": {
+      "name": "Deep Speech",
+      "desc": "Typical speakers include aboleths and cloakers. It is only spoken.",
+      "is_exotic": true,
+      "is_secret": false,
+      "script_language": null,
+      "document": "srd-2024"
+    }
+  },
+  {
+    "pk": "srd-2024_draconic",
+    "model": "api_v2.language",
+    "fields": {
+      "name": "Draconic",
+      "desc": "Typical speakers include dragons and dragonborn.",
+      "is_exotic": true,
+      "is_secret": false,
+      "script_language": "draconic",
+      "document": "srd-2024"
+    }
+  },
+  {
+    "pk": "srd-2024_druidic",
+    "model": "api_v2.language",
+    "fields": {
+      "name": "Druidic",
+      "desc": "The secret language of druids.",
+      "is_exotic": false,
+      "is_secret": true,
+      "script_language": null,
+      "document": "srd-2024"
+    }
+  },
+  {
+    "pk": "srd-2024_dwarvish",
+    "model": "api_v2.language",
+    "fields": {
+      "name": "Dwarvish",
+      "desc": "Typical speakers are dwarves.",
+      "is_exotic": false,
+      "is_secret": false,
+      "script_language": "dwarvish",
+      "document": "srd-2024"
+    }
+  },
+  {
+    "pk": "srd-2024_elvish",
+    "model": "api_v2.language",
+    "fields": {
+      "name": "Elvish",
+      "desc": "Typical speakers are elves.",
+      "is_exotic": false,
+      "is_secret": false,
+      "script_language": "elvish",
+      "document": "srd-2024"
+    }
+  },
+  {
+    "pk": "srd-2024_giant",
+    "model": "api_v2.language",
+    "fields": {
+      "name": "Giant",
+      "desc": "Typical speakers include ogres, and giants.",
+      "is_exotic": false,
+      "is_secret": false,
+      "script_language": "dwarvish",
+      "document": "srd-2024"
+    }
+  },
+  {
+    "pk": "srd-2024_gnomish",
+    "model": "api_v2.language",
+    "fields": {
+      "name": "Gnomish",
+      "desc": "Typical speakers are gnomes.",
+      "is_exotic": false,
+      "is_secret": false,
+      "script_language": "dwarvish",
+      "document": "srd-2024"
+    }
+  },
+  {
+    "pk": "srd-2024_goblin",
+    "model": "api_v2.language",
+    "fields": {
+      "name": "Goblin",
+      "desc": "Typical speakers are goblinoids.",
+      "is_exotic": false,
+      "is_secret": false,
+      "script_language": "dwarvish",
+      "document": "srd-2024"
+    }
+  },
+  {
+    "pk": "srd-2024_halfling",
+    "model": "api_v2.language",
+    "fields": {
+      "name": "Halfling",
+      "desc": "Typical speakers are halflings.",
+      "is_exotic": false,
+      "is_secret": false,
+      "script_language": "common",
+      "document": "srd-2024"
+    }
+  },
+  {
+    "pk": "srd-2024_infernal",
+    "model": "api_v2.language",
+    "fields": {
+      "name": "Infernal",
+      "desc": "Typical speakers are devils.",
+      "is_exotic": true,
+      "is_secret": false,
+      "script_language": "infernal",
+      "document": "srd-2024"
+    }
+  },
+  {
+    "pk": "srd-2024_orc",
+    "model": "api_v2.language",
+    "fields": {
+      "name": "Orc",
+      "desc": "Typical speakers are orcs",
+      "is_exotic": false,
+      "is_secret": false,
+      "script_language": "dwarvish",
+      "document": "srd-2024"
+    }
+  },
+  {
+    "pk": "srd-2024_primordial",
+    "model": "api_v2.language",
+    "fields": {
+      "name": "Primordial",
+      "desc": "Typical speakers are elementals.",
+      "is_exotic": true,
+      "is_secret": false,
+      "script_language": "dwarvish",
+      "document": "srd-2024"
+    }
+  },
+  {
+    "pk": "srd-2024_sylvan",
+    "model": "api_v2.language",
+    "fields": {
+      "name": "Sylvan",
+      "desc": "Typical speakers are fey creatures.",
+      "is_exotic": true,
+      "is_secret": false,
+      "script_language": "elvish",
+      "document": "srd-2024"
+    }
+  },
+  {
+    "pk": "srd-2024_thieves-cant",
+    "model": "api_v2.language",
+    "fields": {
+      "name": "Thieves' Cant",
+      "desc": "A secret mix of dialect, jargon, and code.",
+      "is_exotic": false,
+      "is_secret": true,
+      "script_language": null,
+      "document": "srd-2024"
+    }
+  },
+  {
+    "pk": "srd-2024_undercommon",
+    "model": "api_v2.language",
+    "fields": {
+      "name": "Undercommon",
+      "desc": "Typical speakers are underworld traders.",
+      "is_exotic": true,
+      "is_secret": false,
+      "script_language": "elvish",
+      "document": "srd-2024"
+    }
+  }
+]

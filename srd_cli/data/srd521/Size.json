@@ -1,0 +1,74 @@
+[
+  {
+    "pk": "srd-2024_tiny",
+    "model": "api_v2.size",
+    "fields": {
+      "name": "Tiny",
+      "rank": 1,
+      "space_diameter": 2,
+      "suggested_hit_dice": "d4",
+      "distance_unit": "feet",
+      "document": "srd-2024"
+    }
+  },
+  {
+    "pk": "srd-2024_small",
+    "model": "api_v2.size",
+    "fields": {
+      "name": "Small",
+      "rank": 2,
+      "space_diameter": 5,
+      "suggested_hit_dice": "d6",
+      "distance_unit": "feet",
+      "document": "srd-2024"
+    }
+  },
+  {
+    "pk": "srd-2024_medium",
+    "model": "api_v2.size",
+    "fields": {
+      "name": "Medium",
+      "rank": 3,
+      "space_diameter": 5,
+      "suggested_hit_dice": "d8",
+      "distance_unit": "feet",
+      "document": "srd-2024"
+    }
+  },
+  {
+    "pk": "srd-2024_large",
+    "model": "api_v2.size",
+    "fields": {
+      "name": "Large",
+      "rank": 4,
+      "space_diameter": 10,
+      "suggested_hit_dice": "d10",
+      "distance_unit": "feet",
+      "document": "srd-2024"
+    }
+  },
+  {
+    "pk": "srd-2024_huge",
+    "model": "api_v2.size",
+    "fields": {
+      "name": "Huge",
+      "rank": 5,
+      "space_diameter": 15,
+      "suggested_hit_dice": "d12",
+      "distance_unit": "feet",
+      "document": "srd-2024"
+    }
+  },
+  {
+    "pk": "srd-2024_gargantuan",
+    "model": "api_v2.size",
+    "fields": {
+      "name": "Gargantuan",
+      "rank": 6,
+      "space_diameter": 20,
+      "suggested_hit_dice": "d20",
+      "distance_unit": "feet",
+      "document": "srd-2024"
+    }
+  }
+]
