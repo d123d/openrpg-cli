@@ -1,10 +1,57 @@
+import json
+import os
+from pathlib import Path
 import subprocess
 import sys
+
+import pytest
+
+from srd_cli.api import get_rules_api
+from srd_cli.character_builder import CharacterBuilder, CharacterRequest
+from srd_cli.combat_session import CombatSession
 
 
 def test_release_command_surface():
     for args in (["audit"], ["info"], ["roll", "1d6", "--seed", "1"],
-                 ["character", "--help"], ["combat", "--help"], ["play", "--help"]):
+                 ["character", "--help"], ["combat", "--help"], ["play", "--help"],
+                 ["playtest", "--help"]):
         result = subprocess.run([sys.executable, "-m", "srd_cli", *args],
                                 text=True, capture_output=True, timeout=30)
         assert result.returncode == 0, result.stderr
+
+
+@pytest.mark.parametrize("monster", ["Goblin Warrior", "Ogre", "Air Elemental"])
+def test_seeded_combat_cr_bands(monster):
+    api = get_rules_api()
+    hero = CharacterBuilder(api).build(
+        CharacterRequest("Ada", "Fighter", "Human", "Soldier", "Savage Attacker")
+    )
+    result = CombatSession(hero, api.get_creature(monster), 41, api=api).run_auto()
+    assert result.state.outcome.value in {"victory", "defeat"}
+
+
+def test_isolated_wheel_contains_auditable_content_and_license(tmp_path):
+    project = Path(__file__).resolve().parents[1]
+    dist = tmp_path / "dist"
+    subprocess.run(
+        [sys.executable, "-m", "build", "--wheel", "--outdir", str(dist)],
+        cwd=project, check=True, capture_output=True, text=True, timeout=120,
+    )
+    target = tmp_path / "installed"
+    wheel = next(dist.glob("*.whl"))
+    subprocess.run(
+        [sys.executable, "-m", "pip", "install", "--no-deps", "--target", str(target), str(wheel)],
+        check=True, capture_output=True, text=True, timeout=120,
+    )
+    env = os.environ.copy()
+    env["PYTHONPATH"] = str(target)
+    audit = subprocess.run(
+        [sys.executable, "-m", "srd_cli", "audit"], cwd=tmp_path, env=env,
+        capture_output=True, text=True, timeout=30,
+    )
+    assert audit.returncode == 0, audit.stderr
+    manifest_path = target / "srd_cli" / "data" / "srd521" / "manifest.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    assert manifest["content_license"] == "CC-BY-4.0"
+    assert manifest["srd_version"] == "5.2.1"
+    assert (target / "srd_cli" / "data" / "srd521" / "Creature.json").is_file()
