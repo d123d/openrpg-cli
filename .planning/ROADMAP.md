@@ -15,7 +15,7 @@
 
 - [x] **Phase 1: Clean SRD-Only Fork** - Independent repo, pinned data, attribution, audit, browse/search/show/roll CLI
 - [x] **Phase 2: Normalized Rules API** - Typed joins expose complete SRD classes, species, backgrounds, feats, equipment, spells, and creatures
-- [ ] **Phase 3: Character Engine** - Create, inspect, save, and load legal SRD characters with deterministic derived statistics
+- [x] **Phase 3: Character Engine** - Create, inspect, save, and load legal SRD characters with deterministic derived statistics
 - [ ] **Phase 4: Combat & Interactive Play** - Run deterministic SRD creature combat and a complete interactive terminal workflow
 
 ## Phase Details
@@ -58,7 +58,13 @@ Plans:
   3. Invalid/non-SRD choices fail with readable suggestions.
   4. Character JSON schema is versioned; save/load round-trips without loss.
   5. `character validate` detects tampering or illegal references.
-**Plans**: TBD
+**Plans**: 4 plans
+
+Plans:
+- [x] 03-01-PLAN.md — Immutable contracts, deterministic legal choices, and derived statistics
+- [x] 03-02-PLAN.md — Canonical JSON persistence and integrity validation
+- [x] 03-03-PLAN.md — Rich and JSON character sheet rendering
+- [x] 03-04-PLAN.md — Guided/headless character CLI workflow
 
 ### Phase 4: Combat & Interactive Play
 **Goal**: User can run a complete deterministic combat session using an SRD character and SRD creatures.
@@ -79,5 +85,5 @@ Plans:
 |-------|----------------|--------|-----------|
 | 1. Clean SRD-Only Fork | 1/1 | Complete | 2026-07-26 |
 | 2. Normalized Rules API | 4/4 | Complete | 2026-07-26 |
-| 3. Character Engine | 0/? | Not started | - |
+| 3. Character Engine | 4/4 | Complete | 2026-07-26 |
 | 4. Combat & Interactive Play | 0/? | Not started | - |

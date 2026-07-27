@@ -22,12 +22,12 @@
 
 ## Character Engine
 
-- [ ] **CHAR-01**: Guided and non-interactive character creation.
-- [ ] **CHAR-02**: Deterministic derived statistics.
-- [ ] **CHAR-03**: SRD-only choice validation and suggestions.
-- [ ] **CHAR-04**: Versioned JSON save/load.
-- [ ] **CHAR-05**: Character integrity validation.
-- [ ] **CHAR-06**: Character sheet rendering.
+- [x] **CHAR-01**: Guided and non-interactive character creation.
+- [x] **CHAR-02**: Deterministic derived statistics.
+- [x] **CHAR-03**: SRD-only choice validation and suggestions.
+- [x] **CHAR-04**: Versioned JSON save/load.
+- [x] **CHAR-05**: Character integrity validation.
+- [x] **CHAR-06**: Character sheet rendering.
 
 ## Combat and Play
 
