@@ -29,6 +29,8 @@ from srd_cli.domain.messages import (
     RollDie,
     Stabilize,
     VitalityChanged,
+    StartEncounter, QueryLegalCommands, Act, Move, React, EndTurn,
+    TurnChanged, LegalCommandsListed, ActionResolved, MovementResolved, ReactionResolved,
 )
 from srd_cli.domain.state import (
     ActorState,
@@ -64,6 +66,8 @@ from srd_cli.rules.effects import (
     remove_effect,
 )
 from srd_cli.domain.codecs import _plain
+from srd_cli.rules.turns import roll_initiative, end_turn, TurnOrder, TurnState, InitiativeEntry, ActionBudget
+from srd_cli.rules.actions import CoreAction
 
 
 @dataclass(frozen=True, slots=True)
@@ -214,6 +218,48 @@ def _effect(state: GameState, cmd: Command, rng: GameRNG) -> ReductionResult:
         )
         for e in state.effects
     )
+
+def _encounter_index(state: GameState, encounter_id: str) -> tuple[int, EncounterState]:
+    for i, encounter in enumerate(state.encounters):
+        if encounter.id == encounter_id:
+            return i, encounter
+    raise ValueError("unknown encounter")
+
+def _phase7(state: GameState, cmd: Command, rng: GameRNG) -> ReductionResult:
+    p=dict(cmd.payload); encounter_id=str(p.get("encounter_id",""))
+    if isinstance(cmd,StartEncounter):
+        actor_ids=tuple(p.get("actor_ids",()))
+        actors=[]
+        for actor_id in actor_ids:
+            _,actor=_actor(state,str(actor_id))
+            actors.append((actor.id,actor.team_id or "",int(actor.data.get("initiative_modifier",0))))
+        teams=tuple((team.id,tuple(team.actor_ids)) for team in state.teams)
+        turn,next_rng=roll_initiative(tuple(actors),teams,rng,frozenset(p.get("surprised_actor_ids",())))
+        data={"order":_plain(turn.order.entries),"index":turn.index,"round":turn.round,"surprised":sorted(turn.surprise.surprised_actor_ids),"budgets":{x: _plain(ActionBudget(movement=int(_actor(state,x)[1].data.get("speed",30)))) for x in actor_ids}}
+        encounter=EncounterState(encounter_id,data=data,actor_ids=actor_ids)
+        state=replace(state,encounters=state.encounters+(encounter,))
+        return ReductionResult(state,(_event(TurnChanged,cmd,{"encounter_id":encounter_id,"current_actor_id":turn.current_actor_id,"round":1}),),next_rng)
+    index,enc=_encounter_index(state,encounter_id); data=dict(enc.data)
+    entries=tuple(InitiativeEntry(str(x["actor_id"]),str(x["team_id"]),int(x["roll"]),int(x["modifier"]),int(x["total"])) for x in data["order"])
+    turn=TurnState(TurnOrder(entries),int(data["index"]),int(data["round"]))
+    actor_id=str(p.get("actor_id",""))
+    if actor_id!=turn.current_actor_id:raise ValueError("not_current_actor")
+    if isinstance(cmd,QueryLegalCommands):
+        commands=[x.value for x in CoreAction]
+        return ReductionResult(state,(_event(LegalCommandsListed,cmd,{"actor_id":actor_id,"commands":commands}),),rng)
+    event_cls=ActionResolved
+    payload={"actor_id":actor_id}
+    if isinstance(cmd,EndTurn):
+        turn,transition=end_turn(turn,actor_id);data.update(index=turn.index,round=turn.round)
+        event_cls=TurnChanged;payload.update({"current_actor_id":turn.current_actor_id,"round":turn.round,"transition":_plain(transition)})
+    elif isinstance(cmd,Act):
+        action=CoreAction(str(p.get("action","")));payload["action"]=action.value
+    elif isinstance(cmd,Move):
+        event_cls=MovementResolved;payload["destination"]=p.get("destination")
+    elif isinstance(cmd,React):
+        event_cls=ReactionResolved;payload["trigger_id"]=str(p.get("trigger_id",""))
+    updated=replace(enc,data=data); encounters=list(state.encounters);encounters[index]=updated
+    return ReductionResult(replace(state,encounters=tuple(encounters)),(_event(event_cls,cmd,payload),),rng)
     p = dict(cmd.payload)
     transitions = ()
     if isinstance(cmd, ApplyEffect):
@@ -265,6 +311,7 @@ HANDLERS: dict[type, Handler] = {
     ApplyEffect: _effect,
     RemoveEffect: _effect,
     AdvanceEffects: _effect,
+    StartEncounter:_phase7, QueryLegalCommands:_phase7, Act:_phase7, Move:_phase7, React:_phase7, EndTurn:_phase7,
 }
 
 

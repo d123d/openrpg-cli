@@ -89,6 +89,19 @@ class Stabilize(Message):
 class Recover(Message):
     type_tag: ClassVar[str] = "recover"
 
+@dataclass(frozen=True, slots=True)
+class StartEncounter(Message): type_tag: ClassVar[str] = "start_encounter"
+@dataclass(frozen=True, slots=True)
+class QueryLegalCommands(Message): type_tag: ClassVar[str] = "query_legal_commands"
+@dataclass(frozen=True, slots=True)
+class Act(Message): type_tag: ClassVar[str] = "act"
+@dataclass(frozen=True, slots=True)
+class Move(Message): type_tag: ClassVar[str] = "move"
+@dataclass(frozen=True, slots=True)
+class React(Message): type_tag: ClassVar[str] = "react"
+@dataclass(frozen=True, slots=True)
+class EndTurn(Message): type_tag: ClassVar[str] = "end_turn"
+
 
 @dataclass(frozen=True, slots=True)
 class GameCreated(Message):
@@ -128,6 +141,16 @@ class VitalityChanged(Message):
 @dataclass(frozen=True, slots=True)
 class EffectsChanged(Message):
     type_tag: ClassVar[str] = "effects_changed"
+@dataclass(frozen=True, slots=True)
+class TurnChanged(Message): type_tag: ClassVar[str] = "turn_changed"
+@dataclass(frozen=True, slots=True)
+class LegalCommandsListed(Message): type_tag: ClassVar[str] = "legal_commands_listed"
+@dataclass(frozen=True, slots=True)
+class ActionResolved(Message): type_tag: ClassVar[str] = "action_resolved"
+@dataclass(frozen=True, slots=True)
+class MovementResolved(Message): type_tag: ClassVar[str] = "movement_resolved"
+@dataclass(frozen=True, slots=True)
+class ReactionResolved(Message): type_tag: ClassVar[str] = "reaction_resolved"
 
 
 Command: TypeAlias = (
@@ -144,6 +167,7 @@ Command: TypeAlias = (
     | MakeDeathSave
     | Stabilize
     | Recover
+    | StartEncounter | QueryLegalCommands | Act | Move | React | EndTurn
 )
 Event: TypeAlias = (
     GameCreated
@@ -154,6 +178,7 @@ Event: TypeAlias = (
     | VitalityChanged
     | EffectsChanged
     | CommandRejected
+    | TurnChanged | LegalCommandsListed | ActionResolved | MovementResolved | ReactionResolved
 )
 COMMAND_TYPES = MappingProxyType(
     {
@@ -172,6 +197,7 @@ COMMAND_TYPES = MappingProxyType(
             MakeDeathSave,
             Stabilize,
             Recover,
+            StartEncounter, QueryLegalCommands, Act, Move, React, EndTurn,
         )
     }
 )
@@ -187,6 +213,7 @@ EVENT_TYPES = MappingProxyType(
             VitalityChanged,
             EffectsChanged,
             CommandRejected,
+            TurnChanged, LegalCommandsListed, ActionResolved, MovementResolved, ReactionResolved,
         )
     }
 )
