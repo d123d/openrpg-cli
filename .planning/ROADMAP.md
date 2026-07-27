@@ -76,7 +76,15 @@ Plans:
   1. Every base class advances 1–20 with legal subclass/feature/resource state.
   2. Inventory, currency, encumbrance, equipment, ammo, tools, languages, attunement work.
   3. Spell slots/preparation/concentration and rest recovery are deterministic.
-**Plans**: TBD
+**Plans**: 6 plans
+
+Plans:
+- [ ] 08-01-PLAN.md — All-class level 1-20 progression and explicit feature coverage registry
+- [ ] 08-02-PLAN.md — Typed grant choice graph and complete proficiency projection
+- [ ] 08-03-PLAN.md — Inventory, currency, encumbrance, equipment, ammo, and attunement
+- [ ] 08-04-PLAN.md — Spell/resource state, concentration, and deterministic rests
+- [ ] 08-05-PLAN.md — Character schema v2, lossless v1 migration, and derived projections
+- [ ] 08-06-PLAN.md — Kernel integration, replay, compatibility, and release gates
 
 ### Phase 9: SRD Effect Adapters
 **Goal**: Structured SRD spells, creature abilities, items, and traits execute through declarative effects.
