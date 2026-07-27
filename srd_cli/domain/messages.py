@@ -121,6 +121,46 @@ class EndTurn(Message):
 
 
 @dataclass(frozen=True, slots=True)
+class AdvanceCharacter(Message):
+    type_tag: ClassVar[str] = "advance_character"
+
+
+@dataclass(frozen=True, slots=True)
+class ChooseGrant(Message):
+    type_tag: ClassVar[str] = "choose_grant"
+
+
+@dataclass(frozen=True, slots=True)
+class UpdateInventory(Message):
+    type_tag: ClassVar[str] = "update_inventory"
+
+
+@dataclass(frozen=True, slots=True)
+class EquipItem(Message):
+    type_tag: ClassVar[str] = "equip_item"
+
+
+@dataclass(frozen=True, slots=True)
+class PrepareSpell(Message):
+    type_tag: ClassVar[str] = "prepare_spell"
+
+
+@dataclass(frozen=True, slots=True)
+class SpendResource(Message):
+    type_tag: ClassVar[str] = "spend_resource"
+
+
+@dataclass(frozen=True, slots=True)
+class SetConcentration(Message):
+    type_tag: ClassVar[str] = "set_concentration"
+
+
+@dataclass(frozen=True, slots=True)
+class RestCharacter(Message):
+    type_tag: ClassVar[str] = "rest_character"
+
+
+@dataclass(frozen=True, slots=True)
 class GameCreated(Message):
     type_tag: ClassVar[str] = "game_created"
 
@@ -185,6 +225,11 @@ class ReactionResolved(Message):
     type_tag: ClassVar[str] = "reaction_resolved"
 
 
+@dataclass(frozen=True, slots=True)
+class CharacterChanged(Message):
+    type_tag: ClassVar[str] = "character_changed"
+
+
 Command: TypeAlias = (
     CreateGame
     | PutEntity
@@ -205,6 +250,14 @@ Command: TypeAlias = (
     | Move
     | React
     | EndTurn
+    | AdvanceCharacter
+    | ChooseGrant
+    | UpdateInventory
+    | EquipItem
+    | PrepareSpell
+    | SpendResource
+    | SetConcentration
+    | RestCharacter
 )
 Event: TypeAlias = (
     GameCreated
@@ -220,6 +273,7 @@ Event: TypeAlias = (
     | ActionResolved
     | MovementResolved
     | ReactionResolved
+    | CharacterChanged
 )
 COMMAND_TYPES = MappingProxyType(
     {
@@ -244,6 +298,14 @@ COMMAND_TYPES = MappingProxyType(
             Move,
             React,
             EndTurn,
+            AdvanceCharacter,
+            ChooseGrant,
+            UpdateInventory,
+            EquipItem,
+            PrepareSpell,
+            SpendResource,
+            SetConcentration,
+            RestCharacter,
         )
     }
 )
@@ -264,6 +326,7 @@ EVENT_TYPES = MappingProxyType(
             ActionResolved,
             MovementResolved,
             ReactionResolved,
+            CharacterChanged,
         )
     }
 )

@@ -40,6 +40,15 @@ from srd_cli.domain.messages import (
     ActionResolved,
     MovementResolved,
     ReactionResolved,
+    AdvanceCharacter,
+    ChooseGrant,
+    UpdateInventory,
+    EquipItem,
+    PrepareSpell,
+    SpendResource,
+    SetConcentration,
+    RestCharacter,
+    CharacterChanged,
 )
 from srd_cli.domain.state import (
     ActorState,
@@ -373,6 +382,35 @@ def _phase7(state: GameState, cmd: Command, rng: GameRNG) -> ReductionResult:
     )
 
 
+def _character(state: GameState, cmd: Command, rng: GameRNG) -> ReductionResult:
+    payload = dict(cmd.payload)
+    actor_id = str(payload.pop("actor_id", ""))
+    index, actor = _actor(state, actor_id)
+    if len(payload) > 64:
+        raise ValueError("character command payload too large")
+    operation = cmd.type_tag
+    snapshots = dict(actor.data.get("character_operations", {}))
+    if cmd.id in snapshots:
+        raise ValueError("duplicate character command")
+    snapshots[cmd.id] = {"operation": operation, "payload": payload}
+    state = _replace_actor(state, index, actor, character_operations=snapshots)
+    return ReductionResult(
+        state,
+        (
+            _event(
+                CharacterChanged,
+                cmd,
+                {
+                    "actor_id": actor_id,
+                    "operation": operation,
+                    "delta": payload,
+                },
+            ),
+        ),
+        rng,
+    )
+
+
 Handler = Callable[[GameState, Command, GameRNG], ReductionResult]
 HANDLERS: dict[type, Handler] = {
     CreateGame: _create,
@@ -394,6 +432,14 @@ HANDLERS: dict[type, Handler] = {
     Move: _phase7,
     React: _phase7,
     EndTurn: _phase7,
+    AdvanceCharacter: _character,
+    ChooseGrant: _character,
+    UpdateInventory: _character,
+    EquipItem: _character,
+    PrepareSpell: _character,
+    SpendResource: _character,
+    SetConcentration: _character,
+    RestCharacter: _character,
 }
 
 
