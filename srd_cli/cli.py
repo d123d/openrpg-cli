@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import secrets
 import sys
+from pathlib import Path
 from typing import Any
 
 import typer
@@ -16,6 +17,10 @@ from srd_cli import __version__
 from srd_cli.data import SRDRepository, category_name, get_repository
 from srd_cli.dice import GameRNG, roll as roll_dice
 from srd_cli.api import get_rules_api
+from srd_cli.character import AbilityScores
+from srd_cli.character_builder import CharacterBuilder, CharacterRequest, ChoiceError
+from srd_cli.character_sheet import render_json, render_sheet
+from srd_cli.character_store import CharacterStore, CharacterValidationError, validate_character
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(errors="replace")
@@ -29,10 +34,128 @@ app = typer.Typer(
     no_args_is_help=True,
 )
 console = Console()
+character_app = typer.Typer(help="Create, inspect, list, and validate level-1 characters.")
+app.add_typer(character_app, name="character")
 
 
 def _repo() -> SRDRepository:
     return get_repository()
+
+
+def _character_services(root: Path | None = None) -> tuple[CharacterBuilder, CharacterStore]:
+    builder = CharacterBuilder(get_rules_api())
+    return builder, CharacterStore(builder, root=root)
+
+
+def _fail_character(exc: Exception) -> None:
+    Console(stderr=True).print(f"Error: {exc}", markup=False)
+    raise typer.Exit(2)
+
+
+def _pick(label: str, value: str | None, choices) -> str:
+    if value is not None:
+        return value
+    names = [x.name for x in choices]
+    console.print(f"{label} choices: {', '.join(names)}")
+    return typer.prompt(label)
+
+
+@character_app.command("create")
+def character_create(
+    name: str | None = typer.Option(None),
+    class_: str | None = typer.Option(None, "--class"),
+    species: str | None = typer.Option(None),
+    background: str | None = typer.Option(None),
+    feat: str | None = typer.Option(None),
+    scores: str | None = typer.Option(None, help="STR,DEX,CON,INT,WIS,CHA."),
+    equipment: list[str] | None = typer.Option(None, "--equipment"),
+    spell: list[str] | None = typer.Option(None, "--spell"),
+    output: Path | None = typer.Option(None),
+    root: Path | None = typer.Option(None),
+    as_json: bool = typer.Option(False, "--json"),
+    overwrite: bool = typer.Option(False),
+) -> None:
+    """Create and save a legal deterministic level-1 character."""
+    builder, store = _character_services(root)
+    try:
+        actual_name = name if name is not None else typer.prompt("Name")
+        class_ = _pick("Class", class_, builder.classes)
+        species = _pick("Species", species, builder.species)
+        background = _pick("Background", background, builder.backgrounds)
+        feat = _pick("Feat", feat, builder.feats)
+        parsed_scores = None
+        if scores:
+            parts = [x.strip() for x in scores.split(",")]
+            if len(parts) != 6:
+                raise ValueError("scores: expected six comma-separated integers in STR,DEX,CON,INT,WIS,CHA order")
+            try:
+                parsed_scores = AbilityScores(*(int(x) for x in parts))
+            except (ValueError, TypeError) as exc:
+                raise ValueError(f"scores: {exc}") from exc
+        character = builder.build(CharacterRequest(
+            actual_name, class_, species, background, feat, parsed_scores,
+            tuple(equipment or ()), tuple(spell or ()),
+        ))
+        path = store.save(character, output, overwrite=overwrite)
+    except (ChoiceError, CharacterValidationError, OSError, ValueError) as exc:
+        _fail_character(exc)
+    if as_json:
+        console.print(render_json(character), end="", markup=False)
+    else:
+        render_sheet(character, console)
+        console.print(f"Saved: {path}")
+
+
+def _character_path(store: CharacterStore, value: str) -> Path:
+    candidate = Path(value)
+    return candidate if candidate.is_absolute() or candidate.parent != Path(".") else store.resolve_name(value)
+
+
+@character_app.command("show")
+def character_show(
+    file_or_name: str,
+    root: Path | None = typer.Option(None),
+    as_json: bool = typer.Option(False, "--json"),
+) -> None:
+    """Validate and render a saved character."""
+    _, store = _character_services(root)
+    try:
+        character = store.load(_character_path(store, file_or_name))
+    except (OSError, ValueError) as exc:
+        _fail_character(exc)
+    if as_json:
+        console.print(render_json(character), end="", markup=False)
+    else:
+        render_sheet(character, console)
+
+
+@character_app.command("list")
+def character_list(root: Path | None = typer.Option(None), as_json: bool = typer.Option(False, "--json")) -> None:
+    """List character files and validation state."""
+    _, store = _character_services(root)
+    rows = store.list()
+    if as_json:
+        console.print(json.dumps([
+            {"name": x.name, "class": x.class_name, "species": x.species_name,
+             "path": str(x.path), "valid": x.valid, "error": x.error}
+            for x in rows
+        ], ensure_ascii=False, indent=2, sort_keys=True), markup=False)
+        return
+    table = Table("Name", "Class", "Species", "Path", "State")
+    for row in rows:
+        table.add_row(row.name, row.class_name, row.species_name, str(row.path), "PASS" if row.valid else f"FAIL: {row.error}")
+    console.print(table)
+
+
+@character_app.command("validate")
+def character_validate(file_or_name: str, root: Path | None = typer.Option(None)) -> None:
+    """Validate schema, SRD references, and recomputed derived state."""
+    _, store = _character_services(root)
+    try:
+        store.load(_character_path(store, file_or_name))
+    except (OSError, ValueError) as exc:
+        _fail_character(exc)
+    console.print("[green]PASS[/green] character schema, references, and derived state are valid.")
 
 
 def _print_entry(category: str, entry: dict[str, Any], *, raw: bool) -> None:
