@@ -172,5 +172,6 @@
       "sha256": "dba56269e96a1fb57f6a85bad7fefb701792d9dc18245b3136ade4440ae91fd9",
       "record_count": 108
     }
-  }
+  },
+  "license_file": "LICENSE.md"
 }

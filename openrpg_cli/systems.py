@@ -32,16 +32,35 @@ class SystemPack:
 
     def audit(self) -> list[str]:
         errors: list[str] = []
-        required = ("pack_id", "system_id", "provider_id", "source_document_ids", "license")
+        required = (
+            "pack_id",
+            "system_id",
+            "provider_id",
+            "source_document_ids",
+            "source_repository",
+            "source_commit",
+            "license",
+        )
         for key in required:
             if not self.manifest.get(key):
                 errors.append(f"{self.pack_id}: missing manifest field {key}")
-        for key in ("notice_file", "attribution_file"):
+        for key in ("license_file", "notice_file", "attribution_file"):
             filename = self.manifest.get(key)
             if not filename or not (self.root / str(filename)).is_file():
                 errors.append(f"{self.pack_id}: missing {key}")
         if self.manifest.get("quarantined") and self.enabled:
             errors.append(f"{self.pack_id}: quarantined pack cannot be enabled")
+        if not self.enabled and not self.manifest.get("disabled_reason"):
+            errors.append(f"{self.pack_id}: disabled pack requires disabled_reason")
+        if self.enabled and not self.manifest.get("license", {}).get("verified"):
+            errors.append(f"{self.pack_id}: enabled pack requires verified license")
+        commit = str(self.manifest.get("source_commit", ""))
+        if len(commit) != 40 or any(char not in "0123456789abcdef" for char in commit):
+            errors.append(f"{self.pack_id}: source_commit must be a full lowercase Git hash")
+        for source in self.manifest.get("source_files", []):
+            digest = str(source.get("sha256", ""))
+            if not source.get("path") or len(digest) != 64:
+                errors.append(f"{self.pack_id}: invalid pinned source file metadata")
 
         allowed = set(self.manifest.get("allowlist", {}).get("document_ids", []))
         sources = set(self.manifest.get("source_document_ids", []))
@@ -49,6 +68,8 @@ class SystemPack:
             errors.append(f"{self.pack_id}: document allowlist must equal source_document_ids")
 
         declared = self.manifest.get("declared_files", {})
+        if self.manifest.get("quarantined") and declared:
+            errors.append(f"{self.pack_id}: quarantined pack must be metadata-only")
         actual = {path.name for path in self.root.glob("*.json")} - {"manifest.json"}
         if set(declared) != actual:
             errors.append(f"{self.pack_id}: declared JSON files differ from pack contents")

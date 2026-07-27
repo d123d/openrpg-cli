@@ -23,14 +23,7 @@
     ]
   },
   "notes": "Disabled: provenance and redistribution terms require review.",
-  "declared_files": {
-    "PanicResult.json": {
-      "sha256": "80546e3fff722783f6ec21b99ee770368850bb7e58a5a86f0b36da62d48fcd01",
-      "record_count": 11
-    },
-    "StressTrigger.json": {
-      "sha256": "77a8e36384f20db38af55f2dd0ace6c7e454668af8e6a463d76f8ca13f6b8121",
-      "record_count": 9
-    }
-  }
+  "declared_files": {},
+  "disabled_reason": "Excluded by project policy; license/source corpus not approved for bundling.",
+  "license_file": "LICENSE.md"
 }

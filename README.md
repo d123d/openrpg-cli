@@ -163,18 +163,29 @@ openrpg_cli/data/providers/<provider-id>/packs/<pack-id>/
   *.json
 ```
 
-Each manifest owns source-document ids, license status, file hashes, record
-counts, allowlist, attribution, and enable/quarantine state. Registry selection
+Each manifest owns source-document ids, full source commit, upstream file
+SHA-256, license status, local file hashes, record counts, allowlist,
+attribution, and enable/quarantine state. Registry selection
 returns separate `SystemPack` namespaces. It never merges rows or license
 boundaries across systems.
 
 ```console
 openrpg systems list
 openrpg systems info srd521
+openrpg systems info fate-core --json
 openrpg systems audit
 ```
 
-`acks-core`, `mothership`, and `pf2e-core` are quarantined and disabled pending
-provenance review. Disabled packs can be inspected and audited but cannot be
-selected for runtime use. No new copyrighted data was downloaded for this
-reorganization.
+Enabled open packs: Fate Core, Fate Accelerated, Fate Condensed, Dungeon World,
+Forged in the Dark SRD, and Cairn First Edition. Packs
+contain compact normalized mechanics only. They exclude logos, art, trade
+dress, adventures, trademarks, and setting material. Cairn's CC-BY-SA content
+remains in a separate provider namespace.
+
+`acks-core`, `mothership`, `pf2e-core`, unverified `legacy-srd`, and
+`questworlds-srd` are
+quarantined metadata-only entries. They cannot be selected and contain no rules
+records. QuestWorlds is disabled because upstream asks users of ORC content to
+include a reserved logo, while project policy forbids bundled trademarks/art.
+`systems audit` checks this invariant plus attribution/legal files,
+source pins, document ownership, hashes, and record counts.

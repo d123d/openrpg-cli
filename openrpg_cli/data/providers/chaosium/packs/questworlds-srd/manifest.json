@@ -1,0 +1,36 @@
+{
+  "schema_version": 2,
+  "pack_id": "questworlds-srd",
+  "system_id": "questworlds-srd",
+  "provider_id": "chaosium",
+  "title": "QuestWorlds System Reference Document 0.97",
+  "enabled": false,
+  "quarantined": true,
+  "source_document_ids": [
+    "questworlds-srd-0.97"
+  ],
+  "source_repository": "https://github.com/ChaosiumInc/QuestWorlds",
+  "source_commit": "5e57ff946c8488ac3a1cbd8f3867e0df22308e45",
+  "source_files": [
+    {
+      "path": "2.0_Basic_Mechanics.md",
+      "sha256": "36b919859ed783c700f36e7fe2002ea38bba8d7ce214e1519adec615fb6f1f4d"
+    }
+  ],
+  "license": {
+    "id": "ORC-1.0",
+    "url": "https://www.chaosium.com/orclicense/",
+    "verified": true
+  },
+  "license_file": "LICENSE.md",
+  "notice_file": "NOTICE.md",
+  "attribution_file": "ATTRIBUTION.md",
+  "allowlist": {
+    "document_ids": [
+      "questworlds-srd-0.97"
+    ]
+  },
+  "scope": "Minimal system mechanics only; excludes trademarks, logos, art, trade dress, adventures, and setting corpus.",
+  "declared_files": {},
+  "disabled_reason": "Upstream attribution instructions require a reserved logo; project policy forbids bundling trademarks or art. Metadata only."
+}

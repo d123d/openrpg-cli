@@ -1,0 +1,40 @@
+{
+  "schema_version": 2,
+  "pack_id": "dungeon-world",
+  "system_id": "dungeon-world",
+  "provider_id": "dungeon-world",
+  "title": "Dungeon World",
+  "enabled": true,
+  "quarantined": false,
+  "source_document_ids": [
+    "dungeon-world-ccby"
+  ],
+  "source_repository": "https://github.com/Sagelt/Dungeon-World",
+  "source_commit": "e67bd51c09d24518a7f989149b76094fbcc7fecc",
+  "source_files": [
+    {
+      "path": "text/Playing_the_Game.xml",
+      "sha256": "4319f803ebd346ea8cd4cbef980e9267cc1975311ff5ba9d82002667202c30a0"
+    }
+  ],
+  "license": {
+    "id": "CC-BY-3.0",
+    "url": "https://creativecommons.org/licenses/by/3.0/",
+    "verified": true
+  },
+  "license_file": "LICENSE.md",
+  "notice_file": "NOTICE.md",
+  "attribution_file": "ATTRIBUTION.md",
+  "allowlist": {
+    "document_ids": [
+      "dungeon-world-ccby"
+    ]
+  },
+  "scope": "Minimal system mechanics only; excludes trademarks, logos, art, trade dress, adventures, and setting corpus.",
+  "declared_files": {
+    "ResolutionRule.json": {
+      "sha256": "32adf522453d6a1844edec63af18f16133afdc93f89ce5dcc335dab761090a43",
+      "record_count": 1
+    }
+  }
+}

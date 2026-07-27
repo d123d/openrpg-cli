@@ -1,0 +1,29 @@
+[
+  {
+    "model": "system.ResolutionRule",
+    "pk": 1,
+    "fields": {
+      "document": "cairn-first-edition-srd",
+      "name": "Saving throw",
+      "dice": "d20 roll-under",
+      "procedure": "Roll d20 equal to or under relevant ability score to save.",
+      "outcomes": [
+        "success",
+        "failure"
+      ]
+    }
+  },
+  {
+    "model": "system.ResolutionRule",
+    "pk": 2,
+    "fields": {
+      "document": "cairn-first-edition-srd",
+      "name": "Attack",
+      "dice": "damage die",
+      "procedure": "Attacks automatically hit; roll weapon damage and subtract armor before reducing hit protection.",
+      "outcomes": [
+        "damage"
+      ]
+    }
+  }
+]

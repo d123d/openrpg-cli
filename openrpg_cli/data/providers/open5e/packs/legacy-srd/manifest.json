@@ -4,8 +4,8 @@
   "system_id": "legacy",
   "provider_id": "open5e",
   "title": "Legacy SRD",
-  "enabled": true,
-  "quarantined": false,
+  "enabled": false,
+  "quarantined": true,
   "source_document_ids": [
     "legacy-srd"
   ],
@@ -23,14 +23,7 @@
     ]
   },
   "notes": "Provisional isolated legacy source; audit before release use.",
-  "declared_files": {
-    "SettlementResource.json": {
-      "sha256": "ec938e6cfecc48f04691dc19a2a7927319427bde01181376622e1a6c911598d0",
-      "record_count": 5
-    },
-    "SettlementType.json": {
-      "sha256": "ada5a41bd463d86992fb16f7799cd9b1f742497bcc996eba88c33466502c67cb",
-      "record_count": 5
-    }
-  }
+  "declared_files": {},
+  "license_file": "LICENSE.md",
+  "disabled_reason": "Exact upstream license and primary corpus were not verified; metadata only."
 }

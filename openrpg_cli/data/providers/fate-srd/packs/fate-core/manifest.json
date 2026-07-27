@@ -1,0 +1,40 @@
+{
+  "schema_version": 2,
+  "pack_id": "fate-core",
+  "system_id": "fate-core",
+  "provider_id": "fate-srd",
+  "title": "Fate Core System SRD",
+  "enabled": true,
+  "quarantined": false,
+  "source_document_ids": [
+    "fate-core-srd"
+  ],
+  "source_repository": "https://github.com/fate-srd/fate-srd-content",
+  "source_commit": "93ed848e723f31b4994b466b7241011ba24be885",
+  "source_files": [
+    {
+      "path": "source/fate-core-SRD.html",
+      "sha256": "8f5b2987d6087b9d23dfd6f06406a47c9c7ec11b22528884c53e741f4ca55b6e"
+    }
+  ],
+  "license": {
+    "id": "CC-BY-3.0",
+    "url": "https://creativecommons.org/licenses/by/3.0/",
+    "verified": true
+  },
+  "license_file": "LICENSE.md",
+  "notice_file": "NOTICE.md",
+  "attribution_file": "ATTRIBUTION.md",
+  "allowlist": {
+    "document_ids": [
+      "fate-core-srd"
+    ]
+  },
+  "scope": "Minimal system mechanics only; excludes trademarks, logos, art, trade dress, adventures, and setting corpus.",
+  "declared_files": {
+    "ResolutionRule.json": {
+      "sha256": "a11f1fbaced8c965497ed7416861166bc6786997e977847faf5abf86ab6aaa4a",
+      "record_count": 1
+    }
+  }
+}

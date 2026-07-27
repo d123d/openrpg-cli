@@ -23,10 +23,7 @@
     ]
   },
   "notes": "Disabled: provenance and redistribution terms require review.",
-  "declared_files": {
-    "Attitude.json": {
-      "sha256": "ad630c9c6cd950f50872a0a0df9618712b43491a408b69c470a8df4ade6ee6d0",
-      "record_count": 5
-    }
-  }
+  "declared_files": {},
+  "disabled_reason": "Excluded by project policy; license/source corpus not approved for bundling.",
+  "license_file": "LICENSE.md"
 }

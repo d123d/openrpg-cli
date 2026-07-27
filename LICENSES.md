@@ -9,37 +9,25 @@
 - **Tables**: All tables in `CATEGORY_TABLES` except those listed below
 - **URL**: https://www.dndbeyond.com/srd
 
-## Open-Licensed Subsystems
+## Isolated Open-System Packs
 
-### Dungeon World Bonds
-- **License**: CC-BY 3.0 Unported
-- **Source**: Dungeon World SRD (Sage LaTorra and Adam Koebel)
-- **Tables**: `Bond.json`
-- **URL**: https://www.dungeonworldsrd.com/
+| Packs | License | Pinned canonical/official corpus |
+|---|---|---|
+| Fate Core, Accelerated, Condensed | CC-BY-3.0 | `fate-srd/fate-srd-content` official-source copies |
+| Dungeon World | CC-BY-3.0 | Author repository `Sagelt/Dungeon-World` |
+| Forged in the Dark SRD | CC-BY-3.0 | Blades SRD text published from official SRD site |
+| Cairn First Edition | CC-BY-SA-4.0 | `yochaigal/cairn` |
 
-### Pathfinder 2e Attitudes
-- **License**: ORC License (Open RPG Creative License)
-- **Source**: Pathfinder 2nd Edition Core Rules (Paizo)
-- **Tables**: `Attitude.json`
-- **URL**: https://2e.aonprd.com/
+Each pack manifest records exact commit, upstream file path and SHA-256.
+Each pack carries its own `LICENSE.md`, `NOTICE.md`, and `ATTRIBUTION.md`.
+Cairn remains isolated so ShareAlike scope cannot be confused with other packs.
 
-### ACKS Domain Management
-- **License**: OGL (Open Game License 1.0a)
-- **Source**: Adventurer Conqueror King System (Autarch)
-- **Tables**: `DomainAction.json`, `LegalCode.json`
-- **URL**: https://www.adventurerconquerorking.com/
+## Disabled Metadata Only
 
-### Mothership Stress/Panic
-- **License**: CC-BY 4.0
-- **Source**: Mothership RPG SRD (Tuesday Knight Games)
-- **Tables**: `StressTrigger.json`, `PanicResult.json`
-- **URL**: https://www.mothershiprpg.com/
-
-### Legacy: Life Among the Ruins Settlements
-- **License**: CC-BY 4.0
-- **Source**: Legacy 2nd Edition SRD (Evil Hat Productions)
-- **Tables**: `SettlementType.json`, `SettlementResource.json`
-- **URL**: https://www.legacyrpg.com/
+Pathfinder 2e, ACKS, Mothership, unverified Legacy SRD, and QuestWorlds are not
+enabled or bundled. QuestWorlds source and ORC metadata are pinned, but its
+upstream attribution asks for a reserved logo that this project's no-trademark
+policy excludes. Registry entries contain no rules records and state the reason.
 
 ## Attribution
 

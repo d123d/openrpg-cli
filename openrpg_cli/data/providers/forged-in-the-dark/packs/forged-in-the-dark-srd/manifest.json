@@ -1,0 +1,40 @@
+{
+  "schema_version": 2,
+  "pack_id": "forged-in-the-dark-srd",
+  "system_id": "forged-in-the-dark-srd",
+  "provider_id": "forged-in-the-dark",
+  "title": "Blades in the Dark SRD / Forged in the Dark",
+  "enabled": true,
+  "quarantined": false,
+  "source_document_ids": [
+    "blades-in-the-dark-srd"
+  ],
+  "source_repository": "https://github.com/amazingrando/blades-in-the-dark-srd-content",
+  "source_commit": "f141ed2c4ed8061b6833a57e37a314a03e4166ce",
+  "source_files": [
+    {
+      "path": "Blades-in-the-Dark-SRD.md",
+      "sha256": "81db12b33a8f701866d39234517e7561c129ae9c8efa35f5044eeb9763dd159d"
+    }
+  ],
+  "license": {
+    "id": "CC-BY-3.0",
+    "url": "https://creativecommons.org/licenses/by/3.0/",
+    "verified": true
+  },
+  "license_file": "LICENSE.md",
+  "notice_file": "NOTICE.md",
+  "attribution_file": "ATTRIBUTION.md",
+  "allowlist": {
+    "document_ids": [
+      "blades-in-the-dark-srd"
+    ]
+  },
+  "scope": "Minimal system mechanics only; excludes trademarks, logos, art, trade dress, adventures, and setting corpus.",
+  "declared_files": {
+    "ResolutionRule.json": {
+      "sha256": "b627011866f0138099430f74f2fb31c245bdfc3042ff5e9d03ed1360d619aa8f",
+      "record_count": 1
+    }
+  }
+}

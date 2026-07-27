@@ -23,14 +23,7 @@
     ]
   },
   "notes": "Disabled: provenance and redistribution terms require review.",
-  "declared_files": {
-    "DomainAction.json": {
-      "sha256": "0880aeabd975a856fe3159fe4d50cee62224ce27f1eb00bae20c8c36dd3212e6",
-      "record_count": 10
-    },
-    "LegalCode.json": {
-      "sha256": "3ec8e41c334c7fb9d90e609eb0040fa066fd13d8103b64af2b461189d4a17d31",
-      "record_count": 10
-    }
-  }
+  "declared_files": {},
+  "disabled_reason": "Excluded by project policy; license/source corpus not approved for bundling.",
+  "license_file": "LICENSE.md"
 }

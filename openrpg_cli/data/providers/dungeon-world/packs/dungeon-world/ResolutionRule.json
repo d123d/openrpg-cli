@@ -1,0 +1,17 @@
+[
+  {
+    "model": "system.ResolutionRule",
+    "pk": 1,
+    "fields": {
+      "document": "dungeon-world-ccby",
+      "name": "Move roll",
+      "dice": "2d6 + modifier",
+      "procedure": "When a move triggers, roll 2d6 and add stated modifier.",
+      "outcomes": [
+        "10+: best outcome",
+        "7-9: success with compromise or cost",
+        "6-: trouble; mark XP"
+      ]
+    }
+  }
+]
