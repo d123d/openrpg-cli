@@ -162,8 +162,8 @@ class CharacterBuilder:
         return tuple(sorted({x.spell.pk: x for x in result}.values(), key=lambda x: (x.spell.data.get("level"), x.spell.name.casefold())))
 
     def build(self, request: CharacterRequest) -> Character:
-        if isinstance(request.level, bool) or request.level != 1:
-            raise ValueError("level: only level 1 is supported")
+        if isinstance(request.level, bool) or not 1 <= request.level <= 20:
+            raise ValueError("level: expected 1..20")
         class_view = self._select("class", request.class_identity, self._class_views)
         species = self._select("species", request.species_identity, self._species_views)
         background = self._select("background", request.background_identity, self._background_views)
@@ -173,14 +173,15 @@ class CharacterBuilder:
         spells = self._spells(tuple(request.spells), class_view)
         mods = {key: modifier(value) for key, value in scores.items()}
         save_names = tuple(class_view.entity.data.get("saving_throws", ()))
-        saves = {key: mods[key] + (2 if key in save_names else 0) for key in ABILITIES}
+        proficiency = 2 + (request.level - 1) // 4
+        saves = {key: mods[key] + (proficiency if key in save_names else 0) for key in ABILITIES}
         skills = {name: mods[ability] for name, ability in SKILLS.items()}
         for benefit in background.benefits:
             if benefit.data.get("type") == "skill_proficiency":
                 desc = str(benefit.data.get("desc") or "")
                 for name, ability in SKILLS.items():
                     if name in desc:
-                        skills[name] = mods[ability] + 2
+                        skills[name] = mods[ability] + proficiency
         attacks = []
         for weapon in weapons:
             properties = {x.property.name for x in weapon.properties}
@@ -188,12 +189,12 @@ class CharacterBuilder:
                 weapon.entity.data.get("range")
             )
             ability = "dex" if ranged or "Finesse" in properties and mods["dex"] > mods["str"] else "str"
-            bonus = mods[ability] + 2
+            bonus = mods[ability] + proficiency
             sign = f"+{mods[ability]}" if mods[ability] >= 0 else str(mods[ability])
             attacks.append(AttackSummary(_ref(weapon.entity), ability, bonus, f"{weapon.entity.data['damage_dice']}{sign} {weapon.entity.data['damage_type']}"))
         class_name = class_view.entity.name.casefold()
         casting = CASTING.get(class_name)
-        spell_bonus = mods[casting] + 2 if casting else None
+        spell_bonus = mods[casting] + proficiency if casting else None
         armor_class = 10 + mods["dex"]
         # Armor is derived from class starting package; explicit equipment currently
         # selects supported attack weapons without discarding worn starting armor.
@@ -215,11 +216,13 @@ class CharacterBuilder:
             armor_class = int(armor["ac_base"]) + dex_bonus
         if "Shield" in equipment_names:
             armor_class += 2
+        hit_die = int(str(class_view.entity.data["hit_dice"]).lstrip("Dd"))
+        max_hp = hit_die + mods["con"] + (request.level - 1) * (hit_die // 2 + 1 + mods["con"])
         derived = DerivedStats(
             modifiers=mods,
-            proficiency_bonus=2,
-            max_hp=int(str(class_view.entity.data["hit_dice"]).lstrip("Dd")) + mods["con"],
-            current_hp=int(str(class_view.entity.data["hit_dice"]).lstrip("Dd")) + mods["con"],
+            proficiency_bonus=proficiency,
+            max_hp=max_hp,
+            current_hp=max_hp,
             armor_class=armor_class,
             saves=saves,
             skills=skills,

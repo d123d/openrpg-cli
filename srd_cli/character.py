@@ -6,7 +6,7 @@ from dataclasses import dataclass
 from types import MappingProxyType
 from typing import Mapping
 
-CHARACTER_SCHEMA_VERSION = 1
+CHARACTER_SCHEMA_VERSION = 2
 ABILITIES = ("str", "dex", "con", "int", "wis", "cha")
 
 
@@ -107,7 +107,7 @@ class Character:
             raise ValueError("name: must not be blank")
         if len(self.name) > 200:
             raise ValueError("name: maximum length is 200")
-        if isinstance(self.level, bool) or self.level != 1:
-            raise ValueError("level: only level 1 is supported")
+        if isinstance(self.level, bool) or not 1 <= self.level <= 20:
+            raise ValueError("level: expected 1..20")
         if self.schema_version != CHARACTER_SCHEMA_VERSION:
             raise ValueError(f"schema_version: expected {CHARACTER_SCHEMA_VERSION}")

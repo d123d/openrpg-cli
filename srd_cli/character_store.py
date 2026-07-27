@@ -119,6 +119,10 @@ class CharacterCodec:
             raise ValueError(f"$: malformed JSON: {exc}") from exc
         root = _expect_map(root, "$", ("schema_version", "identity", "scores", "equipment", "spells", "choices", "derived"))
         version = _int(root["schema_version"], "$.schema_version")
+        if version == 1:
+            root = dict(root)
+            root["schema_version"] = CHARACTER_SCHEMA_VERSION
+            version = CHARACTER_SCHEMA_VERSION
         if version != CHARACTER_SCHEMA_VERSION:
             raise ValueError(f"$.schema_version: {version} requires migration; supported={CHARACTER_SCHEMA_VERSION}")
         identity = _expect_map(root["identity"], "$.identity", ("name", "level", "class", "species", "background", "feat"))
