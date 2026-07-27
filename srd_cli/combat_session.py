@@ -62,7 +62,8 @@ def render_transcript(result: CombatResult) -> str:
             lines.append(f"R{event.round} {event.actor}: initiative {event.payload['total']}")
         else:
             p = event.payload
-            verdict = f"{p['damage']} damage, {p['hp']} HP" if p["hit"] else "miss"
+            verdict = (f"{p['damage']} damage, {p['hp']} HP"
+                       if event.kind == "save_spell" or p["hit"] else "miss")
             lines.append(f"R{event.round} {event.actor}: {p['action']} -> {p['target']} ({verdict})")
     lines.append(f"Result: {result.state.outcome.value}")
     return "\n".join(lines) + "\n"

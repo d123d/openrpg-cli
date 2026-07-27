@@ -7,7 +7,9 @@ from enum import Enum
 from typing import Any, Mapping
 
 from srd_cli.character import Character
-from srd_cli.combat_actions import CombatActionCatalog
+from srd_cli.api import get_rules_api
+from srd_cli.combat_actions import CombatActionCatalog, UnsupportedCombatAction
+from srd_cli.dice import roll
 from srd_cli.combat_rules import CreatureView
 from srd_cli.dice import GameRNG, roll_d20, roll_damage_with_crit
 
@@ -73,8 +75,17 @@ class CombatEngine:
             "total": rolls[x.id].total}) for x in (player, enemy)]
 
     def legal_player_actions(self) -> tuple[tuple[str, str], ...]:
-        return tuple(("weapon", x.weapon.pk) for x in sorted(
-            self.character.derived.attacks, key=lambda x: (x.weapon.name.casefold(), x.weapon.pk)))
+        actions = [("weapon", x.weapon.pk) for x in sorted(
+            self.character.derived.attacks, key=lambda x: (x.weapon.name.casefold(), x.weapon.pk))]
+        for ref in sorted(self.character.spells, key=lambda x: (x.name.casefold(), x.pk)):
+            view = get_rules_api().get_spell(ref.pk)
+            if view:
+                try:
+                    CombatActionCatalog.spell(view)
+                except UnsupportedCombatAction:
+                    continue
+                actions.append(("spell", ref.pk))
+        return tuple(actions)
 
     def act(self, actor: str, action_id: str | None = None) -> tuple[CombatState, tuple[CombatEvent, ...]]:
         before = self.rng.snapshot()
@@ -85,11 +96,21 @@ class CombatEngine:
         try:
             if actor == "player":
                 attacks = {x.weapon.pk: x for x in self.character.derived.attacks}
-                if action_id not in attacks:
-                    raise CombatError(f"unknown or unequipped weapon: {action_id}")
-                attack = attacks[action_id]
-                return self._attack(actor, self.state.order[1 if self.state.order[0] == actor else 0],
-                                    attack.weapon.name, attack.attack_bonus, attack.damage.split()[0])
+                target = self.state.order[1 if self.state.order[0] == actor else 0]
+                if action_id in attacks:
+                    attack = attacks[action_id]
+                    return self._attack(actor, target, attack.weapon.name, attack.attack_bonus,
+                                        attack.damage.split()[0])
+                refs = {x.pk for x in self.character.spells}
+                view = get_rules_api().get_spell(action_id or "")
+                if action_id not in refs or view is None:
+                    raise CombatError(f"unknown, unequipped, or unprepared action: {action_id}")
+                resolved = CombatActionCatalog.spell(view)
+                if view.spell.data.get("attack_roll"):
+                    return self._attack(actor, target, resolved.name,
+                                        int(self.character.derived.spell_attack_bonus or 0),
+                                        resolved.damage)
+                return self._save_spell(target, view, resolved.damage)
             actions = CombatActionCatalog.enemy_actions(self.creature)
             selected = actions[self.rng.randint(0, len(actions) - 1, "enemy-action")]
             return self._attack(actor, "player", selected.name, selected.attack_bonus,
@@ -97,6 +118,33 @@ class CombatEngine:
         except Exception:
             self.rng.restore(before)
             raise
+
+    def _save_spell(self, target: str, view: Any, damage_expr: str):
+        target_obj = next(x for x in self.state.combatants if x.id == target)
+        ability = str(view.spell.data["saving_throw_ability"]).lower()
+        modifier = int(self.creature.entity.data.get(f"saving_throw_{ability}") or 0)
+        save = roll_d20(self.rng, modifier)
+        success = save.total >= int(self.character.derived.spell_save_dc or 0)
+        damage = roll(self.rng, damage_expr).total
+        if success:
+            damage = damage // 2 if view.spell.pk in CombatActionCatalog.HALF_ON_SAVE else 0
+        hp = max(0, target_obj.hp - damage)
+        updated = replace(target_obj, hp=hp)
+        combatants = tuple(updated if x.id == target else x for x in self.state.combatants)
+        outcome = Outcome.VICTORY if hp == 0 else Outcome.ACTIVE
+        event = CombatEvent("save_spell", self.state.round, "player", {
+            "action": view.spell.name, "target": target, "save_ability": ability,
+            "natural": save.natural, "total": save.total,
+            "dc": self.character.derived.spell_save_dc, "success": success,
+            "damage": damage, "hp": hp})
+        index, round_no = self.state.turn_index, self.state.round
+        if outcome == Outcome.ACTIVE:
+            index = (index + 1) % len(self.state.order)
+            if index == 0:
+                round_no += 1
+        self.state = CombatState(combatants, self.state.order, index, round_no, outcome, self.rng.to_dict())
+        self.events.append(event)
+        return self.state, (event,)
 
     def _attack(self, actor: str, target: str, name: str, bonus: int, damage_expr: str,
                 fallback: bool = False) -> tuple[CombatState, tuple[CombatEvent, ...]]:

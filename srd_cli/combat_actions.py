@@ -5,6 +5,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 from srd_cli.combat_rules import CreatureView
+from srd_cli.character_rules import SpellView
 
 
 class UnsupportedCombatAction(ValueError):
@@ -21,6 +22,20 @@ class ResolvedAction:
 
 
 class CombatActionCatalog:
+    HALF_ON_SAVE = frozenset({"srd-2024_burning-hands", "srd-2024_thunderwave"})
+
+    @classmethod
+    def spell(cls, view: SpellView) -> ResolvedAction:
+        row = view.spell
+        data = row.data
+        if (data.get("casting_time") != "action" or data.get("duration") != "instantaneous"
+                or data.get("concentration") or data.get("target_count") != 1
+                or data.get("shape_type") or not data.get("damage_roll")):
+            raise UnsupportedCombatAction(f"{row.name}: unsupported combat mechanics")
+        if not data.get("attack_roll") and not data.get("saving_throw_ability"):
+            raise UnsupportedCombatAction(f"{row.name}: missing structured attack or save")
+        return ResolvedAction(row.pk, row.name, 0, str(data["damage_roll"]))
+
     @staticmethod
     def enemy_actions(creature: CreatureView) -> tuple[ResolvedAction, ...]:
         found: list[ResolvedAction] = []
