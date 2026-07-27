@@ -48,5 +48,5 @@ None.
 
 - Local commits: `58cb0cd` explicit RNG names/RandomSource; `7c4619e` handler router; `f86b9e7` presentation composition; `a2e84fa` sync metadata.
 - Upstream boundary: `srd-cli@5b89831`; core compatibility: `openrpg-core@c178e59` (`0.1.0`).
-- Gates: 107 non-release tests pass; 12/12 system packs audit clean; release build gate pending final environment validation; Ruff repo baseline contains pre-existing debt, changed code has no undefined-name failures.
+- Gates: 112 full tests pass; 12/12 system packs audit clean; wheel build and isolated release smoke pass; Ruff repo baseline contains pre-existing debt, changed code has no undefined-name failures.
 - Policy: inherit shared common systems only. Never collapse OpenRPG providers/packs into SRD scope.

@@ -19,10 +19,10 @@ Structural sync complete through `srd-cli@5b89831`. OpenRPG provider architectur
 
 ## Gates
 
-- Functional: 107 tests pass excluding release smoke.
+- Functional/release: 112 tests pass, including isolated wheel smoke.
 - Systems audit: 12 packs, zero errors.
 - Ruff: repository has pre-existing baseline debt; validate changed paths plus `F821`.
-- Release smoke/build: rerun after final docs commit; prior failure came from build backend/environment and needs captured stderr if persistent.
+- Build: `uv build --wheel` passes. Full suite: `uv run --with build --with pip --with pytest --with typer --with rich python -m pytest -q`.
 
 ## Next tasks
 
