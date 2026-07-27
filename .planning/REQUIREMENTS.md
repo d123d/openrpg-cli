@@ -10,11 +10,11 @@
 
 ## Universal Resolution
 
-- [ ] **RES-01**: Ability checks, saves, attacks, contests, passive scores, DCs.
-- [ ] **RES-02**: Proficiency, expertise, advantage/disadvantage, circumstantial modifiers.
-- [ ] **RES-03**: Typed damage/healing pipeline with criticals, resistances, immunities, vulnerabilities, temporary HP.
-- [ ] **RES-04**: Zero HP, unconscious, death saves, stabilization, defeat, recovery.
-- [ ] **RES-05**: All SRD conditions plus exhaustion and timed effect lifecycle.
+- [x] **RES-01**: Ability checks, saves, attacks, contests, passive scores, DCs.
+- [x] **RES-02**: Proficiency, expertise, advantage/disadvantage, circumstantial modifiers.
+- [x] **RES-03**: Typed damage/healing pipeline with criticals, resistances, immunities, vulnerabilities, temporary HP.
+- [x] **RES-04**: Zero HP, unconscious, death saves, stabilization, defeat, recovery.
+- [x] **RES-05**: All SRD conditions plus exhaustion and timed effect lifecycle.
 
 ## Turns, Actions, Space
 

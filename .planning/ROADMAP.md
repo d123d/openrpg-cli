@@ -14,7 +14,7 @@
 ## Phases
 
 - [x] **Phase 5: Deterministic Gameplay Kernel** - Versioned state, typed commands/events, reducer, logs, replay, migrations
-- [ ] **Phase 6: Universal Resolution & Effects** - Checks, saves, contests, damage, healing, death, conditions, durations
+- [x] **Phase 6: Universal Resolution & Effects** - Checks, saves, contests, damage, healing, death, conditions, durations
 - [ ] **Phase 7: Turn, Action & Space Engine** - N actors, action economy, core actions, reactions, range bands/grid
 - [ ] **Phase 8: Complete Characters & Progression** - Levels 1–20, features, inventory, spell resources, rests
 - [ ] **Phase 9: SRD Effect Adapters** - Spells, monsters, items, multiattack/recharge/traits, coverage registry
@@ -43,13 +43,13 @@
   1. Checks/saves/attacks/contests share one modifier pipeline.
   2. Damage defenses, temp HP, zero HP, death saves, recovery match encoded SRD rules.
   3. All 15 bundled conditions and exhaustion have tested mechanical hooks.
-**Plans**: 4 plans
+**Plans**: 4/4 complete
 
 Plans:
-- [ ] 06-01-PLAN.md — Shared d20 resolution and SRD golden tests
-- [ ] 06-02-PLAN.md — Damage, healing, zero HP, death, and recovery
-- [ ] 06-03-PLAN.md — Complete condition hooks and deterministic effect scheduler
-- [ ] 06-04-PLAN.md — Kernel integration, replay, v1 compatibility, and release gates
+- [x] 06-01-PLAN.md — Shared d20 resolution and SRD golden tests
+- [x] 06-02-PLAN.md — Damage, healing, zero HP, death, and recovery
+- [x] 06-03-PLAN.md — Complete condition hooks and deterministic effect scheduler
+- [x] 06-04-PLAN.md — Kernel integration, replay, v1 compatibility, and release gates
 
 ### Phase 7: Turn, Action & Space Engine
 **Goal**: Multi-actor encounters support full core action economy and targeting.
@@ -126,7 +126,7 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |---|---:|---|---|
 | 5. Deterministic Gameplay Kernel | 4/4 | Complete | 2026-07-26 |
-| 6. Universal Resolution & Effects | 0/4 | Planned | - |
+| 6. Universal Resolution & Effects | 4/4 | Complete | 2026-07-26 |
 | 7. Turn, Action & Space Engine | 0/? | Not started | - |
 | 8. Complete Characters & Progression | 0/? | Not started | - |
 | 9. SRD Effect Adapters | 0/? | Not started | - |

@@ -6,17 +6,17 @@ status: active
 last_updated: "2026-07-26"
 progress:
   total_phases: 9
-  completed_phases: 1
-  percent: 11
+  completed_phases: 2
+  percent: 22
 ---
 
 # Project State
 
 ## Current Position
 
-Phase: 6 of 13
-Status: Ready for planning
-Progress: [█░░░░░░░] 11%
+Phase: 7 of 13
+Status: Phase 6 complete; ready for Phase 7
+Progress: [█░░░░░░░] 22%
 
 ## Decisions
 
@@ -26,6 +26,7 @@ Progress: [█░░░░░░░] 11%
 - Pure deterministic command/event kernel precedes feature expansion.
 - Existing v1 CLI/API compatibility remains gated.
 - Phase 5 uses recursively frozen dataclasses, explicit RNG, canonical JSON, immutable logs, and one-way v1 adapters.
+- Phase 6 uses frozen pure resolvers, exact SRD keys, typed transitions, and phase/tick-neutral effects.
 
 ## Research Findings
 
