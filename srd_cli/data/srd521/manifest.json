@@ -1,0 +1,149 @@
+{
+  "srd_document": "System Reference Document 5.2.1",
+  "srd_version": "5.2.1",
+  "srd_official_url": "https://www.dndbeyond.com/srd",
+  "content_license": "CC-BY-4.0",
+  "content_license_url": "https://creativecommons.org/licenses/by/4.0/legalcode",
+  "source_repository": "https://github.com/open5e/open5e-api",
+  "source_commit": "d4276c586d79f2a27bf2b814aed151cf57605283",
+  "source_subtree": "data/v2/wizards-of-the-coast/srd-2024",
+  "scope": "Only JSON files from Open5e's Wizards of the Coast srd-2024 subtree. No srd-2014, third-party publisher, campaign setting, or adventure data.",
+  "declared_files": {
+    "AbilityDescription.json": {
+      "sha256": "bf21f7512a1b0a57a23cea2f39b3128c73b1b880accdef60773a0974cc7187e6",
+      "record_count": 6
+    },
+    "AlignmentDescription.json": {
+      "sha256": "a793164b8a84a653b744bd3ffa9ac0adebe0d069aebf13d8a69367ff8c588610",
+      "record_count": 9
+    },
+    "Armor.json": {
+      "sha256": "f63ea79faacda476f3a96d6dd579d1024f4ef87315f3c85171152c0096239772",
+      "record_count": 13
+    },
+    "Background.json": {
+      "sha256": "7b57b8c42dbf7f43e14e9985c4aabdb5bc85aa6747a85a04d800dbf9ec27c8fe",
+      "record_count": 4
+    },
+    "BackgroundBenefit.json": {
+      "sha256": "57a60333405bc8e5e300bb97a06311db34f54eac4777cc2e5792402854d63b36",
+      "record_count": 20
+    },
+    "CharacterClass.json": {
+      "sha256": "3ef8d6d1c7303d432cbf6c4edb688da0bae23a0dfd9650021f3e99c45ea298bb",
+      "record_count": 24
+    },
+    "ClassFeature.json": {
+      "sha256": "dac32ee609472b75f109b62ab6c280728fa250135dc4cebd1c0769780152dfc1",
+      "record_count": 352
+    },
+    "ClassFeatureItem.json": {
+      "sha256": "b67901c1e47e5f867de8017fda8618c4f03379dc6206eb5a33125595df04f92b",
+      "record_count": 1811
+    },
+    "ConditionDescription.json": {
+      "sha256": "9638a7cd69d8f82888ca3a693f9b64bc6f9db688b47834d353d08fda213eb54c",
+      "record_count": 15
+    },
+    "Creature.json": {
+      "sha256": "ef5b75b39c0f760846a7982733b8552636db4f639680bf394869a272be249fdc",
+      "record_count": 331
+    },
+    "CreatureAction.json": {
+      "sha256": "1bbee1fb02b30e5c142a6dbd69cd0a2f90d9e9f3821499e5741c930c73284cd3",
+      "record_count": 989
+    },
+    "CreatureActionAttack.json": {
+      "sha256": "2ff5e4ceaee1c982ad262f531c66b14f26d1bf173d2cf5450c4e8a2b4ffea80f",
+      "record_count": 390
+    },
+    "CreatureTrait.json": {
+      "sha256": "f1f28d744f92d52e865c18b34946a8625b32dc144f68bbd0122a4400f0444806",
+      "record_count": 326
+    },
+    "CreatureTypeDescription.json": {
+      "sha256": "8e1bbe3e281e87da0d3a26c1b0eaad8321bcf3c6e282f852944f956c49b60371",
+      "record_count": 14
+    },
+    "CrossReference.json": {
+      "sha256": "a9b6a3a56088338ae0246fe81426657b46d4c03543370fb8e016df5f1fc6e572",
+      "record_count": 2
+    },
+    "DamageTypeDescription.json": {
+      "sha256": "3877aeb7af57e1b3bb9649d39487b01427ef4e1975f00b06e6d52fe2620923d1",
+      "record_count": 13
+    },
+    "Document.json": {
+      "sha256": "b319500fd5da32c092b382836a3e87b0113dd5ee62736696efae65854c19f8fb",
+      "record_count": 1
+    },
+    "Feat.json": {
+      "sha256": "3246172221bc93e794ee810a19b9fa8b9187df8df6470e56ae8d68a0adbf10fc",
+      "record_count": 17
+    },
+    "FeatBenefit.json": {
+      "sha256": "ac1f3a401887ab638cdde59c779ba770b6b6bb53522cda1b0a52ac98b244ebba",
+      "record_count": 35
+    },
+    "Item.json": {
+      "sha256": "3478cf5e11ea1af30cf7bee96e5b298fac473fd9fdd7e5063ebd009baf2d6dea",
+      "record_count": 203
+    },
+    "ItemCategory.json": {
+      "sha256": "11e1cee19b7c0461d031bcf321321e47d66fb4f5ad97246db1f36522b279a542",
+      "record_count": 2
+    },
+    "MagicItem.json": {
+      "sha256": "5052ca693d5146112a59d5d93475493ea65be2807238e21d7a6e23ef95052b05",
+      "record_count": 757
+    },
+    "Rule.json": {
+      "sha256": "d06d1e1b9b007e8086bbb55cee75c64996418f8f3f6cacc31218645fdf1d9d24",
+      "record_count": 56
+    },
+    "RuleSet.json": {
+      "sha256": "67541a19e0ac76688975d67fed1313b252fcef62d9e78c4e0e73f86dc3b16ea9",
+      "record_count": 11
+    },
+    "Service.json": {
+      "sha256": "269c5ac60c02565e44f9349256f8d300844615e2769cf4032c094071e9dd2af5",
+      "record_count": 30
+    },
+    "Services.json": {
+      "sha256": "485a8c21fcc84559303650470946a3d0421b239db3bcbf7b2dfc95437526f1c5",
+      "record_count": 30
+    },
+    "SkillDescription.json": {
+      "sha256": "049722c67ff32974b240aaf5e6c119ecd504875099384d7111f15aa53126811f",
+      "record_count": 18
+    },
+    "Species.json": {
+      "sha256": "9cce17a60d5ece163d558a329d202ededc5775fd1c6062046f1b34a348db093f",
+      "record_count": 9
+    },
+    "SpeciesTrait.json": {
+      "sha256": "0faa36abdbe4b0d2cf45fd4a6349ac4d62dd9257e352ba03fef9cf8414c0bf74",
+      "record_count": 51
+    },
+    "Spell.json": {
+      "sha256": "ca9bc6d7951288c15fdc04a42e981ddc08bb304024fc04ebe650a379cc233f68",
+      "record_count": 339
+    },
+    "SpellCastingOption.json": {
+      "sha256": "1bec742a59b58db9eb4ff800b69227e07657ed77733149bb1df2e45b23de60d2",
+      "record_count": 671
+    },
+    "Weapon.json": {
+      "sha256": "cc3c9828ca243ce91f6e8ff4cc171ef5cb51f1103f2a685a233311e5b8c863ca",
+      "record_count": 38
+    },
+    "WeaponProperty.json": {
+      "sha256": "cfa119e0d58d09d2c732fe47d50199b9e740e555e3bc8a8472e2a32716b11171",
+      "record_count": 17
+    },
+    "WeaponPropertyAssignment.json": {
+      "sha256": "dba56269e96a1fb57f6a85bad7fefb701792d9dc18245b3136ade4440ae91fd9",
+      "record_count": 108
+    }
+  }
+}
