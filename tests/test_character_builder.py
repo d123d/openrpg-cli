@@ -5,6 +5,7 @@ import pytest
 from srd_cli.api import get_rules_api
 from srd_cli.character import AbilityScores, Character
 from srd_cli.character_builder import CharacterBuilder, CharacterRequest, ChoiceError
+from srd_cli.combat_session import CombatSession
 
 
 def test_contracts_reject_invalid_values():
@@ -30,8 +31,25 @@ def test_choices_defaults_are_deterministic():
 
 def test_choices_cover_all_base_classes():
     builder = CharacterBuilder(get_rules_api())
+    monster = get_rules_api().get_creature("Goblin Warrior")
     for cls in builder.classes:
-        assert isinstance(builder.build(request(class_identity=cls.name)), Character)
+        character = builder.build(request(class_identity=cls.name))
+        assert isinstance(character, Character)
+        assert CombatSession(character, monster, 1).engine.legal_player_actions()
+
+
+def test_armor_and_weapon_ability_rules():
+    builder = CharacterBuilder(get_rules_api())
+    fighter = builder.build(request(class_identity="Fighter"))
+    assert fighter.derived.armor_class == 16
+    thrown = builder.build(
+        request(
+            class_identity="Fighter",
+            scores=AbilityScores(15, 14, 13, 12, 10, 8),
+            equipment=("Javelin",),
+        )
+    )
+    assert thrown.derived.attacks[0].ability == "str"
 
 
 def test_suggestions_are_stable():
