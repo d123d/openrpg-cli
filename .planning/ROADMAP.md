@@ -13,7 +13,7 @@
 
 ## Phases
 
-- [ ] **Phase 5: Deterministic Gameplay Kernel** - Versioned state, typed commands/events, reducer, logs, replay, migrations
+- [x] **Phase 5: Deterministic Gameplay Kernel** - Versioned state, typed commands/events, reducer, logs, replay, migrations
 - [ ] **Phase 6: Universal Resolution & Effects** - Checks, saves, contests, damage, healing, death, conditions, durations
 - [ ] **Phase 7: Turn, Action & Space Engine** - N actors, action economy, core actions, reactions, range bands/grid
 - [ ] **Phase 8: Complete Characters & Progression** - Levels 1–20, features, inventory, spell resources, rests
@@ -33,7 +33,7 @@
   1. Reducer replay produces byte-identical state/event hashes.
   2. Interfaces cannot mutate authoritative state.
   3. Runtime scene payloads are stored outside bundled content and labeled user-authored.
-**Plans**: TBD
+**Plans**: 4/4 complete
 
 ### Phase 6: Universal Resolution & Effects
 **Goal**: Shared resolvers implement d20 tests, damage/healing/death, conditions, and durations.
@@ -119,7 +119,7 @@
 
 | Phase | Plans Complete | Status | Completed |
 |---|---:|---|---|
-| 5. Deterministic Gameplay Kernel | 0/? | Not started | - |
+| 5. Deterministic Gameplay Kernel | 4/4 | Complete | 2026-07-26 |
 | 6. Universal Resolution & Effects | 0/? | Not started | - |
 | 7. Turn, Action & Space Engine | 0/? | Not started | - |
 | 8. Complete Characters & Progression | 0/? | Not started | - |
@@ -128,4 +128,3 @@
 | 11. Core Noncombat Scenes | 0/? | Not started | - |
 | 12. Campaign Activity Systems | 0/? | Not started | - |
 | 13. Unified CLI & Hardening | 0/? | Not started | - |
-

@@ -2,11 +2,11 @@
 
 ## Kernel and State
 
-- [ ] **KERN-01**: Versioned immutable game, actor, team, scene, encounter, clock, resource, and effect state.
-- [ ] **KERN-02**: Typed commands and events with canonical JSON codecs.
-- [ ] **KERN-03**: Deterministic reducer with explicit RNG and no interface-side mutation.
-- [ ] **KERN-04**: Append-only command/event log, replay, snapshot hash, save migration.
-- [ ] **KERN-05**: Runtime user-authored scene data separated from bundled SRD content.
+- [x] **KERN-01**: Versioned immutable game, actor, team, scene, encounter, clock, resource, and effect state.
+- [x] **KERN-02**: Typed commands and events with canonical JSON codecs.
+- [x] **KERN-03**: Deterministic reducer with explicit RNG and no interface-side mutation.
+- [x] **KERN-04**: Append-only command/event log, replay, snapshot hash, save migration.
+- [x] **KERN-05**: Runtime user-authored scene data separated from bundled SRD content.
 
 ## Universal Resolution
 
@@ -85,4 +85,3 @@
 | SCENE-01..06 | 11 |
 | SCENE-07..11 | 12 |
 | UX-*, QA-* | 13 |
-

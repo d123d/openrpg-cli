@@ -6,17 +6,17 @@ status: active
 last_updated: "2026-07-26"
 progress:
   total_phases: 9
-  completed_phases: 0
-  percent: 0
+  completed_phases: 1
+  percent: 11
 ---
 
 # Project State
 
 ## Current Position
 
-Phase: 5 of 13
+Phase: 6 of 13
 Status: Ready for planning
-Progress: [░░░░░░░░] 0%
+Progress: [█░░░░░░░] 11%
 
 ## Decisions
 
@@ -25,6 +25,7 @@ Progress: [░░░░░░░░] 0%
 - Complex prose mechanics require explicit adapters or explicit unsupported reasons.
 - Pure deterministic command/event kernel precedes feature expansion.
 - Existing v1 CLI/API compatibility remains gated.
+- Phase 5 uses recursively frozen dataclasses, explicit RNG, canonical JSON, immutable logs, and one-way v1 adapters.
 
 ## Research Findings
 
@@ -36,4 +37,3 @@ Progress: [░░░░░░░░] 0%
 ## Blockers
 
 None.
-

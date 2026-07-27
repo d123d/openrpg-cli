@@ -1,0 +1,15 @@
+---
+phase: 05-deterministic-gameplay-kernel
+plan: 01
+subsystem: domain
+tags: [immutable-state, typed-messages, provenance]
+provides: [KERN-01, KERN-02, KERN-05]
+key-files: [srd_cli/domain/state.py, srd_cli/domain/messages.py, srd_cli/domain/provenance.py]
+---
+# Phase 5 Plan 1: Kernel Contracts Summary
+
+Versioned immutable state graph, closed typed messages, bounded user-authored runtime refs.
+
+Tasks committed in `02cada2`. Deviations: none.
+
+## Self-Check: PASSED
