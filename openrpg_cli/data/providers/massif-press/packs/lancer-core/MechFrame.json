@@ -1,0 +1,202 @@
+[
+  {
+    "pk": "lancer_everest",
+    "fields": {
+      "name": "Everest",
+      "system": "lancer",
+      "license": "CC-BY-NC-SA-4.0",
+      "manufacturer": "GMS",
+      "license_level": 0,
+      "size": 1,
+      "hp": 10,
+      "armor": 0,
+      "evasion": 8,
+      "edef": 8,
+      "heatcap": 6,
+      "speed": 4,
+      "mounts": "Main, Flex, Heavy",
+      "mechtype": "Balanced",
+      "document": "lancer-core"
+    }
+  },
+  {
+    "pk": "lancer_blackbeard",
+    "fields": {
+      "name": "Blackbeard",
+      "system": "lancer",
+      "license": "CC-BY-NC-SA-4.0",
+      "manufacturer": "IPS-N",
+      "license_level": 2,
+      "size": 1,
+      "hp": 12,
+      "armor": 1,
+      "evasion": 8,
+      "edef": 6,
+      "heatcap": 4,
+      "speed": 5,
+      "mounts": "Flex, Main, Heavy",
+      "mechtype": "Striker",
+      "document": "lancer-core"
+    }
+  },
+  {
+    "pk": "lancer_drake",
+    "fields": {
+      "name": "Drake",
+      "system": "lancer",
+      "license": "CC-BY-NC-SA-4.0",
+      "manufacturer": "IPS-N",
+      "license_level": 2,
+      "size": 2,
+      "hp": 8,
+      "armor": 3,
+      "evasion": 6,
+      "edef": 6,
+      "heatcap": 5,
+      "speed": 3,
+      "mounts": "Main, Main, Heavy",
+      "mechtype": "Defender",
+      "document": "lancer-core"
+    }
+  },
+  {
+    "pk": "lancer_nelson",
+    "fields": {
+      "name": "Nelson",
+      "system": "lancer",
+      "license": "CC-BY-NC-SA-4.0",
+      "manufacturer": "IPS-N",
+      "license_level": 2,
+      "size": 1,
+      "hp": 8,
+      "armor": 0,
+      "evasion": 11,
+      "edef": 7,
+      "heatcap": 6,
+      "speed": 5,
+      "mounts": "Flex, Main/Aux",
+      "mechtype": "Striker",
+      "document": "lancer-core"
+    }
+  },
+  {
+    "pk": "lancer_drake",
+    "fields": {
+      "name": "Death Head",
+      "system": "lancer",
+      "license": "CC-BY-NC-SA-4.0",
+      "manufacturer": "SSC",
+      "license_level": 2,
+      "size": 1,
+      "hp": 8,
+      "armor": 0,
+      "evasion": 10,
+      "edef": 8,
+      "heatcap": 6,
+      "speed": 5,
+      "mounts": "Main/Aux, Heavy",
+      "mechtype": "Artillery",
+      "document": "lancer-core"
+    }
+  },
+  {
+    "pk": "lancer_monarch",
+    "fields": {
+      "name": "Monarch",
+      "system": "lancer",
+      "license": "CC-BY-NC-SA-4.0",
+      "manufacturer": "SSC",
+      "license_level": 2,
+      "size": 2,
+      "hp": 8,
+      "armor": 1,
+      "evasion": 8,
+      "edef": 8,
+      "heatcap": 6,
+      "speed": 5,
+      "mounts": "Flex, Main, Heavy",
+      "mechtype": "Artillery",
+      "document": "lancer-core"
+    }
+  },
+  {
+    "pk": "lancer_goblin",
+    "fields": {
+      "name": "Goblin",
+      "system": "lancer",
+      "license": "CC-BY-NC-SA-4.0",
+      "manufacturer": "HORUS",
+      "license_level": 2,
+      "size": 0.5,
+      "hp": 6,
+      "armor": 0,
+      "evasion": 10,
+      "edef": 12,
+      "heatcap": 4,
+      "speed": 5,
+      "mounts": "Flex",
+      "mechtype": "Controller, Support",
+      "document": "lancer-core"
+    }
+  },
+  {
+    "pk": "lancer_balor",
+    "fields": {
+      "name": "Balor",
+      "system": "lancer",
+      "license": "CC-BY-NC-SA-4.0",
+      "manufacturer": "HORUS",
+      "license_level": 2,
+      "size": 2,
+      "hp": 12,
+      "armor": 0,
+      "evasion": 6,
+      "edef": 10,
+      "heatcap": 4,
+      "speed": 3,
+      "mounts": "Main, Heavy",
+      "mechtype": "Striker, Defender",
+      "document": "lancer-core"
+    }
+  },
+  {
+    "pk": "lancer_barbarossa",
+    "fields": {
+      "name": "Barbarossa",
+      "system": "lancer",
+      "license": "CC-BY-NC-SA-4.0",
+      "manufacturer": "HA",
+      "license_level": 2,
+      "size": 3,
+      "hp": 20,
+      "armor": 3,
+      "evasion": 4,
+      "edef": 6,
+      "heatcap": 6,
+      "speed": 2,
+      "mounts": "Main, Superheavy",
+      "mechtype": "Artillery, Defender",
+      "document": "lancer-core"
+    }
+  },
+  {
+    "pk": "lancer_sherman",
+    "fields": {
+      "name": "Sherman",
+      "system": "lancer",
+      "license": "CC-BY-NC-SA-4.0",
+      "manufacturer": "HA",
+      "license_level": 2,
+      "size": 1,
+      "hp": 10,
+      "armor": 1,
+      "evasion": 8,
+      "edef": 8,
+      "heatcap": 8,
+      "speed": 4,
+      "mounts": "Flex, Main, Heavy",
+      "mechtype": "Controller",
+      "document": "lancer-core"
+    }
+  }
+]

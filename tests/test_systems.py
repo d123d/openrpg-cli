@@ -15,6 +15,7 @@ def test_registry_keeps_system_packs_isolated() -> None:
         "fate-condensed",
         "fate-core",
         "forged-in-the-dark-srd",
+        "lancer-core",
         "legacy-srd",
         "mothership",
         "pf2e-core",

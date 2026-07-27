@@ -1,0 +1,101 @@
+[
+  {
+    "pk": "lancer_dt_buy_time",
+    "fields": {
+      "name": "Buy Some Time",
+      "system": "lancer",
+      "license": "CC-BY-NC-SA-4.0",
+      "desc": "Stave off a reckoning or extend your window of opportunity.",
+      "roll": "1d20",
+      "document": "lancer-core"
+    }
+  },
+  {
+    "pk": "lancer_dt_gather_info",
+    "fields": {
+      "name": "Gather Information",
+      "system": "lancer",
+      "license": "CC-BY-NC-SA-4.0",
+      "desc": "Investigate, do research, or keep an eye on something.",
+      "roll": "1d20",
+      "document": "lancer-core"
+    }
+  },
+  {
+    "pk": "lancer_dt_get_drink",
+    "fields": {
+      "name": "Get a Damn Drink",
+      "system": "lancer",
+      "license": "CC-BY-NC-SA-4.0",
+      "desc": "Blow off some steam and get into trouble.",
+      "roll": "1d20",
+      "document": "lancer-core"
+    }
+  },
+  {
+    "pk": "lancer_dt_connected",
+    "fields": {
+      "name": "Get Connected",
+      "system": "lancer",
+      "license": "CC-BY-NC-SA-4.0",
+      "desc": "Make connections, ask for help, or drum up support.",
+      "roll": "1d20",
+      "document": "lancer-core"
+    }
+  },
+  {
+    "pk": "lancer_dt_creative",
+    "fields": {
+      "name": "Get Creative",
+      "system": "lancer",
+      "license": "CC-BY-NC-SA-4.0",
+      "desc": "Tweak something or attempt to make something new.",
+      "roll": "1d20",
+      "document": "lancer-core"
+    }
+  },
+  {
+    "pk": "lancer_dt_focused",
+    "fields": {
+      "name": "Get Focused",
+      "system": "lancer",
+      "license": "CC-BY-NC-SA-4.0",
+      "desc": "Practice, learn, meditate, or call on a teacher.",
+      "roll": "N/A",
+      "document": "lancer-core"
+    }
+  },
+  {
+    "pk": "lancer_dt_organized",
+    "fields": {
+      "name": "Get Organized",
+      "system": "lancer",
+      "license": "CC-BY-NC-SA-4.0",
+      "desc": "Start, run, or improve an organization.",
+      "roll": "1d20",
+      "document": "lancer-core"
+    }
+  },
+  {
+    "pk": "lancer_dt_power_cost",
+    "fields": {
+      "name": "Power at a Cost",
+      "system": "lancer",
+      "license": "CC-BY-NC-SA-4.0",
+      "desc": "Gain rewards, opportunities, or resources.",
+      "roll": "N/A",
+      "document": "lancer-core"
+    }
+  },
+  {
+    "pk": "lancer_dt_scrounge",
+    "fields": {
+      "name": "Scrounge and Barter",
+      "system": "lancer",
+      "license": "CC-BY-NC-SA-4.0",
+      "desc": "Try to get your hands on some gear or asset.",
+      "roll": "1d20",
+      "document": "lancer-core"
+    }
+  }
+]

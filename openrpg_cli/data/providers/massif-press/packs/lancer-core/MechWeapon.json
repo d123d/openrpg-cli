@@ -1,0 +1,122 @@
+[
+  {
+    "pk": "lancer_assault_rifle",
+    "fields": {
+      "name": "Assault Rifle",
+      "system": "lancer",
+      "license": "CC-BY-NC-SA-4.0",
+      "manufacturer": "GMS",
+      "mount": "Main",
+      "type": "Rifle",
+      "damage": "1d6 Kinetic",
+      "range": 10,
+      "tags": "Reliable 2",
+      "document": "lancer-core"
+    }
+  },
+  {
+    "pk": "lancer_heavy_machine_gun",
+    "fields": {
+      "name": "Heavy Machine Gun",
+      "system": "lancer",
+      "license": "CC-BY-NC-SA-4.0",
+      "manufacturer": "GMS",
+      "mount": "Heavy",
+      "type": "Cannon",
+      "damage": "2d6+4 Kinetic",
+      "range": 8,
+      "tags": "Inaccurate",
+      "document": "lancer-core"
+    }
+  },
+  {
+    "pk": "lancer_shotgun",
+    "fields": {
+      "name": "Shotgun",
+      "system": "lancer",
+      "license": "CC-BY-NC-SA-4.0",
+      "manufacturer": "GMS",
+      "mount": "Main",
+      "type": "CQB",
+      "damage": "1d6 Kinetic",
+      "range": 5,
+      "tags": "",
+      "document": "lancer-core"
+    }
+  },
+  {
+    "pk": "lancer_charged_blade",
+    "fields": {
+      "name": "Charged Blade",
+      "system": "lancer",
+      "license": "CC-BY-NC-SA-4.0",
+      "manufacturer": "GMS",
+      "mount": "Main",
+      "type": "Melee",
+      "damage": "1d3+3 Energy",
+      "range": "Threat 1",
+      "tags": "AP",
+      "document": "lancer-core"
+    }
+  },
+  {
+    "pk": "lancer_nanocarbon_sword",
+    "fields": {
+      "name": "Nanocarbon Sword",
+      "system": "lancer",
+      "license": "CC-BY-NC-SA-4.0",
+      "manufacturer": "IPS-N",
+      "mount": "Heavy",
+      "type": "Melee",
+      "damage": "1d6+4 Kinetic",
+      "range": "Threat 2",
+      "tags": "Reliable 3",
+      "document": "lancer-core"
+    }
+  },
+  {
+    "pk": "lancer_railgun",
+    "fields": {
+      "name": "Railgun",
+      "system": "lancer",
+      "license": "CC-BY-NC-SA-4.0",
+      "manufacturer": "SSC",
+      "mount": "Heavy",
+      "type": "Rifle",
+      "damage": "1d6+4 Kinetic",
+      "range": "Line 20",
+      "tags": "AP, Ordnance",
+      "document": "lancer-core"
+    }
+  },
+  {
+    "pk": "lancer_tachyon_lance",
+    "fields": {
+      "name": "Tachyon Lance",
+      "system": "lancer",
+      "license": "CC-BY-NC-SA-4.0",
+      "manufacturer": "HA",
+      "mount": "Superheavy",
+      "type": "Cannon",
+      "damage": "2d6 Energy + 8 Burn",
+      "range": 20,
+      "tags": "Ordnance",
+      "document": "lancer-core"
+    }
+  },
+  {
+    "pk": "lancer_pinaka_missiles",
+    "fields": {
+      "name": "Pinaka Missiles",
+      "system": "lancer",
+      "license": "CC-BY-NC-SA-4.0",
+      "manufacturer": "SSC",
+      "mount": "Superheavy",
+      "type": "Launcher",
+      "damage": "2d6 Explosive",
+      "range": 20,
+      "tags": "Arcing",
+      "document": "lancer-core"
+    }
+  }
+]

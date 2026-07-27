@@ -1,0 +1,43 @@
+{
+  "schema_version": 2,
+  "pack_id": "lancer-core",
+  "system_id": "lancer",
+  "provider_id": "massif-press",
+  "title": "LANCER Core",
+  "enabled": true,
+  "quarantined": false,
+  "source_document_ids": [
+    "lancer-core"
+  ],
+  "source_repository": "https://github.com/massif-press/lancer-data",
+  "source_commit": "ef037b9a42164691dc8d180701c5429d3552b0bf",
+  "license": {
+    "id": "CC-BY-NC-SA-4.0",
+    "verified": true,
+    "url": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+  },
+  "notice_file": "NOTICE.md",
+  "attribution_file": "ATTRIBUTION.md",
+  "allowlist": {
+    "document_ids": [
+      "lancer-core"
+    ]
+  },
+  "notes": "CC-BY-NC-SA 4.0. Mech combat, frames, weapons, systems, downtime actions.",
+  "declared_files": {
+    "MechFrame.json": {
+      "sha256": "5f00f39cba3d805f47cbdaac551f738b5c0ab399bb5247b99f8fd36dc733d22f",
+      "record_count": 10
+    },
+    "MechWeapon.json": {
+      "sha256": "d8d1db29e8b9169294bd30436acf966f34345a166eded76dd88c634492cb8fda",
+      "record_count": 8
+    },
+    "DowntimeAction.json": {
+      "sha256": "229b465e7b13fadf8d8fdf42926935466a2a4d2f41d073e27e14d14a81d2116e",
+      "record_count": 9
+    }
+  },
+  "disabled_reason": null,
+  "license_file": "LICENSE.md"
+}
