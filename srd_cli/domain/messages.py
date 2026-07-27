@@ -46,6 +46,51 @@ class RecordLegacy(Message):
 
 
 @dataclass(frozen=True, slots=True)
+class ResolveTest(Message):
+    type_tag: ClassVar[str] = "resolve_test"
+
+
+@dataclass(frozen=True, slots=True)
+class ApplyDamage(Message):
+    type_tag: ClassVar[str] = "apply_damage"
+
+
+@dataclass(frozen=True, slots=True)
+class Heal(Message):
+    type_tag: ClassVar[str] = "heal"
+
+
+@dataclass(frozen=True, slots=True)
+class ApplyEffect(Message):
+    type_tag: ClassVar[str] = "apply_effect"
+
+
+@dataclass(frozen=True, slots=True)
+class RemoveEffect(Message):
+    type_tag: ClassVar[str] = "remove_effect"
+
+
+@dataclass(frozen=True, slots=True)
+class AdvanceEffects(Message):
+    type_tag: ClassVar[str] = "advance_effects"
+
+
+@dataclass(frozen=True, slots=True)
+class MakeDeathSave(Message):
+    type_tag: ClassVar[str] = "make_death_save"
+
+
+@dataclass(frozen=True, slots=True)
+class Stabilize(Message):
+    type_tag: ClassVar[str] = "stabilize"
+
+
+@dataclass(frozen=True, slots=True)
+class Recover(Message):
+    type_tag: ClassVar[str] = "recover"
+
+
+@dataclass(frozen=True, slots=True)
 class GameCreated(Message):
     type_tag: ClassVar[str] = "game_created"
 
@@ -70,11 +115,80 @@ class CommandRejected(Message):
     type_tag: ClassVar[str] = "command_rejected"
 
 
-Command: TypeAlias = CreateGame | PutEntity | RollDie | RecordLegacy
-Event: TypeAlias = GameCreated | EntityPut | DieRolled | LegacyRecorded | CommandRejected
-COMMAND_TYPES = MappingProxyType({x.type_tag: x for x in (CreateGame, PutEntity, RollDie, RecordLegacy)})
+@dataclass(frozen=True, slots=True)
+class ResolutionCompleted(Message):
+    type_tag: ClassVar[str] = "resolution_completed"
+
+
+@dataclass(frozen=True, slots=True)
+class VitalityChanged(Message):
+    type_tag: ClassVar[str] = "vitality_changed"
+
+
+@dataclass(frozen=True, slots=True)
+class EffectsChanged(Message):
+    type_tag: ClassVar[str] = "effects_changed"
+
+
+Command: TypeAlias = (
+    CreateGame
+    | PutEntity
+    | RollDie
+    | RecordLegacy
+    | ResolveTest
+    | ApplyDamage
+    | Heal
+    | ApplyEffect
+    | RemoveEffect
+    | AdvanceEffects
+    | MakeDeathSave
+    | Stabilize
+    | Recover
+)
+Event: TypeAlias = (
+    GameCreated
+    | EntityPut
+    | DieRolled
+    | LegacyRecorded
+    | ResolutionCompleted
+    | VitalityChanged
+    | EffectsChanged
+    | CommandRejected
+)
+COMMAND_TYPES = MappingProxyType(
+    {
+        x.type_tag: x
+        for x in (
+            CreateGame,
+            PutEntity,
+            RollDie,
+            RecordLegacy,
+            ResolveTest,
+            ApplyDamage,
+            Heal,
+            ApplyEffect,
+            RemoveEffect,
+            AdvanceEffects,
+            MakeDeathSave,
+            Stabilize,
+            Recover,
+        )
+    }
+)
 EVENT_TYPES = MappingProxyType(
-    {x.type_tag: x for x in (GameCreated, EntityPut, DieRolled, LegacyRecorded, CommandRejected)}
+    {
+        x.type_tag: x
+        for x in (
+            GameCreated,
+            EntityPut,
+            DieRolled,
+            LegacyRecorded,
+            ResolutionCompleted,
+            VitalityChanged,
+            EffectsChanged,
+            CommandRejected,
+        )
+    }
 )
 
 

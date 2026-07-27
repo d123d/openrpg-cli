@@ -12,11 +12,18 @@ from srd_cli.combat_session import CombatSession
 
 
 def test_release_command_surface():
-    for args in (["audit"], ["info"], ["roll", "1d6", "--seed", "1"],
-                 ["character", "--help"], ["combat", "--help"], ["play", "--help"],
-                 ["playtest", "--help"]):
-        result = subprocess.run([sys.executable, "-m", "srd_cli", *args],
-                                text=True, capture_output=True, timeout=30)
+    for args in (
+        ["audit"],
+        ["info"],
+        ["roll", "1d6", "--seed", "1"],
+        ["character", "--help"],
+        ["combat", "--help"],
+        ["play", "--help"],
+        ["playtest", "--help"],
+    ):
+        result = subprocess.run(
+            [sys.executable, "-m", "srd_cli", *args], text=True, capture_output=True, timeout=30
+        )
         assert result.returncode == 0, result.stderr
 
 
@@ -35,19 +42,30 @@ def test_isolated_wheel_contains_auditable_content_and_license(tmp_path):
     dist = tmp_path / "dist"
     subprocess.run(
         [sys.executable, "-m", "build", "--wheel", "--outdir", str(dist)],
-        cwd=project, check=True, capture_output=True, text=True, timeout=120,
+        cwd=project,
+        check=True,
+        capture_output=True,
+        text=True,
+        timeout=120,
     )
     target = tmp_path / "installed"
     wheel = next(dist.glob("*.whl"))
     subprocess.run(
         [sys.executable, "-m", "pip", "install", "--no-deps", "--target", str(target), str(wheel)],
-        check=True, capture_output=True, text=True, timeout=120,
+        check=True,
+        capture_output=True,
+        text=True,
+        timeout=120,
     )
     env = os.environ.copy()
     env["PYTHONPATH"] = str(target)
     audit = subprocess.run(
-        [sys.executable, "-m", "srd_cli", "audit"], cwd=tmp_path, env=env,
-        capture_output=True, text=True, timeout=30,
+        [sys.executable, "-m", "srd_cli", "audit"],
+        cwd=tmp_path,
+        env=env,
+        capture_output=True,
+        text=True,
+        timeout=30,
     )
     assert audit.returncode == 0, audit.stderr
     manifest_path = target / "srd_cli" / "data" / "srd521" / "manifest.json"
@@ -55,3 +73,17 @@ def test_isolated_wheel_contains_auditable_content_and_license(tmp_path):
     assert manifest["content_license"] == "CC-BY-4.0"
     assert manifest["srd_version"] == "5.2.1"
     assert (target / "srd_cli" / "data" / "srd521" / "Creature.json").is_file()
+    smoke = subprocess.run(
+        [
+            sys.executable,
+            "-c",
+            "from srd_cli.rules.resolution import *; from srd_cli.engine.rng import GameRNG; "
+            "assert resolve_d20(D20Test(TestKind.CHECK), GameRNG(1))[1].draws == 1",
+        ],
+        cwd=tmp_path,
+        env=env,
+        capture_output=True,
+        text=True,
+        timeout=30,
+    )
+    assert smoke.returncode == 0, smoke.stderr
