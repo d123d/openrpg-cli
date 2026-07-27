@@ -40,7 +40,13 @@
   3. Creature actions/attacks/traits and weapon properties resolve without raw foreign keys.
   4. Public API never mutates raw source data and keeps deterministic ordering.
   5. Coverage tests exercise every bundled relationship table.
-**Plans**: TBD
+**Plans**: 4 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — Immutable typed models, deterministic loaders, 34-table classification
+- [ ] 02-02-PLAN.md — Character-facing class/species/background/feat/spell joins
+- [ ] 02-03-PLAN.md — Combat-facing creature/action/attack and weapon/property joins
+- [ ] 02-04-PLAN.md — Public RulesAPI, compatible CLI rendering, exhaustive coverage
 
 ### Phase 3: Character Engine
 **Goal**: User can create, inspect, save, and load a playable SRD character.
@@ -72,7 +78,6 @@
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Clean SRD-Only Fork | 1/1 | Complete | 2026-07-26 |
-| 2. Normalized Rules API | 0/? | Not started | - |
+| 2. Normalized Rules API | 0/4 | Planned | - |
 | 3. Character Engine | 0/? | Not started | - |
 | 4. Combat & Interactive Play | 0/? | Not started | - |
-
