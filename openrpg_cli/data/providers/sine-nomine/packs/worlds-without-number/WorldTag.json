@@ -1,0 +1,376 @@
+[
+  {
+    "pk": "wn_tag_abandoned",
+    "fields": {
+      "name": "Abandoned",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "Once populated, now empty. Why did they leave?",
+      "category": "population",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_tag_aliens",
+    "fields": {
+      "name": "Alien ruins or presence",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "Non-human artifacts or beings exist here.",
+      "category": "threat",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_tag_annexed",
+    "fields": {
+      "name": "Recently annexed",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "Newly claimed by a faction. Tensions remain.",
+      "category": "faction",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_tag_badlands",
+    "fields": {
+      "name": "Hostile biosphere",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "Dangerous flora and fauna everywhere.",
+      "category": "environment",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_tag_barter",
+    "fields": {
+      "name": "Barter economy",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "No standardized currency. Trade goods rule.",
+      "category": "economy",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_tag_blight",
+    "fields": {
+      "name": "Blighted land",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "Something has corrupted the environment.",
+      "category": "environment",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_tag_cult",
+    "fields": {
+      "name": "Powerful cult",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "A fanatical religious group holds sway.",
+      "category": "faction",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_tag_deadzone",
+    "fields": {
+      "name": "Deadzone",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "No life can survive here without protection.",
+      "category": "environment",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_tag_disputed",
+    "fields": {
+      "name": "Disputed territory",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "Multiple factions claim ownership.",
+      "category": "faction",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_tag_diverse",
+    "fields": {
+      "name": "Diverse biosphere",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "Rich variety of life forms.",
+      "category": "environment",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_tag_espionage",
+    "fields": {
+      "name": "Espionage hotbed",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "Spies and informants are everywhere.",
+      "category": "faction",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_tag_frontier",
+    "fields": {
+      "name": "Frontier colony",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "Newly established, rough and ready.",
+      "category": "population",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_tag_guilds",
+    "fields": {
+      "name": "Guild-dominated",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "Merchant guilds control the economy.",
+      "category": "economy",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_tag_hidden",
+    "fields": {
+      "name": "Hidden colony",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "Concealed from outside view.",
+      "category": "population",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_tag_hostile",
+    "fields": {
+      "name": "Hostile locals",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "The inhabitants are unfriendly to outsiders.",
+      "category": "population",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_tag_isolationist",
+    "fields": {
+      "name": "Isolationist",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "No contact with the outside world.",
+      "category": "population",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_tag_lost_knowledge",
+    "fields": {
+      "name": "Lost knowledge",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "Ancient tech or lore waits to be rediscovered.",
+      "category": "threat",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_tag_militant",
+    "fields": {
+      "name": "Militant culture",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "Warfare is central to their way of life.",
+      "category": "culture",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_tag_outriders",
+    "fields": {
+      "name": "Outriders",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "Nomadic groups roam the wilds.",
+      "category": "population",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_tag_quarantined",
+    "fields": {
+      "name": "Quarantined",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "No one enters or leaves.",
+      "category": "threat",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_tag_relics",
+    "fields": {
+      "name": "Relic tech",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "Old tech still functions here.",
+      "category": "threat",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_tag_republic",
+    "fields": {
+      "name": "Republic",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "Democratic government of some kind.",
+      "category": "government",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_tag_resources",
+    "fields": {
+      "name": "Rich resources",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "Valuable materials or energy sources.",
+      "category": "economy",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_tag_royalty",
+    "fields": {
+      "name": "Hereditary rulers",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "A noble family rules here.",
+      "category": "government",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_tag_rumors",
+    "fields": {
+      "name": "Wild rumors",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "Strange stories circulate about this place.",
+      "category": "mystery",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_tag_sacred",
+    "fields": {
+      "name": "Sacred site",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "Religiously significant location.",
+      "category": "culture",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_tag_secret",
+    "fields": {
+      "name": "Secret society",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "Hidden power structure pulls the strings.",
+      "category": "faction",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_tag_sellsword",
+    "fields": {
+      "name": "Mercenary company",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "Professional soldiers for hire.",
+      "category": "faction",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_tag_slavers",
+    "fields": {
+      "name": "Slavers",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "Human trafficking is practiced.",
+      "category": "threat",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_tag_tech_level",
+    "fields": {
+      "name": "Variable tech level",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "Technology varies widely across the world.",
+      "category": "technology",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_tag_trade_route",
+    "fields": {
+      "name": "Trade route",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "An important path for commerce.",
+      "category": "economy",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_tag_tyranny",
+    "fields": {
+      "name": "Tyranny",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "A cruel despot rules with an iron fist.",
+      "category": "government",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_tag_uplift",
+    "fields": {
+      "name": "Uplift",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "Primitive culture being advanced artificially.",
+      "category": "culture",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_tag_xenoforming",
+    "fields": {
+      "name": "Xenoforming",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "The environment is being reshaped by alien influence.",
+      "category": "threat",
+      "document": "wn-core"
+    }
+  }
+]

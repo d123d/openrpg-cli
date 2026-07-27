@@ -1,0 +1,398 @@
+[
+  {
+    "pk": "d20_skill_acrobatics",
+    "fields": {
+      "name": "Acrobatics",
+      "system": "d20",
+      "license": "OGL",
+      "ability": "DEX",
+      "armor_check": true,
+      "desc": "Perform athletic maneuvers.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_skill_appraise",
+    "fields": {
+      "name": "Appraise",
+      "system": "d20",
+      "license": "OGL",
+      "ability": "INT",
+      "armor_check": false,
+      "desc": "Estimate value of items.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_skill_bluff",
+    "fields": {
+      "name": "Bluff",
+      "system": "d20",
+      "license": "OGL",
+      "ability": "CHA",
+      "armor_check": false,
+      "desc": "Deceive others.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_skill_climb",
+    "fields": {
+      "name": "Climb",
+      "system": "d20",
+      "license": "OGL",
+      "ability": "STR",
+      "armor_check": true,
+      "desc": "Scale surfaces.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_skill_concentration",
+    "fields": {
+      "name": "Concentration",
+      "system": "d20",
+      "license": "OGL",
+      "ability": "CON",
+      "armor_check": false,
+      "desc": "Maintain focus under stress.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_skill_craft",
+    "fields": {
+      "name": "Craft",
+      "system": "d20",
+      "license": "OGL",
+      "ability": "INT",
+      "armor_check": false,
+      "desc": "Create items of a specific type.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_skill_decipher",
+    "fields": {
+      "name": "Decipher Script",
+      "system": "d20",
+      "license": "OGL",
+      "ability": "INT",
+      "armor_check": false,
+      "desc": "Understand written languages or codes.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_skill_diplomacy",
+    "fields": {
+      "name": "Diplomacy",
+      "system": "d20",
+      "license": "OGL",
+      "ability": "CHA",
+      "armor_check": false,
+      "desc": "Influence attitudes.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_skill_disable_device",
+    "fields": {
+      "name": "Disable Device",
+      "system": "d20",
+      "license": "OGL",
+      "ability": "INT",
+      "armor_check": false,
+      "desc": "Disable traps or mechanisms.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_skill_disguise",
+    "fields": {
+      "name": "Disguise",
+      "system": "d20",
+      "license": "OGL",
+      "ability": "CHA",
+      "armor_check": false,
+      "desc": "Change your appearance.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_skill_escape_artist",
+    "fields": {
+      "name": "Escape Artist",
+      "system": "d20",
+      "license": "OGL",
+      "ability": "DEX",
+      "armor_check": true,
+      "desc": "Escape restraints.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_skill_forgery",
+    "fields": {
+      "name": "Forgery",
+      "system": "d20",
+      "license": "OGL",
+      "ability": "INT",
+      "armor_check": false,
+      "desc": "Create fake documents.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_skill_gather_info",
+    "fields": {
+      "name": "Gather Information",
+      "system": "d20",
+      "license": "OGL",
+      "ability": "CHA",
+      "armor_check": false,
+      "desc": "Learn rumors and gossip.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_skill_heal",
+    "fields": {
+      "name": "Heal",
+      "system": "d20",
+      "license": "OGL",
+      "ability": "WIS",
+      "armor_check": false,
+      "desc": "Treat wounds and disease.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_skill_hide",
+    "fields": {
+      "name": "Hide",
+      "system": "d20",
+      "license": "OGL",
+      "ability": "DEX",
+      "armor_check": true,
+      "desc": "Conceal yourself.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_skill_intimidate",
+    "fields": {
+      "name": "Intimidate",
+      "system": "d20",
+      "license": "OGL",
+      "ability": "CHA",
+      "armor_check": false,
+      "desc": "Coerce through fear.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_skill_jump",
+    "fields": {
+      "name": "Jump",
+      "system": "d20",
+      "license": "OGL",
+      "ability": "STR",
+      "armor_check": true,
+      "desc": "Leap distances.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_skill_knowledge",
+    "fields": {
+      "name": "Knowledge",
+      "system": "d20",
+      "license": "OGL",
+      "ability": "INT",
+      "armor_check": false,
+      "desc": "Recall lore about specific subjects.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_skill_listen",
+    "fields": {
+      "name": "Listen",
+      "system": "d20",
+      "license": "OGL",
+      "ability": "WIS",
+      "armor_check": false,
+      "desc": "Hear approaching sounds.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_skill_move_silent",
+    "fields": {
+      "name": "Move Silently",
+      "system": "d20",
+      "license": "OGL",
+      "ability": "DEX",
+      "armor_check": true,
+      "desc": "Move without noise.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_skill_open_lock",
+    "fields": {
+      "name": "Open Lock",
+      "system": "d20",
+      "license": "OGL",
+      "ability": "DEX",
+      "armor_check": true,
+      "desc": "Pick locks.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_skill_perform",
+    "fields": {
+      "name": "Perform",
+      "system": "d20",
+      "license": "OGL",
+      "ability": "CHA",
+      "armor_check": false,
+      "desc": "Entertain an audience.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_skill_profession",
+    "fields": {
+      "name": "Profession",
+      "system": "d20",
+      "license": "OGL",
+      "ability": "WIS",
+      "armor_check": false,
+      "desc": "Earn money in a trade.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_skill_ride",
+    "fields": {
+      "name": "Ride",
+      "system": "d20",
+      "license": "OGL",
+      "ability": "DEX",
+      "armor_check": false,
+      "desc": "Control mounts.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_skill_search",
+    "fields": {
+      "name": "Search",
+      "system": "d20",
+      "license": "OGL",
+      "ability": "INT",
+      "armor_check": false,
+      "desc": "Find hidden objects.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_skill_sense_motive",
+    "fields": {
+      "name": "Sense Motive",
+      "system": "d20",
+      "license": "OGL",
+      "ability": "WIS",
+      "armor_check": false,
+      "desc": "Detect lies.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_skill_sleight",
+    "fields": {
+      "name": "Sleight of Hand",
+      "system": "d20",
+      "license": "OGL",
+      "ability": "DEX",
+      "armor_check": true,
+      "desc": "Pickpocket or palm objects.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_skill_spot",
+    "fields": {
+      "name": "Spot",
+      "system": "d20",
+      "license": "OGL",
+      "ability": "WIS",
+      "armor_check": false,
+      "desc": "Notice details.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_skill_survival",
+    "fields": {
+      "name": "Survival",
+      "system": "d20",
+      "license": "OGL",
+      "ability": "WIS",
+      "armor_check": false,
+      "desc": "Navigate and find food.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_skill_swim",
+    "fields": {
+      "name": "Swim",
+      "system": "d20",
+      "license": "OGL",
+      "ability": "STR",
+      "armor_check": true,
+      "desc": "Move through water.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_skill_tumble",
+    "fields": {
+      "name": "Tumble",
+      "system": "d20",
+      "license": "OGL",
+      "ability": "DEX",
+      "armor_check": true,
+      "desc": "Move through threatened squares.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_skill_use_magic_device",
+    "fields": {
+      "name": "Use Magic Device",
+      "system": "d20",
+      "license": "OGL",
+      "ability": "CHA",
+      "armor_check": false,
+      "desc": "Use scrolls and wands.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_skill_use_rope",
+    "fields": {
+      "name": "Use Rope",
+      "system": "d20",
+      "license": "OGL",
+      "ability": "DEX",
+      "armor_check": false,
+      "desc": "Tie knots and lash.",
+      "document": "d20-srd"
+    }
+  }
+]

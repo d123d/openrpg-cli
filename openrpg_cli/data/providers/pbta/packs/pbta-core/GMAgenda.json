@@ -1,0 +1,38 @@
+[
+  {
+    "pk": "pbta_agenda_world_real",
+    "fields": {
+      "name": "Portray a fantastic world",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_agenda_play_to_find",
+    "fields": {
+      "name": "Play to find out what happens",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_agenda_fans",
+    "fields": {
+      "name": "Make the characters lives interesting",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_agenda_danger",
+    "fields": {
+      "name": "Fill their lives with adventure",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "document": "pbta-core"
+    }
+  }
+]

@@ -1,0 +1,43 @@
+{
+  "schema_version": 2,
+  "pack_id": "d20-srd",
+  "system_id": "d20",
+  "provider_id": "wotc",
+  "title": "d20 System SRD",
+  "enabled": true,
+  "quarantined": false,
+  "source_document_ids": [
+    "d20-srd"
+  ],
+  "source_repository": "https://www.opengamingnetwork.com/",
+  "source_commit": "0000000000000000000000000000000000000000",
+  "license": {
+    "id": "OGL-1.0a",
+    "verified": true,
+    "url": "https://www.opengamingnetwork.com/legal/ogl"
+  },
+  "notice_file": "NOTICE.md",
+  "attribution_file": "ATTRIBUTION.md",
+  "allowlist": {
+    "document_ids": [
+      "d20-srd"
+    ]
+  },
+  "notes": "OGL 1.0a. Core d20 system mechanics.",
+  "declared_files": {
+    "Skill.json": {
+      "sha256": "91c9852ea5d135849f5253d12948a2e3822743d92224cfb9577b61a824297c0d",
+      "record_count": 33
+    },
+    "CombatAction.json": {
+      "sha256": "919e457a3ec33e0f05a2901f622f321e8d170aff920d460369a5654fa2d53213",
+      "record_count": 8
+    },
+    "Condition.json": {
+      "sha256": "c5894efb6d559a5eb4b62aecd4fd1614b92592c2e17c710854c8c41da5c606b8",
+      "record_count": 25
+    }
+  },
+  "disabled_reason": null,
+  "license_file": "LICENSE.md"
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": 2,
+  "pack_id": "worlds-without-number",
+  "system_id": "wn",
+  "provider_id": "sine-nomine",
+  "title": "Worlds Without Number",
+  "enabled": true,
+  "quarantined": false,
+  "source_document_ids": [
+    "wn-core"
+  ],
+  "source_repository": "https://www.drivethrurpg.com/product/230009",
+  "source_commit": "0000000000000000000000000000000000000000",
+  "license": {
+    "id": "CC-BY-4.0",
+    "verified": true,
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "notice_file": "NOTICE.md",
+  "attribution_file": "ATTRIBUTION.md",
+  "allowlist": {
+    "document_ids": [
+      "wn-core"
+    ]
+  },
+  "notes": "CC-BY 4.0 free edition. World generation, faction turns, domain turns.",
+  "declared_files": {
+    "WorldTag.json": {
+      "sha256": "cbdb8bd1c24ef0bd2c39777bf39720eddaa0237b2ddc8cae60cf48b326112afd",
+      "record_count": 34
+    },
+    "FactionAction.json": {
+      "sha256": "fa144bd1b32441919f7ee60c3d7efd77de8a23f14c9ca29aed1901a79b3684d3",
+      "record_count": 9
+    },
+    "DomainTurnAction.json": {
+      "sha256": "987f022c59648616c495367b688d996c57d82cdf93e3cd49387a40f823c700eb",
+      "record_count": 8
+    }
+  },
+  "disabled_reason": null,
+  "license_file": "LICENSE.md"
+}

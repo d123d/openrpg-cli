@@ -43,6 +43,18 @@
     "BasicMove.json": {
       "sha256": "6ffe92bf263307ed96241d8fcddea1bac193da5a10edf3828689421183ca7bfe",
       "record_count": 8
+    },
+    "GMPrinciple.json": {
+      "sha256": "12b1b4a86aead8d37807b2dc328b7b64c60825b9a3cffe07b66574d21b9b58fa",
+      "record_count": 16
+    },
+    "FrontType.json": {
+      "sha256": "97f6f4f0bc52ec0a4da8158e016761a05bc305a5b63c95341d127d7061b8b64e",
+      "record_count": 4
+    },
+    "AdvancedMove.json": {
+      "sha256": "399d65e1b8781a7c51995b76f9cd5e62cc0d61d54cd78b98d272d075bb238113",
+      "record_count": 4
     }
   }
 }

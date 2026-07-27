@@ -10,6 +10,7 @@ def test_registry_keeps_system_packs_isolated() -> None:
     assert {pack.pack_id for pack in packs} == {
         "acks-core",
         "cairn-first-edition",
+        "d20-srd",
         "dungeon-world",
         "fate-accelerated",
         "fate-condensed",
@@ -18,9 +19,11 @@ def test_registry_keeps_system_packs_isolated() -> None:
         "lancer-core",
         "legacy-srd",
         "mothership",
+        "pbta-core",
         "pf2e-core",
         "questworlds-srd",
         "srd521",
+        "worlds-without-number",
     }
     assert registry.select(["srd521", "dungeon-world"])[0].root != registry.select(
         ["srd521", "dungeon-world"]

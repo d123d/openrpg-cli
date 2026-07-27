@@ -1,0 +1,92 @@
+[
+  {
+    "pk": "pbta_mcp_make_world",
+    "fields": {
+      "name": "Make the world seem real",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_mcp_play_to_find",
+    "fields": {
+      "name": "Play to find out what happens",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_mcp_fans",
+    "fields": {
+      "name": "Be a fan of the player characters",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_mcp_ask_questions",
+    "fields": {
+      "name": "Ask questions and use the answers",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_mcp_address",
+    "fields": {
+      "name": "Address the characters, not the players",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_mcp_think_offscreen",
+    "fields": {
+      "name": "Think offscreen too",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_mcp_think_dangerously",
+    "fields": {
+      "name": "Think dangerously",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_mcp_everything_is_a_resource",
+    "fields": {
+      "name": "Everything is a resource",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_mcp_center",
+    "fields": {
+      "name": "Center the characters in the action",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_mcp_boring",
+    "fields": {
+      "name": "Sometimes say what honesty demands",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "document": "pbta-core"
+    }
+  }
+]

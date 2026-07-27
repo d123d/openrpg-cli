@@ -1,0 +1,50 @@
+[
+  {
+    "pk": "dw_adv_armor_master",
+    "fields": {
+      "name": "Armor Master",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "class": "Warrior",
+      "level": 6,
+      "desc": "Ignore 1 armor (2 at level 8+).",
+      "document": "dungeon-world-ccby"
+    }
+  },
+  {
+    "pk": "dw_adv_battle_hardened",
+    "fields": {
+      "name": "Battle Hardened",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "class": "Warrior",
+      "level": 6,
+      "desc": "+1 damage on all attacks.",
+      "document": "dungeon-world-ccby"
+    }
+  },
+  {
+    "pk": "dw_adv_merciless",
+    "fields": {
+      "name": "Merciless",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "class": "Warrior",
+      "level": 6,
+      "desc": "On 7+ Hack and Slash, deal +1d6 damage.",
+      "document": "dungeon-world-ccby"
+    }
+  },
+  {
+    "pk": "dw_adv_second_wind",
+    "fields": {
+      "name": "Second Wind",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "class": "Warrior",
+      "level": 6,
+      "desc": "Once per battle, heal yourself by rolling your damage die.",
+      "document": "dungeon-world-ccby"
+    }
+  }
+]

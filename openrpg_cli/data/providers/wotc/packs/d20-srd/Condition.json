@@ -1,0 +1,252 @@
+[
+  {
+    "pk": "d20_blinded",
+    "fields": {
+      "name": "Blinded",
+      "system": "d20",
+      "license": "OGL",
+      "desc": "Cannot see. -2 AC, -4 Search, auto-fail spot/checks.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_charmed",
+    "fields": {
+      "name": "Charmed",
+      "system": "d20",
+      "license": "OGL",
+      "desc": "Treats caster as trusted friend.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_confused",
+    "fields": {
+      "name": "Confused",
+      "system": "d20",
+      "license": "OGL",
+      "desc": "Behaves randomly each round.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_cowering",
+    "fields": {
+      "name": "Cowering",
+      "system": "d20",
+      "license": "OGL",
+      "desc": "Helpless from fear. -2 AC.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_dazed",
+    "fields": {
+      "name": "Dazed",
+      "system": "d20",
+      "license": "OGL",
+      "desc": "Cannot take actions.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_deafened",
+    "fields": {
+      "name": "Deafened",
+      "system": "d20",
+      "license": "OGL",
+      "desc": "Cannot hear. -4 Listen checks.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_energy_drained",
+    "fields": {
+      "name": "Energy Drained",
+      "system": "d20",
+      "license": "OGL",
+      "desc": "Negative levels reduce capabilities.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_entangled",
+    "fields": {
+      "name": "Entangled",
+      "system": "d20",
+      "license": "OGL",
+      "desc": "Restrained. -2 attack, half speed.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_exhausted",
+    "fields": {
+      "name": "Exhausted",
+      "system": "d20",
+      "license": "OGL",
+      "desc": "-6 STR/DEX, half speed.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_fascinated",
+    "fields": {
+      "name": "Fascinated",
+      "system": "d20",
+      "license": "OGL",
+      "desc": "Compulsively watching.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_fatigued",
+    "fields": {
+      "name": "Fatigued",
+      "system": "d20",
+      "license": "OGL",
+      "desc": "-2 STR/DEX, no running/charging.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_frightened",
+    "fields": {
+      "name": "Frightened",
+      "system": "d20",
+      "license": "OGL",
+      "desc": "Must flee from source.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_grappled",
+    "fields": {
+      "name": "Grappled",
+      "system": "d20",
+      "license": "OGL",
+      "desc": "Locked in combat. -4 attack.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_helpless",
+    "fields": {
+      "name": "Helpless",
+      "system": "d20",
+      "license": "OGL",
+      "desc": "Paralyzed, sleeping, etc.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_incorporeal",
+    "fields": {
+      "name": "Incorporeal",
+      "system": "d20",
+      "license": "OGL",
+      "desc": "No physical body.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_invisible",
+    "fields": {
+      "name": "Invisible",
+      "system": "d20",
+      "license": "OGL",
+      "desc": "Cannot be seen.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_nauseated",
+    "fields": {
+      "name": "Nauseated",
+      "system": "d20",
+      "license": "OGL",
+      "desc": "Only retch each round.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_paralyzed",
+    "fields": {
+      "name": "Paralyzed",
+      "system": "d20",
+      "license": "OGL",
+      "desc": "Cannot move or act.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_panicked",
+    "fields": {
+      "name": "Panicked",
+      "system": "d20",
+      "license": "OGL",
+      "desc": "Flee in random direction.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_petrified",
+    "fields": {
+      "name": "Petrified",
+      "system": "d20",
+      "license": "OGL",
+      "desc": "Turned to stone.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_poisoned",
+    "fields": {
+      "name": "Poisoned",
+      "system": "d20",
+      "license": "OGL",
+      "desc": "Suffering poison effects.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_prone",
+    "fields": {
+      "name": "Prone",
+      "system": "d20",
+      "license": "OGL",
+      "desc": "Lying on ground. -4 melee, +4 ranged.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_shaken",
+    "fields": {
+      "name": "Shaken",
+      "system": "d20",
+      "license": "OGL",
+      "desc": "Nervous. -2 attack/saves.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_sickened",
+    "fields": {
+      "name": "Sickened",
+      "system": "d20",
+      "license": "OGL",
+      "desc": "Nauseous. -2 attack/saves.",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_stunned",
+    "fields": {
+      "name": "Stunned",
+      "system": "d20",
+      "license": "OGL",
+      "desc": "Cannot act. -2 AC.",
+      "document": "d20-srd"
+    }
+  }
+]

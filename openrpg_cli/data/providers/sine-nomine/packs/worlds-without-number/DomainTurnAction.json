@@ -1,0 +1,90 @@
+[
+  {
+    "pk": "wn_domain_clear",
+    "fields": {
+      "name": "Clear Land",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "Remove hostile creatures or hazards.",
+      "cost": "1 project",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_domain_fortify",
+    "fields": {
+      "name": "Fortify",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "Build defenses.",
+      "cost": "2 projects",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_domain_develop",
+    "fields": {
+      "name": "Develop",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "Improve infrastructure.",
+      "cost": "2 projects",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_domain_explore",
+    "fields": {
+      "name": "Explore",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "Scout unknown territory.",
+      "cost": "1 project",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_domain_construct",
+    "fields": {
+      "name": "Construct",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "Build a structure or facility.",
+      "cost": "3 projects",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_domain_recruit",
+    "fields": {
+      "name": "Recruit",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "Raise new forces.",
+      "cost": "1 project",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_domain_produce",
+    "fields": {
+      "name": "Produce",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "Generate resources.",
+      "cost": "1 project",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_domain_administer",
+    "fields": {
+      "name": "Administer",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "Manage existing territory.",
+      "cost": "1 project",
+      "document": "wn-core"
+    }
+  }
+]

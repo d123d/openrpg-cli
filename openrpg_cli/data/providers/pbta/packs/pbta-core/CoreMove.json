@@ -1,0 +1,218 @@
+[
+  {
+    "pk": "pbta_act_under_fire",
+    "fields": {
+      "name": "Act Under Fire",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "desc": "Do something dangerous under pressure.",
+      "roll": "2d6+stat",
+      "outcomes": {
+        "10+": "You do it",
+        "7-9": "You do it but suffer a complication",
+        "6-": "The MC makes a hard move"
+      },
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_attack_someone",
+    "fields": {
+      "name": "Attack Someone",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "desc": "Deal harm to another character.",
+      "roll": "2d6+stat",
+      "outcomes": {
+        "10+": "You inflict harm",
+        "7-9": "You inflict harm but take harm too",
+        "6-": "The MC makes a hard move"
+      },
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_get_a_feeling",
+    "fields": {
+      "name": "Get a Feeling About Someone",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "desc": "Read the NPCs intentions.",
+      "roll": "2d6+stat",
+      "outcomes": {
+        "10+": "Ask 2 questions",
+        "7-9": "Ask 1 question",
+        "6-": "The MC makes a hard move"
+      },
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_read_a_situation",
+    "fields": {
+      "name": "Read a Situation",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "desc": "Assess danger, people, or objects.",
+      "roll": "2d6+stat",
+      "outcomes": {
+        "10+": "Ask 2 questions",
+        "7-9": "Ask 1 question",
+        "6-": "The MC makes a hard move"
+      },
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_get_some_info",
+    "fields": {
+      "name": "Get Some Info",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "desc": "Investigate or learn about something.",
+      "roll": "2d6+stat",
+      "outcomes": {
+        "10+": "You get useful info",
+        "7-9": "You get info but it costs you",
+        "6-": "The MC makes a hard move"
+      },
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_do_something_beyond",
+    "fields": {
+      "name": "Do Something Beyond Your Limits",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "desc": "Push yourself beyond normal capability.",
+      "roll": "2d6+stat",
+      "outcomes": {
+        "10+": "You succeed spectacularly",
+        "7-9": "You succeed at a cost",
+        "6-": "The MC makes a hard move"
+      },
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_hack_and_slash",
+    "fields": {
+      "name": "Hack and Slash",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "desc": "Attack a hostile creature in melee.",
+      "roll": "2d6+STR",
+      "outcomes": {
+        "10+": "Deal your damage, avoid retaliation",
+        "7-9": "Deal damage, but take damage too"
+      },
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_volley",
+    "fields": {
+      "name": "Volley",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "desc": "Attack at range.",
+      "roll": "2d6+DEX",
+      "outcomes": {
+        "10+": "You hit and deal damage",
+        "7-9": "You hit but choose: ammo, take cover, or get closer"
+      },
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_defy_danger",
+    "fields": {
+      "name": "Defy Danger",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "desc": "Face a threat.",
+      "roll": "2d6+stat",
+      "outcomes": {
+        "10+": "You do it",
+        "7-9": "You do it but at a cost"
+      },
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_defend",
+    "fields": {
+      "name": "Defend",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "desc": "Guard someone or something.",
+      "roll": "2d6+STR/DEX",
+      "outcomes": {
+        "10+": "Hold 3",
+        "7-9": "Hold 1"
+      },
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_discern_realities",
+    "fields": {
+      "name": "Discern Realities",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "desc": "Closely observe something.",
+      "roll": "2d6+WIS",
+      "outcomes": {
+        "10+": "Ask 3 questions",
+        "7-9": "Ask 1 question"
+      },
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_parley",
+    "fields": {
+      "name": "Parley",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "desc": "Influence an NPC through leverage.",
+      "roll": "2d6+CHA",
+      "outcomes": {
+        "10+": "They do what you want",
+        "7-9": "They do it but want something"
+      },
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_spout_lore",
+    "fields": {
+      "name": "Spout Lore",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "desc": "Consult your knowledge.",
+      "roll": "2d6+INT",
+      "outcomes": {
+        "10+": "You know something useful",
+        "7-9": "You know something but incomplete or dangerous"
+      },
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_aid_interfere",
+    "fields": {
+      "name": "Aid or Interfere",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "desc": "Help or hinder another PC.",
+      "roll": "2d6+CHA",
+      "outcomes": {
+        "10+": "Grant +2 or -2",
+        "7-9": "Grant +1 or -1 but expose yourself"
+      },
+      "document": "pbta-core"
+    }
+  }
+]

@@ -1,0 +1,51 @@
+{
+  "schema_version": 2,
+  "pack_id": "pbta-core",
+  "system_id": "pbta",
+  "provider_id": "pbta",
+  "title": "Powered by the Apocalypse Core",
+  "enabled": true,
+  "quarantined": false,
+  "source_document_ids": [
+    "pbta-core"
+  ],
+  "source_repository": "https://www.drivethrurpg.com/product/93896",
+  "source_commit": "0000000000000000000000000000000000000000",
+  "license": {
+    "id": "CC-BY-3.0",
+    "verified": true,
+    "url": "https://creativecommons.org/licenses/by/3.0/"
+  },
+  "notice_file": "NOTICE.md",
+  "attribution_file": "ATTRIBUTION.md",
+  "allowlist": {
+    "document_ids": [
+      "pbta-core"
+    ]
+  },
+  "notes": "CC-BY 3.0. Universal PbtA mechanics.",
+  "declared_files": {
+    "CoreMove.json": {
+      "sha256": "892cf0196bfb162a0cad37972fd16e99dbd1dcb45c651ffe6016ea9c368e7df3",
+      "record_count": 14
+    },
+    "MCPrinciple.json": {
+      "sha256": "e519ab8aef3983cdb5eaa07a191a4c7e5dd11dfc02ee4cc1f93431b406a63a13",
+      "record_count": 10
+    },
+    "GMAgenda.json": {
+      "sha256": "dbefdd81038e3536483cd5a607576931949a599d4127c9cce3a4c864f16a6e78",
+      "record_count": 4
+    },
+    "HardMove.json": {
+      "sha256": "ce98f0d2295a735113b2d738899a36fe832c7e2ddfba5c02d90e4f820e6fff0d",
+      "record_count": 15
+    },
+    "Condition.json": {
+      "sha256": "9dd37df85e523f0cf1e7dde68f26341fa9641ff6f0b2726d460a7e7230e44698",
+      "record_count": 8
+    }
+  },
+  "disabled_reason": null,
+  "license_file": "LICENSE.md"
+}

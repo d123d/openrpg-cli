@@ -1,0 +1,101 @@
+[
+  {
+    "pk": "wn_faction_attack",
+    "fields": {
+      "name": "Attack Target",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "Direct military action against a target.",
+      "cost": "Asset commitment",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_faction_defend",
+    "fields": {
+      "name": "Defend Position",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "Fortify and hold a location.",
+      "cost": "Asset commitment",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_faction_improve",
+    "fields": {
+      "name": "Improve Asset",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "Upgrade a base or asset.",
+      "cost": "2 assets",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_faction_repair",
+    "fields": {
+      "name": "Repair Asset",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "Restore a damaged asset.",
+      "cost": "1 asset",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_faction_intel",
+    "fields": {
+      "name": "Gather Intelligence",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "Learn about a target.",
+      "cost": "None",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_faction_withdraw",
+    "fields": {
+      "name": "Withdraw",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "Retreat from a contested area.",
+      "cost": "None",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_faction_negotiate",
+    "fields": {
+      "name": "Negotiate",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "Seek alliance or treaty.",
+      "cost": "Influence",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_faction_create_asset",
+    "fields": {
+      "name": "Create Asset",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "Establish a new asset or base.",
+      "cost": "3 assets + influence",
+      "document": "wn-core"
+    }
+  },
+  {
+    "pk": "wn_faction_scheme",
+    "fields": {
+      "name": "Scheme",
+      "system": "wn",
+      "license": "CC-BY-4.0",
+      "desc": "Attempt a special action specific to your faction type.",
+      "cost": "Varies",
+      "document": "wn-core"
+    }
+  }
+]

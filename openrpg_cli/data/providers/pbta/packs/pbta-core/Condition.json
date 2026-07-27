@@ -1,0 +1,82 @@
+[
+  {
+    "pk": "pbta_cond_angry",
+    "fields": {
+      "name": "Angry",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "desc": "When angry, -1 to ongoing rolls.",
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_cond_afraid",
+    "fields": {
+      "name": "Afraid",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "desc": "When afraid, -1 to ongoing rolls.",
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_cond_confused",
+    "fields": {
+      "name": "Confused",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "desc": "When confused, -1 to ongoing rolls.",
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_cond_cold",
+    "fields": {
+      "name": "Cold",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "desc": "When cold, -1 to ongoing rolls.",
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_cond_scarred",
+    "fields": {
+      "name": "Scarred",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "desc": "When scarred, -1 to ongoing rolls.",
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_cond_worried",
+    "fields": {
+      "name": "Worried",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "desc": "When worried, -1 to ongoing rolls.",
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_cond_hungry",
+    "fields": {
+      "name": "Hungry/Thirsty",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "desc": "When hungry/thirsty, -1 to ongoing rolls.",
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_cond_insecure",
+    "fields": {
+      "name": "Insecure",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "desc": "When insecure, -1 to ongoing rolls.",
+      "document": "pbta-core"
+    }
+  }
+]

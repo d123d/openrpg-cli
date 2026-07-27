@@ -1,0 +1,90 @@
+[
+  {
+    "pk": "d20_attack_melee",
+    "fields": {
+      "name": "Melee Attack",
+      "system": "d20",
+      "license": "OGL",
+      "desc": "Attack adjacent target.",
+      "action_type": "standard",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_attack_ranged",
+    "fields": {
+      "name": "Ranged Attack",
+      "system": "d20",
+      "license": "OGL",
+      "desc": "Attack target at range.",
+      "action_type": "standard",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_cast_spell",
+    "fields": {
+      "name": "Cast a Spell",
+      "system": "d20",
+      "license": "OGL",
+      "desc": "Invoke magical effect.",
+      "action_type": "standard",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_charge",
+    "fields": {
+      "name": "Charge",
+      "system": "d20",
+      "license": "OGL",
+      "desc": "Move and attack with +2 bonus.",
+      "action_type": "full-round",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_full_attack",
+    "fields": {
+      "name": "Full Attack",
+      "system": "d20",
+      "license": "OGL",
+      "desc": "Make all iterative attacks.",
+      "action_type": "full-round",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_demoralize",
+    "fields": {
+      "name": "Demoralize",
+      "system": "d20",
+      "license": "OGL",
+      "desc": "Shaken enemy with Intimidate.",
+      "action_type": "standard",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_total_defense",
+    "fields": {
+      "name": "Total Defense",
+      "system": "d20",
+      "license": "OGL",
+      "desc": "+4 AC, no attacks.",
+      "action_type": "full-round",
+      "document": "d20-srd"
+    }
+  },
+  {
+    "pk": "d20_fight_defensively",
+    "fields": {
+      "name": "Fight Defensively",
+      "system": "d20",
+      "license": "OGL",
+      "desc": "+2 AC, -4 attacks.",
+      "action_type": "standard",
+      "document": "d20-srd"
+    }
+  }
+]

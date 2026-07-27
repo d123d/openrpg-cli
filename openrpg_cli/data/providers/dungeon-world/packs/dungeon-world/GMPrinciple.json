@@ -1,0 +1,146 @@
+[
+  {
+    "pk": "dw_prin_fill_dungeon",
+    "fields": {
+      "name": "Fill their dungeons with monsters and treasure",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "document": "dungeon-world-ccby"
+    }
+  },
+  {
+    "pk": "dw_prin_portray_world",
+    "fields": {
+      "name": "Portray the world as realistically",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "document": "dungeon-world-ccby"
+    }
+  },
+  {
+    "pk": "dw_prin_think_dangerously",
+    "fields": {
+      "name": "Think dangerously",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "document": "dungeon-world-ccby"
+    }
+  },
+  {
+    "pk": "dw_prin_everything_you_know",
+    "fields": {
+      "name": "Everything about the world is yours to show and reveal",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "document": "dungeon-world-ccby"
+    }
+  },
+  {
+    "pk": "dw_prin_play_off_characters",
+    "fields": {
+      "name": "Play to find out what happens",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "document": "dungeon-world-ccby"
+    }
+  },
+  {
+    "pk": "dw_prin_make_world",
+    "fields": {
+      "name": "Make the world real",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "document": "dungeon-world-ccby"
+    }
+  },
+  {
+    "pk": "dw_prin_use_monsters",
+    "fields": {
+      "name": "Use the monsters logically",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "document": "dungeon-world-ccby"
+    }
+  },
+  {
+    "pk": "dw_prin_use_their_actions",
+    "fields": {
+      "name": "Address the players whose characters are most affected",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "document": "dungeon-world-ccby"
+    }
+  },
+  {
+    "pk": "dw_prin_become_their_characters",
+    "fields": {
+      "name": "Ask questions and use the answers",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "document": "dungeon-world-ccby"
+    }
+  },
+  {
+    "pk": "dw_prin_dont_prep",
+    "fields": {
+      "name": "Be a fan of the characters",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "document": "dungeon-world-ccby"
+    }
+  },
+  {
+    "pk": "dw_prin_read_sjd",
+    "fields": {
+      "name": "Think offscreen too",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "document": "dungeon-world-ccby"
+    }
+  },
+  {
+    "pk": "dw_prin_draw_maps",
+    "fields": {
+      "name": "Sometimes disarm the PCs and take away their stuff",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "document": "dungeon-world-ccby"
+    }
+  },
+  {
+    "pk": "dw_prin_sjd",
+    "fields": {
+      "name": "Name everyone, make everyone human",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "document": "dungeon-world-ccby"
+    }
+  },
+  {
+    "pk": "dw_prin_nothing_is_free",
+    "fields": {
+      "name": "What do the monsters want?",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "document": "dungeon-world-ccby"
+    }
+  },
+  {
+    "pk": "dw_prin_offer_give",
+    "fields": {
+      "name": "Create interesting NPCs",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "document": "dungeon-world-ccby"
+    }
+  },
+  {
+    "pk": "dw_prin_wonderland",
+    "fields": {
+      "name": "Give them opportunity to spend resources",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "document": "dungeon-world-ccby"
+    }
+  }
+]

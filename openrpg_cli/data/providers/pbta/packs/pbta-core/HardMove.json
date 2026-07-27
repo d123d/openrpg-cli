@@ -1,0 +1,137 @@
+[
+  {
+    "pk": "pbta_hm_ireplace",
+    "fields": {
+      "name": "Separate them",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_hm_iturn_their",
+    "fields": {
+      "name": "Turn their move back on them",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_hm_ishow_signs",
+    "fields": {
+      "name": "Show signs of an approaching threat",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_hm_idamage",
+    "fields": {
+      "name": "Deal damage",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_hm_iuse",
+    "fields": {
+      "name": "Use a resource",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_hm_iturn_off",
+    "fields": {
+      "name": "Offer an opportunity with a cost",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_hm_iturn_take",
+    "fields": {
+      "name": "Take away their stuff",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_hm_iturn_show",
+    "fields": {
+      "name": "Show a downside to their class, race, or equipment",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_hm_iturn_change",
+    "fields": {
+      "name": "Change the environment",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_hm_iturn_offer",
+    "fields": {
+      "name": "Put someone in a spot",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_hm_iturn_ireplace",
+    "fields": {
+      "name": "Show signs of an approaching threat",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_hm_iturn_iturn_take",
+    "fields": {
+      "name": "Tell them the consequences and ask",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_hm_iturn_ishow",
+    "fields": {
+      "name": "After them",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_hm_iturn_iturn_offer",
+    "fields": {
+      "name": "Take away their stuff",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "document": "pbta-core"
+    }
+  },
+  {
+    "pk": "pbta_hm_iturn_iturn_show",
+    "fields": {
+      "name": "Make them pay",
+      "system": "pbta",
+      "license": "CC-BY-3.0",
+      "document": "pbta-core"
+    }
+  }
+]

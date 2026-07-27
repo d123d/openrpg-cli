@@ -1,0 +1,46 @@
+[
+  {
+    "pk": "dw_front_impending_doom",
+    "fields": {
+      "name": "Impending Doom",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "desc": "A threat that will destroy a location or way of life.",
+      "categories": "arcadian, blazing, crumbling, failing, consuming, rotting, collapsing, freezing, withering, sealing",
+      "document": "dungeon-world-ccby"
+    }
+  },
+  {
+    "pk": "dw_front_darkness",
+    "fields": {
+      "name": "Darkness",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "desc": "A creeping menace corrupting the world.",
+      "categories": "a plague of iron, a broken pass, a corrupting influence, a sealed evil",
+      "document": "dungeon-world-ccby"
+    }
+  },
+  {
+    "pk": "dw_front_warmonger",
+    "fields": {
+      "name": "Warmonger",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "desc": "A force bent on conquest.",
+      "categories": "scheming warlord, invasion, civil war, uncanny army",
+      "document": "dungeon-world-ccby"
+    }
+  },
+  {
+    "pk": "dw_front_arachnid",
+    "fields": {
+      "name": "Arachnid",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "desc": "A web of intrigue and plots.",
+      "categories": "conspiracy, thieves guild, shadow cult, crime syndicate",
+      "document": "dungeon-world-ccby"
+    }
+  }
+]
