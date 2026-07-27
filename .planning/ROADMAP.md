@@ -15,7 +15,7 @@
 
 - [x] **Phase 5: Deterministic Gameplay Kernel** - Versioned state, typed commands/events, reducer, logs, replay, migrations
 - [x] **Phase 6: Universal Resolution & Effects** - Checks, saves, contests, damage, healing, death, conditions, durations
-- [ ] **Phase 7: Turn, Action & Space Engine** - N actors, action economy, core actions, reactions, range bands/grid
+- [x] **Phase 7: Turn, Action & Space Engine** - N actors, action economy, core actions, reactions, range bands/grid (completed 2026-07-27)
 - [ ] **Phase 8: Complete Characters & Progression** - Levels 1–20, features, inventory, spell resources, rests
 - [ ] **Phase 9: SRD Effect Adapters** - Spells, monsters, items, multiattack/recharge/traits, coverage registry
 - [ ] **Phase 10: Encounters, Parties & Sessions** - Encounter lifecycle, teams, party resources, objectives, controllers
@@ -62,11 +62,11 @@ Plans:
 **Plans**: 5 plans
 
 Plans:
-- [ ] 07-01-PLAN.md — N-actor initiative, legal ownership, budgets, and legal-command contracts
-- [ ] 07-02-PLAN.md — Authoritative range bands and optional grid translation
-- [ ] 07-03-PLAN.md — Complete core action catalog and resolution
-- [ ] 07-04-PLAN.md — Grapple, shove, reactions, cover, visibility, mounted, and underwater hooks
-- [ ] 07-05-PLAN.md — Kernel integration, replay, v1 compatibility, and release gates
+- [x] 07-01-PLAN.md — N-actor initiative, legal ownership, budgets, and legal-command contracts
+- [x] 07-02-PLAN.md — Authoritative range bands and optional grid translation
+- [x] 07-03-PLAN.md — Complete core action catalog and resolution
+- [x] 07-04-PLAN.md — Grapple, shove, reactions, cover, visibility, mounted, and underwater hooks
+- [x] 07-05-PLAN.md — Kernel integration, replay, v1 compatibility, and release gates
 
 ### Phase 8: Complete Characters & Progression
 **Goal**: SRD characters work across levels 1–20 with equipment, features, spells, resources, and rests.
@@ -134,7 +134,7 @@ Plans:
 |---|---:|---|---|
 | 5. Deterministic Gameplay Kernel | 4/4 | Complete | 2026-07-26 |
 | 6. Universal Resolution & Effects | 4/4 | Complete | 2026-07-26 |
-| 7. Turn, Action & Space Engine | 0/5 | Planned | - |
+| 7. Turn, Action & Space Engine | 5/5 | Complete   | 2026-07-27 |
 | 8. Complete Characters & Progression | 0/? | Not started | - |
 | 9. SRD Effect Adapters | 0/? | Not started | - |
 | 10. Encounters, Parties & Sessions | 0/? | Not started | - |

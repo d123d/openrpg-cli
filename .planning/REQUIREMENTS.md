@@ -18,11 +18,11 @@
 
 ## Turns, Actions, Space
 
-- [ ] **TURN-01**: N-actor initiative, teams, rounds, surprise, legal turn ownership.
-- [ ] **TURN-02**: Action, bonus action, reaction, movement, interaction budgets.
-- [ ] **TURN-03**: Attack, Magic, Dash, Disengage, Dodge, Help, Hide, Influence, Ready, Search, Study, Utilize.
-- [ ] **TURN-04**: Grapple, shove, opportunity attacks, cover, visibility, mounted/underwater modes.
-- [ ] **TURN-05**: Coordinate-free range bands plus optional grid positions, movement, areas, targets.
+- [x] **TURN-01**: N-actor initiative, teams, rounds, surprise, legal turn ownership.
+- [x] **TURN-02**: Action, bonus action, reaction, movement, interaction budgets.
+- [x] **TURN-03**: Attack, Magic, Dash, Disengage, Dodge, Help, Hide, Influence, Ready, Search, Study, Utilize.
+- [x] **TURN-04**: Grapple, shove, opportunity attacks, cover, visibility, mounted/underwater modes.
+- [x] **TURN-05**: Coordinate-free range bands plus optional grid positions, movement, areas, targets.
 
 ## Characters and Resources
 
