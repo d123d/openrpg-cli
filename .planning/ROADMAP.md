@@ -77,7 +77,13 @@ Plans:
   4. `srd play` provides interactive create/load → encounter → results loop.
   5. `srd combat --character ... --monster ... --seed ... --auto` runs headlessly for CI.
   6. Full audit, tests, ruff, package install, and smoke commands pass.
-**Plans**: TBD
+**Plans**: 4 plans
+
+Plans:
+- [ ] 04-01-PLAN.md — Deterministic combat state, initiative, and weapon resolution
+- [ ] 04-02-PLAN.md — Structured offensive spells and deterministic SRD enemy actions
+- [ ] 04-03-PLAN.md — Reproducible sessions, transcripts, and combat CLI
+- [ ] 04-04-PLAN.md — Interactive play loop and installed-artifact v1.0 verification
 
 ## Progress
 
@@ -86,4 +92,4 @@ Plans:
 | 1. Clean SRD-Only Fork | 1/1 | Complete | 2026-07-26 |
 | 2. Normalized Rules API | 4/4 | Complete | 2026-07-26 |
 | 3. Character Engine | 4/4 | Complete | 2026-07-26 |
-| 4. Combat & Interactive Play | 0/? | Not started | - |
+| 4. Combat & Interactive Play | 0/4 | Planned | - |
