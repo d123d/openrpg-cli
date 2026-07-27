@@ -28,17 +28,17 @@ def test_registry_keeps_system_packs_isolated() -> None:
 
 def test_quarantined_packs_cannot_be_selected() -> None:
     registry = SystemRegistry()
-    for pack_id in ("acks-core", "mothership", "pf2e-core"):
-        pack = registry.get(pack_id, allow_disabled=True)
-        assert pack.manifest["quarantined"] is True
-        try:
-            registry.get(pack_id)
-        except PermissionError:
-            pass
-        else:
-            raise AssertionError(f"{pack_id} should be blocked")
-        assert not pack.manifest["declared_files"]
-        assert pack.manifest["disabled_reason"]
+    # questworlds-srd remains quarantined (reserved logo, no redistribution)
+    pack = registry.get("questworlds-srd", allow_disabled=True)
+    assert pack.manifest["quarantined"] is True
+    try:
+        registry.get("questworlds-srd")
+    except PermissionError:
+        pass
+    else:
+        raise AssertionError("questworlds-srd should be blocked")
+    assert not pack.manifest["declared_files"]
+    assert pack.manifest["disabled_reason"]
 
 
 def test_new_open_systems_have_pinned_primary_sources_and_legal_files() -> None:
@@ -81,9 +81,11 @@ def test_systems_cli_list_info_audit() -> None:
     listed = runner.invoke(app, ["systems", "list", "--json"])
     assert listed.exit_code == 0
     assert '"pack_id": "srd521"' in listed.stdout
+    # mothership is now enabled (CC-BY-4.0 verified)
     info = runner.invoke(app, ["systems", "info", "mothership", "--json"])
     assert info.exit_code == 0
-    assert '"quarantined": true' in info.stdout
+    assert '"quarantined": false' in info.stdout
+    assert '"enabled": true' in info.stdout
     audit = runner.invoke(app, ["systems", "audit"])
     assert audit.exit_code == 0
     assert "srd521: PASS" in audit.stdout

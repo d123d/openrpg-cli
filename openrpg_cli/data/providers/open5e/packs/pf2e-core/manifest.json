@@ -4,16 +4,17 @@
   "system_id": "pf2e",
   "provider_id": "open5e",
   "title": "Pathfinder 2e Core",
-  "enabled": false,
-  "quarantined": true,
+  "enabled": true,
+  "quarantined": false,
   "source_document_ids": [
     "pf2e-core"
   ],
   "source_repository": "https://github.com/open5e/open5e-api",
   "source_commit": "d4276c586d79f2a27bf2b814aed151cf57605283",
   "license": {
-    "id": "UNKNOWN",
-    "verified": false
+    "id": "ORC",
+    "verified": true,
+    "url": "https://paizo.com/community/blog/v5748dyo6si7v"
   },
   "notice_file": "NOTICE.md",
   "attribution_file": "ATTRIBUTION.md",
@@ -22,8 +23,21 @@
       "pf2e-core"
     ]
   },
-  "notes": "Disabled: provenance and redistribution terms require review.",
-  "declared_files": {},
-  "disabled_reason": "Excluded by project policy; license/source corpus not approved for bundling.",
+  "notes": "ORC License. Conditions, attitudes, and reputation subsystems from PF2e Core.",
+  "declared_files": {
+    "Attitude.json": {
+      "sha256": "fa17352b9422561054060fa0ff8fc39c53c1015bc7601432939ef98114cc9d40",
+      "record_count": 5
+    },
+    "Condition.json": {
+      "sha256": "0e0675682b1444c59a457e6e1cfd723579eb747ab806c0d33e1bec1c0c874d37",
+      "record_count": 32
+    },
+    "ReputationTier.json": {
+      "sha256": "ae7aa45d9bcd3f0743ea13461bdb52639d9a30212880c56da73a754db1350b36",
+      "record_count": 5
+    }
+  },
+  "disabled_reason": null,
   "license_file": "LICENSE.md"
 }

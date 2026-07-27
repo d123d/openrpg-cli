@@ -4,16 +4,17 @@
   "system_id": "mothership",
   "provider_id": "open5e",
   "title": "Mothership SRD",
-  "enabled": false,
-  "quarantined": true,
+  "enabled": true,
+  "quarantined": false,
   "source_document_ids": [
     "mothership-srd"
   ],
   "source_repository": "https://github.com/open5e/open5e-api",
   "source_commit": "d4276c586d79f2a27bf2b814aed151cf57605283",
   "license": {
-    "id": "UNKNOWN",
-    "verified": false
+    "id": "CC-BY-4.0",
+    "verified": true,
+    "url": "https://creativecommons.org/licenses/by/4.0/"
   },
   "notice_file": "NOTICE.md",
   "attribution_file": "ATTRIBUTION.md",
@@ -22,8 +23,17 @@
       "mothership-srd"
     ]
   },
-  "notes": "Disabled: provenance and redistribution terms require review.",
-  "declared_files": {},
-  "disabled_reason": "Excluded by project policy; license/source corpus not approved for bundling.",
+  "notes": "CC-BY 4.0. Stress/panic system from Mothership 1e SRD.",
+  "declared_files": {
+    "StressTrigger.json": {
+      "sha256": "10845cc422b9d291489afb180e1adfd6ba71f8f8962df293b60b7771eb955e25",
+      "record_count": 9
+    },
+    "PanicResult.json": {
+      "sha256": "4bd255ca298eceb5408b87cba59cf9068969ddbe990ffc0466eecf13f0a9f8e2",
+      "record_count": 11
+    }
+  },
+  "disabled_reason": null,
   "license_file": "LICENSE.md"
 }

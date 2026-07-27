@@ -1,0 +1,24 @@
+[
+  {
+    "pk": "fate_stunt_rule",
+    "fields": {
+      "name": "Stunt",
+      "system": "fate",
+      "license": "CC-BY-SA-4.0",
+      "desc": "A special ability tied to an aspect. Grants +2 to a specific action or a unique ability.",
+      "cost": "1 Refresh per stunt",
+      "document": "fate-core-srd"
+    }
+  },
+  {
+    "pk": "fate_stunt_permission",
+    "fields": {
+      "name": "Permission Stunt",
+      "system": "fate",
+      "license": "CC-BY-SA-4.0",
+      "desc": "Grants permission to use an aspect that would otherwise be unavailable.",
+      "cost": "1 Refresh",
+      "document": "fate-core-srd"
+    }
+  }
+]

@@ -4,16 +4,17 @@
   "system_id": "legacy",
   "provider_id": "open5e",
   "title": "Legacy SRD",
-  "enabled": false,
-  "quarantined": true,
+  "enabled": true,
+  "quarantined": false,
   "source_document_ids": [
     "legacy-srd"
   ],
   "source_repository": "https://github.com/open5e/open5e-api",
   "source_commit": "d4276c586d79f2a27bf2b814aed151cf57605283",
   "license": {
-    "id": "OPEN-LICENSE-UNVERIFIED",
-    "verified": false
+    "id": "CC-BY-4.0",
+    "verified": true,
+    "url": "https://creativecommons.org/licenses/by/4.0/"
   },
   "notice_file": "NOTICE.md",
   "attribution_file": "ATTRIBUTION.md",
@@ -22,8 +23,21 @@
       "legacy-srd"
     ]
   },
-  "notes": "Provisional isolated legacy source; audit before release use.",
-  "declared_files": {},
+  "notes": "CC-BY 4.0. Settlement and faction subsystems from Legacy 2nd Edition SRD.",
+  "declared_files": {
+    "SettlementType.json": {
+      "sha256": "9d810d3c3b527d79e21214f3bb0625aca022da1ad3fe1827cd7476017d571468",
+      "record_count": 5
+    },
+    "SettlementResource.json": {
+      "sha256": "9aad98b202668672a312cdb12070e44fe83e23b292a54d715f920f2b011cd126",
+      "record_count": 5
+    },
+    "FactionTurn.json": {
+      "sha256": "0aa94dc8bedbb161bf14c3ee9e81e4d933c7db9c6914c97b801f0539d64aa51f",
+      "record_count": 6
+    }
+  },
   "license_file": "LICENSE.md",
-  "disabled_reason": "Exact upstream license and primary corpus were not verified; metadata only."
+  "disabled_reason": null
 }

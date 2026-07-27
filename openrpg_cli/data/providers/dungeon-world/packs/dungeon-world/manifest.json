@@ -35,6 +35,14 @@
     "ResolutionRule.json": {
       "sha256": "32adf522453d6a1844edec63af18f16133afdc93f89ce5dcc335dab761090a43",
       "record_count": 1
+    },
+    "GMMove.json": {
+      "sha256": "3162395618546b81ce6eeadc19c0c4937908c0804970f1146c9053ce6e5776dc",
+      "record_count": 15
+    },
+    "BasicMove.json": {
+      "sha256": "6ffe92bf263307ed96241d8fcddea1bac193da5a10edf3828689421183ca7bfe",
+      "record_count": 8
     }
   }
 }

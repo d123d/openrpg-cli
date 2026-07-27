@@ -35,6 +35,18 @@
     "ResolutionRule.json": {
       "sha256": "a11f1fbaced8c965497ed7416861166bc6786997e977847faf5abf86ab6aaa4a",
       "record_count": 1
+    },
+    "AspectType.json": {
+      "sha256": "0ee9e3e690adbee732921d42dbb243a73d684667006865bfe1bd4f2ec4bdfe31",
+      "record_count": 5
+    },
+    "Compel.json": {
+      "sha256": "c7e36c9c2f9cacdffe1e04bcdb864caafc533c1dee9ba1ad409d701570c06f49",
+      "record_count": 3
+    },
+    "Stunt.json": {
+      "sha256": "a97648402a3b79442ed8c40ea7c06801e142fba7e1356191003a33a99b1c3000",
+      "record_count": 2
     }
   }
 }

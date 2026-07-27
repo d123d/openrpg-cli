@@ -1,0 +1,57 @@
+[
+  {
+    "pk": "pf2e_rep_unknown",
+    "fields": {
+      "name": "Unknown",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "No one has heard of you.",
+      "fame_range": "0-9",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_rep_recognized",
+    "fields": {
+      "name": "Recognized",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Known to locals in your immediate area.",
+      "fame_range": "10-29",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_rep_credible",
+    "fields": {
+      "name": "Credible",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Known to a wider region. People have heard rumors.",
+      "fame_range": "30-49",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_rep_famous",
+    "fields": {
+      "name": "Famous",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Known across a nation or large region.",
+      "fame_range": "50-74",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_rep_legendary",
+    "fields": {
+      "name": "Legendary",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Known throughout the world.",
+      "fame_range": "75-100",
+      "document": "pf2e-core"
+    }
+  }
+]

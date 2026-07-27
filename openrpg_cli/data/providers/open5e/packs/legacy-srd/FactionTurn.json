@@ -1,0 +1,63 @@
+[
+  {
+    "pk": "legacy_faction_claim",
+    "fields": {
+      "name": "Claim Territory",
+      "system": "legacy",
+      "license": "CC-BY-4.0",
+      "cost": "2 influence",
+      "document": "legacy-srd"
+    }
+  },
+  {
+    "pk": "legacy_faction_influence",
+    "fields": {
+      "name": "Build Influence",
+      "system": "legacy",
+      "license": "CC-BY-4.0",
+      "cost": "1 influence",
+      "document": "legacy-srd"
+    }
+  },
+  {
+    "pk": "legacy_faction_undermine",
+    "fields": {
+      "name": "Undermine Rival",
+      "system": "legacy",
+      "license": "CC-BY-4.0",
+      "cost": "2 influence",
+      "document": "legacy-srd"
+    }
+  },
+  {
+    "pk": "legacy_faction_alliance",
+    "fields": {
+      "name": "Form Alliance",
+      "system": "legacy",
+      "license": "CC-BY-4.0",
+      "cost": "3 influence",
+      "document": "legacy-srd"
+    }
+  },
+  {
+    "pk": "legacy_faction_project",
+    "fields": {
+      "name": "Special Project",
+      "system": "legacy",
+      "license": "CC-BY-4.0",
+      "cost": "varies",
+      "document": "legacy-srd"
+    }
+  },
+  {
+    "pk": "legacy_faction_event",
+    "fields": {
+      "name": "Random Event",
+      "system": "legacy",
+      "license": "CC-BY-4.0",
+      "cost": "none",
+      "desc": "GM determines event based on faction state.",
+      "document": "legacy-srd"
+    }
+  }
+]

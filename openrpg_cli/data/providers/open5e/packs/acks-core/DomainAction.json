@@ -1,0 +1,132 @@
+[
+  {
+    "pk": "acks_build",
+    "fields": {
+      "name": "Build Structure",
+      "system": "acks",
+      "license": "OGL",
+      "desc": "Construct a building in a domain.",
+      "cost": "varies",
+      "time": "1 month",
+      "category": "construction",
+      "document": "acks-core"
+    }
+  },
+  {
+    "pk": "acks_recruit",
+    "fields": {
+      "name": "Recruit Soldiers",
+      "system": "acks",
+      "license": "OGL",
+      "desc": "Raise troops from domain population.",
+      "cost": "10gp/recruit/month",
+      "time": "1 month",
+      "category": "military",
+      "document": "acks-core"
+    }
+  },
+  {
+    "pk": "acks_tax",
+    "fields": {
+      "name": "Collect Taxes",
+      "system": "acks",
+      "license": "OGL",
+      "desc": "Gather tax revenue. Base = population x 2gp/household/quarter.",
+      "cost": "none",
+      "time": "1 quarter",
+      "category": "economy",
+      "document": "acks-core"
+    }
+  },
+  {
+    "pk": "acks_patrol",
+    "fields": {
+      "name": "Patrol Territory",
+      "system": "acks",
+      "license": "OGL",
+      "desc": "Send soldiers to suppress banditry.",
+      "cost": "10gp/patrol/hex/month",
+      "time": "1 month",
+      "category": "military",
+      "document": "acks-core"
+    }
+  },
+  {
+    "pk": "acks_market",
+    "fields": {
+      "name": "Establish Market",
+      "system": "acks",
+      "license": "OGL",
+      "desc": "Create marketplace for trade income.",
+      "cost": "5000gp",
+      "time": "2 months",
+      "category": "economy",
+      "document": "acks-core"
+    }
+  },
+  {
+    "pk": "acks_court",
+    "fields": {
+      "name": "Hold Court",
+      "system": "acks",
+      "license": "OGL",
+      "desc": "Adjudicate legal disputes. Affects loyalty and crime.",
+      "cost": "none",
+      "time": "1 week",
+      "category": "legal",
+      "document": "acks-core"
+    }
+  },
+  {
+    "pk": "acks_espionage",
+    "fields": {
+      "name": "Espionage",
+      "system": "acks",
+      "license": "OGL",
+      "desc": "Send agents to infiltrate rival domains.",
+      "cost": "100gp/agent/month",
+      "time": "1 month",
+      "category": "intrigue",
+      "document": "acks-core"
+    }
+  },
+  {
+    "pk": "acks_diplomacy",
+    "fields": {
+      "name": "Diplomatic Envoy",
+      "system": "acks",
+      "license": "OGL",
+      "desc": "Negotiate treaties and alliances.",
+      "cost": "50gp/envoy/month",
+      "time": "1 month",
+      "category": "politics",
+      "document": "acks-core"
+    }
+  },
+  {
+    "pk": "acks_fortify",
+    "fields": {
+      "name": "Fortify Domain",
+      "system": "acks",
+      "license": "OGL",
+      "desc": "Build walls and defenses.",
+      "cost": "varies",
+      "time": "2-6 months",
+      "category": "military",
+      "document": "acks-core"
+    }
+  },
+  {
+    "pk": "acks_explore",
+    "fields": {
+      "name": "Explore Hex",
+      "system": "acks",
+      "license": "OGL",
+      "desc": "Scout unclaimed hexes for resources and threats.",
+      "cost": "50gp/hex",
+      "time": "1 month",
+      "category": "exploration",
+      "document": "acks-core"
+    }
+  }
+]

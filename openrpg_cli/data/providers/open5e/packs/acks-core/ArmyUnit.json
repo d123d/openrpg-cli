@@ -1,0 +1,122 @@
+[
+  {
+    "pk": "acks_militia",
+    "fields": {
+      "name": "Militia",
+      "system": "acks",
+      "license": "OGL",
+      "type": "infantry",
+      "attack": 0,
+      "damage": 1,
+      "hp": 2,
+      "cost": "2gp/recruit",
+      "upkeep": "1gp/soldier/quarter",
+      "document": "acks-core"
+    }
+  },
+  {
+    "pk": "acks_footmen",
+    "fields": {
+      "name": "Footmen",
+      "system": "acks",
+      "license": "OGL",
+      "type": "infantry",
+      "attack": 1,
+      "damage": 2,
+      "hp": 4,
+      "cost": "10gp/recruit",
+      "upkeep": "2gp/soldier/quarter",
+      "document": "acks-core"
+    }
+  },
+  {
+    "pk": "acks_light_cav",
+    "fields": {
+      "name": "Light Cavalry",
+      "system": "acks",
+      "license": "OGL",
+      "type": "cavalry",
+      "attack": 2,
+      "damage": 2,
+      "hp": 5,
+      "cost": "50gp/recruit",
+      "upkeep": "5gp/soldier/quarter",
+      "document": "acks-core"
+    }
+  },
+  {
+    "pk": "acks_heavy_cav",
+    "fields": {
+      "name": "Heavy Cavalry",
+      "system": "acks",
+      "license": "OGL",
+      "type": "cavalry",
+      "attack": 3,
+      "damage": 3,
+      "hp": 8,
+      "cost": "150gp/recruit",
+      "upkeep": "10gp/soldier/quarter",
+      "document": "acks-core"
+    }
+  },
+  {
+    "pk": "acks_archers",
+    "fields": {
+      "name": "Archers",
+      "system": "acks",
+      "license": "OGL",
+      "type": "ranged",
+      "attack": 2,
+      "damage": 2,
+      "hp": 3,
+      "cost": "15gp/recruit",
+      "upkeep": "3gp/soldier/quarter",
+      "document": "acks-core"
+    }
+  },
+  {
+    "pk": "acks_siege",
+    "fields": {
+      "name": "Siege Engines",
+      "system": "acks",
+      "license": "OGL",
+      "type": "siege",
+      "attack": 4,
+      "damage": 6,
+      "hp": 10,
+      "cost": "500gp/unit",
+      "upkeep": "20gp/unit/quarter",
+      "document": "acks-core"
+    }
+  },
+  {
+    "pk": "acks_wizard",
+    "fields": {
+      "name": "Battle Mage",
+      "system": "acks",
+      "license": "OGL",
+      "type": "magic",
+      "attack": 3,
+      "damage": 4,
+      "hp": 3,
+      "cost": "200gp/recruit",
+      "upkeep": "15gp/soldier/quarter",
+      "document": "acks-core"
+    }
+  },
+  {
+    "pk": "acks_mercs",
+    "fields": {
+      "name": "Mercenaries",
+      "system": "acks",
+      "license": "OGL",
+      "type": "infantry",
+      "attack": 2,
+      "damage": 2,
+      "hp": 5,
+      "cost": "30gp/recruit",
+      "upkeep": "8gp/soldier/quarter",
+      "document": "acks-core"
+    }
+  }
+]

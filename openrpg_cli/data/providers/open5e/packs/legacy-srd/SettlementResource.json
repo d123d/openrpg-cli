@@ -1,0 +1,52 @@
+[
+  {
+    "pk": "legacy_food",
+    "fields": {
+      "name": "Food",
+      "system": "legacy",
+      "license": "CC-BY-4.0",
+      "rate": "1 per 10 pop/season",
+      "document": "legacy-srd"
+    }
+  },
+  {
+    "pk": "legacy_material",
+    "fields": {
+      "name": "Material",
+      "system": "legacy",
+      "license": "CC-BY-4.0",
+      "rate": "1 per 5 pop/season",
+      "document": "legacy-srd"
+    }
+  },
+  {
+    "pk": "legacy_labor",
+    "fields": {
+      "name": "Labor",
+      "system": "legacy",
+      "license": "CC-BY-4.0",
+      "rate": "1 per 20 pop/season",
+      "document": "legacy-srd"
+    }
+  },
+  {
+    "pk": "legacy_influence",
+    "fields": {
+      "name": "Influence",
+      "system": "legacy",
+      "license": "CC-BY-4.0",
+      "rate": "1 per 100 pop/season",
+      "document": "legacy-srd"
+    }
+  },
+  {
+    "pk": "legacy_wealth",
+    "fields": {
+      "name": "Wealth",
+      "system": "legacy",
+      "license": "CC-BY-4.0",
+      "rate": "1 per 50 pop/season",
+      "document": "legacy-srd"
+    }
+  }
+]

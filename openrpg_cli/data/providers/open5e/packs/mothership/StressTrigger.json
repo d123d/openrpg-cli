@@ -1,0 +1,101 @@
+[
+  {
+    "pk": "ms_witness",
+    "fields": {
+      "name": "Witness Violence",
+      "system": "mothership",
+      "license": "CC-BY-4.0",
+      "stress": 1,
+      "category": "combat",
+      "document": "mothership-srd"
+    }
+  },
+  {
+    "pk": "ms_near_death",
+    "fields": {
+      "name": "Near Death",
+      "system": "mothership",
+      "license": "CC-BY-4.0",
+      "stress": 2,
+      "category": "combat",
+      "document": "mothership-srd"
+    }
+  },
+  {
+    "pk": "ms_isolation",
+    "fields": {
+      "name": "Isolation",
+      "system": "mothership",
+      "license": "CC-BY-4.0",
+      "stress": 1,
+      "category": "environment",
+      "document": "mothership-srd"
+    }
+  },
+  {
+    "pk": "ms_darkness",
+    "fields": {
+      "name": "Darkness",
+      "system": "mothership",
+      "license": "CC-BY-4.0",
+      "stress": 1,
+      "category": "environment",
+      "document": "mothership-srd"
+    }
+  },
+  {
+    "pk": "ms_body_horror",
+    "fields": {
+      "name": "Body Horror",
+      "system": "mothership",
+      "license": "CC-BY-4.0",
+      "stress": 1,
+      "category": "horror",
+      "document": "mothership-srd"
+    }
+  },
+  {
+    "pk": "ms_aliens",
+    "fields": {
+      "name": "Alien Encounter",
+      "system": "mothership",
+      "license": "CC-BY-4.0",
+      "stress": 2,
+      "category": "horror",
+      "document": "mothership-srd"
+    }
+  },
+  {
+    "pk": "ms_betrayal",
+    "fields": {
+      "name": "Betrayal",
+      "system": "mothership",
+      "license": "CC-BY-4.0",
+      "stress": 2,
+      "category": "social",
+      "document": "mothership-srd"
+    }
+  },
+  {
+    "pk": "ms_death_ally",
+    "fields": {
+      "name": "Death of Ally",
+      "system": "mothership",
+      "license": "CC-BY-4.0",
+      "stress": 2,
+      "category": "social",
+      "document": "mothership-srd"
+    }
+  },
+  {
+    "pk": "ms_unfathomable",
+    "fields": {
+      "name": "Unfathomable Sight",
+      "system": "mothership",
+      "license": "CC-BY-4.0",
+      "stress": 3,
+      "category": "horror",
+      "document": "mothership-srd"
+    }
+  }
+]

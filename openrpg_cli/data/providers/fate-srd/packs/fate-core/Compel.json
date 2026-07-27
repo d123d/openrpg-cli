@@ -1,0 +1,35 @@
+[
+  {
+    "pk": "fate_compel_positive",
+    "fields": {
+      "name": "Positive Compel",
+      "system": "fate",
+      "license": "CC-BY-SA-4.0",
+      "desc": "An aspect makes the situation harder for you. Gain 1 Fate Point.",
+      "mechanic": "offer compels, accept or pay 1 FP to refuse",
+      "document": "fate-core-srd"
+    }
+  },
+  {
+    "pk": "fate_compel_negative",
+    "fields": {
+      "name": "Negative Compel",
+      "system": "fate",
+      "license": "CC-BY-SA-4.0",
+      "desc": "An aspect causes problems. You can refuse by paying 1 Fate Point.",
+      "mechanic": "GM or player offers, target decides",
+      "document": "fate-core-srd"
+    }
+  },
+  {
+    "pk": "fate_compel_tag",
+    "fields": {
+      "name": "Tag-Back",
+      "system": "fate",
+      "license": "CC-BY-SA-4.0",
+      "desc": "After a compel is accepted, the compel becomes an aspect on you.",
+      "mechanic": "compel then accept then aspect until end of scene",
+      "document": "fate-core-srd"
+    }
+  }
+]

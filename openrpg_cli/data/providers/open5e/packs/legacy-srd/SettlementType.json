@@ -1,0 +1,62 @@
+[
+  {
+    "pk": "legacy_camp",
+    "fields": {
+      "name": "Camp",
+      "system": "legacy",
+      "license": "CC-BY-4.0",
+      "pop": "1-20",
+      "defense": 0,
+      "desc": "Temporary gathering.",
+      "document": "legacy-srd"
+    }
+  },
+  {
+    "pk": "legacy_village",
+    "fields": {
+      "name": "Village",
+      "system": "legacy",
+      "license": "CC-BY-4.0",
+      "pop": "21-100",
+      "defense": 1,
+      "desc": "Small permanent settlement.",
+      "document": "legacy-srd"
+    }
+  },
+  {
+    "pk": "legacy_town",
+    "fields": {
+      "name": "Town",
+      "system": "legacy",
+      "license": "CC-BY-4.0",
+      "pop": "101-500",
+      "defense": 2,
+      "desc": "Established settlement with walls.",
+      "document": "legacy-srd"
+    }
+  },
+  {
+    "pk": "legacy_city",
+    "fields": {
+      "name": "City",
+      "system": "legacy",
+      "license": "CC-BY-4.0",
+      "pop": "501-2000",
+      "defense": 3,
+      "desc": "Major urban center.",
+      "document": "legacy-srd"
+    }
+  },
+  {
+    "pk": "legacy_metropolis",
+    "fields": {
+      "name": "Metropolis",
+      "system": "legacy",
+      "license": "CC-BY-4.0",
+      "pop": "2001-10000",
+      "defense": 4,
+      "desc": "Vast city-state.",
+      "document": "legacy-srd"
+    }
+  }
+]

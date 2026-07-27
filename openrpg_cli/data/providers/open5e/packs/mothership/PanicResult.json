@@ -1,0 +1,123 @@
+[
+  {
+    "pk": "ms_panic_scream",
+    "fields": {
+      "range": "1-5",
+      "result": "Scream",
+      "desc": "Involuntary scream.",
+      "system": "mothership",
+      "license": "CC-BY-4.0",
+      "document": "mothership-srd"
+    }
+  },
+  {
+    "pk": "ms_panic_drop",
+    "fields": {
+      "range": "6-15",
+      "result": "Drop Item",
+      "desc": "Drop whatever you are holding.",
+      "system": "mothership",
+      "license": "CC-BY-4.0",
+      "document": "mothership-srd"
+    }
+  },
+  {
+    "pk": "ms_panic_freeze",
+    "fields": {
+      "range": "16-25",
+      "result": "Freeze",
+      "desc": "Frozen in place, cannot act.",
+      "system": "mothership",
+      "license": "CC-BY-4.0",
+      "document": "mothership-srd"
+    }
+  },
+  {
+    "pk": "ms_panic_flee",
+    "fields": {
+      "range": "26-35",
+      "result": "Flee",
+      "desc": "Must flee from source of panic.",
+      "system": "mothership",
+      "license": "CC-BY-4.0",
+      "document": "mothership-srd"
+    }
+  },
+  {
+    "pk": "ms_panic_attack",
+    "fields": {
+      "range": "36-45",
+      "result": "Attack Ally",
+      "desc": "Lash out at nearest creature.",
+      "system": "mothership",
+      "license": "CC-BY-4.0",
+      "document": "mothership-srd"
+    }
+  },
+  {
+    "pk": "ms_panic_vomit",
+    "fields": {
+      "range": "46-55",
+      "result": "Vomit",
+      "desc": "Overcome with nausea.",
+      "system": "mothership",
+      "license": "CC-BY-4.0",
+      "document": "mothership-srd"
+    }
+  },
+  {
+    "pk": "ms_panic_babble",
+    "fields": {
+      "range": "56-65",
+      "result": "Babbling",
+      "desc": "Babble incoherently.",
+      "system": "mothership",
+      "license": "CC-BY-4.0",
+      "document": "mothership-srd"
+    }
+  },
+  {
+    "pk": "ms_panic_faint",
+    "fields": {
+      "range": "66-75",
+      "result": "Faint",
+      "desc": "Collapse, unconscious.",
+      "system": "mothership",
+      "license": "CC-BY-4.0",
+      "document": "mothership-srd"
+    }
+  },
+  {
+    "pk": "ms_panic_catatonic",
+    "fields": {
+      "range": "76-85",
+      "result": "Catatonic",
+      "desc": "Catatonic for 1d10 minutes.",
+      "system": "mothership",
+      "license": "CC-BY-4.0",
+      "document": "mothership-srd"
+    }
+  },
+  {
+    "pk": "ms_panic_violent",
+    "fields": {
+      "range": "86-95",
+      "result": "Violent Outburst",
+      "desc": "Attack everything until subdued.",
+      "system": "mothership",
+      "license": "CC-BY-4.0",
+      "document": "mothership-srd"
+    }
+  },
+  {
+    "pk": "ms_panic_terror",
+    "fields": {
+      "range": "96-100",
+      "result": "Terror",
+      "desc": "Incapacitated with terror for 1d10 rounds.",
+      "system": "mothership",
+      "license": "CC-BY-4.0",
+      "document": "mothership-srd"
+    }
+  }
+]

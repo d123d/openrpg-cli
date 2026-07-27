@@ -1,0 +1,122 @@
+[
+  {
+    "pk": "dw_move_hack_slash",
+    "fields": {
+      "name": "Hack and Slash",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "trigger": "You attack an enemy in melee",
+      "roll": "2d6+STR",
+      "outcomes": {
+        "10+": "Deal your damage, avoid enemy",
+        "7-9": "Deal damage, enemy strikes back"
+      },
+      "document": "dungeon-world-ccby"
+    }
+  },
+  {
+    "pk": "dw_move_volley",
+    "fields": {
+      "name": "Volley",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "trigger": "You attack at range",
+      "roll": "2d6+DEX",
+      "outcomes": {
+        "10+": "Hit, deal damage",
+        "7-9": "Hit but choose: ammo, take cover, or get closer"
+      },
+      "document": "dungeon-world-ccby"
+    }
+  },
+  {
+    "pk": "dw_move_defy_danger",
+    "fields": {
+      "name": "Defy Danger",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "trigger": "You face an imminent threat",
+      "roll": "2d6+relevant stat",
+      "outcomes": {
+        "10+": "You do it",
+        "7-9": "You do it but at a cost"
+      },
+      "document": "dungeon-world-ccby"
+    }
+  },
+  {
+    "pk": "dw_move_defend",
+    "fields": {
+      "name": "Defend",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "trigger": "You guard someone or something",
+      "roll": "2d6+STR/DEX",
+      "outcomes": {
+        "10+": "Hold 3, spend 1 per trigger",
+        "7-9": "Hold 1, spend 1 per trigger"
+      },
+      "document": "dungeon-world-ccby"
+    }
+  },
+  {
+    "pk": "dw_move_discern",
+    "fields": {
+      "name": "Discern Realities",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "trigger": "You closely observe a situation",
+      "roll": "2d6+WIS",
+      "outcomes": {
+        "10+": "Ask 3 questions",
+        "7-9": "Ask 1 question"
+      },
+      "document": "dungeon-world-ccby"
+    }
+  },
+  {
+    "pk": "dw_move_parley",
+    "fields": {
+      "name": "Parley",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "trigger": "You influence an NPC through leverage",
+      "roll": "2d6+CHA",
+      "outcomes": {
+        "10+": "They do what you want",
+        "7-9": "They do it but want something first"
+      },
+      "document": "dungeon-world-ccby"
+    }
+  },
+  {
+    "pk": "dw_move_spout",
+    "fields": {
+      "name": "Spout Lore",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "trigger": "You consult your knowledge",
+      "roll": "2d6+INT",
+      "outcomes": {
+        "10+": "You know something useful",
+        "7-9": "You know something but it is incomplete or dangerous"
+      },
+      "document": "dungeon-world-ccby"
+    }
+  },
+  {
+    "pk": "dw_move_shout",
+    "fields": {
+      "name": "Aid or Interfere",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "trigger": "You help or hinder another character",
+      "roll": "2d6+CHA",
+      "outcomes": {
+        "10+": "Grant +2 or -2",
+        "7-9": "Grant +1 or -1 but expose yourself"
+      },
+      "document": "dungeon-world-ccby"
+    }
+  }
+]

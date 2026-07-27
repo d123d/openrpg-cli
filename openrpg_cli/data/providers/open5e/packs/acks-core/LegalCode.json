@@ -1,0 +1,112 @@
+[
+  {
+    "pk": "acks_theft",
+    "fields": {
+      "name": "Theft",
+      "system": "acks",
+      "license": "OGL",
+      "severity": "minor",
+      "punishment": "Fine (10x value) or imprisonment (1-4 weeks)",
+      "document": "acks-core"
+    }
+  },
+  {
+    "pk": "acks_assault",
+    "fields": {
+      "name": "Assault",
+      "system": "acks",
+      "license": "OGL",
+      "severity": "moderate",
+      "punishment": "Fine (50gp) or imprisonment (1-3 months)",
+      "document": "acks-core"
+    }
+  },
+  {
+    "pk": "acks_murder",
+    "fields": {
+      "name": "Murder",
+      "system": "acks",
+      "license": "OGL",
+      "severity": "capital",
+      "punishment": "Execution or life imprisonment or exile",
+      "document": "acks-core"
+    }
+  },
+  {
+    "pk": "acks_treason",
+    "fields": {
+      "name": "Treason",
+      "system": "acks",
+      "license": "OGL",
+      "severity": "capital",
+      "punishment": "Execution and confiscation of all property",
+      "document": "acks-core"
+    }
+  },
+  {
+    "pk": "acks_banditry",
+    "fields": {
+      "name": "Banditry",
+      "system": "acks",
+      "license": "OGL",
+      "severity": "moderate",
+      "punishment": "Imprisonment (3-12 months) or conscription",
+      "document": "acks-core"
+    }
+  },
+  {
+    "pk": "acks_smuggling",
+    "fields": {
+      "name": "Smuggling",
+      "system": "acks",
+      "license": "OGL",
+      "severity": "moderate",
+      "punishment": "Confiscation and fine (100-500gp)",
+      "document": "acks-core"
+    }
+  },
+  {
+    "pk": "acks_vandalism",
+    "fields": {
+      "name": "Vandalism",
+      "system": "acks",
+      "license": "OGL",
+      "severity": "minor",
+      "punishment": "Fine (restitution) or community service",
+      "document": "acks-core"
+    }
+  },
+  {
+    "pk": "acks_fraud",
+    "fields": {
+      "name": "Fraud",
+      "system": "acks",
+      "license": "OGL",
+      "severity": "moderate",
+      "punishment": "Fine (3x defrauded) and public shaming",
+      "document": "acks-core"
+    }
+  },
+  {
+    "pk": "acks_desecration",
+    "fields": {
+      "name": "Desecration",
+      "system": "acks",
+      "license": "OGL",
+      "severity": "moderate",
+      "punishment": "Imprisonment (1-6 months) and penance",
+      "document": "acks-core"
+    }
+  },
+  {
+    "pk": "acks_poaching",
+    "fields": {
+      "name": "Poaching",
+      "system": "acks",
+      "license": "OGL",
+      "severity": "minor",
+      "punishment": "Fine (50gp/creature) and equipment confiscation",
+      "document": "acks-core"
+    }
+  }
+]

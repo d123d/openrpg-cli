@@ -1,0 +1,57 @@
+[
+  {
+    "pk": "pf2e_hostile",
+    "fields": {
+      "name": "Hostile",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Actively seeks to harm. Will not accept Requests.",
+      "degree": 1,
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_unfriendly",
+    "fields": {
+      "name": "Unfriendly",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Dislikes and distrusts. Will not accept Requests.",
+      "degree": 2,
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_indifferent",
+    "fields": {
+      "name": "Indifferent",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Does not care. Default attitude.",
+      "degree": 3,
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_friendly",
+    "fields": {
+      "name": "Friendly",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Likes the character. Will accept simple, safe Requests.",
+      "degree": 4,
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_helpful",
+    "fields": {
+      "name": "Helpful",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Wishes to actively aid. Will accept reasonable Requests.",
+      "degree": 5,
+      "document": "pf2e-core"
+    }
+  }
+]

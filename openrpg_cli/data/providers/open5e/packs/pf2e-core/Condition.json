@@ -1,0 +1,354 @@
+[
+  {
+    "pk": "pf2e_blinded",
+    "fields": {
+      "name": "Blinded",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "You can't see. All normal terrain is difficult terrain. Immune to visual effects.",
+      "group": "senses",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_broken",
+    "fields": {
+      "name": "Broken",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Object is damaged beyond normal function. Broken armor grants item bonus but impairs AC.",
+      "group": "objects",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_clumsy",
+    "fields": {
+      "name": "Clumsy",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Status penalty to DEX-based rolls and DCs equal to condition value.",
+      "group": "lowered-abilities",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_concealed",
+    "fields": {
+      "name": "Concealed",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Difficult to see. Target must pass DC 5 flat check to be affected by attacks.",
+      "group": "senses",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_confused",
+    "fields": {
+      "name": "Confused",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Attack wildly. Off-guard, no allies, can't Delay/Ready/reactions.",
+      "group": "control",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_controlled",
+    "fields": {
+      "name": "Controlled",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Will subverted. Controller dictates actions.",
+      "group": "control",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_dazzled",
+    "fields": {
+      "name": "Dazzled",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "All creatures and objects are concealed from you.",
+      "group": "senses",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_deafened",
+    "fields": {
+      "name": "Deafened",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Can't hear. Auto-fail Perception requiring hearing. DC 5 flat check for auditory actions.",
+      "group": "senses",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_doomed",
+    "fields": {
+      "name": "Doomed",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Dying value at which you die is reduced by doomed value.",
+      "group": "death",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_drained",
+    "fields": {
+      "name": "Drained",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Status penalty to CON-based rolls. Lose HP equal to level times drained value.",
+      "group": "lowered-abilities",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_dying",
+    "fields": {
+      "name": "Dying",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "At death's door. Recovery check each turn. Die at dying 4.",
+      "group": "death",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_encumbered",
+    "fields": {
+      "name": "Encumbered",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Clumsy 1 and 10-foot speed penalty.",
+      "group": "movement",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_enfeebled",
+    "fields": {
+      "name": "Enfeebled",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Status penalty to STR-based rolls and DCs equal to condition value.",
+      "group": "lowered-abilities",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_fascinated",
+    "fields": {
+      "name": "Fascinated",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "-2 to Perception and skill checks. Can't use concentrate actions unrelated to fascination source.",
+      "group": "control",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_fatigued",
+    "fields": {
+      "name": "Fatigued",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "-1 to AC and saves. Can't use exploration activities.",
+      "group": "movement",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_fleeing",
+    "fields": {
+      "name": "Fleeing",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Must flee from source. Can't Delay or Ready.",
+      "group": "control",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_frightened",
+    "fields": {
+      "name": "Frightened",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Status penalty equal to value to all checks and DCs. Decreases by 1 each turn.",
+      "group": "fear",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_grabbed",
+    "fields": {
+      "name": "Grabbed",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Off-guard and immobilized. DC 5 flat check for manipulate actions.",
+      "group": "movement",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_hidden",
+    "fields": {
+      "name": "Hidden",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Creature knows your space but not precise location. DC 11 flat check to target.",
+      "group": "senses",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_immobilized",
+    "fields": {
+      "name": "Immobilized",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Can't use move actions.",
+      "group": "movement",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_invisible",
+    "fields": {
+      "name": "Invisible",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Undetected to everyone. Creatures must Seek to detect you.",
+      "group": "senses",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_off_guard",
+    "fields": {
+      "name": "Off-Guard",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "-2 circumstance penalty to AC.",
+      "group": "defense",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_paralyzed",
+    "fields": {
+      "name": "Paralyzed",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Frozen in place. Off-guard, can only Recall Knowledge.",
+      "group": "control",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_prone",
+    "fields": {
+      "name": "Prone",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Off-guard, -2 to attacks. Only Crawl and Stand to move.",
+      "group": "movement",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_quickened",
+    "fields": {
+      "name": "Quickened",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Gain 1 additional action at start of turn.",
+      "group": "buffs",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_restrained",
+    "fields": {
+      "name": "Restrained",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Off-guard, immobilized, can only Escape or Force Open.",
+      "group": "movement",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_sickened",
+    "fields": {
+      "name": "Sickened",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Status penalty equal to value. Can't willingly ingest. Retch to recover.",
+      "group": "conditions",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_slowed",
+    "fields": {
+      "name": "Slowed",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Lose actions equal to slowed value.",
+      "group": "action-economy",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_stunned",
+    "fields": {
+      "name": "Stunned",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Can't act. Lose actions equal to stunned value.",
+      "group": "action-economy",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_stupefied",
+    "fields": {
+      "name": "Stupefied",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Status penalty to INT/WIS/CHA rolls. Spells disrupted unless flat check passed.",
+      "group": "lowered-abilities",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_unconscious",
+    "fields": {
+      "name": "Unconscious",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Can't act. -4 to AC/Perception/Reflex. Blinded and off-guard.",
+      "group": "death",
+      "document": "pf2e-core"
+    }
+  },
+  {
+    "pk": "pf2e_wounded",
+    "fields": {
+      "name": "Wounded",
+      "system": "pf2e",
+      "license": "ORC",
+      "desc": "Dying value increases by wounded value when you gain dying.",
+      "group": "death",
+      "document": "pf2e-core"
+    }
+  }
+]

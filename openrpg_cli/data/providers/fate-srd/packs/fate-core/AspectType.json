@@ -1,0 +1,57 @@
+[
+  {
+    "pk": "fate_aspect_high_concept",
+    "fields": {
+      "name": "High Concept",
+      "system": "fate",
+      "license": "CC-BY-SA-4.0",
+      "desc": "The core of who you are. Your concept, advantage, and trouble.",
+      "type": "permanent",
+      "document": "fate-core-srd"
+    }
+  },
+  {
+    "pk": "fate_aspect_trouble",
+    "fields": {
+      "name": "Trouble",
+      "system": "fate",
+      "license": "CC-BY-SA-4.0",
+      "desc": "A recurring problem or complication.",
+      "type": "permanent",
+      "document": "fate-core-srd"
+    }
+  },
+  {
+    "pk": "fate_aspect_aspect",
+    "fields": {
+      "name": "Aspect",
+      "system": "fate",
+      "license": "CC-BY-SA-4.0",
+      "desc": "A phrase that is always true. Can be invoked or compelled.",
+      "type": "standard",
+      "document": "fate-core-srd"
+    }
+  },
+  {
+    "pk": "fate_aspect_situation",
+    "fields": {
+      "name": "Situation Aspect",
+      "system": "fate",
+      "license": "CC-BY-SA-4.0",
+      "desc": "Temporary aspect on the scene. Invoked once for free.",
+      "type": "temporary",
+      "document": "fate-core-srd"
+    }
+  },
+  {
+    "pk": "fate_aspect_boost",
+    "fields": {
+      "name": "Boost",
+      "system": "fate",
+      "license": "CC-BY-SA-4.0",
+      "desc": "Free invocation granted by a successful create advantage.",
+      "type": "temporary",
+      "document": "fate-core-srd"
+    }
+  }
+]

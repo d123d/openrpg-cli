@@ -1,0 +1,152 @@
+[
+  {
+    "pk": "dw_gm_show_signs",
+    "fields": {
+      "name": "Show Signs of an Approaching Threat",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "category": "threat",
+      "document": "dungeon-world-ccby"
+    }
+  },
+  {
+    "pk": "dw_gm_use_resource",
+    "fields": {
+      "name": "Use a Resource",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "category": "environment",
+      "document": "dungeon-world-ccby"
+    }
+  },
+  {
+    "pk": "dw_gm_deal_damage",
+    "fields": {
+      "name": "Deal Damage",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "category": "combat",
+      "document": "dungeon-world-ccby"
+    }
+  },
+  {
+    "pk": "dw_gm_trade_off",
+    "fields": {
+      "name": "Trade Off",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "category": "choice",
+      "document": "dungeon-world-ccby"
+    }
+  },
+  {
+    "pk": "dw_gm_turn_off",
+    "fields": {
+      "name": "Turn Their Move Back on Them",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "category": "consequence",
+      "document": "dungeon-world-ccby"
+    }
+  },
+  {
+    "pk": "dw_gm_separate",
+    "fields": {
+      "name": "Separate Them",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "category": "positioning",
+      "document": "dungeon-world-ccby"
+    }
+  },
+  {
+    "pk": "dw_gm_recruit",
+    "fields": {
+      "name": "Recruit an NPC",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "category": "social",
+      "document": "dungeon-world-ccby"
+    }
+  },
+  {
+    "pk": "dw_gm_offer",
+    "fields": {
+      "name": "Offer an Opportunity",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "category": "choice",
+      "document": "dungeon-world-ccby"
+    }
+  },
+  {
+    "pk": "dw_gm_show_downside",
+    "fields": {
+      "name": "Show a Downside",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "category": "consequence",
+      "document": "dungeon-world-ccby"
+    }
+  },
+  {
+    "pk": "dw_gm_take_action",
+    "fields": {
+      "name": "Take Action",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "category": "combat",
+      "document": "dungeon-world-ccby"
+    }
+  },
+  {
+    "pk": "dw_gm_announce_future",
+    "fields": {
+      "name": "Announce Future Badness",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "category": "threat",
+      "document": "dungeon-world-ccby"
+    }
+  },
+  {
+    "pk": "dw_gm_replace",
+    "fields": {
+      "name": "Replace Their Reward",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "category": "consequence",
+      "document": "dungeon-world-ccby"
+    }
+  },
+  {
+    "pk": "dw_gm_bring_attention",
+    "fields": {
+      "name": "Bring Attention to Something",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "category": "narrative",
+      "document": "dungeon-world-ccby"
+    }
+  },
+  {
+    "pk": "dw_gm_change_the_state",
+    "fields": {
+      "name": "Change the State of the World",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "category": "environment",
+      "document": "dungeon-world-ccby"
+    }
+  },
+  {
+    "pk": "dw_gm_play_a_character",
+    "fields": {
+      "name": "Play a Character",
+      "system": "dungeon-world",
+      "license": "CC-BY-3.0",
+      "category": "social",
+      "document": "dungeon-world-ccby"
+    }
+  }
+]
