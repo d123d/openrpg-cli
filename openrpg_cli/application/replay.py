@@ -8,7 +8,7 @@ from dataclasses import dataclass
 from openrpg_cli.domain.codecs import canonical_json, decode_state
 from openrpg_cli.domain.state import GameState
 from openrpg_cli.engine.reducer import reduce_command
-from openrpg_cli.engine.rng import GameRNG
+from openrpg_cli.engine.rng import DeterministicRNG
 
 from .log import GENESIS_HASH, SessionLog
 
@@ -27,13 +27,13 @@ class Snapshot:
     log_hash: str
     state_bytes: bytes
     state_hash: str
-    rng: GameRNG
+    rng: DeterministicRNG
     rng_hash: str
     schema_version: int = 1
 
     @classmethod
     def create(
-        cls, position: int, log_hash: str, state: GameState, rng: GameRNG
+        cls, position: int, log_hash: str, state: GameState, rng: DeterministicRNG
     ) -> "Snapshot":
         encoded = canonical_json(state)
         rng_hash = hashlib.sha256(canonical_json({"state": rng.state, "draws": rng.draws})).hexdigest()
@@ -42,10 +42,10 @@ class Snapshot:
 
 def replay(
     genesis: GameState,
-    initial_rng: GameRNG,
+    initial_rng: DeterministicRNG,
     log: SessionLog,
     snapshot: Snapshot | None = None,
-) -> tuple[GameState, GameRNG]:
+) -> tuple[GameState, DeterministicRNG]:
     log.validate()
     state, rng, start = genesis, initial_rng, 0
     if snapshot is not None:

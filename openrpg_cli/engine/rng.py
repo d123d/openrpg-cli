@@ -6,18 +6,22 @@ from dataclasses import dataclass
 
 
 @dataclass(frozen=True, slots=True)
-class GameRNG:
+class DeterministicRNG:
     state: int
     draws: int = 0
 
-    def next_int(self, low: int, high: int) -> tuple[int, "GameRNG"]:
+    def next_int(self, low: int, high: int) -> tuple[int, "DeterministicRNG"]:
         if low > high:
             raise ValueError("low must not exceed high")
         state = (self.state * 6364136223846793005 + 1442695040888963407) & ((1 << 64) - 1)
         value = low + state % (high - low + 1)
-        return value, GameRNG(state, self.draws + 1)
+        return value, DeterministicRNG(state, self.draws + 1)
 
-    def die(self, sides: int) -> tuple[int, "GameRNG"]:
+    def die(self, sides: int) -> tuple[int, "DeterministicRNG"]:
         if sides < 2:
             raise ValueError("die must have at least 2 sides")
         return self.next_int(1, sides)
+
+
+# Deprecated v2 compatibility export. New code imports DeterministicRNG.
+GameRNG = DeterministicRNG

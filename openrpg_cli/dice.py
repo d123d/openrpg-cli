@@ -67,7 +67,7 @@ class D20Roll:
 
 
 @dataclass
-class GameRNG:
+class LegacyPythonRNG:
     """Seeded RNG with faithful save/restore via getstate/setstate.
 
     Set ``OPENRPG_CLI_RNG_TRACE=1`` to log every draw to stderr for
@@ -137,7 +137,7 @@ class GameRNG:
         }
 
     @classmethod
-    def from_dict(cls, data: dict) -> "GameRNG":
+    def from_dict(cls, data: dict) -> "LegacyPythonRNG":
         return cls(
             seed=int(data["seed"]),
             draw_count=int(data.get("draw_count", 0)),
@@ -156,7 +156,7 @@ def _list_to_state(data: list[Any]) -> tuple:
     return (version, tuple(internal), gauss)
 
 
-def roll_die(rng: GameRNG, sides: int) -> int:
+def roll_die(rng: LegacyPythonRNG, sides: int) -> int:
     if sides < 2:
         raise ValueError(f"die sides must be >= 2, got {sides}")
     return rng.randint(1, sides)
@@ -201,7 +201,7 @@ def _split_damage_expr(expression: str) -> tuple[str, int]:
     return dice_only, modifier
 
 
-def roll(rng: GameRNG, expression: str) -> RollResult:
+def roll(rng: LegacyPythonRNG, expression: str) -> RollResult:
     expr = expression.strip().replace(" ", "")
     if not expr:
         raise ValueError("empty dice expression")
@@ -254,7 +254,7 @@ def roll(rng: GameRNG, expression: str) -> RollResult:
     return RollResult(expression=expression, groups=groups, modifier=modifier, total=total)
 
 
-def roll_damage_with_crit(rng: GameRNG, expression: str, critical: bool) -> RollResult:
+def roll_damage_with_crit(rng: LegacyPythonRNG, expression: str, critical: bool) -> RollResult:
     """5e crit: roll weapon/spell dice twice, apply modifier once."""
     if not critical:
         return roll(rng, expression)
@@ -278,7 +278,7 @@ def roll_damage_with_crit(rng: GameRNG, expression: str, critical: bool) -> Roll
     )
 
 
-def roll_d20(rng: GameRNG, modifier: int = 0, advantage: Advantage = "normal") -> D20Roll:
+def roll_d20(rng: LegacyPythonRNG, modifier: int = 0, advantage: Advantage = "normal") -> D20Roll:
     n = 2 if advantage in ("advantage", "disadvantage") else 1
     dice = [roll_die(rng, 20) for _ in range(n)]
     if advantage == "advantage":
@@ -296,3 +296,7 @@ def roll_d20(rng: GameRNG, modifier: int = 0, advantage: Advantage = "normal") -
         is_nat20=natural == 20,
         is_nat1=natural == 1,
     )
+
+
+# Deprecated v1 compatibility export. New code imports LegacyPythonRNG.
+GameRNG = LegacyPythonRNG

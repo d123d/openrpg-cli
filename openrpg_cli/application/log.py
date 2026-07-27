@@ -7,7 +7,7 @@ from dataclasses import dataclass
 
 from openrpg_cli.domain.codecs import canonical_json
 from openrpg_cli.domain.messages import Command, Event
-from openrpg_cli.engine.rng import GameRNG
+from openrpg_cli.engine.rng import DeterministicRNG
 
 MAX_EVENTS_PER_RECORD = 1_000
 MAX_RECORDS = 100_000
@@ -20,8 +20,8 @@ class LogRecord:
     sequence: int
     command: Command
     events: tuple[Event, ...]
-    rng_before: GameRNG
-    rng_after: GameRNG
+    rng_before: DeterministicRNG
+    rng_after: DeterministicRNG
     state_hash: str
     previous_hash: str
     record_hash: str
@@ -48,8 +48,8 @@ class SessionLog:
         self,
         command: Command,
         events: tuple[Event, ...],
-        rng_before: GameRNG,
-        rng_after: GameRNG,
+        rng_before: DeterministicRNG,
+        rng_after: DeterministicRNG,
         state_hash: str,
     ) -> "SessionLog":
         if len(self.records) >= MAX_RECORDS:

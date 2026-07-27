@@ -5,7 +5,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from enum import Enum
 
-from openrpg_cli.engine.rng import GameRNG
+from openrpg_cli.engine.rng import DeterministicRNG
 
 LIMIT = 1_000_000
 
@@ -76,7 +76,7 @@ def _modifier(test: D20Test) -> tuple[int, int]:
     return test.ability_modifier + prof + sum(test.circumstantial_modifiers), prof
 
 
-def resolve_d20(test: D20Test, rng: GameRNG) -> tuple[D20Result, GameRNG]:
+def resolve_d20(test: D20Test, rng: DeterministicRNG) -> tuple[D20Result, DeterministicRNG]:
     advantage = bool(test.advantage_sources)
     disadvantage = bool(test.disadvantage_sources)
     count = 1 if advantage == disadvantage else 2
@@ -122,8 +122,8 @@ def resolve_d20(test: D20Test, rng: GameRNG) -> tuple[D20Result, GameRNG]:
 
 
 def resolve_contest(
-    left: D20Test, right: D20Test, rng: GameRNG
-) -> tuple[D20Result, D20Result, int, GameRNG]:
+    left: D20Test, right: D20Test, rng: DeterministicRNG
+) -> tuple[D20Result, D20Result, int, DeterministicRNG]:
     a, rng = resolve_d20(left, rng)
     b, rng = resolve_d20(right, rng)
     return a, b, (1 if a.total > b.total else -1 if a.total < b.total else 0), rng

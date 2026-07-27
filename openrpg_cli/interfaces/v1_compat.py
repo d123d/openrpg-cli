@@ -9,17 +9,17 @@ from openrpg_cli.application.replay import state_hash
 from openrpg_cli.domain.messages import RecordLegacy
 from openrpg_cli.domain.state import GameState
 from openrpg_cli.engine.reducer import reduce_command
-from openrpg_cli.engine.rng import GameRNG
+from openrpg_cli.engine.rng import DeterministicRNG
 
 
-def adapt_combat_result(result: Any) -> tuple[GameState, GameRNG, SessionLog]:
+def adapt_combat_result(result: Any) -> tuple[GameState, DeterministicRNG, SessionLog]:
     """Copy legacy events into stable typed records without changing v1 objects."""
     aggregate = f"v1-combat:{result.seed}"
     state = GameState(
         aggregate,
         metadata={"provenance": "legacy-v1-adapter", "seed": result.seed},
     )
-    rng = GameRNG(int(result.seed))
+    rng = DeterministicRNG(int(result.seed))
     log = SessionLog()
     for index, legacy in enumerate(result.events):
         payload = {

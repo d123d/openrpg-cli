@@ -5,7 +5,7 @@ from __future__ import annotations
 from dataclasses import dataclass, replace
 from enum import Enum
 
-from openrpg_cli.engine.rng import GameRNG
+from openrpg_cli.engine.rng import DeterministicRNG
 
 MAX_ACTORS = 256
 MAX_ID = 128
@@ -85,9 +85,9 @@ class TurnTransition:
 def roll_initiative(
     actors: tuple[tuple[str, str, int], ...],
     teams: tuple[tuple[str, tuple[str, ...]], ...],
-    rng: GameRNG,
+    rng: DeterministicRNG,
     surprised_actor_ids: frozenset[str] = frozenset(),
-) -> tuple[TurnState, GameRNG]:
+) -> tuple[TurnState, DeterministicRNG]:
     if not actors or len(actors) > MAX_ACTORS:
         raise ValueError("invalid actor count")
     actor_ids = [a[0] for a in actors]

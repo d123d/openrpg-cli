@@ -61,7 +61,7 @@ from openrpg_cli.domain.state import (
     TeamState,
 )
 
-from .rng import GameRNG
+from .rng import DeterministicRNG
 from openrpg_cli.rules.resolution import D20Test, Proficiency, TestKind, resolve_d20
 from openrpg_cli.rules.vitality import (
     DamageInstance,
@@ -99,20 +99,20 @@ from openrpg_cli.rules.actions import CoreAction
 class ReductionResult:
     state: GameState
     events: tuple[Event, ...]
-    rng: GameRNG
+    rng: DeterministicRNG
 
 
 def _event(cls: type[Event], command: Command, payload: dict) -> Event:
     return cls(id=f"{command.id}:event", aggregate_id=command.aggregate_id, payload=payload)
 
 
-def _create(state: GameState, cmd: CreateGame, rng: GameRNG) -> ReductionResult:
+def _create(state: GameState, cmd: CreateGame, rng: DeterministicRNG) -> ReductionResult:
     if state.id != cmd.aggregate_id:
         raise ValueError("aggregate id mismatch")
     return ReductionResult(state, (_event(GameCreated, cmd, {"game_id": state.id}),), rng)
 
 
-def _put(state: GameState, cmd: PutEntity, rng: GameRNG) -> ReductionResult:
+def _put(state: GameState, cmd: PutEntity, rng: DeterministicRNG) -> ReductionResult:
     kind, entity_id = str(cmd.payload.get("kind", "")), str(cmd.payload.get("id", ""))
     data = cmd.payload.get("data", {})
     table = {
@@ -139,7 +139,7 @@ def _put(state: GameState, cmd: PutEntity, rng: GameRNG) -> ReductionResult:
     )
 
 
-def _roll(state: GameState, cmd: RollDie, rng: GameRNG) -> ReductionResult:
+def _roll(state: GameState, cmd: RollDie, rng: DeterministicRNG) -> ReductionResult:
     sides = int(cmd.payload.get("sides", 0))
     value, next_rng = rng.die(sides)
     return ReductionResult(
@@ -147,7 +147,7 @@ def _roll(state: GameState, cmd: RollDie, rng: GameRNG) -> ReductionResult:
     )
 
 
-def _legacy(state: GameState, cmd: RecordLegacy, rng: GameRNG) -> ReductionResult:
+def _legacy(state: GameState, cmd: RecordLegacy, rng: DeterministicRNG) -> ReductionResult:
     return ReductionResult(state, (_event(LegacyRecorded, cmd, dict(cmd.payload)),), rng)
 
 
@@ -164,7 +164,7 @@ def _replace_actor(state: GameState, index: int, actor: ActorState, **data: obje
     return replace(state, actors=tuple(actors))
 
 
-def _resolve(state: GameState, cmd: ResolveTest, rng: GameRNG) -> ReductionResult:
+def _resolve(state: GameState, cmd: ResolveTest, rng: DeterministicRNG) -> ReductionResult:
     p = dict(cmd.payload)
     test = D20Test(
         TestKind(p["kind"]),
@@ -187,7 +187,7 @@ def _vitality_from(data: object) -> Vitality:
     return Vitality(**dict(data))
 
 
-def _damage(state: GameState, cmd: ApplyDamage, rng: GameRNG) -> ReductionResult:
+def _damage(state: GameState, cmd: ApplyDamage, rng: DeterministicRNG) -> ReductionResult:
     p = dict(cmd.payload)
     index, actor = _actor(state, str(p["actor_id"]))
     vitality = _vitality_from(actor.data.get("vitality"))
@@ -199,7 +199,7 @@ def _damage(state: GameState, cmd: ApplyDamage, rng: GameRNG) -> ReductionResult
     return ReductionResult(state, (_event(VitalityChanged, cmd, _plain(result)),), rng)
 
 
-def _heal(state: GameState, cmd: Heal, rng: GameRNG) -> ReductionResult:
+def _heal(state: GameState, cmd: Heal, rng: DeterministicRNG) -> ReductionResult:
     p = dict(cmd.payload)
     index, actor = _actor(state, str(p["actor_id"]))
     vitality = apply_healing(_vitality_from(actor.data.get("vitality")), int(p["amount"]))
@@ -207,7 +207,7 @@ def _heal(state: GameState, cmd: Heal, rng: GameRNG) -> ReductionResult:
     return ReductionResult(state, (_event(VitalityChanged, cmd, {"state": _plain(vitality)}),), rng)
 
 
-def _death_op(state: GameState, cmd: Command, rng: GameRNG) -> ReductionResult:
+def _death_op(state: GameState, cmd: Command, rng: DeterministicRNG) -> ReductionResult:
     p = dict(cmd.payload)
     index, actor = _actor(state, str(p["actor_id"]))
     vitality = _vitality_from(actor.data.get("vitality"))
@@ -224,7 +224,7 @@ def _death_op(state: GameState, cmd: Command, rng: GameRNG) -> ReductionResult:
     )
 
 
-def _effect(state: GameState, cmd: Command, rng: GameRNG) -> ReductionResult:
+def _effect(state: GameState, cmd: Command, rng: DeterministicRNG) -> ReductionResult:
     effects = tuple(
         Effect(
             e.id,
@@ -287,7 +287,7 @@ def _encounter_index(state: GameState, encounter_id: str) -> tuple[int, Encounte
     raise ValueError("unknown encounter")
 
 
-def _phase7(state: GameState, cmd: Command, rng: GameRNG) -> ReductionResult:
+def _phase7(state: GameState, cmd: Command, rng: DeterministicRNG) -> ReductionResult:
     p = dict(cmd.payload)
     encounter_id = str(p.get("encounter_id", ""))
     if isinstance(cmd, StartEncounter):
@@ -382,7 +382,7 @@ def _phase7(state: GameState, cmd: Command, rng: GameRNG) -> ReductionResult:
     )
 
 
-def _character(state: GameState, cmd: Command, rng: GameRNG) -> ReductionResult:
+def _character(state: GameState, cmd: Command, rng: DeterministicRNG) -> ReductionResult:
     payload = dict(cmd.payload)
     actor_id = str(payload.pop("actor_id", ""))
     index, actor = _actor(state, actor_id)
@@ -411,7 +411,7 @@ def _character(state: GameState, cmd: Command, rng: GameRNG) -> ReductionResult:
     )
 
 
-Handler = Callable[[GameState, Command, GameRNG], ReductionResult]
+Handler = Callable[[GameState, Command, DeterministicRNG], ReductionResult]
 HANDLERS: dict[type, Handler] = {
     CreateGame: _create,
     PutEntity: _put,
@@ -443,7 +443,7 @@ HANDLERS: dict[type, Handler] = {
 }
 
 
-def reduce_command(state: GameState, command: Command, rng: GameRNG) -> ReductionResult:
+def reduce_command(state: GameState, command: Command, rng: DeterministicRNG) -> ReductionResult:
     handler = HANDLERS.get(type(command))
     try:
         if handler is None:

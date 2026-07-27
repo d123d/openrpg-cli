@@ -4,7 +4,7 @@
 from __future__ import annotations
 from dataclasses import dataclass, replace
 from enum import Enum
-from openrpg_cli.engine.rng import GameRNG
+from openrpg_cli.engine.rng import DeterministicRNG
 from .resolution import D20Test, D20Result, resolve_d20
 from .space import SpatialState, TargetResolution, resolve_targets
 from .turns import *
@@ -98,9 +98,9 @@ def resolve_action(
     turn: TurnState,
     budget: ActionBudget,
     space: SpatialState,
-    rng: GameRNG,
+    rng: DeterministicRNG,
     teams: dict[str, str] | None = None,
-) -> tuple[ActionOutcome, GameRNG]:
+) -> tuple[ActionOutcome, DeterministicRNG]:
     spec = command_spec(req.action, req.actor_id, turn, budget)
     if not spec.legal:
         return ActionOutcome(False, spec.failure_reason, req.action, req.actor_id, budget), rng

@@ -11,7 +11,7 @@ from openrpg_cli.api import RulesAPI, get_rules_api
 from openrpg_cli.combat_actions import CombatActionCatalog, UnsupportedCombatAction
 from openrpg_cli.dice import roll
 from openrpg_cli.combat_rules import CreatureView
-from openrpg_cli.dice import GameRNG, roll_d20, roll_damage_with_crit
+from openrpg_cli.dice import LegacyPythonRNG, roll_d20, roll_damage_with_crit
 
 
 class CombatError(ValueError):
@@ -62,7 +62,7 @@ class CombatEngine:
                  api: RulesAPI | None = None) -> None:
         self.character, self.creature = character, creature
         self.api = api or get_rules_api()
-        self.rng = GameRNG(seed)
+        self.rng = LegacyPythonRNG(seed)
         player = Combatant("player", character.name, character.derived.current_hp,
                            character.derived.max_hp, character.derived.armor_class,
                            character.derived.modifiers["dex"])

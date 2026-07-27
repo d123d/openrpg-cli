@@ -5,7 +5,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from enum import Enum
 
-from openrpg_cli.engine.rng import GameRNG
+from openrpg_cli.engine.rng import DeterministicRNG
 
 
 class DamageType(str, Enum):
@@ -171,7 +171,7 @@ def apply_temporary_hp(state: Vitality, amount: int) -> Vitality:
     )
 
 
-def death_save(state: Vitality, rng: GameRNG) -> tuple[Vitality, int, GameRNG]:
+def death_save(state: Vitality, rng: DeterministicRNG) -> tuple[Vitality, int, DeterministicRNG]:
     if state.current_hp or state.dead or state.defeated:
         raise ValueError("death save unavailable")
     roll, rng = rng.die(20)

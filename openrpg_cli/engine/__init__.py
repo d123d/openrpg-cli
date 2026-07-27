@@ -1,8 +1,8 @@
 """Pure deterministic gameplay engine with cycle-safe lazy exports."""
 
-from .rng import GameRNG
+from .rng import DeterministicRNG, GameRNG
 
-__all__ = ["GameRNG", "ReductionResult", "reduce_command"]
+__all__ = ["DeterministicRNG", "GameRNG", "ReductionResult", "reduce_command"]
 
 
 def __getattr__(name: str):

@@ -15,7 +15,7 @@ from rich.table import Table
 
 from openrpg_cli import __version__
 from openrpg_cli.data import SRDRepository, category_name, get_repository
-from openrpg_cli.dice import GameRNG, roll as roll_dice
+from openrpg_cli.dice import LegacyPythonRNG, roll as roll_dice
 from openrpg_cli.api import get_rules_api
 from openrpg_cli.character import AbilityScores
 from openrpg_cli.character_builder import CharacterBuilder, CharacterRequest, ChoiceError
@@ -573,7 +573,7 @@ def roll(
     seed: int | None = typer.Option(None, help="Deterministic RNG seed."),
 ) -> None:
     """Roll bounded dice using engine forked from dnd-cli."""
-    rng = GameRNG(seed=seed if seed is not None else secrets.randbits(63))
+    rng = LegacyPythonRNG(seed=seed if seed is not None else secrets.randbits(63))
     try:
         result = roll_dice(rng, expression)
     except ValueError as exc:
