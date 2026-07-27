@@ -89,7 +89,7 @@ class CombatEngine:
                     raise CombatError(f"unknown or unequipped weapon: {action_id}")
                 attack = attacks[action_id]
                 return self._attack(actor, self.state.order[1 if self.state.order[0] == actor else 0],
-                                    attack.weapon.name, attack.attack_bonus, attack.damage)
+                                    attack.weapon.name, attack.attack_bonus, attack.damage.split()[0])
             actions = CombatActionCatalog.enemy_actions(self.creature)
             selected = actions[self.rng.randint(0, len(actions) - 1, "enemy-action")]
             return self._attack(actor, "player", selected.name, selected.attack_bonus,

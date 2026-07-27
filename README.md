@@ -7,6 +7,7 @@ Project contains:
 - SRD 5.2.1 structured content
 - search, list, show, integrity audit
 - deterministic bounded dice roller forked from dnd-cli
+- deterministic one-character combat and guided terminal play
 
 Project does **not** contain:
 
@@ -44,7 +45,16 @@ Installed entry points:
 ```powershell
 srd info
 srd show creature "Goblin Warrior"
+srd combat --character .\hero.json --monster "Goblin Warrior" --seed 42 --auto
+srd combat --character .\hero.json --monster "Goblin Warrior" --seed 42 --auto --json
+srd play --character .\hero.json --monster "Goblin Warrior" --seed 42
 ```
+
+Identical character, creature, seed, and output format produce byte-identical output.
+Combat stays offline. Engine resolves equipped weapon attacks and structured ordinary SRD
+creature attacks. Unsupported or prose-dependent mechanics fail readably; no prose gets
+converted into invented rules. Scope excludes parties, maps, adventures, settings, NPCs,
+quests, progression, and non-SRD content.
 
 ## Content Gate
 
@@ -60,7 +70,8 @@ Run:
 ```powershell
 py -3.14 -m pytest -q
 py -3.14 -m ruff check .
+py -3.14 -m build
+py -3.14 -m pytest tests/test_release_smoke.py -q
 ```
 
 See `LICENSE-CONTENT.md` for required attribution. Code license not yet declared.
-

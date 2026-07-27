@@ -1,6 +1,6 @@
 [project]
 name = "srd-cli"
-version = "0.1.0"
+version = "1.0.0"
 description = "Lean command-line toolkit for System Reference Document 5.2.1"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -27,9 +27,6 @@ build-backend = "hatchling.build"
 [tool.hatch.build.targets.wheel]
 packages = ["srd_cli"]
 
-[tool.hatch.build.targets.wheel.force-include]
-"srd_cli/data/srd521" = "srd_cli/data/srd521"
-
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["."]
@@ -37,4 +34,3 @@ pythonpath = ["."]
 [tool.ruff]
 line-length = 100
 target-version = "py311"
-
