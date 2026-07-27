@@ -16,7 +16,7 @@
 - [x] **Phase 1: Clean SRD-Only Fork** - Independent repo, pinned data, attribution, audit, browse/search/show/roll CLI
 - [x] **Phase 2: Normalized Rules API** - Typed joins expose complete SRD classes, species, backgrounds, feats, equipment, spells, and creatures
 - [x] **Phase 3: Character Engine** - Create, inspect, save, and load legal SRD characters with deterministic derived statistics
-- [ ] **Phase 4: Combat & Interactive Play** - Run deterministic SRD creature combat and a complete interactive terminal workflow
+- [x] **Phase 4: Combat & Interactive Play** - Run deterministic SRD creature combat and a complete interactive terminal workflow
 
 ## Phase Details
 
