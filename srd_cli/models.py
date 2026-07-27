@@ -35,35 +35,78 @@ class Relationship(Entity):
 
 
 @dataclass(frozen=True, slots=True)
-class CharacterClass(Entity): pass
+class CharacterClass(Entity):
+    pass
+
+
 @dataclass(frozen=True, slots=True)
-class ClassFeature(Relationship): pass
+class ClassFeature(Relationship):
+    pass
+
+
 @dataclass(frozen=True, slots=True)
-class ClassFeatureItem(Relationship): pass
+class ClassFeatureItem(Relationship):
+    pass
+
+
 @dataclass(frozen=True, slots=True)
-class Species(Entity): pass
+class Species(Entity):
+    pass
+
+
 @dataclass(frozen=True, slots=True)
-class SpeciesTrait(Relationship): pass
+class SpeciesTrait(Relationship):
+    pass
+
+
 @dataclass(frozen=True, slots=True)
-class Background(Entity): pass
+class Background(Entity):
+    pass
+
+
 @dataclass(frozen=True, slots=True)
-class BackgroundBenefit(Relationship): pass
+class BackgroundBenefit(Relationship):
+    pass
+
+
 @dataclass(frozen=True, slots=True)
-class Feat(Entity): pass
+class Feat(Entity):
+    pass
+
+
 @dataclass(frozen=True, slots=True)
-class FeatBenefit(Relationship): pass
+class FeatBenefit(Relationship):
+    pass
+
+
 @dataclass(frozen=True, slots=True)
-class Creature(Entity): pass
+class Creature(Entity):
+    pass
+
+
 @dataclass(frozen=True, slots=True)
-class CreatureTrait(Relationship): pass
+class CreatureTrait(Relationship):
+    pass
+
+
 @dataclass(frozen=True, slots=True)
-class CreatureAction(Relationship): pass
+class CreatureAction(Relationship):
+    pass
+
+
 @dataclass(frozen=True, slots=True)
-class CreatureActionAttack(Relationship): pass
+class CreatureActionAttack(Relationship):
+    pass
+
+
 @dataclass(frozen=True, slots=True)
-class Weapon(Entity): pass
+class Weapon(Entity):
+    pass
+
+
 @dataclass(frozen=True, slots=True)
-class WeaponProperty(Entity): pass
+class WeaponProperty(Entity):
+    pass
 
 
 @dataclass(frozen=True, slots=True)
@@ -73,7 +116,10 @@ class WeaponPropertyAssignment(Entity):
 
 
 @dataclass(frozen=True, slots=True)
-class Spell(Entity): pass
-@dataclass(frozen=True, slots=True)
-class SpellCastingOption(Relationship): pass
+class Spell(Entity):
+    pass
 
+
+@dataclass(frozen=True, slots=True)
+class SpellCastingOption(Relationship):
+    pass

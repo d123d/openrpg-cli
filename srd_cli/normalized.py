@@ -4,42 +4,91 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from types import MappingProxyType
-from typing import Any, Generic, Mapping, TypeVar
+from typing import Mapping, TypeVar
 
 from srd_cli.data import SRDRepository, get_repository
 from srd_cli.models import (
-    Background, BackgroundBenefit, CharacterClass, ClassFeature, ClassFeatureItem,
-    Creature, CreatureAction, CreatureActionAttack, CreatureTrait, Entity, Feat,
-    FeatBenefit, Relationship, Species, SpeciesTrait, Spell, SpellCastingOption,
-    Weapon, WeaponProperty, WeaponPropertyAssignment, freeze,
+    Background,
+    BackgroundBenefit,
+    CharacterClass,
+    ClassFeature,
+    ClassFeatureItem,
+    Creature,
+    CreatureAction,
+    CreatureActionAttack,
+    CreatureTrait,
+    Entity,
+    Feat,
+    FeatBenefit,
+    Relationship,
+    Species,
+    SpeciesTrait,
+    Spell,
+    SpellCastingOption,
+    Weapon,
+    WeaponProperty,
+    WeaponPropertyAssignment,
+    freeze,
 )
 
 T = TypeVar("T", bound=Entity)
 
 MODELS: dict[str, type[Entity]] = {
-    "CharacterClass.json": CharacterClass, "ClassFeature.json": ClassFeature,
-    "ClassFeatureItem.json": ClassFeatureItem, "Species.json": Species,
-    "SpeciesTrait.json": SpeciesTrait, "Background.json": Background,
-    "BackgroundBenefit.json": BackgroundBenefit, "Feat.json": Feat,
-    "FeatBenefit.json": FeatBenefit, "Creature.json": Creature,
-    "CreatureTrait.json": CreatureTrait, "CreatureAction.json": CreatureAction,
-    "CreatureActionAttack.json": CreatureActionAttack, "Weapon.json": Weapon,
+    "CharacterClass.json": CharacterClass,
+    "ClassFeature.json": ClassFeature,
+    "ClassFeatureItem.json": ClassFeatureItem,
+    "Species.json": Species,
+    "SpeciesTrait.json": SpeciesTrait,
+    "Background.json": Background,
+    "BackgroundBenefit.json": BackgroundBenefit,
+    "Feat.json": Feat,
+    "FeatBenefit.json": FeatBenefit,
+    "Creature.json": Creature,
+    "CreatureTrait.json": CreatureTrait,
+    "CreatureAction.json": CreatureAction,
+    "CreatureActionAttack.json": CreatureActionAttack,
+    "Weapon.json": Weapon,
     "WeaponProperty.json": WeaponProperty,
-    "WeaponPropertyAssignment.json": WeaponPropertyAssignment, "Spell.json": Spell,
+    "WeaponPropertyAssignment.json": WeaponPropertyAssignment,
+    "Spell.json": Spell,
     "SpellCastingOption.json": SpellCastingOption,
 }
 
 _ALL_TABLES = (
-    "AbilityDescription.json", "AlignmentDescription.json", "Armor.json",
-    "Background.json", "BackgroundBenefit.json", "CharacterClass.json",
-    "ClassFeature.json", "ClassFeatureItem.json", "ConditionDescription.json",
-    "Creature.json", "CreatureAction.json", "CreatureActionAttack.json",
-    "CreatureTrait.json", "CreatureTypeDescription.json", "CrossReference.json",
-    "DamageTypeDescription.json", "Document.json", "Feat.json", "FeatBenefit.json",
-    "Item.json", "ItemCategory.json", "MagicItem.json", "Rule.json", "RuleSet.json",
-    "Service.json", "Services.json", "SkillDescription.json", "Species.json",
-    "SpeciesTrait.json", "Spell.json", "SpellCastingOption.json", "Weapon.json",
-    "WeaponProperty.json", "WeaponPropertyAssignment.json",
+    "AbilityDescription.json",
+    "AlignmentDescription.json",
+    "Armor.json",
+    "Background.json",
+    "BackgroundBenefit.json",
+    "CharacterClass.json",
+    "ClassFeature.json",
+    "ClassFeatureItem.json",
+    "ConditionDescription.json",
+    "Creature.json",
+    "CreatureAction.json",
+    "CreatureActionAttack.json",
+    "CreatureTrait.json",
+    "CreatureTypeDescription.json",
+    "CrossReference.json",
+    "DamageTypeDescription.json",
+    "Document.json",
+    "Feat.json",
+    "FeatBenefit.json",
+    "Item.json",
+    "ItemCategory.json",
+    "MagicItem.json",
+    "Rule.json",
+    "RuleSet.json",
+    "Service.json",
+    "Services.json",
+    "SkillDescription.json",
+    "Species.json",
+    "SpeciesTrait.json",
+    "Spell.json",
+    "SpellCastingOption.json",
+    "Weapon.json",
+    "WeaponProperty.json",
+    "WeaponPropertyAssignment.json",
 )
 
 
@@ -50,13 +99,18 @@ class TableSpec:
     reason: str | None = None
 
 
-TABLE_CATALOG: Mapping[str, TableSpec] = MappingProxyType({
-    name: TableSpec(name not in {"CrossReference.json", "Document.json"},
-                    MODELS.get(name),
-                    None if name not in {"CrossReference.json", "Document.json"}
-                    else "provenance/transform metadata")
-    for name in _ALL_TABLES
-})
+TABLE_CATALOG: Mapping[str, TableSpec] = MappingProxyType(
+    {
+        name: TableSpec(
+            name not in {"CrossReference.json", "Document.json"},
+            MODELS.get(name),
+            None
+            if name not in {"CrossReference.json", "Document.json"}
+            else "provenance/transform metadata",
+        )
+        for name in _ALL_TABLES
+    }
+)
 
 
 class NormalizedRepository:
@@ -107,8 +161,9 @@ class NormalizedRepository:
             if not isinstance(item, Relationship):
                 raise ValueError(f"{filename}: rows have no parent")
             grouped.setdefault(item.parent, []).append(item)
-        return MappingProxyType({
-            parent: tuple(sorted(items, key=lambda item: item.pk))
-            for parent, items in grouped.items()
-        })
-
+        return MappingProxyType(
+            {
+                parent: tuple(sorted(items, key=lambda item: item.pk))
+                for parent, items in grouped.items()
+            }
+        )
