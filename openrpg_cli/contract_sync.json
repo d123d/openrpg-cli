@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "upstream": {
+    "project": "srd-cli",
+    "through_commit": "5b89831",
+    "ports": {
+      "deterministic_rng_boundaries": "51bc0b8",
+      "command_router_handlers": "cbbb155",
+      "presentation_cli_composition": "5b89831"
+    }
+  },
+  "core_compatibility": {
+    "project": "openrpg-core",
+    "version": "0.1.0",
+    "verified_commit": "c178e59",
+    "contracts": [
+      "deterministic-rng",
+      "command-router",
+      "event-reducer",
+      "presentation-boundary"
+    ]
+  },
+  "scope": "Shared structural contracts only; OpenRPG providers and system packs remain isolated."
+}
