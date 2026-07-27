@@ -8,6 +8,7 @@ from math import floor
 from typing import Iterable
 
 from srd_cli.api import RulesAPI, get_rules_api
+from srd_cli.combat_actions import CombatActionCatalog, UnsupportedCombatAction
 from srd_cli.character import (
     ABILITIES,
     AbilityScores,
@@ -107,14 +108,23 @@ class CharacterBuilder:
         assigned = dict(zip(order, (15, 14, 13, 12, 10, 8), strict=True))
         return AbilityScores.from_mapping(assigned)
 
-    def _weapons(self, values: tuple[str, ...], background) -> tuple:
+    def _default_equipment_names(self, class_view) -> tuple[str, ...]:
+        """Resolve option A from structured class feature records against item tables."""
+        text = " ".join(
+            str(view.feature.data.get("desc") or "")
+            for view in class_view.features
+            if view.feature.data.get("feature_type") == "CORE_TRAITS_TABLE"
+        )
+        option_a = text.split("(A)", 1)[-1].split("(B)", 1)[0]
+        names = [x.entity.name for x in self.api.list_weapons()]
+        names.extend(str(row["fields"]["name"]) for row in self.api.repository.table("Armor.json"))
+        return tuple(name for name in names if name.casefold() in option_a.casefold())
+
+    def _weapons(self, values: tuple[str, ...], class_view) -> tuple:
         legal = tuple(self.api.list_weapons())
         if not values:
-            equipment_text = " ".join(
-                str(x.data.get("desc") or "") for x in background.benefits
-                if x.data.get("type") == "equipment"
-            ).casefold()
-            selected = [x for x in legal if x.entity.name.casefold() in equipment_text]
+            defaults = self._default_equipment_names(class_view)
+            selected = [x for x in legal if x.entity.name in defaults]
             return tuple(sorted(selected, key=lambda x: (x.entity.name.casefold(), x.entity.pk)))
         result = []
         for value in values:
@@ -127,7 +137,14 @@ class CharacterBuilder:
     def _spells(self, values: tuple[str, ...], class_view) -> tuple:
         legal = tuple(x for x in class_view.spells if x.spell.data.get("level") in (0, 1))
         if not values:
-            return legal[: min(2, len(legal))]
+            supported = []
+            for view in legal:
+                try:
+                    CombatActionCatalog.spell(view)
+                except UnsupportedCombatAction:
+                    continue
+                supported.append(view)
+            return tuple(supported[:2])
         result = []
         allowed = {x.spell.pk: x for x in legal}
         for value in values:
@@ -145,7 +162,7 @@ class CharacterBuilder:
         background = self._select("background", request.background_identity, self._background_views)
         feat = self._select("feat", request.feat_identity, self._feat_views)
         scores = request.scores or self._default_scores(class_view)
-        weapons = self._weapons(tuple(request.equipment), background)
+        weapons = self._weapons(tuple(request.equipment), class_view)
         spells = self._spells(tuple(request.spells), class_view)
         mods = {key: modifier(value) for key, value in scores.items()}
         save_names = tuple(class_view.entity.data.get("saving_throws", ()))
@@ -160,19 +177,39 @@ class CharacterBuilder:
         attacks = []
         for weapon in weapons:
             properties = {x.property.name for x in weapon.properties}
-            ability = "dex" if weapon.entity.data.get("range", 0) or "Finesse" in properties and mods["dex"] > mods["str"] else "str"
+            ranged = not any(name in properties for name in ("Thrown", "Finesse")) and bool(
+                weapon.entity.data.get("range")
+            )
+            ability = "dex" if ranged or "Finesse" in properties and mods["dex"] > mods["str"] else "str"
             bonus = mods[ability] + 2
             sign = f"+{mods[ability]}" if mods[ability] >= 0 else str(mods[ability])
             attacks.append(AttackSummary(_ref(weapon.entity), ability, bonus, f"{weapon.entity.data['damage_dice']}{sign} {weapon.entity.data['damage_type']}"))
         class_name = class_view.entity.name.casefold()
         casting = CASTING.get(class_name)
         spell_bonus = mods[casting] + 2 if casting else None
+        armor_class = 10 + mods["dex"]
+        # Armor is derived from class starting package; explicit equipment currently
+        # selects supported attack weapons without discarding worn starting armor.
+        equipment_names = set(self._default_equipment_names(class_view))
+        armor_rows = [
+            row for row in self.api.repository.table("Armor.json")
+            if str(row["fields"]["name"]) in equipment_names
+        ]
+        if armor_rows:
+            armor = armor_rows[0]["fields"]
+            dex_bonus = mods["dex"] if armor.get("ac_add_dexmod") else 0
+            cap = armor.get("ac_cap_dexmod")
+            if isinstance(cap, int):
+                dex_bonus = min(dex_bonus, cap)
+            armor_class = int(armor["ac_base"]) + dex_bonus
+        if "Shield" in equipment_names:
+            armor_class += 2
         derived = DerivedStats(
             modifiers=mods,
             proficiency_bonus=2,
             max_hp=int(str(class_view.entity.data["hit_dice"]).lstrip("Dd")) + mods["con"],
             current_hp=int(str(class_view.entity.data["hit_dice"]).lstrip("Dd")) + mods["con"],
-            armor_class=10 + mods["dex"],
+            armor_class=armor_class,
             saves=saves,
             skills=skills,
             attacks=tuple(attacks),

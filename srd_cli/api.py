@@ -12,6 +12,7 @@ class RulesAPI:
 
     def __init__(self, normalized: NormalizedRepository | None = None) -> None:
         source = normalized or NormalizedRepository()
+        self.repository = source.repository
         self._character = CharacterRules(source)
         self._combat = CombatRules(source)
 
