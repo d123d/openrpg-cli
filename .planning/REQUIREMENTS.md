@@ -13,12 +13,12 @@
 
 ## Normalized Rules API
 
-- [ ] **API-01**: Typed core entity models.
-- [ ] **API-02**: Class features/items joins.
-- [ ] **API-03**: Species/background/feat benefit joins.
-- [ ] **API-04**: Creature action/attack/trait joins.
-- [ ] **API-05**: Weapon/property and spellcasting joins.
-- [ ] **API-06**: Complete relationship coverage tests.
+- [x] **API-01**: Typed core entity models.
+- [x] **API-02**: Class features/items joins.
+- [x] **API-03**: Species/background/feat benefit joins.
+- [x] **API-04**: Creature action/attack/trait joins.
+- [x] **API-05**: Weapon/property and spellcasting joins.
+- [x] **API-06**: Complete relationship coverage tests.
 
 ## Character Engine
 

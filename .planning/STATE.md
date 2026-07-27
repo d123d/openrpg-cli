@@ -5,16 +5,16 @@
 See `.planning/PROJECT.md`.
 
 **Core value:** Complete offline SRD 5.2.1-only CLI.
-**Current focus:** Phase 2 — Normalized Rules API.
+**Current focus:** Phase 3 — Character Engine.
 
 ## Current Position
 
-Phase: 2 of 4 (Normalized Rules API)
+Phase: 3 of 4 (Character Engine)
 Plan: Not started
 Status: Ready for planning
-Last activity: 2026-07-26 — Phase 1 clean fork completed.
+Last activity: 2026-07-26 — Phase 2 normalized rules API completed.
 
-Progress: [██░░░░░░] 25%
+Progress: [████░░░░] 50%
 
 ## Accumulated Context
 
@@ -32,6 +32,6 @@ None.
 ## Session Continuity
 
 Last session: 2026-07-26
-Stopped at: Phase 2 planning.
+Stopped at: Phase 2 complete.
 Resume file: `.planning/ROADMAP.md`
 

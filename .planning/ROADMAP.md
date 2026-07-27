@@ -14,7 +14,7 @@
 ## Phases
 
 - [x] **Phase 1: Clean SRD-Only Fork** - Independent repo, pinned data, attribution, audit, browse/search/show/roll CLI
-- [ ] **Phase 2: Normalized Rules API** - Typed joins expose complete SRD classes, species, backgrounds, feats, equipment, spells, and creatures
+- [x] **Phase 2: Normalized Rules API** - Typed joins expose complete SRD classes, species, backgrounds, feats, equipment, spells, and creatures
 - [ ] **Phase 3: Character Engine** - Create, inspect, save, and load legal SRD characters with deterministic derived statistics
 - [ ] **Phase 4: Combat & Interactive Play** - Run deterministic SRD creature combat and a complete interactive terminal workflow
 
@@ -43,10 +43,10 @@
 **Plans**: 4 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — Immutable typed models, deterministic loaders, 34-table classification
-- [ ] 02-02-PLAN.md — Character-facing class/species/background/feat/spell joins
-- [ ] 02-03-PLAN.md — Combat-facing creature/action/attack and weapon/property joins
-- [ ] 02-04-PLAN.md — Public RulesAPI, compatible CLI rendering, exhaustive coverage
+- [x] 02-01-PLAN.md — Immutable typed models, deterministic loaders, 34-table classification
+- [x] 02-02-PLAN.md — Character-facing class/species/background/feat/spell joins
+- [x] 02-03-PLAN.md — Combat-facing creature/action/attack and weapon/property joins
+- [x] 02-04-PLAN.md — Public RulesAPI, compatible CLI rendering, exhaustive coverage
 
 ### Phase 3: Character Engine
 **Goal**: User can create, inspect, save, and load a playable SRD character.
@@ -78,6 +78,6 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Clean SRD-Only Fork | 1/1 | Complete | 2026-07-26 |
-| 2. Normalized Rules API | 0/4 | Planned | - |
+| 2. Normalized Rules API | 4/4 | Complete | 2026-07-26 |
 | 3. Character Engine | 0/? | Not started | - |
 | 4. Combat & Interactive Play | 0/? | Not started | - |
