@@ -82,13 +82,41 @@ def combat(
 
 @app.command()
 def play(
-    character: Path = typer.Option(..., exists=True, readable=True),
-    monster: str = typer.Option(...),
+    character: Path | None = typer.Option(None),
+    monster: str | None = typer.Option(None),
     seed: int = typer.Option(0),
 ) -> None:
-    """Guide load → SRD creature → combat result."""
-    combat(character=character, monster=monster, seed=seed, auto=False,
-           as_json=False, max_rounds=100)
+    """Guide create/load → SRD creature → combat result."""
+    builder, store = _character_services()
+    try:
+        if character is None:
+            mode = typer.prompt("Character: create or load", default="load").strip().casefold()
+            if mode == "create":
+                hero = builder.build(CharacterRequest(
+                    typer.prompt("Name"),
+                    _pick("Class", None, builder.classes),
+                    _pick("Species", None, builder.species),
+                    _pick("Background", None, builder.backgrounds),
+                    _pick("Feat", None, builder.feats),
+                    None, (), (),
+                ))
+                if typer.confirm("Save character?", default=False):
+                    store.save(hero)
+            elif mode == "load":
+                character = Path(typer.prompt("Character file"))
+                hero = store.load(character)
+            else:
+                raise ValueError("expected create or load")
+        else:
+            hero = store.load(character)
+        selected = monster or typer.prompt("SRD creature")
+        creature = get_rules_api().get_creature(selected)
+        if creature is None:
+            raise CombatError(f"unknown or ambiguous creature: {selected}")
+        result = CombatSession(hero, creature, seed).run_auto()
+        console.print(render_transcript(result), end="", markup=False)
+    except (CombatError, CharacterValidationError, ChoiceError, OSError, ValueError) as exc:
+        _fail_character(exc)
 
 
 def _pick(label: str, value: str | None, choices) -> str:
