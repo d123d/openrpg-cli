@@ -21,8 +21,8 @@ from srd_cli.character import AbilityScores
 from srd_cli.character_builder import CharacterBuilder, CharacterRequest, ChoiceError
 from srd_cli.character_sheet import render_json, render_sheet
 from srd_cli.character_store import CharacterStore, CharacterValidationError
-from srd_cli.combat import CombatError
-from srd_cli.combat_session import CombatSession, render_combat_json, render_transcript
+from srd_cli.combat import CombatError, Outcome
+from srd_cli.combat_session import CombatResult, CombatSession, render_combat_json, render_transcript
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(errors="replace")
@@ -54,6 +54,37 @@ def _fail_character(exc: Exception) -> None:
     raise typer.Exit(2)
 
 
+def _run_interactive(session: CombatSession) -> CombatResult:
+    """Prompt only on player turns; resolve enemy turns immediately."""
+    while session.engine.state.outcome == Outcome.ACTIVE:
+        state = session.engine.state
+        if state.round > session.max_rounds:
+            raise CombatError(f"combat exceeded {session.max_rounds} rounds")
+        player = next(x for x in state.combatants if x.id == "player")
+        enemy = next(x for x in state.combatants if x.id != "player")
+        console.print(
+            f"Round {state.round}: {player.name} {player.hp}/{player.max_hp} HP; "
+            f"{enemy.name} {enemy.hp}/{enemy.max_hp} HP"
+        )
+        if state.active_actor != "player":
+            session.engine.act(state.active_actor)
+            continue
+        actions = session.engine.legal_player_actions()
+        for index, (kind, identity) in enumerate(actions, 1):
+            console.print(f"  {index}. {kind}: {identity}")
+        while True:
+            choice = typer.prompt("Action")
+            try:
+                selected = int(choice)
+            except ValueError:
+                selected = 0
+            if 1 <= selected <= len(actions):
+                break
+            console.print(f"Choose 1-{len(actions)}.")
+        session.engine.act("player", actions[selected - 1][1])
+    return CombatResult(session.seed, session.engine.state, tuple(session.engine.events))
+
+
 @app.command()
 def combat(
     character: Path = typer.Option(..., exists=True, readable=True),
@@ -71,9 +102,7 @@ def combat(
         if creature is None:
             raise CombatError(f"unknown or ambiguous creature: {monster}")
         session = CombatSession(hero, creature, seed, max_rounds)
-        if not auto:
-            console.print("Interactive combat uses stable first legal action each turn.")
-        result = session.run_auto()
+        result = session.run_auto() if auto else _run_interactive(session)
         console.print(render_combat_json(result) if as_json else render_transcript(result),
                       end="", markup=False)
     except (CombatError, CharacterValidationError, OSError, ValueError) as exc:
@@ -109,11 +138,18 @@ def play(
                 raise ValueError("expected create or load")
         else:
             hero = store.load(character)
-        selected = monster or typer.prompt("SRD creature")
-        creature = get_rules_api().get_creature(selected)
-        if creature is None:
-            raise CombatError(f"unknown or ambiguous creature: {selected}")
-        result = CombatSession(hero, creature, seed).run_auto()
+        creatures = get_rules_api().list_creatures()
+        selected = monster
+        while True:
+            if selected is None:
+                console.print("Creature choices: " + ", ".join(x.entity.name for x in creatures))
+                selected = typer.prompt("SRD creature")
+            creature = get_rules_api().get_creature(selected)
+            if creature is not None:
+                break
+            console.print(f"Unknown creature: {selected}")
+            selected = None
+        result = _run_interactive(CombatSession(hero, creature, seed))
         console.print(render_transcript(result), end="", markup=False)
     except (CombatError, CharacterValidationError, ChoiceError, OSError, ValueError) as exc:
         _fail_character(exc)
